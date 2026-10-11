@@ -34,10 +34,7 @@ export default function Philosophy() {
       <div aria-hidden data-slash className="absolute right-[7%] top-0 -z-0 hidden h-[44%] w-[7vw] -skew-x-[16deg] bg-signal md:block" />
       <div aria-hidden data-slash className="absolute right-[calc(7%+9vw)] top-0 -z-0 hidden h-[44%] w-[6px] -skew-x-[16deg] bg-ink md:block" />
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className="micro section-index flex justify-between border-t border-ink/20 pt-4">
-          <span>{c.index}</span>
-          <span className="text-ink/50">JMP</span>
-        </p>
+        <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
 
         <h2 aria-label={c.lines.join(' ')} className="display mt-14 text-[clamp(3.6rem,14.5vw,17rem)] md:mt-20">
           <Lines lines={c.lines} />

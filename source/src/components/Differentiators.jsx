@@ -24,10 +24,7 @@ export default function Differentiators() {
   return (
     <section ref={ref} className="relative bg-paper py-28 text-ink md:py-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className="micro section-index flex justify-between border-t border-ink/20 pt-4">
-          <span>{c.index}</span>
-          <span className="text-ink/60">3 pontos</span>
-        </p>
+        <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
         <h2 aria-label={c.lines.join(' ')} className="display mt-14 text-[clamp(2.8rem,8vw,9.5rem)] md:mt-20">
           <Lines lines={c.lines} classes={['', 'deep-signal']} />
         </h2>

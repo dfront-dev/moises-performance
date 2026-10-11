@@ -54,10 +54,7 @@ export default function Coach({ index }) {
   return (
     <section id="sobre" ref={ref} className="relative bg-ink pt-28 text-paper md:pt-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className="micro section-index flex justify-between border-t border-paper/20 pt-4">
-          <span>{index || c.index}</span>
-          <span className="text-steel">João Moisés</span>
-        </p>
+        <div aria-hidden data-fade className="section-index h-px bg-paper/20" />
 
         <div className="mt-14 grid gap-14 md:mt-20 md:grid-cols-12">
           {/* portrait */}

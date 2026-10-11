@@ -20,10 +20,7 @@ export default function Collaboration() {
   return (
     <section ref={ref} className="relative bg-ink py-28 text-paper md:py-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className="micro section-index flex justify-between border-t border-paper/20 pt-4">
-          <span>{c.index}</span>
-          <span className="text-steel">JMP</span>
-        </p>
+        <div aria-hidden data-fade className="section-index h-px bg-paper/20" />
         <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">
           <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(2.8rem,8vw,9.5rem)] md:col-span-7">
             <Lines lines={c.lines} classes={['', '', 'text-signal']} />

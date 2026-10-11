@@ -37,10 +37,7 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
       className={`relative py-28 md:py-44 ${dark ? 'bg-ink text-paper' : 'bg-paper text-ink'}`}
     >
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className={`micro section-index flex justify-between border-t pt-4 ${dark ? 'border-paper/20' : 'border-ink/20'}`}>
-          <span>{data.index}</span>
-          <span className={dark ? 'text-steel' : 'text-ink/60'}>JMP</span>
-        </p>
+        <div aria-hidden data-fade className={`section-index h-px ${dark ? 'bg-paper/20' : 'bg-ink/20'}`} />
 
         <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">
           <h2 aria-label={data.lines.join(' ')} className="display text-[clamp(3rem,9vw,10.5rem)] md:col-span-8">

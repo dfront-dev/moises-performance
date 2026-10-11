@@ -42,10 +42,7 @@ export default function Expertise() {
   return (
     <section id="expertise" ref={ref} className="relative bg-paper py-28 text-ink md:py-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className="micro section-index flex justify-between border-t border-ink/20 pt-4">
-          <span>{c.index}</span>
-          <span className="text-ink/60">03 programas</span>
-        </p>
+        <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
 
         <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">
           <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(3rem,9.4vw,11rem)] md:col-span-12">

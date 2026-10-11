@@ -24,7 +24,6 @@ export default function Mindset() {
 
   return (
     <section id="mentalidade" ref={ref} className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-signal py-24 text-ink lg:py-0">
-      <p className="micro absolute left-5 top-8 md:left-10">{c.index}</p>
       <div className="relative">
         <p data-a aria-label={c.lines[0]} className="display whitespace-normal px-5 text-[clamp(3.4rem,17vw,21rem)] text-ink/30 lg:whitespace-nowrap lg:px-10">
           {c.lines[0]}

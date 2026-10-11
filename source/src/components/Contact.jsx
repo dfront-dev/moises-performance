@@ -33,10 +33,7 @@ export default function Contact({ standalone = false }) {
     <section id="contacto" ref={ref} className={`relative isolate overflow-hidden bg-paper text-ink ${standalone ? 'pb-28 pt-40 md:pb-44 md:pt-56' : 'py-28 md:py-44'}`}>
       <div aria-hidden className="absolute right-[5%] top-0 -z-0 hidden h-[30%] w-[7vw] -skew-x-[16deg] bg-signal md:block" />
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className="micro section-index flex justify-between border-t border-ink/20 pt-4">
-          <span>{c.index}</span>
-          <span className="text-ink/60">JMP</span>
-        </p>
+        <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
 
         <h2 aria-label={c.lines.join(' ')} className="display mt-14 text-[clamp(2.6rem,8vw,9.5rem)] md:mt-20">
           <Lines lines={c.lines} />

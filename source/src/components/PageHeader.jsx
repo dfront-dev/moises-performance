@@ -22,11 +22,7 @@ export default function PageHeader({ label, lines, intro, classes = [] }) {
       <div aria-hidden data-slash className="absolute right-[calc(2.5%+7.5vw)] top-0 -z-10 hidden h-full w-[6px] -skew-x-[16deg] bg-paper/80 md:block" />
 
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className="micro section-index flex items-center gap-3 border-t border-paper/20 pt-4 text-paper/70">
-          <a href="index.html" className="transition-colors hover:text-signal">Início</a>
-          <span aria-hidden className="text-signal">/</span>
-          <span className="text-paper">{label}</span>
-        </p>
+        <div aria-hidden data-fade className="section-index h-px bg-paper/20" />
 
         <h1 aria-label={lines.join(' ')} className="display mt-14 text-[clamp(3rem,10.4vw,13rem)] md:mt-20">
           <Lines lines={lines} classes={classes} />

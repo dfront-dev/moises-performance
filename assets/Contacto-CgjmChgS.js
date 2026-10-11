@@ -1,1 +1,0 @@
-import{t as e}from"./main-Bpd-n-Gg.js";import{r as t}from"./split-BqIq2W4v.js";import{t as n}from"./Contact-DNzUpyXK.js";var r=e();function i(){return(0,r.jsx)(t,{page:`contacto`,children:(0,r.jsx)(n,{standalone:!0})})}export{i as default};
