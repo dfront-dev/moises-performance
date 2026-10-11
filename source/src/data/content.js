@@ -12,11 +12,10 @@ export const nav = [
 export const hero = {
   index: 'Performance humana / 001',
   motto: 'Precisão. Disciplina. Progresso.',
-  lines: ['Performance', 'é engenharia.'],
+  lines: ['Preparador físico', 'para alto', 'rendimento.'],
   support: 'Coaching de precisão para quem exige mais do corpo e da mente.',
   role: 'João Moisés, Fisiologista do Exercício e Preparador Físico',
-  primary: { label: 'Explorar o método', href: '#metodo' },
-  secondary: { label: 'Trabalhar com o João', href: '#contacto' },
+  primary: { label: 'Explorar programas', href: 'programas.html' },
 }
 
 export const philosophy = {

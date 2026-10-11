@@ -4,9 +4,9 @@ const site = 'https://moises-performance.com/'
 const pages = [
   {
     file: 'index.html', page: 'home', path: '',
-    title: 'JMP, João Moisés Performance | Performance é engenharia',
+    title: 'JMP, João Moisés Performance | Preparador físico para alto rendimento',
     desc: 'Coaching de precisão para quem exige mais do corpo e da mente. João Moisés, fisiologista do exercício e preparador físico, com mais de 15 anos de alta competição e três ciclos Olímpicos.',
-    h1: 'Performance é engenharia.',
+    h1: 'Preparador físico para alto rendimento.',
     body: '<p>JMP, João Moisés Performance. Fisiologista do exercício e preparador físico, com mais de 15 anos de experiência em alta competição e três ciclos Olímpicos (Rio 2016, Tóquio 2020, Paris 2024).</p>',
     jsonld: true, preload: true,
   },

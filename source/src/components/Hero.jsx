@@ -124,9 +124,9 @@ export default function Hero() {
         <h1
           data-hero-title
           aria-label={hero.lines.join(' ')}
-          className="display text-[clamp(2.6rem,11vw,14.5rem)] md:text-[clamp(2.6rem,10.2vw,14.5rem)]"
+          className="display text-[clamp(2rem,8.6vw,14.5rem)] md:text-[clamp(2.4rem,8.2vw,13rem)]"
         >
-          <Lines lines={hero.lines} classes={['', 'text-signal']} dataAttr="data-hero-line" />
+          <Lines lines={hero.lines} classes={['', 'text-signal', 'text-signal']} dataAttr="data-hero-line" />
         </h1>
 
         <div className="mt-10 grid gap-8 border-t border-paper/15 pt-7 md:mt-14 md:grid-cols-12 md:items-end">
@@ -136,9 +136,6 @@ export default function Hero() {
           <div className="flex flex-wrap gap-3 md:col-span-7 md:justify-end">
             <a data-cta href={hero.primary.href} className="btn btn-solid micro">
               {hero.primary.label} <span aria-hidden>→</span>
-            </a>
-            <a data-cta href={hero.secondary.href} className="btn btn-line micro">
-              {hero.secondary.label}
             </a>
           </div>
         </div>
