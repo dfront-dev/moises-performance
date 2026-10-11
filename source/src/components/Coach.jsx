@@ -5,7 +5,7 @@ import { useGsap, gsap } from '../lib/useGsap'
 
 const pad = (n, p = 0) => String(n).padStart(p, '0')
 
-export default function Coach() {
+export default function Coach({ index }) {
   const ref = useRef(null)
 
   useGsap(ref, ({ q }) => {
@@ -54,8 +54,8 @@ export default function Coach() {
   return (
     <section id="sobre" ref={ref} className="relative bg-ink pt-28 text-paper md:pt-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className="micro flex justify-between border-t border-paper/20 pt-4">
-          <span>{c.index}</span>
+        <p data-fade className="micro section-index flex justify-between border-t border-paper/20 pt-4">
+          <span>{index || c.index}</span>
           <span className="text-steel">João Moisés</span>
         </p>
 
@@ -78,12 +78,12 @@ export default function Coach() {
                     style={{ filter: 'grayscale(1) contrast(1.15) brightness(0.92)' }}
                   />
                 </picture>
-                <span aria-hidden className="absolute left-0 top-0 h-5 w-5 border-l border-t border-paper/70" />
-                <span aria-hidden className="absolute right-0 top-0 h-5 w-5 border-r border-t border-paper/70" />
-                <span aria-hidden className="absolute bottom-0 left-0 h-5 w-5 border-b border-l border-paper/70" />
-                <span aria-hidden className="absolute bottom-0 right-0 h-5 w-5 border-b border-r border-paper/70" />
-                <p className="micro absolute bottom-5 left-5 bg-ink/80 px-3 py-2 text-[10px]">
-                  Fisiologista do Exercício <span className="text-signal">/</span> Preparador Físico
+                <span aria-hidden className="absolute left-0 top-0 h-5 w-5 border-l-2 border-t-2 border-signal" />
+                <span aria-hidden className="absolute right-0 top-0 h-5 w-5 border-r-2 border-t-2 border-signal" />
+                <span aria-hidden className="absolute bottom-0 left-0 h-5 w-5 border-b-2 border-l-2 border-signal" />
+                <span aria-hidden className="absolute bottom-0 right-0 h-5 w-5 border-b-2 border-r-2 border-signal" />
+                <p className="micro absolute bottom-5 left-5 bg-signal px-3 py-2 text-[10px] text-ink">
+                  Fisiologista do Exercício / Preparador Físico
                 </p>
               </div>
             </div>
@@ -127,12 +127,12 @@ export default function Coach() {
       </div>
 
       {/* results ticker */}
-      <div className="mt-28 overflow-hidden border-y border-paper/15 py-6 md:mt-40" role="region" aria-label="Resultados dos atletas">
+      <div className="mt-28 overflow-hidden bg-signal py-6 text-ink md:mt-40" role="region" aria-label="Resultados dos atletas">
         <div className="marquee-track flex w-max gap-14 whitespace-nowrap">
           {loop.map((h, i) => (
             <p key={i} aria-hidden={i >= c.highlights.length} className="display flex items-center gap-14 text-[clamp(1.4rem,2.6vw,2.6rem)] leading-none">
               {h}
-              <span aria-hidden className="inline-block h-2 w-2 bg-signal" />
+              <span aria-hidden className="inline-block h-3 w-3 -skew-x-12 bg-ink" />
             </p>
           ))}
         </div>

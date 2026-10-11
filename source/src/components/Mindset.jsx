@@ -23,21 +23,21 @@ export default function Mindset() {
   })
 
   return (
-    <section id="mentalidade" ref={ref} className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-ink py-24 text-paper lg:py-0">
+    <section id="mentalidade" ref={ref} className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden bg-signal py-24 text-ink lg:py-0">
       <p className="micro absolute left-5 top-8 md:left-10">{c.index}</p>
       <div className="relative">
-        <p data-a aria-label={c.lines[0]} className="display whitespace-normal px-5 text-[clamp(3.4rem,17vw,21rem)] text-paper/25 lg:whitespace-nowrap lg:px-10">
+        <p data-a aria-label={c.lines[0]} className="display whitespace-normal px-5 text-[clamp(3.4rem,17vw,21rem)] text-ink/30 lg:whitespace-nowrap lg:px-10">
           {c.lines[0]}
         </p>
-        <span data-rule aria-hidden className="my-4 block h-px w-full bg-signal lg:my-8" />
-        <p data-b aria-label={c.lines[1]} className="display whitespace-normal px-5 text-[clamp(3.4rem,17vw,21rem)] text-paper lg:whitespace-nowrap lg:px-10">
+        <span data-rule aria-hidden className="my-4 block h-[3px] w-full bg-ink lg:my-8" />
+        <p data-b aria-label={c.lines[1]} className="display whitespace-normal px-5 text-[clamp(3.4rem,17vw,21rem)] text-ink lg:whitespace-nowrap lg:px-10">
           {c.lines[1]}
         </p>
       </div>
       <ul aria-label="Princípios" className="absolute inset-x-5 bottom-8 flex justify-between md:inset-x-10">
         {c.words.map((w, i) => (
           <li data-word key={w} className="micro flex items-center gap-3">
-            <span aria-hidden className="text-steel">0{i + 1}</span>
+            <span aria-hidden className="text-ink/50">0{i + 1}</span>
             {w}
           </li>
         ))}

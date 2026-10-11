@@ -29,7 +29,7 @@ export default function System() {
   return (
     <section id="metodo" ref={ref} className="relative bg-ink py-28 text-paper md:py-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className="micro flex justify-between border-t border-paper/20 pt-4">
+        <p data-fade className="micro section-index flex justify-between border-t border-paper/20 pt-4">
           <span>{c.index}</span>
           <span className="text-steel">06 fases</span>
         </p>
@@ -46,13 +46,13 @@ export default function System() {
         <ol className="mt-20 grid gap-x-8 gap-y-16 md:mt-32 md:grid-cols-2 lg:grid-cols-3">
           {c.steps.map((s) => (
             <li key={s.n} data-step className="group relative pt-6">
-              <span data-rule aria-hidden className="absolute inset-x-0 top-0 h-px bg-paper/25" />
-              <span aria-hidden className="absolute -top-[3px] left-0 h-[7px] w-[7px] bg-paper/25 transition-colors duration-300 group-hover:bg-signal" />
+              <span data-rule aria-hidden className="absolute inset-x-0 top-0 h-[2px] bg-signal/70" />
+              <span aria-hidden className="absolute -top-[5px] left-0 h-[10px] w-[10px] bg-signal" />
               <div className="flex items-start justify-between">
-                <span data-num className="outline-num display block text-[clamp(5rem,9vw,10rem)] text-paper/55 transition-colors duration-500 group-hover:text-paper">
+                <span data-num className="outline-num display block text-[clamp(5rem,9vw,10rem)] text-signal transition-all duration-500 group-hover:[-webkit-text-fill-color:var(--color-signal)]">
                   {s.n}
                 </span>
-                <span data-body className="micro mt-3 text-steel transition-colors group-hover:text-signal">{s.tag}</span>
+                <span data-body className="micro mt-3 text-signal/80">{s.tag}</span>
               </div>
               <h3 data-body className="display mt-6 text-[clamp(1.6rem,2.4vw,2.4rem)] leading-none">{s.title}</h3>
               <p data-body className="mt-4 max-w-xs text-[15px] leading-relaxed text-paper/65">{s.text}</p>

@@ -8,7 +8,22 @@ export default function TechVisual({ variant = 'curve', label = '' }) {
         </pattern>
       </defs>
       <rect width="800" height="600" fill={`url(#g-${variant})`} />
-      {variant === 'curve' ? (
+      {variant === 'bars' ? (
+        <g fill="none" stroke="#F2F3F1">
+          <path d="M60 520H740" strokeOpacity=".5" />
+          {[0, 1, 2, 3, 4].map((i) => {
+            const h = 80 + i * 70
+            return (
+              <rect key={i} data-draw pathLength="1" x={100 + i * 128} y={520 - h} width="88" height={h} strokeWidth="2" stroke={i === 4 ? '#00E5C3' : '#F2F3F1'} strokeOpacity={i === 4 ? 1 : 0.35 + i * 0.12} />
+            )
+          })}
+          <path d="M100 440L228 372L356 292L484 220L612 120" strokeOpacity=".4" strokeDasharray="4 8" />
+          <g fill="#F2F3F1" fillOpacity=".55" stroke="none" fontSize="14" fontWeight="700" letterSpacing="3">
+            <text x="60" y="552">INICIAÇÃO</text>
+            <text x="620" y="552">DIFERENCIAÇÃO</text>
+          </g>
+        </g>
+      ) : variant === 'curve' ? (
         <g fill="none" stroke="#F2F3F1" strokeLinecap="square">
           <path d="M60 520H740M60 520V60" strokeOpacity=".5" />
           <path data-draw pathLength="1" d="M60 470C150 480 190 520 260 420S400 330 470 300S600 170 740 110" strokeWidth="2.5" />

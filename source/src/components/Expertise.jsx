@@ -1,15 +1,11 @@
 import { useRef } from 'react'
-import { expertise as c, EMAIL } from '../data/content'
+import { expertise as c } from '../data/content'
+import { programs } from '../data/programs'
 import { Lines } from '../lib/split'
 import TechVisual from './TechVisual'
 import { useGsap, gsap } from '../lib/useGsap'
 
-const spans = [
-  'md:col-span-7',
-  'md:col-span-5 md:mt-32',
-  'md:col-span-5',
-  'md:col-span-7 md:mt-32',
-]
+const offsets = ['', 'md:mt-20', 'md:mt-40']
 
 export default function Expertise() {
   const ref = useRef(null)
@@ -46,9 +42,9 @@ export default function Expertise() {
   return (
     <section id="expertise" ref={ref} className="relative bg-paper py-28 text-ink md:py-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className="micro flex justify-between border-t border-ink/20 pt-4">
+        <p data-fade className="micro section-index flex justify-between border-t border-ink/20 pt-4">
           <span>{c.index}</span>
-          <span className="text-ink/50">04 áreas</span>
+          <span className="text-ink/60">03 programas</span>
         </p>
 
         <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">
@@ -60,51 +56,52 @@ export default function Expertise() {
           </p>
         </div>
 
-        <div className="mt-20 grid gap-x-8 gap-y-20 md:mt-32 md:grid-cols-12">
-          {c.items.map((it, i) => (
-            <article key={it.n} data-card className={`card group ${spans[i]}`}>
-              <div data-mask className="relative aspect-[4/3] overflow-hidden bg-ink md:aspect-[5/4]">
-                <div data-inner className="absolute inset-0">
-                  {it.image ? (
-                    <picture>
-                      <source srcSet={`images/${it.image}.webp`} type="image/webp" />
-                      <img src={`images/${it.image}.jpg`} alt={it.alt} loading="lazy" decoding="async" className="photo h-full w-full object-cover" style={{ objectPosition: it.pos || '50% 50%' }} />
-                    </picture>
-                  ) : (
-                    <TechVisual variant={it.visual} label="" />
-                  )}
+        <div className="mt-20 grid gap-x-8 gap-y-20 md:mt-28 md:grid-cols-3">
+          {programs.map((p, i) => (
+            <article key={p.id} data-card className={`card group ${offsets[i]}`}>
+              <a href={`programas.html#${p.id}`} className="block">
+                <div data-mask className="relative aspect-[4/5] overflow-hidden bg-ink">
+                  <div data-inner className="absolute inset-0">
+                    {p.image ? (
+                      <div className="tint relative h-full w-full">
+                        <picture>
+                          <source srcSet={`images/${p.image}.webp`} type="image/webp" />
+                          <img src={`images/${p.image}.jpg`} alt={p.alt} loading="lazy" decoding="async" className="photo h-full w-full object-cover" />
+                        </picture>
+                      </div>
+                    ) : (
+                      <TechVisual variant={p.visual} label="" />
+                    )}
+                  </div>
+                  <span aria-hidden className="outline-num display pointer-events-none absolute left-5 top-4 text-[clamp(4.5rem,7vw,7.5rem)] text-signal">{p.n}</span>
+                  <span className="micro absolute bottom-0 right-0 bg-signal px-4 py-3 text-ink">{p.price}€ / mês</span>
                 </div>
-                <span aria-hidden className="outline-num display pointer-events-none absolute left-5 top-4 text-[clamp(4.5rem,8vw,8rem)] text-paper/90 mix-blend-difference">
-                  {it.n}
-                </span>
-                {it.price && (
-                  <span className="micro absolute right-0 top-6 bg-signal px-4 py-2 text-ink">{it.price}</span>
-                )}
-              </div>
+              </a>
 
-              <div className="mt-6 grid gap-6 md:grid-cols-12">
-                <h3 data-text className="display text-[clamp(1.9rem,3vw,3.2rem)] leading-[0.92] md:col-span-6">{it.title}</h3>
-                <p data-text className="text-[15px] leading-relaxed text-ink/70 md:col-span-6">{it.text}</p>
-              </div>
+              <h3 data-text className="display mt-6 text-[clamp(1.9rem,2.8vw,3rem)] leading-[0.92]">
+                <a href={`programas.html#${p.id}`} className="transition-colors hover:text-[#007b6c]">{p.name}</a>
+              </h3>
+              <p data-text className="micro mt-3 text-[10.5px] deep-signal">{p.desc}</p>
+              <p data-text className="mt-4 text-[15px] leading-relaxed text-ink/70">{p.ideal}.</p>
 
-              <ul data-text className="mt-6 grid border-t border-ink/20 sm:grid-cols-2">
-                {it.list.map((l) => (
-                  <li key={l} className="micro flex items-center gap-3 border-b border-ink/10 py-3 text-[10.5px] text-ink/75">
-                    <span aria-hidden className="h-[6px] w-[6px] bg-ink/30 transition-colors duration-300 group-hover:bg-signal" />
-                    {l}
+              <ul data-text className="mt-6 border-t border-ink/20">
+                {p.services.map((s) => (
+                  <li key={s} className="micro flex items-center gap-3 border-b border-ink/10 py-3 text-[10.5px] text-ink/80">
+                    <span aria-hidden className="h-[7px] w-[7px] -skew-x-12 bg-signal" />
+                    {s}
                   </li>
                 ))}
               </ul>
 
-              <a
-                data-text
-                href={`mailto:${EMAIL}?subject=${encodeURIComponent(it.subject)}`}
-                className="micro underline-link mt-6 inline-flex items-center gap-3 pb-1"
-              >
-                Falar sobre este plano <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+              <a data-text href={`programas.html#${p.id}`} className="micro underline-link mt-6 inline-flex items-center gap-3 pb-1">
+                Ver o programa <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
               </a>
             </article>
           ))}
+        </div>
+
+        <div data-fade className="mt-24 flex justify-center">
+          <a href="programas.html" className="btn btn-dark micro">Comparar os programas <span aria-hidden>→</span></a>
         </div>
       </div>
     </section>

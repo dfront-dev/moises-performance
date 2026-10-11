@@ -44,54 +44,9 @@ export const system = {
 }
 
 export const expertise = {
-  index: '04 / Expertise',
-  lines: ['Áreas de', 'expertise.'],
-  intro: 'Acompanhamento individual, adaptado ao calendário competitivo e à modalidade de cada atleta.',
-  items: [
-    {
-      n: '01',
-      title: 'Acompanhamento básico',
-      text: 'Monitorização contínua e ajustes regulares ao plano de treino.',
-      list: ['Avaliação física inicial', 'Plano de treino periodizado', 'Check-ins regulares'],
-      image: 'hero',
-      pos: '88% 50%',
-      alt: 'João Moisés a orientar uma atleta de Surf em sessão técnica na praia',
-      subject: 'Plano: Acompanhamento básico',
-    },
-    {
-      n: '02',
-      title: 'Época tailormade',
-      price: '250€ / mês',
-      text: 'Plano de época completo, com acompanhamento próximo e reportado à estrutura técnica do atleta.',
-      list: [
-        'Época tailormade, treino periodizado',
-        'Acompanhamento via WhatsApp',
-        'Reabilitação com deslocação local',
-        'Acompanhamento nutricional',
-        'Relatórios trimestrais para a Federação',
-        'Reuniões com o preparador físico',
-      ],
-      image: 'equipa-vela',
-      alt: 'Equipa Olímpica Portuguesa de Vela, ciclo Tóquio 2020',
-      subject: 'Plano: Época tailormade',
-    },
-    {
-      n: '03',
-      title: 'Reabilitação',
-      text: 'Avaliação e recuperação de lesão, com retorno progressivo à competição.',
-      list: ['Avaliação funcional', 'Retorno progressivo', 'Prevenção de recidiva'],
-      visual: 'curve',
-      subject: 'Plano: Reabilitação',
-    },
-    {
-      n: '04',
-      title: 'Treino 1x1',
-      text: 'Sessões individuais de alta intensidade, com observação e correção em tempo real.',
-      list: ['Sessões individuais', 'Correção da execução', 'Gestão da carga'],
-      visual: 'target',
-      subject: 'Plano: Treino 1x1',
-    },
-  ],
+  index: '04 / Programas',
+  lines: ['Programas de', 'performance.'],
+  intro: 'Três programas para três momentos: iniciação, alto rendimento e reabilitação.',
 }
 
 export const coach = {
@@ -144,9 +99,41 @@ export const contact = {
 }
 
 export const footerLinks = [
-  { label: 'Resultados', href: 'resultados.html' },
   { label: 'Programas', href: 'programas.html' },
-  { label: 'Serviços', href: 'servicos.html' },
-  { label: 'Perfil completo', href: 'sobre.html' },
+  { label: 'Resultados', href: 'resultados.html' },
+  { label: 'Sobre', href: 'sobre.html' },
+  { label: 'Testemunhos', href: 'testemunhos.html' },
+  { label: 'Contacto', href: 'contacto.html' },
   { label: 'Curriculum', href: 'CV-Joao-Moises.pdf', download: true },
+]
+
+export const differentiators = {
+  index: '04 / Diferenciação',
+  lines: ['O que distingue', 'o acompanhamento.'],
+  items: [
+    { n: '01', title: 'Presença no terreno', text: 'Aumenta o rigor e a exigência das sessões, e permite perceber a resposta à fadiga e a qualidade do movimento, aspetos que nem sempre aparecem nos dados.' },
+    { n: '02', title: 'Visão integrada', text: 'Treino, recuperação, sono, alimentação, contexto emocional e saúde fazem parte do mesmo processo, em articulação com toda a equipa técnica.' },
+    { n: '03', title: 'Experiência de elite', text: 'Três ciclos Olímpicos e múltiplas modalidades, com conhecimento científico combinado com experiência real de alta competição.' },
+  ],
+}
+
+export const collaboration = {
+  index: '05 / Colaboração',
+  lines: ['Consultoria,', 'formação,', 'palestras.'],
+  intro:
+    'Disponível para colaborar com federações, clubes e academias na estruturação da preparação física, na formação de equipas técnicas e em palestras sobre preparação física aplicada a desportos de vento, ondas e alta competição.',
+  items: [
+    { title: 'Federações e clubes', text: 'Apoio na estruturação de departamentos de preparação física e no planeamento de época.' },
+    { title: 'Equipas técnicas', text: 'Sessões de formação para treinadores sobre periodização, controlo de carga e prevenção de lesão.' },
+    { title: 'Palestras e workshops', text: 'Intervenções sobre preparação física de alto rendimento em desportos de vento, ondas e outras modalidades.' },
+  ],
+}
+
+export const placeholders = [
+  ['[Nome do atleta]', '[Modalidade / função]'],
+  ['[Nome do treinador]', '[Clube / Federação]'],
+  ['[Nome do responsável]', '[Federação / instituição]'],
+  ['[Nome do atleta]', '[Modalidade / função]'],
+  ['[Nome do atleta]', '[Modalidade / função]'],
+  ['[Pai ou mãe de atleta]', '[Programa JMP Academy]'],
 ]

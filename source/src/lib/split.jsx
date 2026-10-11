@@ -1,9 +1,9 @@
-export function Lines({ lines, as: Tag = 'span', className = '', lineClass = '', dataAttr = 'data-line' }) {
+export function Lines({ lines, as: Tag = 'span', className = '', lineClass = '', classes = [], dataAttr = 'data-line' }) {
   return (
     <Tag className={className}>
       {lines.map((l, i) => (
         <span className={`line ${lineClass}`} key={i}>
-          <span className="line-inner" {...{ [dataAttr]: '' }}>
+          <span className={`line-inner ${classes[i] || ''}`} {...{ [dataAttr]: '' }}>
             {l}
           </span>
         </span>

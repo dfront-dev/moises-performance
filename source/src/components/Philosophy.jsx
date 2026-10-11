@@ -19,6 +19,10 @@ export default function Philosophy() {
         scrollTrigger: { trigger: q('[data-words]')[0], start: 'top 82%', end: 'bottom 52%', scrub: true },
       }
     )
+    gsap.from(q('[data-slash]'), {
+      scaleY: 0, transformOrigin: 'top', duration: 1.5, stagger: 0.12, ease: 'power4.inOut',
+      scrollTrigger: { trigger: ref.current, start: 'top 65%' },
+    })
     gsap.from(q('[data-fade]'), {
       opacity: 0, y: 24, duration: 1, stagger: 0.12, ease: 'power3.out',
       scrollTrigger: { trigger: q('[data-fade]')[0], start: 'top 88%' },
@@ -26,9 +30,11 @@ export default function Philosophy() {
   })
 
   return (
-    <section id="filosofia" ref={ref} className="relative bg-paper py-28 text-ink md:py-44">
+    <section id="filosofia" ref={ref} className="relative isolate overflow-hidden bg-paper py-28 text-ink md:py-44">
+      <div aria-hidden data-slash className="absolute right-[7%] top-0 -z-0 hidden h-[44%] w-[7vw] -skew-x-[16deg] bg-signal md:block" />
+      <div aria-hidden data-slash className="absolute right-[calc(7%+9vw)] top-0 -z-0 hidden h-[44%] w-[6px] -skew-x-[16deg] bg-ink md:block" />
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <p data-fade className="micro flex justify-between border-t border-ink/20 pt-4">
+        <p data-fade className="micro section-index flex justify-between border-t border-ink/20 pt-4">
           <span>{c.index}</span>
           <span className="text-ink/50">JMP</span>
         </p>

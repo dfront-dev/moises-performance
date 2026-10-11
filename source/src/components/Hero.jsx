@@ -15,6 +15,7 @@ export default function Hero() {
       .from(q('[data-micro]'), { opacity: 0, y: 12, stagger: 0.08, duration: 0.9 }, 0.8)
       .from(q('[data-cta]'), { opacity: 0, y: 26, stagger: 0.1, duration: 1 }, 1)
       .from(q('[data-tick]'), { scaleY: 0, transformOrigin: 'top', duration: 1.3 }, 0.5)
+      .from(q('[data-slash]'), { scaleY: 0, transformOrigin: 'top', duration: 1.5, stagger: 0.12, ease: 'power4.inOut' }, 0.2)
       .from(q('[data-crop]'), { opacity: 0, scale: 1.25, stagger: 0.07, duration: 0.9 }, 1.2)
 
     gsap.to(q('[data-portrait-img]'), {
@@ -68,6 +69,10 @@ export default function Hero() {
         style={{ backgroundImage: 'linear-gradient(to right, rgba(242,243,241,.06) 1px, transparent 1px)', backgroundSize: 'calc(100% / 6) 100%' }}
       />
 
+      <div aria-hidden className="absolute -bottom-52 -left-[12%] -z-10 h-[56vw] w-[56vw] rounded-full bg-signal/[0.09] blur-3xl" />
+      <div aria-hidden data-slash className="absolute left-[41%] top-[17%] -z-10 hidden h-[36%] w-[2.4vw] -skew-x-[16deg] bg-signal md:block" />
+      <div aria-hidden data-slash className="absolute left-[45%] top-[17%] -z-10 hidden h-[36%] w-[5px] -skew-x-[16deg] bg-paper/70 md:block" />
+
       {/* portrait */}
       <div data-portrait className="portrait-mask absolute right-0 top-0 -z-10 h-[64svh] w-full md:h-full md:w-[58%]">
         <picture>
@@ -103,11 +108,11 @@ export default function Hero() {
         <p data-micro className="micro text-paper/80">{hero.index}</p>
         <p data-micro className="micro mt-2 hidden text-steel md:block">{hero.motto}</p>
       </div>
-      <div aria-hidden data-tick className="pointer-events-none absolute right-6 top-0 hidden h-full w-px bg-signal/70 md:right-10 md:block" style={{ height: '34%' }} />
+      <div aria-hidden data-tick className="pointer-events-none absolute right-6 top-0 hidden h-full w-[3px] bg-signal md:right-10 md:block" style={{ height: '34%' }} />
       <p aria-hidden data-micro className="micro pointer-events-none absolute right-5 top-28 hidden origin-top-right translate-x-0 text-steel md:right-14 md:block" style={{ writingMode: 'vertical-rl' }}>
         {hero.role}
       </p>
-      <div aria-hidden className="pointer-events-none absolute bottom-[34%] right-[3%] hidden md:block">
+      <div aria-hidden className="pointer-events-none absolute bottom-[34%] right-[8%] hidden md:block">
         {[['left-0 top-0', 'border-l border-t'], ['right-0 top-0', 'border-r border-t'], ['bottom-0 left-0', 'border-b border-l'], ['bottom-0 right-0', 'border-b border-r']].map(([pos, b]) => (
           <span key={pos} data-crop className={`absolute h-3 w-3 border-paper/60 ${pos} ${b}`} />
         ))}
@@ -121,7 +126,7 @@ export default function Hero() {
           aria-label={hero.lines.join(' ')}
           className="display text-[clamp(2.6rem,11vw,14.5rem)] md:text-[clamp(2.6rem,10.2vw,14.5rem)]"
         >
-          <Lines lines={hero.lines} dataAttr="data-hero-line" />
+          <Lines lines={hero.lines} classes={['', 'text-signal']} dataAttr="data-hero-line" />
         </h1>
 
         <div className="mt-10 grid gap-8 border-t border-paper/15 pt-7 md:mt-14 md:grid-cols-12 md:items-end">

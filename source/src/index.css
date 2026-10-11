@@ -85,12 +85,16 @@ body {
   transition: background-color .35s ease, color .35s ease, border-color .35s ease, gap .35s ease;
 }
 .btn:hover { gap: 1.4rem; }
-.btn-solid { background: var(--color-paper); color: var(--color-ink); }
-.btn-solid:hover { background: var(--color-signal); }
+.btn-solid { background: var(--color-signal); color: var(--color-ink); }
+.btn-solid:hover { background: var(--color-paper); }
+.btn-paper { background: var(--color-paper); color: var(--color-ink); }
+.btn-paper:hover { background: var(--color-signal); }
 .btn-line { border: 1px solid rgba(242, 243, 241, 0.32); color: var(--color-paper); }
 .btn-line:hover { border-color: var(--color-signal); color: var(--color-signal); }
 .btn-dark { background: var(--color-ink); color: var(--color-paper); }
 .btn-dark:hover { background: var(--color-signal); color: var(--color-ink); }
+.btn-ink-on-signal { background: var(--color-ink); color: var(--color-signal); }
+.btn-ink-on-signal:hover { background: var(--color-paper); color: var(--color-ink); }
 
 .underline-link { background: linear-gradient(currentColor, currentColor) 0 100% / 100% 1px no-repeat; transition: background-size .4s ease, color .3s ease; }
 .underline-link:hover { color: var(--color-signal); }
@@ -100,3 +104,12 @@ body {
 @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
 
 input, textarea { border-radius: 0; }
+
+.section-index { position: relative; }
+.section-index::before {
+  content: ''; position: absolute; left: 0; top: -2px; width: 56px; height: 3px; background: var(--color-signal);
+}
+.tint::after { content: ''; position: absolute; inset: 0; background: var(--color-signal); mix-blend-mode: multiply; opacity: 0.32; transition: opacity .7s ease; pointer-events: none; }
+.card:hover .tint::after, .card:focus-within .tint::after { opacity: 0; }
+.col-fill { background: color-mix(in oklab, var(--color-paper) 5%, transparent); }
+.deep-signal { color: #007b6c; }
