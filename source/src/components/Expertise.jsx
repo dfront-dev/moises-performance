@@ -71,7 +71,6 @@ export default function Expertise() {
                     )}
                   </div>
                   <span aria-hidden className="outline-num display pointer-events-none absolute left-5 top-4 text-[clamp(4.5rem,7vw,7.5rem)] text-signal">{p.n}</span>
-                  <span className="micro absolute bottom-0 right-0 bg-signal px-4 py-3 text-ink">{p.price}€ / mês</span>
                 </div>
               </a>
 

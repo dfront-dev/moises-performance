@@ -47,5 +47,4 @@ export const programRows = [
   ['Target', 'target'],
   ['Serviços', 'services'],
   ['Cadência', 'cadence'],
-  ['Valor', 'price'],
 ]

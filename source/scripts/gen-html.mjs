@@ -13,9 +13,9 @@ const pages = [
   {
     file: 'programas.html', page: 'programas', path: 'programas.html',
     title: 'Programas | JMP, João Moisés Performance',
-    desc: 'JMP Academy, JMP Elite Athletes e JMP Quality Recovery: três programas de preparação física e acompanhamento fisiológico, de 90€ a 500€ por mês.',
+    desc: 'JMP Academy, JMP Elite Athletes e JMP Quality Recovery: três programas de preparação física, acompanhamento fisiológico e reabilitação.',
     h1: 'Programas de performance.',
-    body: '<ul><li>JMP Academy, 90€/mês: iniciação ao alto rendimento, 2x/semana. Preparação física, acompanhamento fisiológico e aulas de grupo.</li><li>JMP Elite Athletes, 300€/mês: acompanhamento de alto rendimento, 3x/semana. Planeamento de época, acompanhamento fisiológico e treinos 1vs1.</li><li>JMP Quality Recovery, 500€/mês: acompanhamento de reabilitação, 3x/semana. Acompanhamento hospitalar, plano de reabilitação e treinos 1vs1.</li></ul>',
+    body: '<ul><li>JMP Academy: iniciação ao alto rendimento, 2x/semana. Preparação física, acompanhamento fisiológico e aulas de grupo.</li><li>JMP Elite Athletes: acompanhamento de alto rendimento, 3x/semana. Planeamento de época, acompanhamento fisiológico e treinos 1vs1.</li><li>JMP Quality Recovery: acompanhamento de reabilitação, 3x/semana. Acompanhamento hospitalar, plano de reabilitação e treinos 1vs1.</li></ul>',
   },
   {
     file: 'resultados.html', page: 'resultados', path: 'resultados.html',

@@ -17,13 +17,6 @@ function Cell({ p, k, big }) {
         ))}
       </ul>
     )
-  if (k === 'price')
-    return (
-      <p className="display text-signal">
-        <span className={big ? 'text-[clamp(3.4rem,5.2vw,6rem)]' : 'text-6xl'}>{p.price}€</span>
-        <span className="micro ml-2 align-top text-[11px] text-paper/70">/ mês</span>
-      </p>
-    )
   if (k === 'cadence') return <p className="display text-3xl normal-case">{p.cadence}</p>
   return <p className="text-[17px] leading-snug">{p[k]}</p>
 }
@@ -70,7 +63,7 @@ export default function ProgramTable() {
               <tr key={k} data-row>
                 <th scope="row" className="micro border-b border-paper/10 py-7 pr-4 text-left align-top text-[10.5px] text-signal">{label}</th>
                 {programs.map((p) => (
-                  <td key={p.id} className={`col-fill border-b border-paper/10 px-7 align-top ${k === 'price' ? 'py-9' : 'py-7'}`}>
+                  <td key={p.id} className={`col-fill border-b border-paper/10 px-7 align-top py-7`}>
                     <Cell p={p} k={k} big />
                   </td>
                 ))}
