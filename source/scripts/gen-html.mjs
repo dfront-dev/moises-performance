@@ -13,9 +13,9 @@ const pages = [
   {
     file: 'programas.html', page: 'programas', path: 'programas.html',
     title: 'Programas | JMP, João Moisés Performance',
-    desc: 'JMP Academy, JMP Elite Athletes e JMP Return: três programas de preparação física, acompanhamento fisiológico e reabilitação.',
+    desc: 'JMP Academy, JMP Elite Athletes e JMP Recovery: três programas de preparação física, acompanhamento fisiológico e reabilitação.',
     h1: 'Programas de performance.',
-    body: '<ul><li>JMP Academy: iniciação ao alto rendimento, 2x/semana. Preparação física, acompanhamento fisiológico e aulas de grupo.</li><li>JMP Elite Athletes: acompanhamento de alto rendimento, 3x/semana. Planeamento de época, acompanhamento fisiológico e treinos 1vs1.</li><li>JMP Return: acompanhamento de reabilitação, 3x/semana. Acompanhamento hospitalar, plano de reabilitação e treinos 1vs1.</li></ul>',
+    body: '<ul><li>JMP Academy: iniciação ao alto rendimento, 2x/semana. Preparação física, acompanhamento fisiológico e aulas de grupo.</li><li>JMP Elite Athletes: acompanhamento de alto rendimento, 3x/semana. Planeamento de época, acompanhamento fisiológico e treinos 1vs1.</li><li>JMP Recovery: acompanhamento de reabilitação, 3x/semana. Acompanhamento hospitalar, plano de reabilitação e treinos 1vs1.</li></ul>',
   },
   {
     file: 'resultados.html', page: 'resultados', path: 'resultados.html',

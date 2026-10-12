@@ -31,7 +31,7 @@ export const programs = [
   {
     id: 'recovery',
     n: '03',
-    name: 'JMP Return',
+    name: 'JMP Recovery',
     desc: 'Acompanhamento de reabilitação',
     ideal: 'Para atletas lesionados ou em desgaste fisiológico',
     target: 'Atletas e Federações',
@@ -41,7 +41,7 @@ export const programs = [
     image: 'recovery',
     pos: '42% 50%',
     alt: 'Treinador a orientar um atleta num exercício de mobilidade com banda elástica',
-    subject: 'Programa: JMP Return',
+    subject: 'Programa: JMP Recovery',
   },
 ]
 
