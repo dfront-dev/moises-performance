@@ -14,7 +14,7 @@ export default function Home() {
       <Philosophy />
       <System />
       <Expertise />
-      <Coach />
+      <Coach lean />
       <Mindset />
       <Contact />
     </Layout>

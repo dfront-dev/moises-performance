@@ -5,7 +5,7 @@ import { useGsap, gsap } from '../lib/useGsap'
 
 const pad = (n, p = 0) => String(n).padStart(p, '0')
 
-export default function Coach({ index }) {
+export default function Coach({ index, lean = false }) {
   const ref = useRef(null)
 
   useGsap(ref, ({ q }) => {
@@ -109,13 +109,13 @@ export default function Coach({ index }) {
                 </div>
               ))}
             </div>
-            <p className="micro mt-6 text-[10px] text-steel">{c.numbersNote}</p>
+            {!lean && <p className="micro mt-6 text-[10px] text-steel">{c.numbersNote}</p>}
 
             <dl className="mt-16 border-t border-paper/20">
               {c.credentials.map(([t, m]) => (
                 <div data-row key={t} className="grid gap-1 border-b border-paper/10 py-4 md:grid-cols-12 md:gap-6">
-                  <dt className="text-[15px] font-bold leading-snug md:col-span-7">{t}</dt>
-                  <dd className="micro text-[10px] text-steel md:col-span-5 md:text-right">{m}</dd>
+                  <dt className={`text-[15px] font-bold leading-snug ${lean ? 'md:col-span-12' : 'md:col-span-7'}`}>{t}</dt>
+                  {!lean && <dd className="micro text-[10px] text-steel md:col-span-5 md:text-right">{m}</dd>}
                 </div>
               ))}
             </dl>

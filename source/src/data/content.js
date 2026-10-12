@@ -128,8 +128,17 @@ export const collaboration = {
   ],
 }
 
+export const testimonials = [
+  {
+    quote:
+      'Após uma grande queda de bicicleta, o Moisés ajudou-me a restabelecer o meu ombro de uma lesão grave, onde o prognóstico era pessimista e conservador, a tempo de recuperar para uma prova que me preparei o ano inteiro. Hoje sei que sem o Moisés não continuaria no desporto.',
+    name: 'Sebastião Seguro',
+    role: 'Triatleta CNATRIL',
+    initials: 'SS',
+  },
+]
+
 export const placeholders = [
-  ['[Nome do atleta]', '[Modalidade / função]'],
   ['[Nome do treinador]', '[Clube / Federação]'],
   ['[Nome do responsável]', '[Federação / instituição]'],
   ['[Nome do atleta]', '[Modalidade / função]'],

@@ -1,7 +1,7 @@
 import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import CtaBand from '../components/CtaBand'
-import { placeholders, EMAIL } from '../data/content'
+import { testimonials, placeholders, EMAIL } from '../data/content'
 
 export default function Testemunhos() {
   return (
@@ -10,11 +10,24 @@ export default function Testemunhos() {
         label="Testemunhos"
         lines={['Testemunhos.']}
         classes={['text-signal']}
-        intro="Esta página vai reunir testemunhos reais e autorizados de atletas, treinadores e federações. Os espaços abaixo são exemplos de estrutura."
+        intro="Testemunhos reais de atletas, treinadores e federações. Os espaços marcados como exemplo são provisórios e serão substituídos por testemunhos autorizados."
       />
       <section className="bg-paper py-24 text-ink md:py-36">
         <div className="mx-auto max-w-[1680px] px-5 md:px-10">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {testimonials.map((t) => (
+              <figure key={t.name} className="relative border border-ink/15 border-t-[4px] border-t-signal bg-white p-8 md:col-span-2 lg:col-span-1">
+                <span aria-hidden className="display block text-6xl leading-none text-[#007b6c]">"</span>
+                <blockquote className="mt-4 text-[15px] leading-relaxed text-ink">{t.quote}</blockquote>
+                <figcaption className="mt-8 flex items-center gap-4">
+                  <span aria-hidden className="grid h-11 w-11 place-items-center bg-signal text-[12px] font-bold text-ink">{t.initials}</span>
+                  <span>
+                    <span className="block text-sm font-bold">{t.name}</span>
+                    <span className="micro text-[10px] text-ink/60">{t.role}</span>
+                  </span>
+                </figcaption>
+              </figure>
+            ))}
             {placeholders.map(([name, role], i) => (
               <figure key={i} className="relative border border-ink/15 border-t-[4px] border-t-signal bg-white p-8">
                 <span className="micro absolute -top-3 right-5 bg-steel px-3 py-1 text-[10px] text-ink">Exemplo</span>
