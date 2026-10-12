@@ -13,7 +13,7 @@ export const hero = {
   index: 'Performance humana / 001',
   motto: 'Precisão. Disciplina. Progresso.',
   lines: ['Preparador físico', 'para alto', 'rendimento.'],
-  support: 'Coaching de precisão para quem exige mais do corpo e da mente.',
+  support: 'João Moisés Performance. Fisiologista do exercício e preparador físico.',
   role: 'João Moisés, Fisiologista do Exercício e Preparador Físico',
   primary: { label: 'Explorar programas', href: 'programas.html' },
 }
