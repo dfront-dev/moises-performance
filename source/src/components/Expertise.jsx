@@ -63,7 +63,7 @@ export default function Expertise() {
                       <div className="tint relative h-full w-full">
                         <picture>
                           <source srcSet={`images/${p.image}.webp`} type="image/webp" />
-                          <img src={`images/${p.image}.jpg`} alt={p.alt} loading="lazy" decoding="async" className="photo h-full w-full object-cover" />
+                          <img src={`images/${p.image}.jpg`} alt={p.alt} loading="lazy" decoding="async" className="photo h-full w-full object-cover" style={{ objectPosition: p.pos || '50% 50%' }} />
                         </picture>
                       </div>
                     ) : (

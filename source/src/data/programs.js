@@ -23,8 +23,9 @@ export const programs = [
     services: ['Planeamento de época', 'Acompanhamento fisiológico', 'Treinos 1vs1'],
     cadence: '3x/semana',
     price: '300',
-    image: 'equipa-vela',
-    alt: 'Equipa Olímpica Portuguesa de Vela, ciclo Tóquio 2020',
+    image: 'elite',
+    pos: '62% 50%',
+    alt: 'Treinador a acompanhar um atleta num exercício de estabilidade e controlo',
     subject: 'Programa: JMP Elite Athletes',
   },
   {
@@ -37,7 +38,9 @@ export const programs = [
     services: ['Acompanhamento hospitalar', 'Plano de reabilitação', 'Treinos 1vs1'],
     cadence: '3x/semana',
     price: '500',
-    visual: 'curve',
+    image: 'recovery',
+    pos: '42% 50%',
+    alt: 'Treinador a orientar um atleta num exercício de mobilidade com banda elástica',
     subject: 'Programa: JMP Quality Recovery',
   },
 ]
