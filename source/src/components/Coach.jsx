@@ -62,16 +62,16 @@ export default function Coach({ index, lean = false }) {
             <div className="md:sticky md:top-24">
               <div data-coach-frame className="relative aspect-[3/4] overflow-hidden bg-steel/20">
                 <picture>
-                  <source srcSet="images/joao.webp" type="image/webp" />
+                  <source srcSet="images/joao-sobre.webp" type="image/webp" />
                   <img
                     data-coach-img
-                    src="images/joao.jpg"
-                    alt="Retrato de João Moisés"
-                    width="1086"
-                    height="1448"
+                    src="images/joao-sobre.jpg"
+                    alt="João Moisés sentado num degrau de betão, a sorrir para a câmara"
+                    width="1435"
+                    height="1096"
                     loading="lazy"
                     decoding="async"
-                    className="absolute inset-0 h-[112%] w-full object-cover object-[50%_20%]"
+                    className="absolute inset-0 h-[112%] w-full object-cover object-[86%_30%]"
                     style={{ filter: 'grayscale(1) contrast(1.15) brightness(0.92)' }}
                   />
                 </picture>
