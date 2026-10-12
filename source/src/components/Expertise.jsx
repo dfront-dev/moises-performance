@@ -70,7 +70,6 @@ export default function Expertise() {
                       <TechVisual variant={p.visual} label="" />
                     )}
                   </div>
-                  <span aria-hidden className="outline-num display pointer-events-none absolute left-5 top-4 text-[clamp(4.5rem,7vw,7.5rem)] text-signal">{p.n}</span>
                 </div>
               </a>
 

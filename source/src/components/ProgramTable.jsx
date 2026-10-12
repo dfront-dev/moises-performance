@@ -17,7 +17,7 @@ function Cell({ p, k, big }) {
         ))}
       </ul>
     )
-  if (k === 'cadence') return <p className="display text-3xl normal-case">{p.cadence}</p>
+  if (k === 'cadence') return <p className="display text-3xl" style={{ textTransform: 'none' }}>{p.cadence}</p>
   return <p className="text-[17px] leading-snug">{p[k]}</p>
 }
 
@@ -52,8 +52,7 @@ export default function ProgramTable() {
               <td className="w-[13%]" />
               {programs.map((p) => (
                 <th key={p.id} id={p.id} scope="col" data-col-head className="scroll-mt-28 bg-signal px-7 pb-8 pt-7 text-left align-bottom text-ink">
-                  <span className="micro block text-[10px] opacity-70">Programa {p.n}</span>
-                  <span className="display mt-5 block whitespace-nowrap text-[clamp(1.5rem,2.15vw,2.8rem)] leading-[0.92]">{p.name}</span>
+                  <span className="display block whitespace-nowrap text-[clamp(1.5rem,2.15vw,2.8rem)] leading-[0.92]">{p.name}</span>
                 </th>
               ))}
             </tr>
@@ -87,8 +86,7 @@ export default function ProgramTable() {
           {programs.map((p) => (
             <article key={p.id} id={`${p.id}-m`} data-card-m className="scroll-mt-24">
               <div className="bg-signal px-6 pb-7 pt-6 text-ink">
-                <span className="micro block text-[10px] opacity-70">Programa {p.n}</span>
-                <h2 className="display mt-4 text-[2.4rem] leading-[0.92]">{p.name}</h2>
+                <h2 className="display text-[2.4rem] leading-[0.92]">{p.name}</h2>
               </div>
               <dl className="col-fill">
                 {programRows.map(([label, k]) => (
