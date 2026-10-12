@@ -41,6 +41,7 @@ export default function Nav({ page = 'home' }) {
   }, [open])
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${hidden && !open ? '-translate-y-full' : 'translate-y-0'} ${solid || open ? 'bg-ink/90 backdrop-blur-md' : 'bg-transparent'}`}
     >
@@ -81,24 +82,25 @@ export default function Nav({ page = 'home' }) {
         </button>
       </div>
 
-      <div
-        id="menu-mobile"
-        className={`fixed inset-0 top-[56px] bg-ink px-5 pb-10 pt-10 transition-opacity duration-300 md:hidden ${open ? 'visible opacity-100' : 'invisible opacity-0'}`}
-      >
-        <ul className="flex flex-col">
-          {links.map((l, i) => (
-            <li key={l.key} className="border-b border-paper/10">
-              <a href={l.href} onClick={() => setOpen(false)} className={`display flex items-baseline justify-between py-4 text-[2.3rem] ${page === l.key ? 'text-signal' : ''}`}>
-                {l.label}
-                <span className="micro text-steel">0{i + 1}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-        <a href={cta} onClick={() => setOpen(false)} className="btn btn-solid micro mt-10 w-full justify-between">
-          Trabalhar com o João <span aria-hidden>→</span>
-        </a>
-      </div>
     </header>
+    <div
+      id="menu-mobile"
+      className={`fixed inset-0 z-40 overflow-y-auto bg-ink px-5 pb-10 pt-[88px] transition-opacity duration-300 md:hidden ${open ? 'visible opacity-100' : 'invisible opacity-0'}`}
+    >
+      <ul className="flex flex-col">
+        {links.map((l, i) => (
+          <li key={l.key} className="border-b border-paper/10">
+            <a href={l.href} onClick={() => setOpen(false)} className={`display flex items-baseline justify-between py-4 text-[2.3rem] ${page === l.key ? 'text-signal' : ''}`}>
+              {l.label}
+              <span className="micro text-steel">0{i + 1}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <a href={cta} onClick={() => setOpen(false)} className="btn btn-solid micro mt-10 w-full justify-between">
+        Trabalhar com o João <span aria-hidden>→</span>
+      </a>
+    </div>
+  </>
   )
 }
