@@ -53,7 +53,7 @@ export default function ProgramTable() {
               {programs.map((p) => (
                 <th key={p.id} id={p.id} scope="col" data-col-head className="scroll-mt-28 bg-signal px-7 pb-8 pt-7 text-left align-bottom text-ink">
                   <span className="micro block text-[10px] opacity-70">Programa {p.n}</span>
-                  <span className="display mt-5 block text-[clamp(1.9rem,2.7vw,3.2rem)] leading-[0.92]">{p.name}</span>
+                  <span className="display mt-5 block whitespace-nowrap text-[clamp(1.5rem,2.15vw,2.8rem)] leading-[0.92]">{p.name}</span>
                 </th>
               ))}
             </tr>

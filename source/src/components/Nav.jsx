@@ -14,6 +14,7 @@ export default function Nav({ page = 'home' }) {
   const [solid, setSolid] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [open, setOpen] = useState(false)
+  const light = page === 'contacto' && !solid && !open
 
   useEffect(() => {
     let last = window.scrollY
@@ -49,7 +50,7 @@ export default function Nav({ page = 'home' }) {
       </a>
       <div className="mx-auto flex max-w-[1680px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
         <a href={home ? '#top' : 'index.html'} aria-label="JMP, João Moisés Performance. Início" className="block">
-          <img src="images/jmp-logo-white.png" alt="JMP" width="177" height="59" className="h-6 w-auto md:h-7" />
+          <img src={light ? 'images/jmp-logo-black.png' : 'images/jmp-logo-white.png'} alt="JMP" width="177" height="59" className="h-6 w-auto md:h-7" />
         </a>
 
         <nav aria-label="Principal" className="hidden items-center gap-9 md:flex">
@@ -58,20 +59,20 @@ export default function Nav({ page = 'home' }) {
               key={l.key}
               href={l.href}
               aria-current={page === l.key ? 'page' : undefined}
-              className={`micro border-b-2 pb-1 transition-colors hover:text-signal ${page === l.key ? 'border-signal text-signal' : 'border-transparent text-paper/75'}`}
+              className={`micro border-b-2 pb-1 transition-colors ${light ? 'hover:text-[#007b6c]' : 'hover:text-signal'} ${page === l.key ? (light ? 'border-[#007b6c] text-[#007b6c]' : 'border-signal text-signal') : light ? 'border-transparent text-ink/75' : 'border-transparent text-paper/75'}`}
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        <a href={cta} className="micro hidden bg-signal px-5 py-3 text-ink transition-colors hover:bg-paper md:inline-flex">
+        <a href={cta} className={`micro hidden px-5 py-3 transition-colors md:inline-flex ${light ? 'bg-ink text-signal hover:bg-signal hover:text-ink' : 'bg-signal text-ink hover:bg-paper'}`}>
           Trabalhar com o João
         </a>
 
         <button
           type="button"
-          className="micro text-paper md:hidden"
+          className={`micro md:hidden ${light ? 'text-ink' : 'text-paper'}`}
           aria-expanded={open}
           aria-controls="menu-mobile"
           onClick={() => setOpen((o) => !o)}
