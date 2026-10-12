@@ -9,7 +9,8 @@ export const programs = [
     services: ['Preparação física', 'Acompanhamento fisiológico', 'Aulas de grupo'],
     cadence: '2x/semana',
     price: '90',
-    visual: 'bars',
+    image: 'academy',
+    alt: 'Treinador a corrigir a execução de uma atleta durante um exercício com haltere',
     subject: 'Programa: JMP Academy',
   },
   {
