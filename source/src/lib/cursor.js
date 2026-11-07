@@ -1,7 +1,6 @@
 import { gsap } from './gsap'
 
 // Custom cursor: a dot and a ring (blend: difference, so it reads on any background).
-// Elements can set data-cursor="label" to show a word inside the ring.
 export function initCursor() {
   const fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches
   if (!fine || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return () => {}
@@ -12,8 +11,6 @@ export function initCursor() {
   const mk = (cls) => { const d = document.createElement('div'); d.className = cls; d.setAttribute('aria-hidden', 'true'); document.body.appendChild(d); return d }
   const dot = mk('cursor-dot')
   const ring = mk('cursor-ring')
-  const label = document.createElement('span')
-  ring.appendChild(label)
 
   gsap.set([dot, ring], { xPercent: -50, yPercent: -50, x: -100, y: -100 })
   const dx = gsap.quickTo(dot, 'x', { duration: 0.12, ease: 'power3' })
@@ -22,24 +19,19 @@ export function initCursor() {
   const ry = gsap.quickTo(ring, 'y', { duration: 0.55, ease: 'power3' })
 
   let state = ''
-  const set = (next, text = '') => {
-    if (next === state && label.textContent === text) return
+  const set = (next) => {
+    if (next === state) return
     state = next
-    label.textContent = text
-    root.dataset.cursor = next
-    const size = next === 'label' ? 92 : next === 'link' ? 56 : next === 'text' ? 4 : 34
+    const size = next === 'link' ? 56 : next === 'text' ? 4 : 34
     gsap.to(ring, { width: size, height: size, duration: 0.45, ease: 'power3.out' })
-    gsap.to(dot, { scale: next === 'link' || next === 'label' ? 0 : 1, duration: 0.3 })
+    gsap.to(dot, { scale: next === 'link' ? 0 : 1, duration: 0.3 })
   }
 
   const onMove = (e) => { dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY) }
   const onOver = (e) => {
-    const t = e.target.closest ? e.target.closest('[data-cursor], a, button, summary, input, textarea, select, label') : null
+    const t = e.target.closest ? e.target.closest('a, button, summary, input, textarea, select, label') : null
     if (!t) return set('')
-    if (t.matches('input, textarea, select')) return set('text')
-    const text = t.getAttribute('data-cursor')
-    if (text) return set('label', text)
-    set('link')
+    set(t.matches('input, textarea, select') ? 'text' : 'link')
   }
   const onLeave = () => gsap.to([dot, ring], { opacity: 0, duration: 0.3 })
   const onEnter = () => gsap.to([dot, ring], { opacity: 1, duration: 0.3 })
