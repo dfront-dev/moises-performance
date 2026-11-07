@@ -1,7 +1,25 @@
 import { useRef } from 'react'
 import { useGsap, gsap } from '../lib/useGsap'
 
-// Technical readout: a fixed hairline with a live percentage, kept in the left gutter.
+// Reads the colour of whatever sits behind the readout so it stays visible:
+// light text on dark sections, green on paper sections, ink on green sections.
+function toneBehind(x, y) {
+  let el = document.elementFromPoint(x, y)
+  while (el) {
+    const m = getComputedStyle(el).backgroundColor.match(/rgba?\(([^)]+)\)/)
+    if (m) {
+      const [r, g, b, a = 1] = m[1].split(',').map((v) => parseFloat(v))
+      if (a > 0.5) {
+        if (r < 70 && g > 170 && b > 130) return 'signal'
+        const lum = 0.2126 * r + 0.7152 * g + 0.0722 * b
+        return lum > 150 ? 'paper' : 'ink'
+      }
+    }
+    el = el.parentElement
+  }
+  return 'ink'
+}
+
 export default function Spine() {
   const ref = useRef(null)
   const bar = useRef(null)
@@ -10,7 +28,16 @@ export default function Spine() {
   useGsap(ref, () => {
     const set = gsap.quickSetter(bar.current, 'scaleY')
     const proxy = { v: 0 }
+    let tone = ''
+    const paintTone = () => {
+      const t = toneBehind(14, window.innerHeight - 70)
+      if (t !== tone) {
+        tone = t
+        ref.current.dataset.tone = t
+      }
+    }
     const onScroll = () => {
+      paintTone()
       const max = document.documentElement.scrollHeight - window.innerHeight
       const p = max > 0 ? window.scrollY / max : 0
       gsap.to(proxy, {
@@ -22,22 +49,26 @@ export default function Spine() {
       })
     }
     window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
     onScroll()
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('resize', onScroll)
+    }
   })
 
   return (
-    <div ref={ref} aria-hidden className="pointer-events-none fixed bottom-6 left-3 z-40 hidden flex-col items-center gap-3 lg:flex">
+    <div ref={ref} data-tone="ink" aria-hidden className="spine pointer-events-none fixed bottom-6 left-3 z-40 hidden flex-col items-center gap-3 lg:flex">
       <div
-        className="micro flex items-center gap-1 leading-none text-paper mix-blend-difference"
+        className="spine-label micro flex items-center gap-1 leading-none"
         style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', fontSize: '9px' }}
       >
         <span className="opacity-70">JMP</span>
         <span ref={num}>000</span>
         <span className="opacity-70">%</span>
       </div>
-      <div className="relative h-24 w-[2px] bg-steel/40">
-        <div ref={bar} className="absolute inset-0 origin-top scale-y-0 bg-signal" />
+      <div className="spine-track relative h-24 w-[2px]">
+        <div ref={bar} className="spine-bar absolute inset-0 origin-top scale-y-0" />
       </div>
     </div>
   )

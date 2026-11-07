@@ -113,3 +113,14 @@ input, textarea { border-radius: 0; }
 .card:hover .tint::after, .card:focus-within .tint::after { opacity: 0; }
 .col-fill { background: color-mix(in oklab, var(--color-paper) 5%, transparent); }
 .deep-signal { color: #007b6c; }
+
+/* Scroll readout colours follow the section behind it */
+.spine .spine-label { color: var(--color-paper); transition: color .3s ease; }
+.spine .spine-track { background: rgba(157, 165, 168, 0.4); transition: background-color .3s ease; }
+.spine .spine-bar { background: var(--color-signal); transition: background-color .3s ease; }
+.spine[data-tone='paper'] .spine-label { color: #007b6c; }
+.spine[data-tone='paper'] .spine-track { background: rgba(8, 10, 11, 0.22); }
+.spine[data-tone='paper'] .spine-bar { background: #007b6c; }
+.spine[data-tone='signal'] .spine-label { color: var(--color-ink); }
+.spine[data-tone='signal'] .spine-track { background: rgba(8, 10, 11, 0.25); }
+.spine[data-tone='signal'] .spine-bar { background: var(--color-ink); }
