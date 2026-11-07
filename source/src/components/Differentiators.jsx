@@ -22,19 +22,19 @@ export default function Differentiators() {
   })
 
   return (
-    <section ref={ref} className="relative bg-paper py-28 text-ink md:py-44">
+    <section ref={ref} className="relative bg-ink py-28 text-paper md:py-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
+        <div aria-hidden data-fade className="section-index h-px bg-paper/20" />
         <h2 aria-label={c.lines.join(' ')} className="display mt-14 text-[clamp(2.8rem,8vw,9.5rem)] md:mt-20">
-          <Lines lines={c.lines} classes={['', 'deep-signal']} />
+          <Lines lines={c.lines} classes={['', 'text-signal']} />
         </h2>
         <div className="mt-20 grid gap-12 md:mt-28 md:grid-cols-3 md:gap-8">
           {c.items.map((it) => (
             <div key={it.n} data-item className="relative pt-6">
               <span data-rule aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-signal" />
-              <span data-body className="display text-[clamp(3rem,5vw,5.5rem)] leading-none text-[#007b6c]">{it.n}</span>
+              <span data-body className="display text-[clamp(3rem,5vw,5.5rem)] leading-none text-signal">{it.n}</span>
               <h3 data-body className="display subhead mt-6 text-[clamp(1.4rem,2vw,2.1rem)]">{it.title}</h3>
-              <p data-body className="mt-4 max-w-sm text-[15px] leading-relaxed text-ink/70">{it.text}</p>
+              <p data-body className="mt-4 max-w-sm text-[15px] leading-relaxed text-paper/70">{it.text}</p>
             </div>
           ))}
         </div>
