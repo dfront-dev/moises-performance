@@ -11,7 +11,7 @@ const Trophy = () => (
   </svg>
 )
 
-export default function ResultsBlock({ data, tone = 'ink', saturated = false }) {
+export default function ResultsBlock({ data, tone = 'ink', saturated = false, compact = false }) {
   const ref = useRef(null)
   const tip = useRef(null)
   const [photo, setPhoto] = useState(null)
@@ -27,10 +27,12 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false }) 
   const dark = tone === 'ink'
 
   useGsap(ref, ({ q }) => {
-    gsap.from(q('[data-line]'), {
-      yPercent: 118, duration: 1.3, stagger: 0.12, ease: 'power4.out',
-      scrollTrigger: { trigger: q('h2')[0], start: 'top 82%' },
-    })
+    if (q('[data-line]').length) {
+      gsap.from(q('[data-line]'), {
+        yPercent: 118, duration: 1.3, stagger: 0.12, ease: 'power4.out',
+        scrollTrigger: { trigger: q('h2')[0], start: 'top 82%' },
+      })
+    }
     gsap.from(q('[data-fade]'), {
       opacity: 0, y: 24, duration: 1, stagger: 0.1, ease: 'power3.out',
       scrollTrigger: { trigger: q('[data-fade]')[0], start: 'top 88%' },
@@ -64,36 +66,55 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false }) 
     <section
       id={data.id}
       ref={ref}
-      className={`relative py-28 md:py-44 ${dark ? 'bg-ink text-paper' : 'bg-paper text-ink'}`}
+      className={`relative ${compact ? 'py-20 md:py-28' : 'py-28 md:py-44'} ${dark ? 'bg-ink text-paper' : 'bg-paper text-ink'}`}
     >
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
         <div aria-hidden data-fade className={`section-index h-px ${dark ? 'bg-paper/20' : 'bg-ink/20'}`} />
 
+        {compact ? (
+          <div className="mt-14 md:mt-16">
+            <h2 className="sr-only">{data.lines.join(' ')}</h2>
+            <p data-fade className="micro inline-block bg-signal px-3 py-2 text-[10.5px] text-ink">{data.blocks[0].label}</p>
+            {data.bullets ? (
+              <ul data-fade className={`mt-8 max-w-xl space-y-3 ${sub}`}>
+                {data.bullets.map((b) => (
+                  <li key={b} className="flex gap-3 text-base leading-snug">
+                    <span aria-hidden className="mt-[9px] h-[7px] w-[7px] shrink-0 -skew-x-12 bg-signal" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p data-fade className={`mt-8 max-w-xl text-base leading-relaxed ${sub}`}>{data.intro}</p>
+            )}
+          </div>
+        ) : (
         <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">
-          <h2 aria-label={data.lines.join(' ')} className="display text-[clamp(3rem,9vw,10.5rem)] md:col-span-8">
-            <Lines lines={data.lines} classes={['', dark || saturated ? 'text-signal' : 'deep-signal']} />
-          </h2>
-          {data.bullets ? (
-            <ul data-fade className={`max-w-md space-y-3 md:col-span-4 md:justify-self-end ${sub}`}>
-              {data.bullets.map((b) => (
-                <li key={b} className="flex gap-3 text-base leading-snug">
-                  <span aria-hidden className="mt-[9px] h-[7px] w-[7px] shrink-0 -skew-x-12 bg-signal" />
-                  {b}
-                </li>
-              ))}
-            </ul>
-          ) : (
-            <p data-fade className={`max-w-md text-base leading-relaxed md:col-span-4 md:justify-self-end ${sub}`}>{data.intro}</p>
-          )}
-        </div>
+            <h2 aria-label={data.lines.join(' ')} className="display text-[clamp(3rem,9vw,10.5rem)] md:col-span-8">
+              <Lines lines={data.lines} classes={['', dark || saturated ? 'text-signal' : 'deep-signal']} />
+            </h2>
+            {data.bullets ? (
+              <ul data-fade className={`max-w-md space-y-3 md:col-span-4 md:justify-self-end ${sub}`}>
+                {data.bullets.map((b) => (
+                  <li key={b} className="flex gap-3 text-base leading-snug">
+                    <span aria-hidden className="mt-[9px] h-[7px] w-[7px] shrink-0 -skew-x-12 bg-signal" />
+                    {b}
+                  </li>
+                ))}
+              </ul>
+            ) : (
+              <p data-fade className={`max-w-md text-base leading-relaxed md:col-span-4 md:justify-self-end ${sub}`}>{data.intro}</p>
+            )}
+          </div>
+        )}
 
-        <div className="mt-20 grid gap-16 md:mt-28 md:grid-cols-12">
+        <div className={`grid gap-16 md:grid-cols-12 ${compact ? 'mt-10 md:mt-12' : 'mt-20 md:mt-28'}`}>
           <div className="space-y-20 md:col-span-12">
             {data.blocks.map((b) => (
               <div key={b.label}>
-                <p data-fade className="micro inline-block bg-signal px-3 py-2 text-[10.5px] text-ink">{b.label}</p>
-                <h3 data-fade className="display subhead mt-6 max-w-2xl text-[clamp(1.5rem,2.4vw,2.6rem)]">{b.title}</h3>
-                <ul data-rowset className={`mt-8 border-t ${hair}`}>
+                {!compact && <p data-fade className="micro inline-block bg-signal px-3 py-2 text-[10.5px] text-ink">{b.label}</p>}
+                {!compact && <h3 data-fade className="display subhead mt-6 max-w-2xl text-[clamp(1.5rem,2.4vw,2.6rem)]">{b.title}</h3>}
+                <ul data-rowset className={`border-t ${compact ? '' : 'mt-8'} ${hair}`}>
                   {b.rows.map(([who, what, pic]) => (
                     <li
                       key={who + what}

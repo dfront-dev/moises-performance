@@ -12,19 +12,12 @@ export const results = [
     alt: 'João Moisés com atletas da Vela Olímpica Portuguesa',
     blocks: [
       {
-        label: 'Paris 2024',
-        title: 'Quatro embarcações, um resultado coletivo de destaque',
+        label: 'Vela',
         rows: [
-          ['Diogo Costa & Carolina João', '5.º lugar, 470 Mixed', 'diogo-carolina'],
-          ['Eduardo Marques', '11.º lugar, ILCA 7', 'eduardo-marques'],
-          ['Mafalda Pires de Lima', '14.º lugar, Formula Kite', 'mafalda-pires-de-lima'],
-          ['Hernán Umpierre & Fernando Diz (URU)', '10.º lugar, 49er', 'hernan-fernando'],
-        ],
-      },
-      {
-        label: 'Tóquio 2020 e Santiago 2023',
-        title: 'Acompanhamento presencial em contexto pandémico',
-        rows: [
+          ['Diogo Costa & Carolina João', '5.º lugar, 470 Mixed, Paris 2024', 'diogo-carolina'],
+          ['Eduardo Marques', '11.º lugar, ILCA 7, Paris 2024', 'eduardo-marques'],
+          ['Mafalda Pires de Lima', '14.º lugar, Formula Kite, Paris 2024', 'mafalda-pires-de-lima'],
+          ['Hernán Umpierre & Fernando Diz (URU)', '10.º lugar, 49er, Paris 2024', 'hernan-fernando'],
           ['Jorge Lima & José Costa', '7.º lugar, 49er, Tóquio 2020', 'lima-costa-toquio'],
           ['Diogo Costa & Pedro Costa', '15.º lugar, 470 Masculino, Tóquio 2020', 'diogo-pedro-costa-toquio'],
           ['Diogo Costa & Pedro Costa', 'Vice-campeões do mundo, 470 Masculino, 2021', 'diogo-pedro-costa-mundial'],
