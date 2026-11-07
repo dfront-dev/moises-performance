@@ -1,1 +1,0 @@
-import{t as e}from"./main-nkoG8WmQ.js";import{a as t}from"./useGsap-DffYOy0H.js";import{t as n}from"./Contact-uEGKO6uX.js";var r=e();function i(){return(0,r.jsx)(t,{page:`contacto`,tone:`paper`,children:(0,r.jsx)(n,{standalone:!0})})}export{i as default};
