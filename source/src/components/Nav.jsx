@@ -37,7 +37,7 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
       </a>
       <div className={`mx-auto flex max-w-[1680px] items-center justify-between px-5 py-4 md:grid md:grid-cols-[1fr_auto_1fr] md:px-10 ${solid ? "md:py-3" : "md:py-5"} transition-[padding] duration-500`}>
         <a href={home ? '#top' : 'index.html'} aria-label="JMP, João Moisés Performance. Início" className="block md:justify-self-start">
-          <img src={light ? 'images/jmp-logo.svg' : 'images/jmp-logo-light.svg'} alt="JMP" width="72" height="29" className="h-8 w-auto md:h-10" />
+          <img src={light ? 'images/jmp-logo.svg' : 'images/jmp-logo-light.svg'} alt="JMP" width="72" height="29" className="h-[52px] w-auto md:h-[60px]" />
         </a>
 
         <div className={`hidden flex-col items-center text-center md:flex ${light ? 'text-ink' : 'text-paper'}`}>
