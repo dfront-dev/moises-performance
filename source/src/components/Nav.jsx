@@ -59,7 +59,7 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
 
         <div className="hidden flex-col items-center text-center md:flex">
           <p className="text-[clamp(15px,1.45vw,21px)] font-semibold leading-tight tracking-[-0.01em] text-ink">
-            João Moisés <span aria-hidden className="mx-[0.55em] text-ink/70">•</span> Sport Physiologist
+            João Moisés <span aria-hidden className="mx-[0.55em] text-ink/60">•</span> Sport Physiologist
           </p>
           <nav aria-label="Principal" className="mt-[2px] flex items-center text-[clamp(15px,1.45vw,21px)] font-semibold leading-tight tracking-[-0.01em]">
             {links.map((l, i) => (
@@ -101,7 +101,7 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
       <ul className="flex flex-col">
         {links.map((l, i) => (
           <li key={l.key} className="overflow-hidden border-b border-ink/10">
-            <a href={l.href} onClick={() => setOpen(false)} className={`display flex items-baseline justify-between py-4 text-[2.3rem] transition-transform duration-[900ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${page === l.key ? 'text-ink' : 'text-ink/70'}`} style={{ transform: open ? 'translateY(0)' : 'translateY(110%)', transitionDelay: open ? `${150 + i * 70}ms` : '0ms' }}>
+            <a href={l.href} onClick={() => setOpen(false)} className={`display flex items-baseline justify-between py-4 text-[2.3rem] transition-transform duration-[900ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${page === l.key ? 'text-ink' : 'text-ink/60'}`} style={{ transform: open ? 'translateY(0)' : 'translateY(110%)', transitionDelay: open ? `${150 + i * 70}ms` : '0ms' }}>
               {l.label}
               <span className="micro text-steel">0{i + 1}</span>
             </a>

@@ -51,17 +51,17 @@ export default function Footer({ tone = 'paper' }) {
             </Icon>
           </div>
         </div>
-        <ul className="flex flex-wrap gap-x-8 gap-y-3">
+        <ul className="bullets gap-y-3">
           {footerLinks.map((l) => (
             <li key={l.label}>
-              <a href={l.href} {...(l.download ? { download: true } : {})} className={`micro transition-colors ${paper ? 'text-ink/75' : 'text-paper/75'} ${hov}`}><span className="roll"><span>{l.label}</span><span aria-hidden>{l.label}</span></span></a>
+              <a href={l.href} {...(l.download ? { download: true } : {})} className={`micro transition-colors ${paper ? 'text-ink/65' : 'text-paper/75'} ${hov}`}><span className="roll"><span>{l.label}</span><span aria-hidden>{l.label}</span></span></a>
             </li>
           ))}
         </ul>
       </div>
       <div className="relative mx-auto flex max-w-[1680px] justify-between px-5 pb-6 md:px-10">
         <p className="micro text-[10px] text-steel">© 2026 JMP</p>
-        <p className="micro flex gap-6 text-[10px] text-steel">
+        <p className="micro bullets text-[10px] text-steel">
           <a href="privacidade.html" className={`transition-colors ${hov}`}>Política de privacidade</a>
           <a href="termos.html" className={`transition-colors ${hov}`}>Termos e condições</a>
         </p>

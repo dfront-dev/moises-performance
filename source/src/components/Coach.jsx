@@ -86,7 +86,7 @@ export default function Coach({ index, lean = false }) {
               <Lines lines={c.lines} />
             </h2>
 
-            <div className="mt-14 max-w-2xl space-y-6 text-lg leading-relaxed text-ink/80 md:text-xl">
+            <div className="mt-14 max-w-2xl space-y-6 text-lg leading-relaxed text-ink/70 md:text-xl">
               {c.body.map((p) => (
                 <p key={p} data-fade>{p}</p>
               ))}

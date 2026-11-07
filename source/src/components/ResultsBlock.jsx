@@ -59,7 +59,7 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
   }
 
   const hair = dark ? 'border-paper/15' : 'border-ink/15'
-  const sub = dark ? 'text-paper/65' : 'text-ink/65'
+  const sub = dark ? 'text-paper/65' : 'text-ink/60'
 
   return (
     <section
@@ -117,7 +117,7 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
                         {b.trophy !== false && <span className={dark ? 'text-paper/40' : 'text-ink/35'}><Medal /></span>}
                         {who}
                       </span>
-                      <span className={`micro self-center text-[10.5px] leading-relaxed md:col-span-7 md:text-right ${dark ? 'text-paper/75' : 'text-ink/75'}`}>{what}</span>
+                      <span className={`micro self-center text-[10.5px] leading-relaxed md:col-span-7 md:text-right ${dark ? 'text-paper/75' : 'text-ink/65'}`}>{what}</span>
                     </li>
                   ))}
                 </ul>

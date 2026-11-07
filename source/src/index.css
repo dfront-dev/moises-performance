@@ -45,6 +45,8 @@ body {
   text-rendering: optimizeLegibility;
   font-optical-sizing: auto;
   font-feature-settings: 'ss01', 'cv11';
+  font-weight: 500;
+  letter-spacing: -0.011em;
   overflow-x: hidden;
 }
 
@@ -54,23 +56,23 @@ body {
 
 /* Type: calm, medium weight, sentence case, generous line height. */
 .display {
-  font-weight: 500;
-  line-height: 1.03;
-  letter-spacing: -0.045em;
+  font-weight: 600;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
 }
 .subhead {
-  font-weight: 500;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-weight: 600;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
 }
 .title-soft {
-  font-weight: 500;
-  line-height: 1.03;
+  font-weight: 600;
+  line-height: 1.02;
 }
 .micro {
   font-size: 11px;
   font-weight: 600;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
   font-variant-numeric: tabular-nums;
 }
@@ -165,3 +167,7 @@ html.has-cursor input, html.has-cursor textarea, html.has-cursor select { cursor
 .roll { display: inline-block; overflow: hidden; height: 1.3em; line-height: 1.3em; vertical-align: bottom; }
 .roll > span { display: block; transition: transform 0.6s var(--ease-calm); }
 a:hover > .roll > span, button:hover > .roll > span { transform: translateY(-100%); }
+
+/* Inline lists read as: one • two • three */
+.bullets { display: flex; flex-wrap: wrap; align-items: center; }
+.bullets > li + li::before, .bullets > span + span::before, .bullets > a + a::before { content: '•'; margin: 0 0.7em; opacity: 0.35; }

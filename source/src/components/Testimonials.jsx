@@ -36,7 +36,7 @@ export default function Testimonials({ tone = 'paper' }) {
           {testimonials.map((t) => (
             <figure key={t.name} data-card className={`group relative border border-t-signal/60 p-8 md:p-10 ${paper ? 'border-ink/10 bg-ink/[0.03] text-ink' : 'border-paper/10 bg-paper/[0.035] text-paper'} ${testimonials.length === 1 ? 'max-w-3xl md:col-span-2 lg:col-span-3' : 'md:col-span-1'}`}>
               <span aria-hidden className={`display block text-4xl leading-none ${paper ? 'text-signal' : 'text-signal/60'}`}>"</span>
-              <blockquote className={`mt-4 text-[15px] font-light leading-relaxed md:text-lg md:leading-relaxed ${paper ? 'text-ink/80' : 'text-paper/80'}`}>{t.quote}</blockquote>
+              <blockquote className={`mt-4 text-[15px] font-medium leading-relaxed md:text-lg md:leading-relaxed ${paper ? 'text-ink/70' : 'text-paper/80'}`}>{t.quote}</blockquote>
               <figcaption className="mt-8 flex items-center gap-4">
                 {t.photo ? (
                   <picture>
@@ -44,7 +44,7 @@ export default function Testimonials({ tone = 'paper' }) {
                     <img src={`${t.photo}.jpg`} alt={t.name} loading="lazy" decoding="async" className="h-14 w-14 object-cover grayscale transition duration-700 group-hover:grayscale-0" />
                   </picture>
                 ) : (
-                  <span aria-hidden className={`grid h-10 w-10 place-items-center border text-[11px] font-medium ${paper ? 'border-ink/20 text-ink/70' : 'border-paper/20 text-paper/70'}`}>{t.initials}</span>
+                  <span aria-hidden className={`grid h-10 w-10 place-items-center border text-[11px] font-medium ${paper ? 'border-ink/20 text-ink/60' : 'border-paper/20 text-paper/70'}`}>{t.initials}</span>
                 )}
                 <span>
                   <span className={`block text-sm font-medium ${paper ? 'text-ink/90' : 'text-paper/90'}`}>{t.name}</span>

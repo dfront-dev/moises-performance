@@ -41,7 +41,7 @@ export default function ServiceTable() {
                   <span className="micro text-[10.5px] text-steel md:col-span-3">{s.verb}</span>
                   <span className="md:col-span-7">
                     <span className="display block text-[clamp(1.5rem,7.6vw,2.4rem)] leading-[0.95] md:text-[clamp(1.7rem,3.0vw,3.3rem)] transition-colors duration-300 group-hover:text-ink/60">{s.short}</span>
-                    <span className="mt-4 block max-w-2xl text-base leading-relaxed text-ink/65 md:text-lg">{s.desc}</span>
+                    <span className="mt-4 block max-w-2xl text-base leading-relaxed text-ink/60 md:text-lg">{s.desc}</span>
                   </span>
                   <span
                     aria-hidden

@@ -67,12 +67,12 @@ export default function Hero() {
       <DotField />
       <div className="relative mx-auto grid min-h-[100svh] max-w-[1680px] gap-12 px-5 pb-16 pt-32 md:grid-cols-12 md:items-center md:gap-10 md:px-10 md:pb-20 md:pt-28">
         <div className="md:col-span-7">
-          <p data-fade className="micro text-[10.5px] text-steel">{hero.role}</p>
+          <p data-fade className="micro text-[10.5px] text-steel">{hero.role.split(', ').join(' • ')}</p>
           <h1 aria-label={hero.lines.join(' ')} className="display mt-8 text-[clamp(2.5rem,6.4vw,7.2rem)] md:mt-10">
             <CharLines lines={hero.lines} classes={['', 'text-ink/50', 'text-ink/50']} dataAttr="data-hero-line" />
           </h1>
           <div data-rule aria-hidden className="mt-12 h-px w-full max-w-md bg-ink/20 md:mt-16" />
-          <p data-fade className="mt-8 max-w-md text-lg leading-relaxed text-ink/75 md:text-xl">{hero.support}</p>
+          <p data-fade className="mt-8 max-w-md text-lg leading-relaxed text-ink/65 md:text-xl">{hero.support}</p>
           <div data-fade className="mt-10">
             <a href={hero.primary.href} className="btn btn-solid micro">
               {hero.primary.label} <span aria-hidden>→</span>

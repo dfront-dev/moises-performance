@@ -60,7 +60,7 @@ export default function System({ merge = false }) {
           <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(2.2rem,5.6vw,6.4rem)] md:col-span-8">
             <Lines lines={c.lines} classes={['', 'text-ink/50']} />
           </h2>
-          <p data-fade className="max-w-sm text-base leading-relaxed text-ink/70 md:col-span-4 md:justify-self-end">{c.intro}</p>
+          <p data-fade className="max-w-sm text-base leading-relaxed text-ink/60 md:col-span-4 md:justify-self-end">{c.intro}</p>
         </div>
       </div>
 
@@ -85,7 +85,7 @@ export default function System({ merge = false }) {
               {c.steps.map((s, i) => (
                 <div key={s.n} className="absolute inset-x-0 top-0 transition-all duration-700" style={{ opacity: active === i ? 1 : 0, transform: `translateY(${active === i ? 0 : 14}px)` }}>
                   <p className="micro text-[10.5px] text-steel">{s.tag}</p>
-                  <p className="mt-3 max-w-xs text-lg leading-snug text-ink/80">{s.text}</p>
+                  <p className="mt-3 max-w-xs text-lg leading-snug text-ink/70">{s.text}</p>
                 </div>
               ))}
             </div>
@@ -93,7 +93,7 @@ export default function System({ merge = false }) {
               <span data-rail-fill aria-hidden className="absolute -left-px top-0 h-full w-px origin-top scale-y-0 bg-ink" />
               {c.steps.map((s, i) => (
                 <li key={s.n}>
-                  <button type="button" onClick={() => jump(i)} aria-current={active === i ? 'step' : undefined} className={`relative flex w-full items-center gap-4 py-[7px] text-left transition-colors duration-500 ${active === i ? 'text-ink' : 'text-ink/35 hover:text-ink/70'}`}>
+                  <button type="button" onClick={() => jump(i)} aria-current={active === i ? 'step' : undefined} className={`relative flex w-full items-center gap-4 py-[7px] text-left transition-colors duration-500 ${active === i ? 'text-ink' : 'text-ink/35 hover:text-ink/60'}`}>
                     <span aria-hidden className={`absolute -left-[28px] h-[7px] w-[7px] bg-signal transition-opacity duration-500 ${active === i ? 'opacity-100' : 'opacity-0'}`} />
                     <span className="micro w-6 text-[10px]">{s.n}</span>
                     <span className="text-base">{s.title}</span>
@@ -119,7 +119,7 @@ export default function System({ merge = false }) {
                 <span className="micro mt-3 text-steel">{s.tag}</span>
               </div>
               <h3 className="display subhead mt-4 text-[1.5rem]">{s.title}</h3>
-              <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-ink/65">{s.text}</p>
+              <p className="mt-3 max-w-xs text-[15px] leading-relaxed text-ink/60">{s.text}</p>
             </li>
           ))}
         </ol>
@@ -137,7 +137,7 @@ export default function System({ merge = false }) {
                 <li key={it.title} data-merge-item>
                   <span aria-hidden className="block h-[2px] w-10 bg-signal" />
                   <h4 className="display subhead mt-5 text-[clamp(1.1rem,1.5vw,1.5rem)]">{it.title}</h4>
-                  <p className="mt-3 text-[15px] leading-relaxed text-ink/70">{it.text}</p>
+                  <p className="mt-3 text-[15px] leading-relaxed text-ink/60">{it.text}</p>
                 </li>
               ))}
             </ul>

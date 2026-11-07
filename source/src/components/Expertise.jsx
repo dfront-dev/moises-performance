@@ -69,7 +69,7 @@ export default function Expertise() {
           <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(2.2rem,5.6vw,6.4rem)] md:col-span-8">
             <Lines lines={c.lines} classes={['', 'text-ink/50']} />
           </h2>
-          <p data-fade className="max-w-md text-base leading-relaxed text-ink/70 md:col-span-4 md:justify-self-end">{c.intro}</p>
+          <p data-fade className="max-w-md text-base leading-relaxed text-ink/60 md:col-span-4 md:justify-self-end">{c.intro}</p>
         </div>
 
         <ul data-list className="svc-list mt-20 md:mt-28">
@@ -81,7 +81,7 @@ export default function Expertise() {
                 <span className="svc-name display text-[clamp(2rem,5.3vw,6rem)] leading-[1] md:col-span-7">{s.short}</span>
                 <span className="md:col-span-3">
                   <span className="micro block text-[10.5px] text-steel">{s.full}</span>
-                  <span className="mt-3 block max-w-sm text-[15px] leading-relaxed text-ink/70">{s.desc}</span>
+                  <span className="mt-3 block max-w-sm text-[15px] leading-relaxed text-ink/60">{s.desc}</span>
                 </span>
                 <span aria-hidden className="svc-arrow hidden text-2xl md:col-span-1 md:block md:justify-self-end">↗</span>
                 {/* touch: the image sits in the row */}
