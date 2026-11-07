@@ -49,8 +49,6 @@ export default function Coach({ index, lean = false }) {
     })
   })
 
-  const loop = [...c.highlights, ...c.highlights]
-
   return (
     <section id="sobre" ref={ref} className="relative bg-ink pt-28 text-paper md:pt-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
@@ -120,22 +118,6 @@ export default function Coach({ index, lean = false }) {
             </dl>
           </div>
         </div>
-      </div>
-
-      {/* results ticker */}
-      <div className="mt-28 overflow-hidden bg-signal py-6 text-ink md:mt-40" role="region" aria-label="Resultados dos atletas">
-        <div className="marquee-track flex w-max gap-14 whitespace-nowrap">
-          {loop.map((h, i) => (
-            <p key={i} aria-hidden={i >= c.highlights.length} className="display flex items-center gap-14 text-[clamp(1.4rem,2.6vw,2.6rem)] leading-none">
-              {h}
-              <span aria-hidden className="inline-block h-3 w-3 -skew-x-12 bg-ink" />
-            </p>
-          ))}
-        </div>
-      </div>
-      <div className="mx-auto flex max-w-[1680px] flex-col justify-between gap-5 px-5 py-8 md:flex-row md:items-start md:px-10">
-        <p className="micro max-w-2xl text-[10px] leading-relaxed text-steel">{c.footnote}</p>
-        <a href="resultados.html" className="micro underline-link shrink-0 pb-1">Ver todos os resultados →</a>
       </div>
     </section>
   )
