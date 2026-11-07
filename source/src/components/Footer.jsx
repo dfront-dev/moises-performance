@@ -21,7 +21,10 @@ export default function Footer() {
       </p>
       <div className="mx-auto flex max-w-[1680px] justify-between px-5 pb-6 md:px-10">
         <p className="micro text-[10px] text-steel">© 2026 JMP</p>
-        <p className="micro text-[10px] text-steel">Precisão. Disciplina. Progresso.</p>
+        <p className="micro flex gap-6 text-[10px] text-steel">
+          <a href="privacidade.html" className="transition-colors hover:text-signal">Política de privacidade</a>
+          <a href="termos.html" className="transition-colors hover:text-signal">Termos e condições</a>
+        </p>
       </div>
     </footer>
   )

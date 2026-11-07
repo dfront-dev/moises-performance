@@ -39,6 +39,20 @@ const pages = [
     body: '<p><a href="mailto:joaomoises13@gmail.com">joaomoises13@gmail.com</a> · +351 918 669 143</p>',
   },
   {
+    file: 'privacidade.html', page: 'privacidade', path: 'privacidade.html',
+    title: 'Política de privacidade | JMP, João Moisés Performance Physiology',
+    desc: 'Como são tratados os dados pessoais de quem visita o site e contacta o João Moisés, em conformidade com o RGPD.',
+    h1: 'Política de privacidade.',
+    body: '<p>Informação sobre o tratamento de dados pessoais. Contacto: joaomoises13@gmail.com.</p>',
+  },
+  {
+    file: 'termos.html', page: 'termos', path: 'termos.html',
+    title: 'Termos e condições | JMP, João Moisés Performance Physiology',
+    desc: 'Termos e condições de utilização do site JMP, João Moisés Performance Physiology.',
+    h1: 'Termos e condições.',
+    body: '<p>Condições de utilização do site e dos serviços. Contacto: joaomoises13@gmail.com.</p>',
+  },
+  {
     file: 'testemunhos.html', page: 'testemunhos', path: 'testemunhos.html',
     title: 'Testemunhos | JMP, João Moisés Performance Physiology',
     desc: 'Testemunhos de atletas, treinadores e federações sobre o acompanhamento de João Moisés.',

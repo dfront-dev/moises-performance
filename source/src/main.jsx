@@ -9,6 +9,8 @@ const pages = {
   sobre: lazy(() => import('./pages/Sobre')),
   contacto: lazy(() => import('./pages/Contacto')),
   testemunhos: lazy(() => import('./pages/Testemunhos')),
+  privacidade: lazy(() => import('./pages/Privacidade')),
+  termos: lazy(() => import('./pages/Termos')),
 }
 
 const root = document.getElementById('root')
