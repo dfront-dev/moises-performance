@@ -84,9 +84,9 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
                   </li>
                 ))}
               </ul>
-            ) : (
+            ) : data.intro ? (
               <p data-fade className={`mt-8 max-w-xl text-base leading-relaxed ${sub}`}>{data.intro}</p>
-            )}
+            ) : null}
           </div>
         ) : (
         <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">

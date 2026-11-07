@@ -3,11 +3,6 @@ export const results = [
     id: 'vela',
     index: '01 / Vela Olímpica',
     lines: ['Vela', 'Olímpica.'],
-    bullets: [
-      'Avaliação, planeamento, implementação e controlo do treino físico de atletas de alto rendimento',
-      'Em articulação com treinadores, fisioterapeutas e restantes elementos da equipa multidisciplinar',
-      'Ao longo de três ciclos olímpicos consecutivos',
-    ],
     image: 'vela-bandeira',
     alt: 'João Moisés com atletas da Vela Olímpica Portuguesa',
     blocks: [
