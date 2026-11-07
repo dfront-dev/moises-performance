@@ -17,6 +17,10 @@ export default function Nav({ page = 'home', tone = 'ink' }) {
   const light = (paper && !open) || (page === 'contacto' && !solid && !open)
 
   useEffect(() => {
+    document.documentElement.dataset.navHidden = hidden && !open ? '1' : '0'
+  }, [hidden, open])
+
+  useEffect(() => {
     let last = window.scrollY
     let ticking = false
     const onScroll = () => {

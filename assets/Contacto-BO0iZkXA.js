@@ -1,1 +1,0 @@
-import{t as e}from"./main-1f2D8t5G.js";import{r as t}from"./split-B7nDttl5.js";import{t as n}from"./Contact-VY8Cp_mY.js";var r=e();function i(){return(0,r.jsx)(t,{page:`contacto`,children:(0,r.jsx)(n,{standalone:!0})})}export{i as default};
