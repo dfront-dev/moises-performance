@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 
@@ -15,6 +15,15 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
   const ref = useRef(null)
   const tip = useRef(null)
   const [photo, setPhoto] = useState(null)
+  const [idx, setIdx] = useState(0)
+  const pics = photo ? [].concat(photo) : []
+
+  useEffect(() => {
+    setIdx(0)
+    if (pics.length < 2) return
+    const t = setInterval(() => setIdx((i) => (i + 1) % pics.length), 1400)
+    return () => clearInterval(t)
+  }, [photo]) // eslint-disable-line react-hooks/exhaustive-deps
   const dark = tone === 'ink'
 
   useGsap(ref, ({ q }) => {
@@ -117,12 +126,12 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
         aria-hidden
         className={`pointer-events-none fixed left-0 top-0 z-[70] hidden h-[192px] w-[288px] overflow-hidden bg-ink transition-opacity duration-200 md:block ${photo ? 'opacity-100' : 'opacity-0'}`}
       >
-        {photo && (
-          <picture>
-            <source srcSet={`images/atletas/${photo}.webp`} type="image/webp" />
-            <img src={`images/atletas/${photo}.jpg`} alt="" className="h-full w-full object-cover" />
+        {pics.map((p, i) => (
+          <picture key={p}>
+            <source srcSet={`images/atletas/${p}.webp`} type="image/webp" />
+            <img src={`images/atletas/${p}.jpg`} alt="" className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ${i === idx ? 'opacity-100' : 'opacity-0'}`} />
           </picture>
-        )}
+        ))}
         <span className="absolute left-0 top-0 h-4 w-4 border-l-2 border-t-2 border-signal" />
         <span className="absolute bottom-0 right-0 h-4 w-4 border-b-2 border-r-2 border-signal" />
       </div>
