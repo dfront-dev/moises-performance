@@ -52,13 +52,6 @@ const pages = [
     h1: 'Termos e condições.',
     body: '<p>Condições de utilização do site e dos serviços. Contacto: joaomoises13@gmail.com.</p>',
   },
-  {
-    file: 'testemunhos.html', page: 'testemunhos', path: 'testemunhos.html',
-    title: 'Testemunhos | JMP, João Moisés Performance Physiology',
-    desc: 'Testemunhos de atletas, treinadores e federações sobre o acompanhamento de João Moisés.',
-    h1: 'Testemunhos.',
-    body: '<p>Página em construção, a reunir testemunhos reais e autorizados.</p>',
-  },
 ]
 
 const jsonld = `

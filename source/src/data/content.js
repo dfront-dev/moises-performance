@@ -101,7 +101,6 @@ export const footerLinks = [
   { label: 'Serviços', href: 'servicos.html' },
   { label: 'Resultados', href: 'resultados.html' },
   { label: 'Sobre', href: 'sobre.html' },
-  { label: 'Testemunhos', href: 'testemunhos.html' },
   { label: 'Contacto', href: 'contacto.html' },
   { label: 'Curriculum', href: 'CV-Joao-Moises.pdf', download: true },
 ]
