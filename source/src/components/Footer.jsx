@@ -33,8 +33,8 @@ export default function Footer() {
           <div className="relative">
           <div data-fphoto className="relative aspect-[4/3] overflow-hidden rounded-[8px] bg-paper-2">
             <picture>
-              <source srcSet="images/recovery.webp" type="image/webp" />
-              <img src="images/recovery.jpg" alt="Treinador a orientar um atleta num exercício de mobilidade com banda elástica" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover grayscale" style={{ objectPosition: '42% 50%' }} />
+              <source srcSet="images/footer-treino.webp" type="image/webp" />
+              <img src="images/footer-treino.jpg" alt="Treinador a orientar um atleta num exercício com banda elástica, em movimento" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover grayscale" style={{ objectPosition: '50% 38%' }} />
             </picture>
           </div>
             <Crosses />
@@ -75,7 +75,7 @@ export default function Footer() {
 
       <div className="relative mx-auto flex max-w-[1680px] flex-wrap items-center justify-between gap-4 border-t border-ink/10 px-5 py-6 md:px-10">
         <div className="flex items-center gap-5">
-          <img src="images/jmp-logo.svg" alt="JMP" width="72" height="29" className="h-8 w-auto" />
+          <img src="images/jmp-logo.svg" alt="JMP" width="72" height="29" className="h-[52px] w-auto" />
           <p className="micro text-steel">© 2026 JMP</p>
         </div>
         <p className="micro bullets text-steel">
