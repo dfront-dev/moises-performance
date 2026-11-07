@@ -76,7 +76,7 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
       </a>
       <div className="mx-auto flex max-w-[1680px] items-center justify-between px-5 py-4 md:grid md:grid-cols-[1fr_auto_1fr] md:px-10 md:py-5">
         <a href={home ? '#top' : 'index.html'} aria-label="JMP, João Moisés Performance. Início" className="block md:justify-self-start">
-          <img src={light ? 'images/jmp-logo-black.png' : 'images/jmp-logo-white.png'} alt="JMP" width="177" height="59" className="h-6 w-auto md:h-7" />
+          <img src={light ? 'images/jmp-logo.svg' : 'images/jmp-logo-light.svg'} alt="JMP" width="72" height="29" className="h-6 w-auto md:h-7" />
         </a>
 
         <nav ref={navRef} aria-label="Principal" className="relative hidden items-center gap-9 md:flex">
