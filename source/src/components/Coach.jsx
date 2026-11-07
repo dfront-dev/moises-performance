@@ -116,6 +116,13 @@ export default function Coach({ index, lean = false }) {
                 </div>
               ))}
             </dl>
+
+            {!lean && (
+              <div className="mt-10">
+                <p className="micro text-[10px] text-steel">Curriculum</p>
+                <a href="CV-Joao-Moises.pdf" download className="underline-link text-[clamp(1.3rem,2.2vw,2.1rem)] font-bold tracking-tight">Descarregar ↓</a>
+              </div>
+            )}
           </div>
         </div>
       </div>
