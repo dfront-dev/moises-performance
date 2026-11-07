@@ -58,6 +58,7 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
         </div>
 
         <div className="mt-20 grid gap-16 md:mt-28 md:grid-cols-12">
+          {data.image && (
           <div className="md:col-span-5">
             <div className="md:sticky md:top-28">
               <div data-photo className="card group relative aspect-[4/5] overflow-hidden bg-ink">
@@ -71,8 +72,9 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
               </div>
             </div>
           </div>
+          )}
 
-          <div className="space-y-20 md:col-span-7">
+          <div className={`space-y-20 md:col-span-7 ${data.image ? '' : 'md:col-start-6'}`}>
             {data.blocks.map((b) => (
               <div key={b.label}>
                 <p data-fade className="micro inline-block bg-signal px-3 py-2 text-[10.5px] text-ink">{b.label}</p>

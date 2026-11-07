@@ -12,10 +12,11 @@ export default function Resultados() {
         label="Resultados"
         lines={['Resultados', 'desportivos.']}
         classes={['', 'text-signal']}
-        intro="Três ciclos Olímpicos na Vela e um percurso de referência no Surf nacional e internacional, Padel e outras modalidades."
+        intro="Três ciclos Olímpicos na Vela, um percurso de referência no Surf nacional e internacional e trabalho noutras modalidades."
       />
       <ResultsBlock data={results[0]} tone="ink" />
       <ResultsBlock data={results[1]} tone="paper" />
+      <ResultsBlock data={results[2]} tone="ink" />
       <Testimonials />
       <CtaBand
         lines={['Queres resultados', 'assim na tua equipa?']}

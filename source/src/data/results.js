@@ -37,10 +37,10 @@ export const results = [
   },
   {
     id: 'surf',
-    index: '02 / Surf e outras modalidades',
-    lines: ['Surf e', 'outras modalidades.'],
+    index: '02 / Surf',
+    lines: ['Surf.'],
     intro:
-      'Percurso de referência no Surf nacional e internacional, com campeões nacionais, europeus e mundiais de júnior, a par de trabalho multidisciplinar em Padel, Ténis e Freediving.',
+      'Percurso de referência no Surf nacional e internacional, com campeões nacionais, europeus e mundiais de júnior.',
     image: 'trofeu',
     alt: 'João Moisés com um atleta e troféu de Surf',
     blocks: [
@@ -58,8 +58,16 @@ export const results = [
           ['Maria Abecassis', 'Bicampeã nacional de Surf, 2011 e 2012'],
         ],
       },
+    ],
+  },
+  {
+    id: 'outras',
+    index: '03 / Outras modalidades',
+    lines: ['Outras', 'modalidades.'],
+    intro: 'Trabalho multidisciplinar de preparação física e fisiológica noutras modalidades.',
+    blocks: [
       {
-        label: 'Outras modalidades',
+        label: 'Destaques',
         title: 'Do pódio nacional ao mundial',
         rows: [
           ['Sebastião Mendonça', '5.º no Mundial de Seleções de Padel, 2018'],
