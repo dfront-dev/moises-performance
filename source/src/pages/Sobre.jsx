@@ -2,7 +2,6 @@ import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import Coach from '../components/Coach'
 import System from '../components/System'
-import Differentiators from '../components/Differentiators'
 import Collaboration from '../components/Collaboration'
 
 export default function Sobre() {
@@ -15,8 +14,7 @@ export default function Sobre() {
         intro="Decisões construídas com base em dados e acompanhamento no terreno. Fisiologista do exercício, com mais de 15 anos em alta competição."
       />
       <Coach index="01 / Percurso" />
-      <System />
-      <Differentiators />
+      <System merge />
       <Collaboration />
     </Layout>
   )

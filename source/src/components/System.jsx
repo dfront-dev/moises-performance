@@ -1,9 +1,9 @@
 import { useRef } from 'react'
-import { system as c } from '../data/content'
+import { system as c, differentiators as d } from '../data/content'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 
-export default function System() {
+export default function System({ merge = false }) {
   const ref = useRef(null)
 
   useGsap(ref, ({ q }) => {
@@ -14,6 +14,9 @@ export default function System() {
     gsap.from(q('[data-fade]'), {
       opacity: 0, y: 24, duration: 1, stagger: 0.1, ease: 'power3.out',
       scrollTrigger: { trigger: q('[data-fade]')[0], start: 'top 88%' },
+    })
+    q('[data-merge-item]').forEach((el) => {
+      gsap.from(el, { opacity: 0, y: 24, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' } })
     })
     q('[data-step]').forEach((el) => {
       const rule = el.querySelector('[data-rule]')
@@ -56,6 +59,24 @@ export default function System() {
             </li>
           ))}
         </ol>
+
+        {merge && (
+          <div className="mt-24 border-t border-paper/20 pt-12 md:mt-32 md:grid md:grid-cols-12 md:gap-10 md:pt-16">
+            <h3 aria-label={d.lines.join(' ')} className="display subhead text-[clamp(1.6rem,2.6vw,2.8rem)] md:col-span-4">
+              <span className="block">{d.lines[0]}</span>
+              <span className="block text-signal">{d.lines[1]}</span>
+            </h3>
+            <ul className="mt-10 grid gap-10 md:col-span-8 md:mt-0 md:grid-cols-3 md:gap-8">
+              {d.items.map((it) => (
+                <li key={it.title} data-merge-item>
+                  <span aria-hidden className="block h-[3px] w-10 bg-signal" />
+                  <h4 className="display subhead mt-5 text-[clamp(1.1rem,1.5vw,1.5rem)]">{it.title}</h4>
+                  <p className="mt-3 text-[15px] leading-relaxed text-paper/70">{it.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   )
