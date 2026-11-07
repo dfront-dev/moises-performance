@@ -8,7 +8,6 @@ export default function Nav({ page = 'home', tone = 'ink' }) {
     { key: 'servicos', label: 'Serviços', href: 'servicos.html' },
     { key: 'resultados', label: 'Resultados', href: 'resultados.html' },
     { key: 'sobre', label: 'Sobre', href: 'sobre.html' },
-    { key: 'contacto', label: 'Contacto', href: home ? '#contacto' : 'contacto.html' },
   ]
   const cta = home ? '#contacto' : 'contacto.html'
 
@@ -50,8 +49,8 @@ export default function Nav({ page = 'home', tone = 'ink' }) {
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-signal focus:px-4 focus:py-2 focus:text-ink">
         Saltar para o conteúdo
       </a>
-      <div className="mx-auto flex max-w-[1680px] items-center justify-between px-5 py-4 md:px-10 md:py-5">
-        <a href={home ? '#top' : 'index.html'} aria-label="JMP, João Moisés Performance. Início" className="block">
+      <div className="mx-auto flex max-w-[1680px] items-center justify-between px-5 py-4 md:grid md:grid-cols-[1fr_auto_1fr] md:px-10 md:py-5">
+        <a href={home ? '#top' : 'index.html'} aria-label="JMP, João Moisés Performance. Início" className="block md:justify-self-start">
           <img src={light ? 'images/jmp-logo-black.png' : 'images/jmp-logo-white.png'} alt="JMP" width="177" height="59" className="h-6 w-auto md:h-7" />
         </a>
 
@@ -68,8 +67,8 @@ export default function Nav({ page = 'home', tone = 'ink' }) {
           ))}
         </nav>
 
-        <a href={cta} className={`micro hidden px-5 py-3 transition-colors md:inline-flex ${light ? 'bg-ink text-signal hover:bg-signal hover:text-ink' : 'bg-signal text-ink hover:bg-paper'}`}>
-          Trabalhar com o João
+        <a href={cta} className={`micro hidden px-5 py-3 transition-colors md:inline-flex md:justify-self-end ${light ? 'bg-ink text-signal hover:bg-signal hover:text-ink' : 'bg-signal text-ink hover:bg-paper'}`}>
+          Contactos
         </a>
 
         <button
@@ -100,7 +99,7 @@ export default function Nav({ page = 'home', tone = 'ink' }) {
         ))}
       </ul>
       <a href={cta} onClick={() => setOpen(false)} className="btn btn-solid micro mt-10 w-full justify-between">
-        Trabalhar com o João <span aria-hidden>→</span>
+        Contactos <span aria-hidden>→</span>
       </a>
     </div>
   </>
