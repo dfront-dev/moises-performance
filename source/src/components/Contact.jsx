@@ -30,7 +30,7 @@ export default function Contact({ standalone = false }) {
     window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
 
-  const field = 'w-full border-0 border-b border-ink/30 bg-transparent py-3 text-lg text-ink placeholder:text-ink/35 focus:border-ink focus:outline-none focus:ring-0'
+  const field = 'w-full border-0 border-b-2 border-ink bg-transparent py-3 text-lg text-ink placeholder:text-ink/35 focus:border-ink focus:shadow-[0_2px_0_0_var(--color-signal)] focus:outline-none focus:ring-0'
 
   return (
     <section id="contacto" ref={ref} className={`relative isolate overflow-hidden bg-paper text-ink ${standalone ? 'pb-28 pt-40 md:pb-44 md:pt-56' : 'py-28 md:py-44'}`}>
