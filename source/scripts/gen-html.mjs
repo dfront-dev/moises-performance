@@ -35,7 +35,7 @@ const pages = [
     file: 'contacto.html', page: 'contacto', path: 'contacto.html',
     title: 'Contacto | JMP, João Moisés Performance Physiology',
     desc: 'Contacta João Moisés para acompanhamento de atletas, federações e estruturas técnicas, em Portugal e internacionalmente.',
-    h1: 'O teu próximo nível começa aqui.',
+    h1: 'Contacto',
     body: '<p><a href="mailto:joaomoises13@gmail.com">joaomoises13@gmail.com</a> · +351 918 669 143</p>',
   },
   {
