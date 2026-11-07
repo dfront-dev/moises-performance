@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { contact as c, EMAIL, PHONE, PHONE_HREF } from '../data/content'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
+import DotField from './DotField'
 
 export default function Contact({ standalone = false }) {
   const ref = useRef(null)
@@ -33,7 +34,8 @@ export default function Contact({ standalone = false }) {
 
   return (
     <section id="contacto" ref={ref} className={`relative isolate overflow-hidden bg-paper text-ink ${standalone ? 'pb-28 pt-40 md:pb-44 md:pt-56' : 'py-28 md:py-44'}`}>
-      <div className="mx-auto max-w-[1680px] px-5 md:px-10">
+      <DotField />
+      <div className="relative mx-auto max-w-[1680px] px-5 md:px-10">
         <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
 
         {standalone ? (
@@ -50,11 +52,11 @@ export default function Contact({ standalone = false }) {
             <div data-fade className={`space-y-6 ${standalone ? '' : 'mt-12'}`}>
               <div>
                 <p className="micro text-[10px] text-ink/50">Email</p>
-                <a href={`mailto:${EMAIL}`} className="underline-link break-all text-[clamp(1.3rem,2.2vw,2.1rem)] font-bold tracking-tight">{EMAIL}</a>
+                <a href={`mailto:${EMAIL}`} data-magnetic className="underline-link inline-block break-all text-[clamp(1.3rem,2.2vw,2.1rem)] font-bold tracking-tight">{EMAIL}</a>
               </div>
               <div>
                 <p className="micro text-[10px] text-ink/50">Telemóvel</p>
-                <a href={PHONE_HREF} className="underline-link text-[clamp(1.3rem,2.2vw,2.1rem)] font-bold tracking-tight">{PHONE}</a>
+                <a href={PHONE_HREF} data-magnetic className="underline-link inline-block text-[clamp(1.3rem,2.2vw,2.1rem)] font-bold tracking-tight">{PHONE}</a>
               </div>
               <div>
                 <p className="micro text-[10px] text-ink/50">Curriculum</p>

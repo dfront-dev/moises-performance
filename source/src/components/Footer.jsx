@@ -1,3 +1,4 @@
+import DotField from './DotField'
 import { footerLinks, social, EMAIL, PHONE, PHONE_HREF } from '../data/content'
 
 const Icon = ({ href, label, children, external = true, paper = false }) => {
@@ -25,7 +26,8 @@ export default function Footer({ tone = 'paper' }) {
   const hov = paper ? 'hover:text-ink/60' : 'hover:text-signal'
   return (
     <footer className={`relative overflow-hidden border-t border-ink/15 ${paper ? 'bg-paper text-ink' : 'bg-ink text-paper'}`}>
-      <div className="mx-auto flex max-w-[1680px] flex-col justify-between gap-10 px-5 pb-10 pt-16 md:flex-row md:items-start md:px-10">
+      <DotField />
+      <div className="relative mx-auto flex max-w-[1680px] flex-col justify-between gap-10 px-5 pb-10 pt-16 md:flex-row md:items-start md:px-10">
         <div>
           <img src={paper ? 'images/jmp-logo-black.png' : 'images/jmp-logo-white.png'} alt="JMP" width="177" height="59" className="h-7 w-auto" />
           <p className="micro mt-4 text-[10px] text-steel">João Moisés Performance Physiology</p>
@@ -52,12 +54,12 @@ export default function Footer({ tone = 'paper' }) {
         <ul className="flex flex-wrap gap-x-8 gap-y-3">
           {footerLinks.map((l) => (
             <li key={l.label}>
-              <a href={l.href} {...(l.download ? { download: true } : {})} className={`micro transition-colors ${paper ? 'text-ink/75' : 'text-paper/75'} ${hov}`}>{l.label}</a>
+              <a href={l.href} {...(l.download ? { download: true } : {})} className={`micro transition-colors ${paper ? 'text-ink/75' : 'text-paper/75'} ${hov}`}><span className="roll"><span>{l.label}</span><span aria-hidden>{l.label}</span></span></a>
             </li>
           ))}
         </ul>
       </div>
-      <div className="mx-auto flex max-w-[1680px] justify-between px-5 pb-6 md:px-10">
+      <div className="relative mx-auto flex max-w-[1680px] justify-between px-5 pb-6 md:px-10">
         <p className="micro text-[10px] text-steel">© 2026 JMP</p>
         <p className="micro flex gap-6 text-[10px] text-steel">
           <a href="privacidade.html" className={`transition-colors ${hov}`}>Política de privacidade</a>

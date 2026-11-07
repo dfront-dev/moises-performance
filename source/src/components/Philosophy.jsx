@@ -11,6 +11,14 @@ export default function Philosophy() {
       yPercent: 50, opacity: 0, duration: 1.2, stagger: 0.1, ease: 'power3.out',
       scrollTrigger: { trigger: q('h2')[0], start: 'top 82%' },
     })
+    gsap.fromTo(
+      q('.word'),
+      { opacity: 0.16 },
+      {
+        opacity: 1, ease: 'none', stagger: 0.12,
+        scrollTrigger: { trigger: q('[data-words]')[0], start: 'top 80%', end: 'bottom 55%', scrub: 0.6 },
+      }
+    )
     gsap.from(q('[data-fade]'), {
       opacity: 0, y: 24, duration: 1, stagger: 0.12, ease: 'power3.out',
       scrollTrigger: { trigger: q('[data-fade]')[0], start: 'top 88%' },

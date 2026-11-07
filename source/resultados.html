@@ -5,10 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Resultados | JMP, João Moisés Performance Physiology</title>
     <meta name="description" content="Resultados na Vela Olímpica (Paris 2024, Tóquio 2020, Rio 2016), no Surf e no Padel. Resultados dos atletas e das respetivas equipas." />
-    <meta name="theme-color" content="#080A0B" />
+    <meta name="theme-color" content="#F6F4EF" />
     <link rel="canonical" href="https://moises-performance.com/resultados.html" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="preload" href="./fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="./fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <style>
+      html{background:#F6F4EF}
+      #curtain{position:fixed;inset:0;z-index:200;background:#0F1213;color:#F6F4EF;display:grid;place-items:center;animation:curtain-failsafe .01s 6s forwards}
+      #curtain .curtain-mark{width:96px;height:auto}
+      #curtain .curtain-count{position:absolute;left:24px;bottom:22px;font:600 11px/1 'Inter',system-ui,sans-serif;letter-spacing:.18em}
+      #curtain .curtain-line{position:absolute;left:0;bottom:0;height:2px;width:100%;background:#14CFB1;transform:scaleX(0);transform-origin:left}
+      @keyframes curtain-failsafe{to{opacity:0;visibility:hidden}}
+    </style>
+    <noscript><style>#curtain{display:none}</style></noscript>
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_PT" />
     <meta property="og:title" content="Resultados | JMP, João Moisés Performance Physiology" />
@@ -18,8 +27,9 @@
     <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
+    <div id="curtain" aria-hidden="true"><img class="curtain-mark" src="./images/jmp-logo-white.png" alt="" width="177" height="59" /><span class="curtain-count">000</span><span class="curtain-line"></span></div>
     <div id="root" data-page="resultados">
-      <main style="font-family:sans-serif;background:#080A0B;color:#F2F3F1;padding:48px;min-height:100vh">
+      <main style="font-family:sans-serif;background:#F6F4EF;color:#0F1213;padding:48px;min-height:100vh">
         <h1>Resultados desportivos.</h1>
         <p>Três ciclos Olímpicos na Vela e um percurso de referência no Surf nacional e internacional e resultados no Padel.</p>
       </main>

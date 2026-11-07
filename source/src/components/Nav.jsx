@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { gsap } from '../lib/gsap'
 
 export default function Nav({ page = 'home', tone = 'paper' }) {
   const paper = tone === 'paper'
@@ -14,7 +15,28 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
   const [solid, setSolid] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [open, setOpen] = useState(false)
+  const navRef = useRef(null)
+  const ind = useRef(null)
   const light = (paper && !open) || (page === 'contacto' && !solid && !open)
+
+  // a single underline glides between links and rests under the current page
+  useEffect(() => {
+    const nav = navRef.current
+    const bar = ind.current
+    if (!nav || !bar) return undefined
+    const cur = () => nav.querySelector('[aria-current="page"]')
+    const to = (el, instant) => {
+      if (!el) { gsap.to(bar, { opacity: 0, duration: 0.3 }); return }
+      gsap.to(bar, { x: el.offsetLeft, width: el.offsetWidth, opacity: 1, duration: instant ? 0 : 0.55, ease: 'power3.out' })
+    }
+    to(cur(), true)
+    const over = (e) => { const a = e.target.closest('a'); if (a) to(a) }
+    const out = () => to(cur())
+    nav.addEventListener('pointerover', over)
+    nav.addEventListener('pointerleave', out)
+    window.addEventListener('resize', out)
+    return () => { nav.removeEventListener('pointerover', over); nav.removeEventListener('pointerleave', out); window.removeEventListener('resize', out) }
+  }, [])
 
   useEffect(() => {
     document.documentElement.dataset.navHidden = hidden && !open ? '1' : '0'
@@ -57,17 +79,18 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
           <img src={light ? 'images/jmp-logo-black.png' : 'images/jmp-logo-white.png'} alt="JMP" width="177" height="59" className="h-6 w-auto md:h-7" />
         </a>
 
-        <nav aria-label="Principal" className="hidden items-center gap-9 md:flex">
+        <nav ref={navRef} aria-label="Principal" className="relative hidden items-center gap-9 md:flex">
           {links.map((l) => (
             <a
               key={l.key}
               href={l.href}
               aria-current={page === l.key ? 'page' : undefined}
-              className={`micro border-b-2 pb-1 transition-colors ${light ? (paper ? 'hover:text-ink' : 'hover:text-[#007b6c]') : 'hover:text-signal'} ${page === l.key ? (light ? (paper ? 'border-signal text-ink' : 'border-signal text-ink') : 'border-signal text-signal') : light ? 'border-transparent text-ink/75' : 'border-transparent text-paper/75'}`}
+              className={`micro py-2 transition-colors duration-300 ${page === l.key ? 'text-ink' : 'text-ink/70 hover:text-ink'}`}
             >
-              {l.label}
+              <span className="roll"><span>{l.label}</span><span aria-hidden>{l.label}</span></span>
             </a>
           ))}
+          <span ref={ind} aria-hidden className="pointer-events-none absolute bottom-0 left-0 h-[2px] w-0 bg-signal opacity-0" />
         </nav>
 
         <a href={cta} className={`micro hidden px-5 py-3 transition-colors md:inline-flex md:justify-self-end ${light ? 'bg-ink text-paper hover:bg-signal hover:text-ink' : 'bg-signal text-ink hover:bg-paper'}`}>
@@ -93,8 +116,8 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
     >
       <ul className="flex flex-col">
         {links.map((l, i) => (
-          <li key={l.key} className="border-b border-ink/10">
-            <a href={l.href} onClick={() => setOpen(false)} className={`display flex items-baseline justify-between py-4 text-[2.3rem] ${page === l.key ? 'text-ink' : 'text-ink/70'}`}>
+          <li key={l.key} className="overflow-hidden border-b border-ink/10">
+            <a href={l.href} onClick={() => setOpen(false)} className={`display flex items-baseline justify-between py-4 text-[2.3rem] transition-transform duration-[900ms] ease-[cubic-bezier(0.22,0.61,0.36,1)] ${page === l.key ? 'text-ink' : 'text-ink/70'}`} style={{ transform: open ? 'translateY(0)' : 'translateY(110%)', transitionDelay: open ? `${150 + i * 70}ms` : '0ms' }}>
               {l.label}
               <span className="micro text-steel">0{i + 1}</span>
             </a>
