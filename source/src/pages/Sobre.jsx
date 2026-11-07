@@ -4,7 +4,6 @@ import Coach from '../components/Coach'
 import System from '../components/System'
 import Differentiators from '../components/Differentiators'
 import Collaboration from '../components/Collaboration'
-import CtaBand from '../components/CtaBand'
 
 export default function Sobre() {
   return (
@@ -19,12 +18,6 @@ export default function Sobre() {
       <System />
       <Differentiators />
       <Collaboration />
-      <CtaBand
-        lines={['Vamos falar', 'de performance.']}
-        text="Atletas, federações e estruturas técnicas, em Portugal e internacionalmente."
-        primary={{ label: 'Falar com o João', href: 'contacto.html' }}
-        secondary={{ label: 'Ver serviços', href: 'servicos.html' }}
-      />
     </Layout>
   )
 }
