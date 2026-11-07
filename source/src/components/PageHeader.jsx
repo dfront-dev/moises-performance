@@ -2,7 +2,8 @@ import { useRef } from 'react'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 
-export default function PageHeader({ label, lines, intro, classes = [], image, imageAlt = '', imagePos = '50% 30%' }) {
+export default function PageHeader({ label, lines, intro, classes = [], image, imageAlt = '', imagePos = '50% 30%', tone = 'ink' }) {
+  const paper = tone === 'paper'
   const ref = useRef(null)
 
   useGsap(ref, ({ q }) => {
@@ -17,7 +18,7 @@ export default function PageHeader({ label, lines, intro, classes = [], image, i
   })
 
   return (
-    <section ref={ref} className="relative isolate overflow-hidden bg-ink pb-16 pt-40 text-paper md:pb-24 md:pt-56">
+    <section ref={ref} className={`relative isolate overflow-hidden pb-16 pt-40 md:pb-24 md:pt-56 ${paper ? 'bg-paper text-ink' : 'bg-ink text-paper'}`}>
       {image && (
         <div aria-hidden data-fade className="absolute inset-0 -z-20 md:left-[34%]">
           <picture>
@@ -25,23 +26,23 @@ export default function PageHeader({ label, lines, intro, classes = [], image, i
             <img src={`images/${image}.jpg`} alt={imageAlt} decoding="async" className="photo h-full w-full object-cover" style={{ objectPosition: imagePos }} />
           </picture>
           <div className="tint absolute inset-0" />
-          <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/55 to-ink/10" />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink via-transparent to-ink/50" />
-          <div className="absolute inset-0 bg-ink/40 md:hidden" />
+          <div className={`absolute inset-0 bg-gradient-to-r ${paper ? 'from-paper via-paper/60 to-paper/10' : 'from-ink via-ink/55 to-ink/10'}`} />
+          <div className={`absolute inset-0 bg-gradient-to-t ${paper ? 'from-paper via-transparent to-paper/50' : 'from-ink via-transparent to-ink/50'}`} />
+          <div className={`absolute inset-0 md:hidden ${paper ? 'bg-paper/55' : 'bg-ink/40'}`} />
         </div>
       )}
       <div aria-hidden data-slash className="absolute right-[2.5%] top-0 -z-10 hidden h-full w-[5.5vw] -skew-x-[16deg] bg-signal md:block" />
-      <div aria-hidden data-slash className="absolute right-[calc(2.5%+7.5vw)] top-0 -z-10 hidden h-full w-[6px] -skew-x-[16deg] bg-paper/80 md:block" />
+      <div aria-hidden data-slash className={`absolute right-[calc(2.5%+7.5vw)] top-0 -z-10 hidden h-full w-[6px] -skew-x-[16deg] md:block ${paper ? 'bg-ink/70' : 'bg-paper/80'}`} />
 
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <div aria-hidden data-fade className="section-index h-px bg-paper/20" />
+        <div aria-hidden data-fade className={`section-index h-px ${paper ? 'bg-ink/20' : 'bg-paper/20'}`} />
 
         <h1 aria-label={lines.join(' ')} className="display mt-14 text-[clamp(3rem,10.4vw,13rem)] md:mt-20">
           <Lines lines={lines} classes={classes} />
         </h1>
 
         {intro && (
-          <p data-fade className="mt-10 max-w-xl border-l-[3px] border-signal pl-5 text-lg leading-snug text-paper/85 md:mt-14 md:text-xl">
+          <p data-fade className={`mt-10 max-w-xl border-l-[3px] border-signal pl-5 text-lg leading-snug md:mt-14 md:text-xl ${paper ? 'text-ink/80' : 'text-paper/85'}`}>
             {intro}
           </p>
         )}

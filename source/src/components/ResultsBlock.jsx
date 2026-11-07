@@ -11,7 +11,7 @@ const Trophy = () => (
   </svg>
 )
 
-export default function ResultsBlock({ data, tone = 'ink' }) {
+export default function ResultsBlock({ data, tone = 'ink', saturated = false }) {
   const ref = useRef(null)
   const tip = useRef(null)
   const [photo, setPhoto] = useState(null)
@@ -71,7 +71,7 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
 
         <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">
           <h2 aria-label={data.lines.join(' ')} className="display text-[clamp(3rem,9vw,10.5rem)] md:col-span-8">
-            <Lines lines={data.lines} classes={['', dark ? 'text-signal' : 'deep-signal']} />
+            <Lines lines={data.lines} classes={['', dark || saturated ? 'text-signal' : 'deep-signal']} />
           </h2>
           {data.bullets ? (
             <ul data-fade className={`max-w-md space-y-3 md:col-span-4 md:justify-self-end ${sub}`}>
@@ -103,7 +103,7 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
                       className={`group grid gap-1 border-b py-5 transition-colors hover:bg-signal/10 md:grid-cols-12 md:gap-6 ${hair}`}
                     >
                       <span className="flex items-center gap-3 text-lg font-bold leading-snug md:col-span-5">
-                        {b.trophy !== false && <span className={dark ? 'text-signal' : 'text-[#007b6c]'}><Trophy /></span>}
+                        {b.trophy !== false && <span className={dark || saturated ? 'text-signal' : 'text-[#007b6c]'}><Trophy /></span>}
                         {who}
                       </span>
                       <span className={`micro self-center text-[10.5px] leading-relaxed md:col-span-7 md:text-right ${dark ? 'text-paper/75' : 'text-ink/75'}`}>{what}</span>

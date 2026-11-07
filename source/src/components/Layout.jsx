@@ -5,7 +5,7 @@ import Footer from './Footer'
 import EntityStrip from './EntityStrip'
 import { ScrollTrigger } from '../lib/gsap'
 
-export default function Layout({ page, children }) {
+export default function Layout({ page, tone = 'ink', children }) {
   useEffect(() => {
     const refresh = () => ScrollTrigger.refresh()
     document.fonts?.ready.then(refresh)
@@ -15,11 +15,11 @@ export default function Layout({ page, children }) {
 
   return (
     <div className="grain">
-      <Nav page={page} />
+      <Nav page={page} tone={tone} />
       <Spine />
       <main id="main">{children}</main>
-      <EntityStrip />
-      <Footer />
+      <EntityStrip tone={tone} />
+      <Footer tone={tone} />
     </div>
   )
 }

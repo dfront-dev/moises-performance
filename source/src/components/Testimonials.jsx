@@ -3,7 +3,8 @@ import { testimonials } from '../data/content'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 
-export default function Testimonials() {
+export default function Testimonials({ tone = 'ink' }) {
+  const paper = tone === 'paper'
   const ref = useRef(null)
 
   useGsap(ref, ({ q }) => {
@@ -21,21 +22,21 @@ export default function Testimonials() {
   })
 
   return (
-    <section id="testemunhos" ref={ref} className="relative bg-ink py-24 text-paper md:py-36">
+    <section id="testemunhos" ref={ref} className={`relative py-24 md:py-36 ${paper ? 'bg-paper text-ink' : 'bg-ink text-paper'}`}>
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <div aria-hidden data-fade className="section-index h-px bg-paper/20" />
+        <div aria-hidden data-fade className={`section-index h-px ${paper ? 'bg-ink/20' : 'bg-paper/20'}`} />
 
         <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-12 md:items-end">
           <h2 aria-label="Impacto nos atletas" className="display title-soft text-[clamp(2.2rem,5vw,5.6rem)] md:col-span-12">
-            <Lines lines={['Impacto', 'nos atletas.']} classes={['', 'text-signal/90']} />
+            <Lines lines={['Impacto', 'nos atletas.']} classes={['', paper ? 'text-signal' : 'text-signal/90']} />
           </h2>
         </div>
 
         <div className="mt-14 grid gap-5 md:mt-20 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
-            <figure key={t.name} data-card className={`group relative border border-paper/10 border-t-signal/50 bg-paper/[0.035] p-8 text-paper md:p-10 ${testimonials.length === 1 ? 'max-w-3xl md:col-span-2 lg:col-span-3' : 'md:col-span-2 lg:col-span-1'}`}>
-              <span aria-hidden className="display block text-4xl leading-none text-signal/60">"</span>
-              <blockquote className="mt-4 text-[15px] font-light leading-relaxed text-paper/80 md:text-lg md:leading-relaxed">{t.quote}</blockquote>
+            <figure key={t.name} data-card className={`group relative border border-t-signal/60 p-8 md:p-10 ${paper ? 'border-ink/10 bg-ink/[0.03] text-ink' : 'border-paper/10 bg-paper/[0.035] text-paper'} ${testimonials.length === 1 ? 'max-w-3xl md:col-span-2 lg:col-span-3' : 'md:col-span-2 lg:col-span-1'}`}>
+              <span aria-hidden className={`display block text-4xl leading-none ${paper ? 'text-signal' : 'text-signal/60'}`}>"</span>
+              <blockquote className={`mt-4 text-[15px] font-light leading-relaxed md:text-lg md:leading-relaxed ${paper ? 'text-ink/80' : 'text-paper/80'}`}>{t.quote}</blockquote>
               <figcaption className="mt-8 flex items-center gap-4">
                 {t.photo ? (
                   <picture>
@@ -43,11 +44,11 @@ export default function Testimonials() {
                     <img src={`${t.photo}.jpg`} alt={t.name} loading="lazy" decoding="async" className="h-14 w-14 object-cover grayscale transition duration-700 group-hover:grayscale-0" />
                   </picture>
                 ) : (
-                  <span aria-hidden className="grid h-10 w-10 place-items-center border border-paper/20 text-[11px] font-medium text-paper/70">{t.initials}</span>
+                  <span aria-hidden className={`grid h-10 w-10 place-items-center border text-[11px] font-medium ${paper ? 'border-ink/20 text-ink/70' : 'border-paper/20 text-paper/70'}`}>{t.initials}</span>
                 )}
                 <span>
-                  <span className="block text-sm font-medium text-paper/90">{t.name}</span>
-                  <span className="micro text-[10px] text-paper/45">{t.role}</span>
+                  <span className={`block text-sm font-medium ${paper ? 'text-ink/90' : 'text-paper/90'}`}>{t.name}</span>
+                  <span className={`micro text-[10px] ${paper ? 'text-ink/50' : 'text-paper/45'}`}>{t.role}</span>
                 </span>
               </figcaption>
             </figure>

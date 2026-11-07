@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 
-export default function Nav({ page = 'home' }) {
+export default function Nav({ page = 'home', tone = 'ink' }) {
+  const paper = tone === 'paper'
   const home = page === 'home'
   const links = [
     { key: 'metodo', label: 'Método', href: home ? '#metodo' : 'index.html#metodo' },
@@ -14,7 +15,7 @@ export default function Nav({ page = 'home' }) {
   const [solid, setSolid] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [open, setOpen] = useState(false)
-  const light = page === 'contacto' && !solid && !open
+  const light = (paper && !open) || (page === 'contacto' && !solid && !open)
 
   useEffect(() => {
     let last = window.scrollY
@@ -43,7 +44,7 @@ export default function Nav({ page = 'home' }) {
   return (
     <>
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${hidden && !open ? '-translate-y-full' : 'translate-y-0'} ${solid || open ? 'bg-ink/90 backdrop-blur-md' : 'bg-transparent'}`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${hidden && !open ? '-translate-y-full' : 'translate-y-0'} ${open ? 'bg-ink/90 backdrop-blur-md' : solid ? (paper ? 'bg-paper/90 backdrop-blur-md' : 'bg-ink/90 backdrop-blur-md') : 'bg-transparent'}`}
     >
       <span aria-hidden className={`absolute inset-x-0 top-0 h-[3px] bg-signal transition-opacity duration-500 ${solid ? 'opacity-100' : 'opacity-0'}`} />
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-signal focus:px-4 focus:py-2 focus:text-ink">
@@ -60,7 +61,7 @@ export default function Nav({ page = 'home' }) {
               key={l.key}
               href={l.href}
               aria-current={page === l.key ? 'page' : undefined}
-              className={`micro border-b-2 pb-1 transition-colors ${light ? 'hover:text-[#007b6c]' : 'hover:text-signal'} ${page === l.key ? (light ? 'border-[#007b6c] text-[#007b6c]' : 'border-signal text-signal') : light ? 'border-transparent text-ink/75' : 'border-transparent text-paper/75'}`}
+              className={`micro border-b-2 pb-1 transition-colors ${light ? (paper ? 'hover:text-ink' : 'hover:text-[#007b6c]') : 'hover:text-signal'} ${page === l.key ? (light ? (paper ? 'border-signal text-ink' : 'border-[#007b6c] text-[#007b6c]') : 'border-signal text-signal') : light ? 'border-transparent text-ink/75' : 'border-transparent text-paper/75'}`}
             >
               {l.label}
             </a>
