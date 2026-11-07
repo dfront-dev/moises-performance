@@ -2,7 +2,6 @@ import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import ResultsBlock from '../components/ResultsBlock'
 import Testimonials from '../components/Testimonials'
-import SectionNav from '../components/SectionNav'
 import { results } from '../data/results'
 
 export default function Resultados() {
@@ -17,7 +16,6 @@ export default function Resultados() {
         imagePos="50% 0%"
         intro="Três ciclos Olímpicos na Vela, um percurso de referência no Surf nacional e internacional e resultados no Padel."
       />
-      <SectionNav tone="paper" label="Modalidades" items={[{ id: 'vela', label: 'Vela' }, { id: 'surf', label: 'Surf' }, { id: 'padel', label: 'Padel' }]} />
       <ResultsBlock data={results[0]} tone="paper" saturated compact />
       <ResultsBlock data={results[1]} tone="paper" saturated compact />
       <ResultsBlock data={results[2]} tone="paper" saturated compact />
