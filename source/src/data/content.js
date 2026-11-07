@@ -182,3 +182,11 @@ export const social = {
   instagram: '',
   linkedin: '',
 }
+
+// Se existir um ficheiro de logótipo (em public/images/entidades/), indicar o caminho em `logo`.
+// Sem logótipo, a entidade aparece escrita em tipografia, sempre em tons de cinza.
+export const entities = [
+  { name: 'Federação Portuguesa de Vela', logo: '' },
+  { name: 'Federação Portuguesa de Surf', logo: '' },
+  { name: 'CNATRIL', logo: '' },
+]

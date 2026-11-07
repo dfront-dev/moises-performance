@@ -124,3 +124,6 @@ input, textarea { border-radius: 0; }
 .spine[data-tone='signal'] .spine-label { color: var(--color-ink); }
 .spine[data-tone='signal'] .spine-track { background: rgba(8, 10, 11, 0.25); }
 .spine[data-tone='signal'] .spine-bar { background: var(--color-ink); }
+
+.strip:hover > div { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .strip > div { animation: none !important; } }

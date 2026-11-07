@@ -2,6 +2,7 @@ import { useEffect } from 'react'
 import Nav from './Nav'
 import Spine from './Spine'
 import Footer from './Footer'
+import EntityStrip from './EntityStrip'
 import { ScrollTrigger } from '../lib/gsap'
 
 export default function Layout({ page, children }) {
@@ -17,6 +18,7 @@ export default function Layout({ page, children }) {
       <Nav page={page} />
       <Spine />
       <main id="main">{children}</main>
+      <EntityStrip />
       <Footer />
     </div>
   )
