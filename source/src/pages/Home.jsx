@@ -7,7 +7,6 @@ import Audiences from '../components/Audiences'
 import Endurance from '../components/Endurance'
 import Coach from '../components/Coach'
 import Testimonials from '../components/Testimonials'
-import Contact from '../components/Contact'
 
 export default function Home() {
   return (
@@ -20,7 +19,6 @@ export default function Home() {
       <Endurance />
       <Coach lean />
       <Testimonials />
-      <Contact />
     </Layout>
   )
 }

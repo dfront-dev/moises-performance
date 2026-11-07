@@ -9,7 +9,7 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
     { key: 'resultados', label: 'Resultados', href: 'resultados.html' },
     { key: 'sobre', label: 'Sobre', href: 'sobre.html' },
   ]
-  const cta = home ? '#contacto' : 'contacto.html'
+  const cta = 'contacto.html'
 
   const [solid, setSolid] = useState(false)
   const [hidden, setHidden] = useState(false)
