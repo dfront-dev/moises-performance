@@ -1,5 +1,5 @@
 export const intro =
-  'Uma marca de fisiologia aplicada à performance, capaz de intervir em diferentes momentos e níveis de profundidade no processo de treino.'
+  'Consultoria de fisiologia aplicada à performance, com intervenção em diferentes momentos e níveis de profundidade no processo de treino.'
 
 export const services = [
   {
