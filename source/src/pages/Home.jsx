@@ -6,7 +6,6 @@ import Expertise from '../components/Expertise'
 import Audiences from '../components/Audiences'
 import Endurance from '../components/Endurance'
 import Coach from '../components/Coach'
-import Mindset from '../components/Mindset'
 import Contact from '../components/Contact'
 
 export default function Home() {
@@ -19,7 +18,6 @@ export default function Home() {
       <Audiences />
       <Endurance />
       <Coach lean />
-      <Mindset />
       <Contact />
     </Layout>
   )
