@@ -86,6 +86,7 @@ export default function Nav({ page = 'home', tone = 'ink' }) {
     </header>
     <div
       id="menu-mobile"
+      data-lenis-prevent
       className={`fixed inset-0 z-40 overflow-y-auto bg-ink px-5 pb-10 pt-[88px] transition-opacity duration-300 md:hidden ${open ? 'visible opacity-100' : 'invisible opacity-0'}`}
     >
       <ul className="flex flex-col">

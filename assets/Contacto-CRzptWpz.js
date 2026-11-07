@@ -1,0 +1,1 @@
+import{t as e}from"./main-CMqFy4-N.js";import{r as t}from"./split-D-VKbg5c.js";import{t as n}from"./Contact-CuNuTNif.js";var r=e();function i(){return(0,r.jsx)(t,{page:`contacto`,children:(0,r.jsx)(n,{standalone:!0})})}export{i as default};

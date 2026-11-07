@@ -16,8 +16,11 @@
   --font-sans: 'Satoshi', ui-sans-serif, system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
 }
 
-html { scroll-behavior: smooth; background: #080A0B; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+html { background: #080A0B; }
+html.lenis, html.lenis body { height: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
+.lenis.lenis-stopped { overflow: hidden; }
 
 body {
   font-family: var(--font-sans);

@@ -4,13 +4,18 @@ import Spine from './Spine'
 import Footer from './Footer'
 import EntityStrip from './EntityStrip'
 import { ScrollTrigger } from '../lib/gsap'
+import { startSmoothScroll } from '../lib/smooth'
 
 export default function Layout({ page, tone = 'ink', children }) {
   useEffect(() => {
     const refresh = () => ScrollTrigger.refresh()
     document.fonts?.ready.then(refresh)
     window.addEventListener('load', refresh)
-    return () => window.removeEventListener('load', refresh)
+    const stopSmooth = startSmoothScroll()
+    return () => {
+      window.removeEventListener('load', refresh)
+      stopSmooth()
+    }
   }, [])
 
   return (
