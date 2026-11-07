@@ -111,7 +111,7 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
                       onMouseEnter={pic ? (e) => { move(e); setPhoto(pic) } : undefined}
                       onMouseMove={pic ? move : undefined}
                       onMouseLeave={pic ? () => setPhoto(null) : undefined}
-                      className={`group grid gap-1 border-b py-5 transition-colors hover:bg-signal/10 md:grid-cols-12 md:gap-6 ${hair}`}
+                      className={`group grid gap-1 border-b ${compact ? 'py-[30px]' : 'py-5'} transition-colors hover:bg-signal/10 md:grid-cols-12 md:gap-6 ${hair}`}
                     >
                       <span className="flex items-center gap-3 text-lg font-bold leading-snug md:col-span-5">
                         {b.trophy !== false && <span className={dark ? 'text-paper/40' : 'text-ink/40'}><Medal /></span>}
