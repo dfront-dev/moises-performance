@@ -119,7 +119,7 @@ export const collaboration = {
   index: '05 / Colaboração',
   lines: ['Consultoria,', 'formação,', 'palestras.'],
   intro:
-    'Disponível para colaborar com federações, clubes e academias na estruturação da preparação física, na formação de equipas técnicas e em palestras sobre preparação física aplicada a desportos de vento, ondas e alta competição.',
+    'Ao longo dos anos o Moisés colaborou com federações, clubes e academias na estruturação da preparação física, na formação de equipas técnicas e em palestras sobre preparação física aplicada a desportos de vento, ondas e alta competição.',
   items: [
     { title: 'Federações e clubes', text: 'Apoio na estruturação de departamentos de preparação física e no planeamento de época.' },
     { title: 'Equipas técnicas', text: 'Sessões de formação para treinadores sobre periodização, controlo de carga e prevenção de lesão.' },
