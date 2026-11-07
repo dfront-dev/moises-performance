@@ -188,6 +188,6 @@ export const social = {
 export const entities = [
   { name: 'Federação Portuguesa de Vela', logo: 'images/entidades/fpv.png', h: 'h-8 md:h-11' },
   { name: 'Federação Portuguesa de Surf', logo: 'images/entidades/fps.png', h: 'h-7 md:h-9' },
-  { name: 'Comité Paralímpico de Portugal', logo: 'images/entidades/cpp.png', h: 'h-14 md:h-[4.5rem]' },
+  { name: 'Comité Paralímpico de Portugal', logo: 'images/entidades/cpp.png', h: 'h-16 md:h-24' },
   { name: 'CNATRIL', logo: 'images/entidades/cnatril.png', h: 'h-6 md:h-8' },
 ]
