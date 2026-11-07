@@ -18,7 +18,6 @@ export default function EntityStrip() {
   const set = [...entities, ...entities, ...entities]
   return (
     <section aria-label="Entidades com quem trabalhou" className="strip relative overflow-hidden border-t border-paper/10 bg-ink py-10 text-paper md:py-14">
-      <p className="micro mx-auto mb-8 max-w-[1680px] px-5 text-[10px] text-steel md:px-10">Entidades com quem trabalhou</p>
       <div className="flex w-max" style={{ animation: 'marquee 46s linear infinite' }}>
         <ul className="marquee-set flex shrink-0 items-center gap-14 pr-14">
           {set.map((e, i) => (
