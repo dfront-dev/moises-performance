@@ -76,23 +76,23 @@ export default function Hero() {
       {/* portrait */}
       <div data-portrait className="portrait-mask absolute right-0 top-0 -z-10 h-[64svh] w-full md:h-full md:w-[58%]">
         <picture>
-          <source srcSet="images/joao.webp" type="image/webp" />
+          <source srcSet="images/joao-nova.webp" type="image/webp" />
           <img
             data-ghost
             aria-hidden
             alt=""
-            src="images/joao.jpg"
+            src="images/joao-nova.jpg"
             width="1086"
             height="1448"
             className="absolute inset-0 h-full w-full object-cover object-[50%_14%] opacity-0 blur-[14px] grayscale"
           />
         </picture>
         <picture>
-          <source srcSet="images/joao.webp" type="image/webp" />
+          <source srcSet="images/joao-nova.webp" type="image/webp" />
           <img
             data-portrait-img
             alt="João Moisés, fisiologista do exercício, de braços cruzados num espaço de treino"
-            src="images/joao.jpg"
+            src="images/joao-nova.jpg"
             width="1086"
             height="1448"
             fetchpriority="high"
