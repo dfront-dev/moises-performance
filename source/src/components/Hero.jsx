@@ -6,13 +6,13 @@ import DotField from './DotField'
 
 // A few small white squares laid over the portrait. They drift at different speeds as the page scrolls.
 const squares = [
-  { x: 47, y: 16, w: 9, h: 9, d: -70 },
-  { x: 70, y: 31, w: 6, h: 16, d: 90 },
-  { x: 24, y: 40, w: 9, h: 9, d: 55 },
-  { x: 76, y: 58, w: 9, h: 9, d: -45 },
-  { x: 36, y: 66, w: 6, h: 16, d: -95 },
-  { x: 60, y: 79, w: 9, h: 9, d: 70 },
-  { x: 14, y: 24, w: 6, h: 6, d: 35 },
+  { x: 36, y: 60, w: 9, h: 9, d: -60 },
+  { x: 64, y: 55, w: 6, h: 16, d: 80 },
+  { x: 52, y: 70, w: 9, h: 9, d: 50 },
+  { x: 72, y: 78, w: 9, h: 9, d: -45 },
+  { x: 30, y: 76, w: 6, h: 16, d: -85 },
+  { x: 58, y: 86, w: 9, h: 9, d: 60 },
+  { x: 44, y: 52, w: 6, h: 6, d: 30 },
 ]
 
 export default function Hero() {
@@ -87,13 +87,13 @@ export default function Hero() {
 
         <div className="md:col-span-5">
           <div className="relative">
-            <div data-portrait className="relative aspect-[4/5] overflow-hidden bg-paper-2">
+            <div data-portrait className="relative aspect-[4/5] overflow-hidden rounded-[8px] bg-paper-2">
               <picture>
-                <source srcSet="images/joao.webp" type="image/webp" />
+                <source srcSet="images/joao-hero.webp" type="image/webp" />
                 <img
                   data-portrait-img
                   alt="João Moisés, fisiologista do exercício, de braços cruzados num espaço de treino"
-                  src="images/joao.jpg"
+                  src="images/joao-hero.jpg"
                   width="1086"
                   height="1448"
                   fetchpriority="high"

@@ -81,7 +81,7 @@ for (const p of pages) {
     <meta name="robots" content="noindex" data-dev-only />
     <link rel="canonical" href="${site}${p.path}" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="preload" href="./fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin />${p.preload ? '\n    <link rel="preload" as="image" href="./images/joao.webp" type="image/webp" fetchpriority="high" />' : ''}
+    <link rel="preload" href="./fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin />${p.preload ? '\n    <link rel="preload" as="image" href="./images/joao-hero.webp" type="image/webp" fetchpriority="high" />' : ''}
     <style>
       html{background:#F6F4EF}
       #curtain{position:fixed;inset:0;z-index:200;background:#0F1213;color:#F6F4EF;display:grid;place-items:center;animation:curtain-failsafe .01s 6s forwards}
