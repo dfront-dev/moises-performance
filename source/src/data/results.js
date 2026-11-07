@@ -47,7 +47,7 @@ export const results = [
         label: 'Surf',
         title: 'Referências nacionais',
         rows: [
-          ['Teresa Bonvalot', 'Bicampeã europeia júnior 2016 e 2017, campeã nacional (2015 a 2020)'],
+          ['Teresa Bonvalot', 'Bicampeã europeia júnior 2016 e 2017, campeã nacional (2015 a 2020)', 'teresa-bonvalot'],
           ['Vasco Ribeiro', 'Campeão mundial e europeu júnior, e nacional, em 2014'],
           ['Pedro Henrique', 'Campeão europeu 2015, vice-campeão mundial nos ISA Games'],
           ['Nicolau von Rupp', 'Vice-campeão mundial, ISA World Surfing Games 2015'],
