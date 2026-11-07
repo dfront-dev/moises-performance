@@ -1,0 +1,1 @@
+import{t as e}from"./main-CiEe9k99.js";import{r as t,t as n}from"./LegalPage-B3pPbVwY.js";var r=e();function i(){return(0,r.jsx)(n,{page:`termos`,label:`Termos e condições`,lines:[`Termos e`,`condições.`],data:t})}export{i as default};
