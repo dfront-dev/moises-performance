@@ -1,15 +1,18 @@
 import { useEffect, useRef } from 'react'
 import { hero } from '../data/content'
-import { system } from '../data/content'
 import { CharLines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 import DotField from './DotField'
 
-// Three readings placed on the portrait: they borrow the names of the method's own steps.
-const marks = [
-  { label: system.steps[1].title, x: 60, y: 21, side: 'right' },
-  { label: system.steps[2].title, x: 60, y: 57, side: 'right' },
-  { label: system.steps[4].title, x: 41, y: 82, side: 'left' },
+// A few small white squares laid over the portrait. They drift at different speeds as the page scrolls.
+const squares = [
+  { x: 47, y: 16, w: 9, h: 9, d: -70 },
+  { x: 70, y: 31, w: 6, h: 16, d: 90 },
+  { x: 24, y: 40, w: 9, h: 9, d: 55 },
+  { x: 76, y: 58, w: 9, h: 9, d: -45 },
+  { x: 36, y: 66, w: 6, h: 16, d: -95 },
+  { x: 60, y: 79, w: 9, h: 9, d: 70 },
+  { x: 14, y: 24, w: 6, h: 6, d: 35 },
 ]
 
 export default function Hero() {
@@ -23,9 +26,7 @@ export default function Hero() {
       .from(q('[data-fade]'), { opacity: 0, y: 14, stagger: 0.1, duration: 1 }, 0.8)
       .from(q('[data-rule]'), { scaleX: 0, transformOrigin: 'left', duration: 1.6, ease: 'power3.inOut' }, 0.6)
       .from(q('[data-plus]'), { opacity: 0, scale: 0.4, stagger: 0.08, duration: 0.8 }, 1.2)
-      .from(q('[data-mark-dot]'), { scale: 0, stagger: 0.35, duration: 0.7, ease: 'back.out(2.2)' }, 2)
-      .from(q('[data-mark-line]'), { scaleX: 0, transformOrigin: 'var(--o)', stagger: 0.35, duration: 0.8, ease: 'power3.inOut' }, 2.2)
-      .from(q('[data-mark-label]'), { opacity: 0, x: (i, el) => (el.dataset.side === 'left' ? 8 : -8), stagger: 0.35, duration: 0.8 }, 2.4)
+      .from(q('[data-sq]'), { scale: 0, opacity: 0, stagger: 0.18, duration: 0.7, ease: 'back.out(2)' }, 1.9)
 
     const start = () => tl.play()
     if (window.__jmpReady) start()
@@ -33,6 +34,11 @@ export default function Hero() {
 
     // soft parallax on the portrait only (a few percent)
     gsap.to(q('[data-portrait-img]'), { yPercent: 4, ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true } })
+
+    // the squares drift and thin out with the scroll
+    q('[data-sq]').forEach((el) => {
+      gsap.to(el, { y: Number(el.dataset.d), opacity: 0.25, ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: 0.6 } })
+    })
 
     // letters wake up near the pointer
     let cleanup
@@ -99,30 +105,13 @@ export default function Hero() {
             {[['-left-3 -top-3'], ['-right-3 -top-3'], ['-bottom-3 -left-3'], ['-bottom-3 -right-3']].map(([pos]) => (
               <span key={pos} data-plus aria-hidden className={`absolute ${pos} hidden text-[15px] leading-none text-ink/50 md:block`}>+</span>
             ))}
-            {/* readings */}
+            {/* white squares, reactive to scroll */}
             <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
-              {marks.map((mk) => (
-                <div key={mk.label} className="absolute" style={{ left: `${mk.x}%`, top: `${mk.y}%` }}>
-                  <span data-mark-dot className="absolute -left-[5px] -top-[5px] block h-[10px] w-[10px] rounded-full bg-signal ring-2 ring-paper">
-                    <span className="ping absolute inset-0 rounded-full border border-signal" />
-                  </span>
-                  <span
-                    data-mark-line
-                    style={{ '--o': mk.side === 'left' ? 'right' : 'left' }}
-                    className={`absolute top-0 block h-px w-10 bg-ink/70 ${mk.side === 'left' ? 'right-[6px]' : 'left-[6px]'}`}
-                  />
-                  <span
-                    data-mark-label
-                    data-side={mk.side}
-                    className={`micro absolute -top-[6px] whitespace-nowrap bg-paper/85 px-2 py-1 text-[9px] text-ink ${mk.side === 'left' ? 'right-[54px]' : 'left-[54px]'}`}
-                  >
-                    {mk.label}
-                  </span>
-                </div>
+              {squares.map((q, i) => (
+                <span key={i} data-sq data-d={q.d} className="absolute block bg-white shadow-[0_0_0_1px_rgba(15,18,19,0.08)]" style={{ left: `${q.x}%`, top: `${q.y}%`, width: q.w, height: q.h }} />
               ))}
             </div>
           </div>
-          <p data-fade className="micro mt-5 text-[10px] text-steel">João Moisés</p>
         </div>
       </div>
     </section>
