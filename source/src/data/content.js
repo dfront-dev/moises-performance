@@ -117,7 +117,7 @@ export const differentiators = {
 
 export const collaboration = {
   index: '05 / Colaboração',
-  lines: ['Consultoria,', 'formação,', 'palestras.'],
+  lines: ['Consultoria,', 'formação &', 'workshops'],
   intro:
     'Ao longo dos anos o Moisés colaborou com federações, clubes e academias na estruturação da preparação física, na formação de equipas técnicas e em palestras sobre preparação física aplicada a desportos de vento, ondas e alta competição.',
   items: [
