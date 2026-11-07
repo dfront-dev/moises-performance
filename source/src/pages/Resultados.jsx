@@ -1,7 +1,6 @@
 import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import ResultsBlock from '../components/ResultsBlock'
-import CtaBand from '../components/CtaBand'
 import Testimonials from '../components/Testimonials'
 import { results } from '../data/results'
 
@@ -20,12 +19,6 @@ export default function Resultados() {
       <ResultsBlock data={results[1]} tone="paper" />
       <ResultsBlock data={results[2]} tone="ink" />
       <Testimonials />
-      <CtaBand
-        lines={['Queres resultados', 'assim na tua equipa?']}
-        text="Vamos falar dos objetivos da tua época."
-        primary={{ label: 'Ver serviços', href: 'servicos.html' }}
-        secondary={{ label: 'Contactar', href: 'contacto.html' }}
-      />
     </Layout>
   )
 }
