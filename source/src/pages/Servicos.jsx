@@ -3,7 +3,6 @@ import PageHeader from '../components/PageHeader'
 import ServiceTable from '../components/ServiceTable'
 import ServiceDetail from '../components/ServiceDetail'
 import ResultsBlock from '../components/ResultsBlock'
-import CtaBand from '../components/CtaBand'
 import { services, details, intro, statement, otherAreas } from '../data/services'
 
 export default function Servicos() {
@@ -23,12 +22,6 @@ export default function Servicos() {
         <p className="display mx-auto max-w-[1680px] text-[clamp(2rem,6vw,7rem)] leading-[0.95]">{statement}</p>
       </section>
       <ResultsBlock data={otherAreas} tone="paper" />
-      <CtaBand
-        lines={['Qual é o', 'serviço certo?']}
-        text="Conta o essencial e o João indica a melhor forma de intervir."
-        primary={{ label: 'Falar com o João', href: 'contacto.html' }}
-        secondary={{ label: 'Ver resultados', href: 'resultados.html' }}
-      />
     </Layout>
   )
 }

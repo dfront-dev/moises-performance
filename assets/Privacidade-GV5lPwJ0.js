@@ -1,1 +1,0 @@
-import{t as e}from"./main-CPVYuQM_.js";import{n as t,t as n}from"./LegalPage-di0ZC2dG.js";var r=e();function i(){return(0,r.jsx)(n,{page:`privacidade`,label:`Política de privacidade`,lines:[`Política de`,`privacidade.`],data:t})}export{i as default};
