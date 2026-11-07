@@ -12,29 +12,12 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
   const cta = 'contacto.html'
 
   const [solid, setSolid] = useState(false)
-  const [hidden, setHidden] = useState(false)
   const [open, setOpen] = useState(false)
   const light = paper && !open
 
   useEffect(() => {
-    document.documentElement.dataset.navHidden = hidden && !open ? '1' : '0'
-  }, [hidden, open])
-
-  useEffect(() => {
-    let last = window.scrollY
-    let ticking = false
-    const onScroll = () => {
-      if (ticking) return
-      ticking = true
-      requestAnimationFrame(() => {
-        const y = window.scrollY
-        setSolid(y > 40)
-        setHidden(y > 240 && y > last + 4)
-        if (y < last - 4) setHidden(false)
-        last = y
-        ticking = false
-      })
-    }
+    const onScroll = () => setSolid(window.scrollY > 40)
+    onScroll()
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
@@ -47,28 +30,30 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
   return (
     <>
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${hidden && !open ? '-translate-y-full' : 'translate-y-0'} ${open ? 'bg-ink/90 backdrop-blur-md' : solid ? (paper ? 'bg-paper/90 backdrop-blur-md' : 'bg-ink/90 backdrop-blur-md') : 'bg-transparent'}`}
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${open ? 'bg-ink/90 backdrop-blur-md' : solid ? (paper ? 'bg-paper/90 backdrop-blur-md' : 'bg-ink/90 backdrop-blur-md') : 'bg-transparent'}`}
     >
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-signal focus:px-4 focus:py-2 focus:text-ink">
         Saltar para o conteúdo
       </a>
-      <div className="mx-auto flex max-w-[1680px] items-center justify-between px-5 py-4 md:grid md:grid-cols-[1fr_auto_1fr] md:px-10 md:py-5">
+      <div className={`mx-auto flex max-w-[1680px] items-center justify-between px-5 py-4 md:grid md:grid-cols-[1fr_auto_1fr] md:px-10 ${solid ? "md:py-3" : "md:py-5"} transition-[padding] duration-500`}>
         <a href={home ? '#top' : 'index.html'} aria-label="JMP, João Moisés Performance. Início" className="block md:justify-self-start">
           <img src={light ? 'images/jmp-logo.svg' : 'images/jmp-logo-light.svg'} alt="JMP" width="72" height="29" className="h-8 w-auto md:h-10" />
         </a>
 
-        <div className="hidden flex-col items-center text-center md:flex">
-          <p className="text-[clamp(15px,1.45vw,21px)] font-semibold leading-tight tracking-[-0.01em] text-ink">
-            João Moisés <span aria-hidden className="mx-[0.55em] text-ink/60">•</span> Sport Physiologist
-          </p>
-          <nav aria-label="Principal" className="mt-[2px] flex items-center text-[clamp(15px,1.45vw,21px)] font-semibold leading-tight tracking-[-0.01em]">
+        <div className={`hidden flex-col items-center text-center md:flex ${light ? 'text-ink' : 'text-paper'}`}>
+          <div className={`grid transition-[grid-template-rows,opacity,margin] duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] ${solid ? 'mb-0 grid-rows-[0fr] opacity-0' : 'mb-[2px] grid-rows-[1fr] opacity-100'}`} aria-hidden={solid}>
+            <p className="overflow-hidden text-[clamp(15px,1.45vw,21px)] font-semibold leading-tight tracking-[-0.01em]">
+              João Moisés <span aria-hidden className="mx-[0.55em] opacity-60">•</span> Sport Physiologist
+            </p>
+          </div>
+          <nav aria-label="Principal" className="flex items-center text-[clamp(15px,1.45vw,21px)] font-semibold leading-tight tracking-[-0.01em]">
             {links.map((l, i) => (
               <span key={l.key} className="flex items-center">
-                {i > 0 && <span aria-hidden className="mx-[0.55em] text-ink/35">•</span>}
+                {i > 0 && <span aria-hidden className="mx-[0.55em] opacity-35">•</span>}
                 <a
                   href={l.href}
                   aria-current={page === l.key ? 'page' : undefined}
-                  className={`transition-colors duration-300 ${page === l.key ? 'text-ink' : 'text-ink/40 hover:text-ink'}`}
+                  className={`transition-opacity duration-300 ${page === l.key ? 'opacity-100' : 'opacity-40 hover:opacity-100'}`}
                 >
                   {l.label}
                 </a>
