@@ -80,7 +80,7 @@ export default function Coach({ index, lean = false }) {
                 <span aria-hidden className="absolute bottom-0 left-0 h-5 w-5 border-b-2 border-l-2 border-signal" />
                 <span aria-hidden className="absolute bottom-0 right-0 h-5 w-5 border-b-2 border-r-2 border-signal" />
                 <p className="micro absolute bottom-5 left-5 bg-signal px-3 py-2 text-[10px] text-ink">
-                  Fisiologista do Exercício / Preparador Físico
+                  Fisiologista do Exercício / Performance Physiology
                 </p>
               </div>
             </div>

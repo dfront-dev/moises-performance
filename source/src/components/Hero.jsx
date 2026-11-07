@@ -91,7 +91,7 @@ export default function Hero() {
           <source srcSet="images/joao.webp" type="image/webp" />
           <img
             data-portrait-img
-            alt="João Moisés, fisiologista do exercício e preparador físico, de braços cruzados num espaço de treino"
+            alt="João Moisés, fisiologista do exercício, de braços cruzados num espaço de treino"
             src="images/joao.jpg"
             width="1086"
             height="1448"

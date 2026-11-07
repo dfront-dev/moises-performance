@@ -13,7 +13,7 @@ export default function Sobre() {
         label="Sobre"
         lines={['Da avaliação', 'à prática.']}
         classes={['', 'text-signal']}
-        intro="Decisões construídas em cima de dados e do terreno. Fisiologista do exercício e preparador físico, com mais de 15 anos de alta competição."
+        intro="Decisões construídas em cima de dados e do terreno. Fisiologista do exercício, com mais de 15 anos de alta competição."
       />
       <Coach index="01 / Percurso" />
       <System />

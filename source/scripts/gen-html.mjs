@@ -4,43 +4,43 @@ const site = 'https://moises-performance.com/'
 const pages = [
   {
     file: 'index.html', page: 'home', path: '',
-    title: 'JMP, João Moisés Performance | Preparador físico para alto rendimento',
-    desc: 'Coaching de precisão para quem exige mais do corpo e da mente. João Moisés, fisiologista do exercício e preparador físico, com mais de 15 anos de alta competição e três ciclos Olímpicos.',
-    h1: 'Preparador físico para alto rendimento.',
-    body: '<p>JMP, João Moisés Performance. Fisiologista do exercício e preparador físico, com mais de 15 anos de experiência em alta competição e três ciclos Olímpicos (Rio 2016, Tóquio 2020, Paris 2024).</p>',
+    title: 'JMP, João Moisés Performance Physiology | Fisiologia aplicada à performance',
+    desc: 'João Moisés Performance Physiology. Fisiologia aplicada à performance: avaliar, interpretar e transformar informação fisiológica em decisões concretas de treino, em parceria com atletas, treinadores e equipas.',
+    h1: 'Fisiologia aplicada à performance.',
+    body: '<p>JMP, João Moisés Performance Physiology. Fisiologista do exercício, com mais de 15 anos de experiência em alta competição e três ciclos Olímpicos (Rio 2016, Tóquio 2020, Paris 2024). Avaliar, interpretar e transformar informação fisiológica em decisões concretas de treino, em parceria com atletas, treinadores e equipas.</p>',
     jsonld: true, preload: true,
   },
   {
     file: 'servicos.html', page: 'servicos', path: 'servicos.html',
-    title: 'Serviços | JMP, João Moisés Performance',
+    title: 'Serviços | JMP, João Moisés Performance Physiology',
     desc: 'Consultoria estratégica de otimização do treino, avaliação física e fisiológica presencial e acompanhamento integrado de performance. Fisiologia aplicada à performance.',
     h1: 'Serviços de performance.',
     body: '<ul><li>Consultoria estratégica de otimização do treino: compreender e orientar. Online, pontual ou periódica.</li><li>Avaliação física e fisiológica presencial: avaliar e aprofundar.</li><li>Acompanhamento Integrado de Performance: acompanhar e otimizar, de forma continuada, personalizada e premium.</li></ul>',
   },
   {
     file: 'resultados.html', page: 'resultados', path: 'resultados.html',
-    title: 'Resultados | JMP, João Moisés Performance',
+    title: 'Resultados | JMP, João Moisés Performance Physiology',
     desc: 'Resultados na Vela Olímpica (Paris 2024, Tóquio 2020, Rio 2016) e no Surf, Padel e outras modalidades. Resultados dos atletas e das respetivas equipas.',
     h1: 'Resultados desportivos.',
     body: '<p>Três ciclos Olímpicos na Vela e um percurso de referência no Surf nacional e internacional, Padel e outras modalidades.</p>',
   },
   {
     file: 'sobre.html', page: 'sobre', path: 'sobre.html',
-    title: 'Sobre | JMP, João Moisés Performance',
+    title: 'Sobre | JMP, João Moisés Performance Physiology',
     desc: 'Perfil, método e formação de João Moisés, fisiologista do exercício e preparador físico com mais de 15 anos de experiência em alta competição.',
     h1: 'Da avaliação à prática.',
     body: '<p>João Moisés, fisiologista do exercício e preparador físico. Preparador Físico da Federação Portuguesa de Vela. Mestrado em Treino Desportivo (Alto Rendimento).</p>',
   },
   {
     file: 'contacto.html', page: 'contacto', path: 'contacto.html',
-    title: 'Contacto | JMP, João Moisés Performance',
+    title: 'Contacto | JMP, João Moisés Performance Physiology',
     desc: 'Contacta João Moisés para acompanhamento de atletas, federações e estruturas técnicas, em Portugal e internacionalmente.',
     h1: 'O teu próximo nível começa aqui.',
     body: '<p><a href="mailto:joaomoises13@gmail.com">joaomoises13@gmail.com</a> · +351 918 669 143</p>',
   },
   {
     file: 'testemunhos.html', page: 'testemunhos', path: 'testemunhos.html',
-    title: 'Testemunhos | JMP, João Moisés Performance',
+    title: 'Testemunhos | JMP, João Moisés Performance Physiology',
     desc: 'Testemunhos de atletas, treinadores e federações sobre o acompanhamento de João Moisés.',
     h1: 'Testemunhos.',
     body: '<p>Página em construção, a reunir testemunhos reais e autorizados.</p>',
@@ -53,12 +53,12 @@ const jsonld = `
         "@context": "https://schema.org",
         "@type": "Person",
         "name": "João Moisés",
-        "jobTitle": "Fisiologista do Exercício e Preparador Físico",
+        "jobTitle": "Fisiologista do Exercício",
         "url": "${site}",
         "email": "joaomoises13@gmail.com",
         "telephone": "+351918669143",
         "worksFor": { "@type": "Organization", "name": "Federação Portuguesa de Vela" },
-        "brand": { "@type": "Brand", "name": "JMP, João Moisés Performance" }
+        "brand": { "@type": "Brand", "name": "JMP, João Moisés Performance Physiology" }
       }
     </script>`
 

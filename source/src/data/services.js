@@ -57,6 +57,9 @@ export const serviceRows = [
 export const tableNote =
   'A diferença entre os serviços é o tipo e a profundidade da intervenção, não o estatuto ou o nível do atleta.'
 
+export const partnerNote =
+  'O João não pretende substituir o treinador. Funciona como parceiro especializado, acrescentando conhecimento fisiológico, análise e acompanhamento ao processo de treino.'
+
 export const details = {
   consultoria: {
     intro:

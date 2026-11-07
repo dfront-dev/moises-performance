@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { services, serviceRows, tableNote } from '../data/services'
+import { services, serviceRows, tableNote, partnerNote } from '../data/services'
 import { EMAIL } from '../data/content'
 import { useGsap, gsap } from '../lib/useGsap'
 
@@ -91,7 +91,10 @@ export default function ServiceTable() {
           ))}
         </div>
 
-        <p className="mt-10 max-w-2xl border-l-[3px] border-signal pl-5 text-base leading-relaxed text-paper/80">{tableNote}</p>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <p className="max-w-xl border-l-[3px] border-signal pl-5 text-base leading-relaxed text-paper/80">{tableNote}</p>
+          <p className="max-w-xl border-l-[3px] border-signal pl-5 text-base leading-relaxed text-paper/80">{partnerNote}</p>
+        </div>
       </div>
     </section>
   )

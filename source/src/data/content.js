@@ -10,21 +10,21 @@ export const nav = [
 ]
 
 export const hero = {
-  index: 'Performance humana / 001',
+  index: 'Performance Physiology / 001',
   motto: 'Precisão. Disciplina. Progresso.',
-  lines: ['Preparador físico', 'para alto', 'rendimento.'],
-  support: 'João Moisés Performance. Fisiologista do exercício e preparador físico.',
-  role: 'João Moisés, Fisiologista do Exercício e Preparador Físico',
+  lines: ['Fisiologia', 'aplicada à', 'performance.'],
+  support: 'João Moisés Performance Physiology. Avaliar, interpretar e transformar informação fisiológica em decisões concretas de treino.',
+  role: 'João Moisés, Fisiologista do Exercício, Performance Physiology',
   primary: { label: 'Explorar serviços', href: 'servicos.html' },
 }
 
 export const philosophy = {
   index: '02 / Filosofia',
-  lines: ['Além do', 'treino.'],
+  lines: ['Da fisiologia', 'à decisão.'],
   statement:
-    'Performance não é treinar mais. É compreender o corpo, otimizar cada variável e construir as bases de uma progressão sustentável.',
+    'O valor está em avaliar, interpretar e identificar limitadores, e em transformar informação fisiológica em decisões concretas para o treino.',
   note:
-    'Treino, recuperação, sono, alimentação, contexto emocional, saúde e exigência competitiva fazem parte do mesmo processo.',
+    'Ciência e dados são fundamentais. A observação no terreno e a capacidade de adaptar o trabalho à realidade de cada atleta valem tanto como eles. A diferença está em ligar as duas dimensões.',
 }
 
 export const system = {
@@ -52,7 +52,7 @@ export const coach = {
   index: '05 / Sobre',
   lines: ['A mente', 'por trás', 'do método.'],
   body: [
-    'Fisiologista do exercício e preparador físico, com mais de 15 anos de experiência no treino e acompanhamento de atletas de alta competição.',
+    'Fisiologista do exercício, com mais de 15 anos de experiência na avaliação, interpretação e acompanhamento de atletas de alta competição.',
     'Desde 2015 especializado na preparação física e fisiológica aplicada à Vela Olímpica, como Preparador Físico da Federação Portuguesa de Vela. Em paralelo, trabalho com Surf, Ténis, Padel e Freediving.',
     'Presente no terreno: observa, interpreta, adapta e garante continuidade entre avaliação, planeamento e prática.',
   ],
@@ -145,3 +145,35 @@ export const placeholders = [
   ['[Nome do atleta]', '[Modalidade / função]'],
   ['[Pai ou mãe de atleta]', '[Serviço contratado]'],
 ]
+
+export const audiences = {
+  lines: ['Atletas,', 'treinadores', 'e equipas.'],
+  intro:
+    'Cada um decide de forma diferente e precisa de coisas diferentes. O João adapta a forma de intervir, sem nunca substituir o papel do treinador.',
+  items: [
+    {
+      title: 'Atletas',
+      text: 'Clareza sobre o que pode estar a limitar a evolução e orientação especializada sobre como melhorar o processo de treino.',
+      href: 'servicos.html#consultoria',
+      cta: 'Consultoria e avaliação',
+    },
+    {
+      title: 'Treinadores',
+      text: 'Um parceiro especializado, não um substituto. Acrescenta conhecimento fisiológico, análise e acompanhamento ao processo de treino, e o treinador decide como integrar as recomendações.',
+      href: 'servicos.html#acompanhamento',
+      cta: 'Acompanhamento integrado',
+    },
+    {
+      title: 'Equipas, clubes e federações',
+      text: 'Integração na estrutura de performance, com articulação regular com treinadores e restantes profissionais, e formação de equipas técnicas.',
+      href: 'sobre.html',
+      cta: 'Consultoria e formação',
+    },
+  ],
+}
+
+export const endurance = {
+  lines: ['Endurance,', 'ciclismo', 'e triatlo.'],
+  text:
+    'Além da Vela e do Surf, o João está a desenvolver uma especialização em endurance, com foco em ciclismo e triatlo: avaliação e análise fisiológica ao serviço de atletas e treinadores, com protocolos específicos de ciclismo, corrida e natação sempre que há uma necessidade concreta.',
+}

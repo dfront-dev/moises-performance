@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto flex max-w-[1680px] flex-col justify-between gap-10 px-5 pb-6 pt-14 md:flex-row md:items-start md:px-10">
         <div>
           <img src="images/jmp-logo-white.png" alt="JMP" width="177" height="59" loading="lazy" className="h-7 w-auto" />
-          <p className="micro mt-4 text-[10px] text-steel">João Moisés Performance</p>
+          <p className="micro mt-4 text-[10px] text-steel">João Moisés Performance Physiology</p>
         </div>
         <ul className="flex flex-wrap gap-x-8 gap-y-3">
           {footerLinks.map((l) => (
