@@ -73,7 +73,7 @@ export default function Expertise() {
                 </div>
               </a>
 
-              <h3 data-text className="display mt-6 text-[1.75rem] leading-[0.92] md:text-[clamp(1.5rem,2.6vw,3rem)]">
+              <h3 data-text className="display subhead mt-6 text-[1.5rem] md:text-[clamp(1.3rem,2.3vw,2.6rem)]">
                 <a href={`servicos.html#${s.id}`} className="transition-colors hover:text-[#007b6c]">{s.short}</a>
               </h3>
               <p data-text className="micro mt-3 text-[10.5px] deep-signal">{s.full}</p>

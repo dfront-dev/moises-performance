@@ -33,7 +33,7 @@ export default function Differentiators() {
             <div key={it.n} data-item className="relative pt-6">
               <span data-rule aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-signal" />
               <span data-body className="display text-[clamp(3rem,5vw,5.5rem)] leading-none text-[#007b6c]">{it.n}</span>
-              <h3 data-body className="display mt-6 text-[clamp(1.6rem,2.3vw,2.4rem)] leading-none">{it.title}</h3>
+              <h3 data-body className="display subhead mt-6 text-[clamp(1.4rem,2vw,2.1rem)]">{it.title}</h3>
               <p data-body className="mt-4 max-w-sm text-[15px] leading-relaxed text-ink/70">{it.text}</p>
             </div>
           ))}

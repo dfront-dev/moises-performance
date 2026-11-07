@@ -31,7 +31,7 @@ export default function Collaboration() {
           {c.items.map((it, i) => (
             <div key={it.title} data-fade className="group border border-paper/15 border-t-[4px] border-t-signal p-8 transition-colors hover:bg-paper/[0.04]">
               <span className="micro text-[10px] text-signal">0{i + 1}</span>
-              <h3 className="display mt-6 text-[clamp(1.5rem,2vw,2.1rem)] leading-none">{it.title}</h3>
+              <h3 className="display subhead mt-6 text-[clamp(1.3rem,1.8vw,1.85rem)]">{it.title}</h3>
               <p className="mt-4 text-[15px] leading-relaxed text-paper/70">{it.text}</p>
             </div>
           ))}

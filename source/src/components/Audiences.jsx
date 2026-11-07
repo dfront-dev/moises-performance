@@ -34,7 +34,7 @@ export default function Audiences() {
         <div className="mt-20 grid gap-6 md:mt-28 md:grid-cols-3">
           {c.items.map((it) => (
             <a key={it.title} data-item href={it.href} className="group flex flex-col border border-paper/15 border-t-[4px] border-t-signal p-8 transition-colors hover:bg-paper/[0.04]">
-              <h3 className="display text-[clamp(1.5rem,2vw,2.2rem)] leading-[0.98]">{it.title}</h3>
+              <h3 className="display subhead text-[clamp(1.3rem,1.8vw,1.9rem)]">{it.title}</h3>
               <p className="mt-5 flex-grow text-[15px] leading-relaxed text-paper/75">{it.text}</p>
               <span className="micro mt-8 inline-flex items-center gap-3 text-signal">
                 {it.cta} <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>

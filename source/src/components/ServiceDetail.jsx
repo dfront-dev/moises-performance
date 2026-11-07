@@ -9,7 +9,7 @@ function Block({ b, dark }) {
   return (
     <div>
       <p data-fade className="micro inline-block bg-signal px-3 py-2 text-[10.5px] text-ink">{b.label}</p>
-      <h3 data-fade className="display mt-6 max-w-2xl text-[clamp(1.5rem,2.4vw,2.6rem)] leading-[0.98]">{b.title}</h3>
+      <h3 data-fade className="display subhead mt-6 max-w-2xl text-[clamp(1.3rem,2.1vw,2.3rem)]">{b.title}</h3>
 
       {b.kind === 'steps' && (
         <ol className={`mt-8 border-t ${hair}`}>

@@ -51,7 +51,7 @@ export default function System() {
                 </span>
                 <span data-body className="micro mt-3 text-signal/80">{s.tag}</span>
               </div>
-              <h3 data-body className="display mt-6 text-[clamp(1.6rem,2.4vw,2.4rem)] leading-none">{s.title}</h3>
+              <h3 data-body className="display subhead mt-6 text-[clamp(1.4rem,2.1vw,2.1rem)]">{s.title}</h3>
               <p data-body className="mt-4 max-w-xs text-[15px] leading-relaxed text-paper/65">{s.text}</p>
             </li>
           ))}

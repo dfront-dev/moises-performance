@@ -83,7 +83,7 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
             {data.blocks.map((b) => (
               <div key={b.label}>
                 <p data-fade className="micro inline-block bg-signal px-3 py-2 text-[10.5px] text-ink">{b.label}</p>
-                <h3 data-fade className="display mt-6 max-w-2xl text-[clamp(1.7rem,2.8vw,3rem)] leading-[0.95]">{b.title}</h3>
+                <h3 data-fade className="display subhead mt-6 max-w-2xl text-[clamp(1.5rem,2.4vw,2.6rem)]">{b.title}</h3>
                 <ul data-rowset className={`mt-8 border-t ${hair}`}>
                   {b.rows.map(([who, what, pic]) => (
                     <li
