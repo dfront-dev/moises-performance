@@ -67,7 +67,23 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
         </div>
 
         <div className="mt-20 grid gap-16 md:mt-28 md:grid-cols-12">
-          <div className="space-y-20 md:col-span-12">
+          {data.image && (
+          <div className="md:col-span-5">
+            <div className="md:sticky md:top-28">
+              <div data-photo className="card group relative aspect-[4/5] overflow-hidden bg-ink">
+                <picture>
+                  <source srcSet={`images/${data.image}.webp`} type="image/webp" />
+                  <img src={`images/${data.image}.jpg`} alt={data.alt} loading="lazy" decoding="async" className="photo absolute inset-0 h-[112%] w-full object-cover" />
+                </picture>
+                <div aria-hidden className="tint absolute inset-0" />
+                <span aria-hidden className="absolute left-0 top-0 h-5 w-5 border-l-2 border-t-2 border-signal" />
+                <span aria-hidden className="absolute bottom-0 right-0 h-5 w-5 border-b-2 border-r-2 border-signal" />
+              </div>
+            </div>
+          </div>
+          )}
+
+          <div className={`space-y-20 md:col-span-7 ${data.image ? '' : 'md:col-start-6'}`}>
             {data.blocks.map((b) => (
               <div key={b.label}>
                 <p data-fade className="micro inline-block bg-signal px-3 py-2 text-[10.5px] text-ink">{b.label}</p>
@@ -89,6 +105,15 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
               <div data-fade className="bg-signal p-8 text-ink md:p-10">
                 <p className="micro text-[10.5px]">{data.highlight.label}</p>
                 <p className="display mt-4 text-[clamp(1.5rem,2.6vw,2.8rem)] leading-[0.98]">{data.highlight.text}</p>
+              </div>
+            )}
+            {data.image2 && (
+              <div data-photo className="card group relative aspect-[4/3] overflow-hidden bg-ink">
+                <picture>
+                  <source srcSet={`images/${data.image2}.webp`} type="image/webp" />
+                  <img src={`images/${data.image2}.jpg`} alt={data.alt2} loading="lazy" decoding="async" className="photo absolute inset-0 h-[112%] w-full object-cover" />
+                </picture>
+                <div aria-hidden className="tint absolute inset-0" />
               </div>
             )}
           </div>
