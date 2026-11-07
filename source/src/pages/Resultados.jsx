@@ -15,9 +15,9 @@ export default function Resultados() {
         imagePos="50% 0%"
         intro="Três ciclos Olímpicos na Vela, um percurso de referência no Surf nacional e internacional e resultados no Padel."
       />
-      <ResultsBlock data={results[0]} tone="ink" />
+      <ResultsBlock data={results[0]} tone="paper" />
       <ResultsBlock data={results[1]} tone="paper" />
-      <ResultsBlock data={results[2]} tone="ink" />
+      <ResultsBlock data={results[2]} tone="paper" />
       <Testimonials />
     </Layout>
   )
