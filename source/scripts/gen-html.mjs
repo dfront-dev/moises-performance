@@ -81,6 +81,8 @@ for (const p of pages) {
     <meta name="robots" content="noindex" data-dev-only />
     <link rel="canonical" href="${site}${p.path}" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <link rel="preload" href="./fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin />${p.preload ? '\n    <link rel="preload" as="image" href="./images/joao.webp" type="image/webp" fetchpriority="high" />' : ''}
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_PT" />
