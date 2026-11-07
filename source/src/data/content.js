@@ -142,6 +142,7 @@ export const testimonials = [
     name: 'José Ferreira',
     role: 'Surfista, Campeão Nacional Pro',
     initials: 'JF',
+    photo: 'images/testemunhos/jose-ferreira',
   },
 ]
 
