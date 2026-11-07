@@ -32,9 +32,9 @@ export default function Testimonials({ tone = 'ink' }) {
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-5 md:mt-20 md:grid-cols-2 lg:grid-cols-3">
+        <div className={`mt-14 grid gap-5 md:mt-20 md:grid-cols-2 ${testimonials.length > 2 ? 'lg:grid-cols-3' : ''}`}>
           {testimonials.map((t) => (
-            <figure key={t.name} data-card className={`group relative border border-t-signal/60 p-8 md:p-10 ${paper ? 'border-ink/10 bg-ink/[0.03] text-ink' : 'border-paper/10 bg-paper/[0.035] text-paper'} ${testimonials.length === 1 ? 'max-w-3xl md:col-span-2 lg:col-span-3' : 'md:col-span-2 lg:col-span-1'}`}>
+            <figure key={t.name} data-card className={`group relative border border-t-signal/60 p-8 md:p-10 ${paper ? 'border-ink/10 bg-ink/[0.03] text-ink' : 'border-paper/10 bg-paper/[0.035] text-paper'} ${testimonials.length === 1 ? 'max-w-3xl md:col-span-2 lg:col-span-3' : 'md:col-span-1'}`}>
               <span aria-hidden className={`display block text-4xl leading-none ${paper ? 'text-signal' : 'text-signal/60'}`}>"</span>
               <blockquote className={`mt-4 text-[15px] font-light leading-relaxed md:text-lg md:leading-relaxed ${paper ? 'text-ink/80' : 'text-paper/80'}`}>{t.quote}</blockquote>
               <figcaption className="mt-8 flex items-center gap-4">

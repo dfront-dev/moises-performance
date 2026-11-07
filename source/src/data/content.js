@@ -136,6 +136,13 @@ export const testimonials = [
     initials: 'SS',
     photo: 'images/testemunhos/sebastiao-seguro',
   },
+  {
+    quote:
+      'Para além da relação pessoal criada, que me fortaleceu como atleta e pessoa, criei com o Moisés uma base física que me sustentou não só a carreira competitiva, mas também após a mesma terminar. Passaram 10 anos e ainda nunca tive uma lesão.',
+    name: 'José Ferreira',
+    role: 'Surfista, Campeão Nacional Pro',
+    initials: 'JF',
+  },
 ]
 
 export const placeholders = [
