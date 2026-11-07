@@ -15,8 +15,8 @@ export const results = [
         label: 'Paris 2024',
         title: 'Quatro embarcações, um resultado coletivo de destaque',
         rows: [
-          ['Diogo Costa & Carolina João', '5.º lugar, 470 Mixed'],
-          ['Eduardo Marques', '11.º lugar, ILCA 7'],
+          ['Diogo Costa & Carolina João', '5.º lugar, 470 Mixed', 'diogo-carolina'],
+          ['Eduardo Marques', '11.º lugar, ILCA 7', 'eduardo-marques'],
           ['Mafalda Pires de Lima', '14.º lugar, Formula Kite'],
           ['Hernán Umpierre & Fernando Diz (URU)', '10.º lugar, 49er'],
         ],
