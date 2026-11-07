@@ -2,6 +2,15 @@ import { useRef } from 'react'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 
+const Trophy = () => (
+  <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden className="shrink-0">
+    <path d="M8 4h8v5a4 4 0 0 1-8 0V4Z" />
+    <path d="M8 5.5H5.5a1 1 0 0 0-1 1V7a3 3 0 0 0 3 3H8" />
+    <path d="M16 5.5h2.5a1 1 0 0 1 1 1V7a3 3 0 0 1-3 3H16" />
+    <path d="M12 13v4M9 20h6M10 17h4v3" />
+  </svg>
+)
+
 export default function ResultsBlock({ data, tone = 'ink' }) {
   const ref = useRef(null)
   const dark = tone === 'ink'
@@ -82,10 +91,19 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
                 <ul data-rowset className={`mt-8 border-t ${hair}`}>
                   {b.rows.map(([who, what]) => (
                     <li key={who + what} className={`group grid gap-1 border-b py-5 transition-colors hover:bg-signal/10 md:grid-cols-12 md:gap-6 ${hair}`}>
-                      <span className="text-lg font-bold leading-snug md:col-span-5">{who}</span>
+                      <span className="flex items-center gap-3 text-lg font-bold leading-snug md:col-span-5">
+                        {b.trophy !== false && <span className={dark ? 'text-signal' : 'text-[#007b6c]'}><Trophy /></span>}
+                        {who}
+                      </span>
                       <span className={`micro self-center text-[10.5px] leading-relaxed md:col-span-7 md:text-right ${dark ? 'text-paper/75' : 'text-ink/75'}`}>{what}</span>
                     </li>
                   ))}
+            {data.highlight && (
+              <div data-fade className="bg-signal p-8 text-ink md:p-10">
+                <p className="micro text-[10.5px]">{data.highlight.label}</p>
+                <p className="display mt-4 text-[clamp(1.5rem,2.6vw,2.8rem)] leading-[0.98]">{data.highlight.text}</p>
+              </div>
+            )}
                 </ul>
               </div>
             ))}

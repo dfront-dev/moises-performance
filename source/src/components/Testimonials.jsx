@@ -21,19 +21,19 @@ export default function Testimonials() {
   })
 
   return (
-    <section id="testemunhos" ref={ref} className="relative bg-paper py-28 text-ink md:py-44">
+    <section id="testemunhos" ref={ref} className="relative bg-ink py-28 text-paper md:py-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
+        <div aria-hidden data-fade className="section-index h-px bg-paper/20" />
 
         <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">
           <h2 aria-label="Impacto nos atletas" className="display text-[clamp(2.8rem,8vw,9.5rem)] md:col-span-12">
-            <Lines lines={['Impacto', 'nos atletas.']} classes={['', 'text-[#007b6c]']} />
+            <Lines lines={['Impacto', 'nos atletas.']} classes={['', 'text-signal']} />
           </h2>
         </div>
 
         <div className="mt-20 grid gap-6 md:mt-28 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
-            <figure key={t.name} data-card className="relative border border-ink/15 border-t-[4px] border-t-signal bg-white p-8 md:col-span-2 lg:col-span-1">
+            <figure key={t.name} data-card className="relative border border-ink/15 border-t-[4px] border-t-signal bg-white p-8 text-ink md:col-span-2 lg:col-span-1">
               <span aria-hidden className="display block text-6xl leading-none text-[#007b6c]">"</span>
               <blockquote className="mt-4 text-[15px] leading-relaxed text-ink">{t.quote}</blockquote>
               <figcaption className="mt-8 flex items-center gap-4">
@@ -46,7 +46,7 @@ export default function Testimonials() {
             </figure>
           ))}
           {placeholders.map(([name, role], i) => (
-            <figure key={i} data-card className="relative border border-ink/15 border-t-[4px] border-t-signal bg-white p-8">
+            <figure key={i} data-card className="relative border border-ink/15 border-t-[4px] border-t-signal bg-white p-8 text-ink">
               <span className="micro absolute -top-3 right-5 bg-steel px-3 py-1 text-[10px] text-ink">Exemplo</span>
               <span aria-hidden className="display block text-6xl leading-none text-[#007b6c]">"</span>
               <blockquote className="mt-4 min-h-24 text-[15px] italic leading-relaxed text-ink/70">

@@ -61,20 +61,38 @@ export const results = [
     ],
   },
   {
-    id: 'outras',
-    index: '03 / Outras modalidades',
-    lines: ['Outras', 'modalidades.'],
-    intro: 'Trabalho multidisciplinar de preparação física e fisiológica noutras modalidades.',
+    id: 'padel',
+    index: '03 / Padel',
+    lines: ['Padel.'],
+    intro: 'Preparação física de atletas de Padel.',
     blocks: [
       {
-        label: 'Destaques',
+        label: 'Padel',
         title: 'Do pódio nacional ao mundial',
+        rows: [['Sebastião Mendonça', '5.º no Mundial de Seleções de Padel, 2018']],
+      },
+    ],
+  },
+  {
+    id: 'outras',
+    index: '04 / Outras modalidades',
+    lines: ['Outras', 'modalidades.'],
+    intro: 'Trabalho noutras modalidades, além da Vela, do Surf e do Padel.',
+    blocks: [
+      {
+        label: 'Atividade',
+        title: 'Freediving e Ténis',
+        trophy: false,
         rows: [
-          ['Sebastião Mendonça', '5.º no Mundial de Seleções de Padel, 2018'],
-          ['Freediving e Ténis', 'Preparação física desde 2020 e 2021'],
+          ['Instrutor de Freediving', 'Desde 2020'],
+          ['Preparação física de Ténis', 'Desde 2021'],
         ],
       },
     ],
+    highlight: {
+      label: 'Em foco',
+      text: 'Desportos de endurance, com foco em triatlo, em articulação com equipas e treinadores.',
+    },
   },
 ]
 

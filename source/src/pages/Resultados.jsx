@@ -17,6 +17,7 @@ export default function Resultados() {
       <ResultsBlock data={results[0]} tone="ink" />
       <ResultsBlock data={results[1]} tone="paper" />
       <ResultsBlock data={results[2]} tone="ink" />
+      <ResultsBlock data={results[3]} tone="paper" />
       <Testimonials />
       <CtaBand
         lines={['Queres resultados', 'assim na tua equipa?']}
