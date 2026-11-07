@@ -2,19 +2,14 @@ import { useRef } from 'react'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 
-export default function PageHeader({ label, lines, intro, classes = [], image, imageAlt = '', imagePos = '50% 30%', tone = 'ink' }) {
+export default function PageHeader({ label, lines, intro, classes = [], image, imageAlt = '', imagePos = '50% 30%', tone = 'paper' }) {
   const paper = tone === 'paper'
   const ref = useRef(null)
 
   useGsap(ref, ({ q }) => {
     const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
     tl.from(q('[data-line]'), { yPercent: 118, duration: 1.3, stagger: 0.12 }, 0.1)
-      .from(q('[data-slash]'), { scaleY: 0, transformOrigin: 'top', duration: 1.4, stagger: 0.12, ease: 'power4.inOut' }, 0)
       .from(q('[data-fade]'), { opacity: 0, y: 20, duration: 0.9, stagger: 0.1 }, 0.5)
-    gsap.to(q('[data-slash]'), {
-      yPercent: 14, ease: 'none',
-      scrollTrigger: { trigger: ref.current, start: 'top top', end: 'bottom top', scrub: true },
-    })
   })
 
   return (
@@ -31,13 +26,11 @@ export default function PageHeader({ label, lines, intro, classes = [], image, i
           <div className={`absolute inset-0 md:hidden ${paper ? 'bg-paper/55' : 'bg-ink/40'}`} />
         </div>
       )}
-      <div aria-hidden data-slash className="absolute right-[2.5%] top-0 -z-10 hidden h-full w-[5.5vw] -skew-x-[16deg] bg-signal md:block" />
-      <div aria-hidden data-slash className={`absolute right-[calc(2.5%+7.5vw)] top-0 -z-10 hidden h-full w-[6px] -skew-x-[16deg] md:block ${paper ? 'bg-ink/70' : 'bg-paper/80'}`} />
 
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
         <div aria-hidden data-fade className={`section-index h-px ${paper ? 'bg-ink/20' : 'bg-paper/20'}`} />
 
-        <h1 aria-label={lines.join(' ')} className="display mt-14 text-[clamp(3rem,10.4vw,13rem)] md:mt-20">
+        <h1 aria-label={lines.join(' ')} className="display mt-14 text-[clamp(2.34rem,6.24vw,7.8rem)] md:mt-20">
           <Lines lines={lines} classes={classes} />
         </h1>
 

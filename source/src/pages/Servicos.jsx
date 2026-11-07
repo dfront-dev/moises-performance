@@ -11,7 +11,7 @@ export default function Servicos() {
       <PageHeader
         label="Serviços"
         lines={['Consultoria de', 'fisiologia']}
-        classes={['', 'text-signal']}
+        classes={['', 'text-ink/50']}
         intro={intro}
       />
       <ServiceTable />

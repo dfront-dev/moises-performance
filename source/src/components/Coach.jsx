@@ -10,7 +10,7 @@ export default function Coach({ index, lean = false }) {
 
   useGsap(ref, ({ q }) => {
     gsap.from(q('[data-line]'), {
-      yPercent: 118, duration: 1.3, stagger: 0.12, ease: 'power4.out',
+      yPercent: 50, opacity: 0, duration: 1.2, stagger: 0.1, ease: 'power3.out',
       scrollTrigger: { trigger: q('h2')[0], start: 'top 82%' },
     })
     gsap.from(q('[data-fade]'), {
@@ -25,11 +25,11 @@ export default function Coach({ index, lean = false }) {
       scrollTrigger: { trigger: q('[data-coach-frame]')[0], start: 'top 75%', end: 'bottom 35%', scrub: true },
     })
     gsap.from(q('[data-coach-frame]'), {
-      clipPath: 'inset(0 0 100% 0)', duration: 1.4, ease: 'power4.inOut',
+      clipPath: 'inset(0 0 100% 0)', duration: 1.4, ease: 'power3.inOut',
       scrollTrigger: { trigger: q('[data-coach-frame]')[0], start: 'top 85%' },
     })
     gsap.to(img, {
-      yPercent: -7, ease: 'none',
+      yPercent: -3, ease: 'none',
       scrollTrigger: { trigger: q('[data-coach-frame]')[0], start: 'top bottom', end: 'bottom top', scrub: true },
     })
 
@@ -50,9 +50,9 @@ export default function Coach({ index, lean = false }) {
   })
 
   return (
-    <section id="sobre" ref={ref} className="relative bg-ink pt-28 text-paper md:pt-44">
+    <section id="sobre" ref={ref} className="relative bg-paper pt-28 text-ink md:pt-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <div aria-hidden data-fade className="section-index h-px bg-paper/20" />
+        <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
 
         <div className="mt-14 grid gap-14 md:mt-20 md:grid-cols-12">
           {/* portrait */}
@@ -73,11 +73,7 @@ export default function Coach({ index, lean = false }) {
                     style={{ filter: 'grayscale(1) contrast(1.15) brightness(0.92)' }}
                   />
                 </picture>
-                <span aria-hidden className="absolute left-0 top-0 h-5 w-5 border-l-2 border-t-2 border-signal" />
-                <span aria-hidden className="absolute right-0 top-0 h-5 w-5 border-r-2 border-t-2 border-signal" />
-                <span aria-hidden className="absolute bottom-0 left-0 h-5 w-5 border-b-2 border-l-2 border-signal" />
-                <span aria-hidden className="absolute bottom-0 right-0 h-5 w-5 border-b-2 border-r-2 border-signal" />
-                <p className="micro absolute bottom-5 left-5 bg-signal px-3 py-2 text-[10px] text-ink">
+                <p className="micro absolute bottom-5 left-5 bg-paper px-3 py-2 text-[10px] text-ink">
                   João Moisés / Fisiologista do Exercício
                 </p>
               </div>
@@ -86,31 +82,31 @@ export default function Coach({ index, lean = false }) {
 
           {/* copy */}
           <div className="md:col-span-7 md:pl-6">
-            <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(2.2rem,5.4vw,6.2rem)]">
+            <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(1.72rem,3.24vw,3.72rem)]">
               <Lines lines={c.lines} />
             </h2>
 
-            <div className="mt-14 max-w-2xl space-y-6 text-lg leading-relaxed text-paper/80 md:text-xl">
+            <div className="mt-14 max-w-2xl space-y-6 text-lg leading-relaxed text-ink/80 md:text-xl">
               {c.body.map((p) => (
                 <p key={p} data-fade>{p}</p>
               ))}
             </div>
 
-            <div className="mt-16 grid grid-cols-3 gap-6 border-t border-paper/20 pt-8">
+            <div className="mt-16 grid grid-cols-3 gap-6 border-t border-ink/20 pt-8">
               {c.numbers.map((n) => (
                 <div key={n.label}>
-                  <p className="display text-[clamp(3rem,6.4vw,7rem)] leading-none">
+                  <p className="display text-[clamp(2.34rem,3.84vw,4.2rem)] leading-none">
                     <span data-count={n.value} data-pad={n.pad || 0}>{pad(n.value, n.pad || 0)}</span>
-                    <span className="text-signal">{n.suffix}</span>
+                    <span className="text-ink/40">{n.suffix}</span>
                   </p>
                   <p className="micro mt-3 text-[10px] text-steel">{n.label}</p>
                 </div>
               ))}
             </div>
 
-            <dl className="mt-16 border-t border-paper/20">
+            <dl className="mt-16 border-t border-ink/20">
               {c.credentials.map(([t, m]) => (
-                <div data-row key={t} className="grid gap-1 border-b border-paper/10 py-4 md:grid-cols-12 md:gap-6">
+                <div data-row key={t} className="grid gap-1 border-b border-ink/10 py-4 md:grid-cols-12 md:gap-6">
                   <dt className={`text-[15px] font-bold leading-snug ${lean ? 'md:col-span-12' : 'md:col-span-7'}`}>{t}</dt>
                   {!lean && <dd className="micro text-[10px] text-steel md:col-span-5 md:text-right">{m}</dd>}
                 </div>

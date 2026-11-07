@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function Nav({ page = 'home', tone = 'ink' }) {
+export default function Nav({ page = 'home', tone = 'paper' }) {
   const paper = tone === 'paper'
   const home = page === 'home'
   const links = [
@@ -49,7 +49,6 @@ export default function Nav({ page = 'home', tone = 'ink' }) {
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${hidden && !open ? '-translate-y-full' : 'translate-y-0'} ${open ? 'bg-ink/90 backdrop-blur-md' : solid ? (paper ? 'bg-paper/90 backdrop-blur-md' : 'bg-ink/90 backdrop-blur-md') : 'bg-transparent'}`}
     >
-      <span aria-hidden className={`absolute inset-x-0 top-0 h-[3px] bg-signal transition-opacity duration-500 ${solid ? 'opacity-100' : 'opacity-0'}`} />
       <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:bg-signal focus:px-4 focus:py-2 focus:text-ink">
         Saltar para o conteúdo
       </a>
@@ -64,14 +63,14 @@ export default function Nav({ page = 'home', tone = 'ink' }) {
               key={l.key}
               href={l.href}
               aria-current={page === l.key ? 'page' : undefined}
-              className={`micro border-b-2 pb-1 transition-colors ${light ? (paper ? 'hover:text-ink' : 'hover:text-[#007b6c]') : 'hover:text-signal'} ${page === l.key ? (light ? (paper ? 'border-signal text-ink' : 'border-[#007b6c] text-[#007b6c]') : 'border-signal text-signal') : light ? 'border-transparent text-ink/75' : 'border-transparent text-paper/75'}`}
+              className={`micro border-b-2 pb-1 transition-colors ${light ? (paper ? 'hover:text-ink' : 'hover:text-[#007b6c]') : 'hover:text-signal'} ${page === l.key ? (light ? (paper ? 'border-signal text-ink' : 'border-signal text-ink') : 'border-signal text-signal') : light ? 'border-transparent text-ink/75' : 'border-transparent text-paper/75'}`}
             >
               {l.label}
             </a>
           ))}
         </nav>
 
-        <a href={cta} className={`micro hidden px-5 py-3 transition-colors md:inline-flex md:justify-self-end ${light ? 'bg-ink text-signal hover:bg-signal hover:text-ink' : 'bg-signal text-ink hover:bg-paper'}`}>
+        <a href={cta} className={`micro hidden px-5 py-3 transition-colors md:inline-flex md:justify-self-end ${light ? 'bg-ink text-paper hover:bg-signal hover:text-ink' : 'bg-signal text-ink hover:bg-paper'}`}>
           Contactos
         </a>
 
@@ -90,12 +89,12 @@ export default function Nav({ page = 'home', tone = 'ink' }) {
     <div
       id="menu-mobile"
       data-lenis-prevent
-      className={`fixed inset-0 z-40 overflow-y-auto bg-ink px-5 pb-10 pt-[88px] transition-opacity duration-300 md:hidden ${open ? 'visible opacity-100' : 'invisible opacity-0'}`}
+      className={`fixed inset-0 z-40 overflow-y-auto bg-paper px-5 pb-10 pt-[88px] text-ink transition-opacity duration-300 md:hidden ${open ? 'visible opacity-100' : 'invisible opacity-0'}`}
     >
       <ul className="flex flex-col">
         {links.map((l, i) => (
-          <li key={l.key} className="border-b border-paper/10">
-            <a href={l.href} onClick={() => setOpen(false)} className={`display flex items-baseline justify-between py-4 text-[2.3rem] ${page === l.key ? 'text-signal' : ''}`}>
+          <li key={l.key} className="border-b border-ink/10">
+            <a href={l.href} onClick={() => setOpen(false)} className={`display flex items-baseline justify-between py-4 text-[2.3rem] ${page === l.key ? 'text-ink' : 'text-ink/70'}`}>
               {l.label}
               <span className="micro text-steel">0{i + 1}</span>
             </a>

@@ -9,7 +9,7 @@ export default function Endurance() {
 
   useGsap(ref, ({ q }) => {
     gsap.from(q('[data-line]'), {
-      yPercent: 118, duration: 1.3, stagger: 0.12, ease: 'power4.out',
+      yPercent: 50, opacity: 0, duration: 1.2, stagger: 0.1, ease: 'power3.out',
       scrollTrigger: { trigger: q('h2')[0], start: 'top 82%' },
     })
     gsap.from(q('[data-fade]'), {
@@ -24,8 +24,8 @@ export default function Endurance() {
         <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
         <div className="mt-14 grid gap-14 md:mt-20 md:grid-cols-12 md:items-start">
           <div className="md:col-span-6">
-            <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(2.8rem,7.4vw,8.6rem)]">
-              <Lines lines={c.lines} classes={['', 'text-[#007b6c]', 'text-[#007b6c]']} />
+            <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(2.18rem,4.44vw,5.16rem)]">
+              <Lines lines={c.lines} classes={['', 'text-ink/50', 'text-ink/50']} />
             </h2>
             <p data-fade className="mt-10 max-w-lg border-l-[3px] border-signal pl-5 text-lg leading-snug text-ink/80">{c.text}</p>
           </div>

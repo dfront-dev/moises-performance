@@ -24,13 +24,13 @@ export default function ServiceTable() {
   })
 
   return (
-    <section ref={ref} className="relative bg-ink pb-20 pt-6 text-paper md:pb-28">
+    <section ref={ref} className="relative bg-paper pb-20 pt-6 text-ink md:pb-28">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <ul className="border-t border-paper/20">
+        <ul className="border-t border-ink/20">
           {services.map((s) => {
             const isOpen = open === s.id
             return (
-              <li key={s.id} data-svc className="border-b border-paper/20">
+              <li key={s.id} data-svc className="border-b border-ink/20">
                 <button
                   type="button"
                   aria-expanded={isOpen}
@@ -38,14 +38,14 @@ export default function ServiceTable() {
                   onClick={() => setOpen(isOpen ? null : s.id)}
                   className="group relative grid w-full gap-x-8 gap-y-3 py-9 pr-16 text-left md:grid-cols-12 md:items-center md:py-14 md:pr-0"
                 >
-                  <span className="micro text-[10.5px] text-signal md:col-span-3">{s.verb}</span>
+                  <span className="micro text-[10.5px] text-steel md:col-span-3">{s.verb}</span>
                   <span className="md:col-span-7">
-                    <span className="display block text-[clamp(1.5rem,7.6vw,2.4rem)] leading-[0.95] md:text-[clamp(2rem,5vw,5.5rem)] transition-colors duration-300 group-hover:text-signal">{s.short}</span>
-                    <span className="mt-4 block max-w-2xl text-base leading-relaxed text-paper/65 md:text-lg">{s.desc}</span>
+                    <span className="display block text-[clamp(1.5rem,7.6vw,2.4rem)] leading-[0.95] md:text-[clamp(1.7rem,3.0vw,3.3rem)] transition-colors duration-300 group-hover:text-ink/60">{s.short}</span>
+                    <span className="mt-4 block max-w-2xl text-base leading-relaxed text-ink/65 md:text-lg">{s.desc}</span>
                   </span>
                   <span
                     aria-hidden
-                    className={`absolute right-0 top-9 grid h-12 w-12 place-items-center border transition-colors duration-300 md:static md:col-span-2 md:top-auto md:justify-self-end ${isOpen ? 'border-signal bg-signal text-ink' : 'border-paper/30 text-paper group-hover:border-signal group-hover:text-signal'}`}
+                    className={`absolute right-0 top-9 grid h-12 w-12 place-items-center border transition-colors duration-300 md:static md:col-span-2 md:top-auto md:justify-self-end ${isOpen ? 'border-ink bg-ink text-paper' : 'border-ink/25 text-ink group-hover:border-ink'}`}
                   >
                     <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" className={`transition-transform duration-500 ${isOpen ? 'rotate-45' : ''}`}>
                       <path d="M12 5v14M5 12h14" />
@@ -65,8 +65,8 @@ export default function ServiceTable() {
                     <div className="grid gap-10 pb-12 md:grid-cols-12 md:gap-8 md:pb-16">
                       <dl className="grid gap-7 md:col-span-9 md:col-start-4 md:grid-cols-3 md:gap-8">
                         {details.map(([label, k]) => (
-                          <div key={k} className="border-t border-paper/15 pt-4">
-                            <dt className="micro text-[10px] text-signal">{label}</dt>
+                          <div key={k} className="border-t border-ink/15 pt-4">
+                            <dt className="micro text-[10px] text-steel">{label}</dt>
                             <dd className="mt-3 text-[17px] leading-snug">{s[k]}</dd>
                           </div>
                         ))}

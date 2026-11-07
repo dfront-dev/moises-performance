@@ -10,7 +10,7 @@ export default function Contact({ standalone = false }) {
   useGsap(ref, ({ q }) => {
     if (q('[data-line]').length) {
       gsap.from(q('[data-line]'), {
-        yPercent: 118, duration: 1.3, stagger: 0.12, ease: 'power4.out',
+        yPercent: 50, opacity: 0, duration: 1.2, stagger: 0.1, ease: 'power3.out',
         scrollTrigger: { trigger: q('h2')[0], start: 'top 82%' },
       })
     }
@@ -29,18 +29,17 @@ export default function Contact({ standalone = false }) {
     window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }
 
-  const field = 'w-full border-0 border-b border-ink/30 bg-transparent py-3 text-lg text-ink placeholder:text-ink/35 focus:border-signal focus:outline-none focus:ring-0'
+  const field = 'w-full border-0 border-b border-ink/30 bg-transparent py-3 text-lg text-ink placeholder:text-ink/35 focus:border-ink focus:outline-none focus:ring-0'
 
   return (
     <section id="contacto" ref={ref} className={`relative isolate overflow-hidden bg-paper text-ink ${standalone ? 'pb-28 pt-40 md:pb-44 md:pt-56' : 'py-28 md:py-44'}`}>
-      <div aria-hidden className="absolute right-[5%] top-0 -z-0 hidden h-[30%] w-[7vw] -skew-x-[16deg] bg-signal md:block" />
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
         <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
 
         {standalone ? (
           <h2 className="sr-only">Contacto</h2>
         ) : (
-          <h2 aria-label={c.lines.join(' ')} className="display mt-14 text-[clamp(2.6rem,8vw,9.5rem)] md:mt-20">
+          <h2 aria-label={c.lines.join(' ')} className="display mt-14 text-[clamp(2.03rem,4.8vw,5.7rem)] md:mt-20">
             <Lines lines={c.lines} />
           </h2>
         )}

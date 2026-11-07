@@ -3,13 +3,13 @@ import { testimonials } from '../data/content'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 
-export default function Testimonials({ tone = 'ink' }) {
+export default function Testimonials({ tone = 'paper' }) {
   const paper = tone === 'paper'
   const ref = useRef(null)
 
   useGsap(ref, ({ q }) => {
     gsap.from(q('[data-line]'), {
-      yPercent: 118, duration: 1.3, stagger: 0.12, ease: 'power4.out',
+      yPercent: 50, opacity: 0, duration: 1.2, stagger: 0.1, ease: 'power3.out',
       scrollTrigger: { trigger: q('h2')[0], start: 'top 85%' },
     })
     gsap.from(q('[data-fade]'), {
@@ -27,8 +27,8 @@ export default function Testimonials({ tone = 'ink' }) {
         <div aria-hidden data-fade className={`section-index h-px ${paper ? 'bg-ink/20' : 'bg-paper/20'}`} />
 
         <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-12 md:items-end">
-          <h2 aria-label="Impacto nos atletas" className="display title-soft text-[clamp(2.2rem,5vw,5.6rem)] md:col-span-12">
-            <Lines lines={['Impacto', 'nos atletas.']} classes={['', paper ? 'text-signal' : 'text-signal/90']} />
+          <h2 aria-label="Impacto nos atletas" className="display title-soft text-[clamp(1.72rem,3.0vw,3.36rem)] md:col-span-12">
+            <Lines lines={['Impacto', 'nos atletas.']} classes={['', paper ? 'text-ink/50' : 'text-ink/50']} />
           </h2>
         </div>
 

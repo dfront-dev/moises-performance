@@ -28,7 +28,7 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
   useGsap(ref, ({ q }) => {
     if (q('[data-line]').length) {
       gsap.from(q('[data-line]'), {
-        yPercent: 118, duration: 1.3, stagger: 0.12, ease: 'power4.out',
+        yPercent: 50, opacity: 0, duration: 1.2, stagger: 0.1, ease: 'power3.out',
         scrollTrigger: { trigger: q('h2')[0], start: 'top 82%' },
       })
     }
@@ -37,8 +37,8 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
       scrollTrigger: { trigger: q('[data-fade]')[0], start: 'top 88%' },
     })
     q('[data-photo]').forEach((el) => {
-      gsap.from(el, { clipPath: 'inset(100% 0 0 0)', duration: 1.4, ease: 'power4.inOut', scrollTrigger: { trigger: el, start: 'top 85%' } })
-      gsap.to(el.querySelector('img'), { yPercent: -6, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } })
+      gsap.from(el, { clipPath: 'inset(100% 0 0 0)', duration: 1.4, ease: 'power3.inOut', scrollTrigger: { trigger: el, start: 'top 85%' } })
+      gsap.to(el.querySelector('img'), { yPercent: -3, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom top', scrub: true } })
     })
     q('[data-rowset]').forEach((set) => {
       gsap.from(set.querySelectorAll('li'), {
@@ -73,21 +73,21 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
         {compact ? (
           <div className="mt-14 flex flex-col gap-6 md:mt-16 md:flex-row md:items-start md:gap-10">
             <h2 className="sr-only">{data.lines.join(' ')}</h2>
-            <p data-fade className="micro inline-block shrink-0 self-start bg-signal px-3 py-2 text-[10.5px] text-ink">{data.blocks[0].label}</p>
+            <p data-fade className="micro chip shrink-0 self-start text-[10.5px]">{data.blocks[0].label}</p>
             {data.intro && (
               <p data-fade className={`max-w-3xl text-base leading-relaxed md:text-lg md:leading-relaxed ${sub}`}>{data.intro}</p>
             )}
           </div>
         ) : (
         <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">
-            <h2 aria-label={data.lines.join(' ')} className="display text-[clamp(3rem,9vw,10.5rem)] md:col-span-8">
-              <Lines lines={data.lines} classes={['', dark || saturated ? 'text-signal' : 'deep-signal']} />
+            <h2 aria-label={data.lines.join(' ')} className="display text-[clamp(2.34rem,5.4vw,6.3rem)] md:col-span-8">
+              <Lines lines={data.lines} classes={['', dark || saturated ? 'text-ink/50' : 'text-ink/50']} />
             </h2>
             {data.bullets ? (
               <ul data-fade className={`max-w-md space-y-3 md:col-span-4 md:justify-self-end ${sub}`}>
                 {data.bullets.map((b) => (
                   <li key={b} className="flex gap-3 text-base leading-snug">
-                    <span aria-hidden className="mt-[9px] h-[7px] w-[7px] shrink-0 -skew-x-12 bg-signal" />
+                    <span aria-hidden className="mt-[9px] h-[7px] w-[7px] shrink-0 bg-signal" />
                     {b}
                   </li>
                 ))}
@@ -102,7 +102,7 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
           <div className="space-y-20 md:col-span-12">
             {data.blocks.map((b) => (
               <div key={b.label}>
-                {!compact && <p data-fade className="micro inline-block bg-signal px-3 py-2 text-[10.5px] text-ink">{b.label}</p>}
+                {!compact && <p data-fade className="micro chip text-[10.5px]">{b.label}</p>}
                 {!compact && <h3 data-fade className="display subhead mt-6 max-w-2xl text-[clamp(1.5rem,2.4vw,2.6rem)]">{b.title}</h3>}
                 <ul data-rowset className={`border-t ${compact ? '' : 'mt-8'} ${hair}`}>
                   {b.rows.map(([who, what, pic]) => (
@@ -111,10 +111,10 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
                       onMouseEnter={pic ? (e) => { move(e); setPhoto(pic) } : undefined}
                       onMouseMove={pic ? move : undefined}
                       onMouseLeave={pic ? () => setPhoto(null) : undefined}
-                      className={`group grid gap-1 border-b ${compact ? 'py-[30px]' : 'py-5'} transition-colors hover:bg-signal/10 md:grid-cols-12 md:gap-6 ${hair}`}
+                      className={`group grid gap-1 border-b ${compact ? 'py-[30px]' : 'py-5'} transition-colors hover:bg-ink/[0.03] md:grid-cols-12 md:gap-6 ${hair}`}
                     >
                       <span className="flex items-center gap-3 text-lg font-bold leading-snug md:col-span-5">
-                        {b.trophy !== false && <span className={dark ? 'text-paper/40' : 'text-ink/40'}><Medal /></span>}
+                        {b.trophy !== false && <span className={dark ? 'text-paper/40' : 'text-ink/35'}><Medal /></span>}
                         {who}
                       </span>
                       <span className={`micro self-center text-[10.5px] leading-relaxed md:col-span-7 md:text-right ${dark ? 'text-paper/75' : 'text-ink/75'}`}>{what}</span>
@@ -124,7 +124,7 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
               </div>
             ))}
             {data.highlight && (
-              <div data-fade className="bg-signal p-8 text-ink md:p-10">
+              <div data-fade className="border border-ink/10 bg-paper-2 p-8 text-ink md:p-10">
                 <p className="micro text-[10.5px]">{data.highlight.label}</p>
                 <p className="display mt-4 text-[clamp(1.5rem,2.6vw,2.8rem)] leading-[0.98]">{data.highlight.text}</p>
               </div>

@@ -20,12 +20,12 @@ const Icon = ({ href, label, children, external = true, paper = false }) => {
   )
 }
 
-export default function Footer({ tone = 'ink' }) {
+export default function Footer({ tone = 'paper' }) {
   const paper = tone === 'paper'
   const hov = paper ? 'hover:text-ink/60' : 'hover:text-signal'
   return (
-    <footer className={`relative overflow-hidden border-t-[6px] border-signal ${paper ? 'bg-paper text-ink' : 'bg-ink text-paper'}`}>
-      <div className="mx-auto flex max-w-[1680px] flex-col justify-between gap-10 px-5 pb-6 pt-14 md:flex-row md:items-start md:px-10">
+    <footer className={`relative overflow-hidden border-t border-ink/15 ${paper ? 'bg-paper text-ink' : 'bg-ink text-paper'}`}>
+      <div className="mx-auto flex max-w-[1680px] flex-col justify-between gap-10 px-5 pb-10 pt-16 md:flex-row md:items-start md:px-10">
         <div>
           <img src={paper ? 'images/jmp-logo-black.png' : 'images/jmp-logo-white.png'} alt="JMP" width="177" height="59" className="h-7 w-auto" />
           <p className="micro mt-4 text-[10px] text-steel">João Moisés Performance Physiology</p>
@@ -57,9 +57,6 @@ export default function Footer({ tone = 'ink' }) {
           ))}
         </ul>
       </div>
-      <p aria-hidden className="display pointer-events-none -mb-[0.16em] mt-6 select-none whitespace-nowrap text-center text-[clamp(8rem,34vw,44rem)] italic leading-[0.8] text-signal/[0.16]" style={{ transform: 'skewX(-10deg)' }}>
-        JMP
-      </p>
       <div className="mx-auto flex max-w-[1680px] justify-between px-5 pb-6 md:px-10">
         <p className="micro text-[10px] text-steel">© 2026 JMP</p>
         <p className="micro flex gap-6 text-[10px] text-steel">
