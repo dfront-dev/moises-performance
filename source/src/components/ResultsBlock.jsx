@@ -72,21 +72,12 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
         <div aria-hidden data-fade className={`section-index h-px ${dark ? 'bg-paper/20' : 'bg-ink/20'}`} />
 
         {compact ? (
-          <div className="mt-14 md:mt-16">
+          <div className="mt-14 flex flex-col gap-6 md:mt-16 md:flex-row md:items-start md:gap-10">
             <h2 className="sr-only">{data.lines.join(' ')}</h2>
-            <p data-fade className="micro inline-block bg-signal px-3 py-2 text-[10.5px] text-ink">{data.blocks[0].label}</p>
-            {data.bullets ? (
-              <ul data-fade className={`mt-8 max-w-xl space-y-3 ${sub}`}>
-                {data.bullets.map((b) => (
-                  <li key={b} className="flex gap-3 text-base leading-snug">
-                    <span aria-hidden className="mt-[9px] h-[7px] w-[7px] shrink-0 -skew-x-12 bg-signal" />
-                    {b}
-                  </li>
-                ))}
-              </ul>
-            ) : data.intro ? (
-              <p data-fade className={`mt-8 max-w-xl text-base leading-relaxed ${sub}`}>{data.intro}</p>
-            ) : null}
+            <p data-fade className="micro inline-block shrink-0 self-start bg-signal px-3 py-2 text-[10.5px] text-ink">{data.blocks[0].label}</p>
+            {data.intro && (
+              <p data-fade className={`max-w-3xl text-base leading-relaxed md:text-lg md:leading-relaxed ${sub}`}>{data.intro}</p>
+            )}
           </div>
         ) : (
         <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">
