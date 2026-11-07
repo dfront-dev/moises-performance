@@ -14,7 +14,7 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
   const [solid, setSolid] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [open, setOpen] = useState(false)
-  const light = (paper && !open) || (page === 'contacto' && !solid && !open)
+  const light = paper && !open
 
   useEffect(() => {
     document.documentElement.dataset.navHidden = hidden && !open ? '1' : '0'
