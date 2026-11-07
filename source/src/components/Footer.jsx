@@ -75,7 +75,7 @@ export default function Footer() {
 
       <div className="relative mx-auto flex max-w-[1680px] flex-wrap items-center justify-between gap-4 border-t border-ink/10 px-5 py-6 md:px-10">
         <div className="flex items-center gap-5">
-          <img src="images/jmp-logo.svg" alt="JMP" width="72" height="29" className="h-5 w-auto" />
+          <img src="images/jmp-logo.svg" alt="JMP" width="72" height="29" className="h-8 w-auto" />
           <p className="micro text-steel">© 2026 JMP</p>
         </div>
         <p className="micro bullets text-steel">
