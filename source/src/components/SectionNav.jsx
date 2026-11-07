@@ -54,9 +54,9 @@ export default function SectionNav({ items, tone = 'ink', label = 'Secções da 
   return (
     <div
       ref={ref}
-      className={`sticky top-0 z-40 border-y backdrop-blur-md transition-[top] duration-500 ${paper ? 'border-ink/10 bg-paper/95 text-ink' : 'border-paper/10 bg-ink/95 text-paper'}`}
+      className={`sticky top-0 z-40 border-y bg-transparent transition-[top] duration-500 ${paper ? 'border-ink/10 text-ink' : 'border-paper/10 text-paper'}`}
     >
-      <nav aria-label={label} className="mx-auto flex max-w-[1680px] gap-8 overflow-x-auto px-5 md:px-10">
+      <nav aria-label={label} className="mx-auto flex max-w-[1680px] justify-center gap-10 overflow-x-auto px-5 md:px-10">
         {items.map((i) => (
           <a
             key={i.id}
