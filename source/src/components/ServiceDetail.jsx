@@ -8,7 +8,7 @@ function Block({ b, dark }) {
   const accent = 'text-steel'
   return (
     <div>
-      <p data-fade className="micro chip text-[10.5px]">{b.label}</p>
+      <p data-fade className="micro chip">{b.label}</p>
       <h3 data-fade className="display subhead mt-6 max-w-2xl text-[clamp(1.3rem,2.1vw,2.3rem)]">{b.title}</h3>
 
       {b.kind === 'steps' && (
@@ -93,13 +93,13 @@ export default function ServiceDetail({ s, d, tone = 'paper' }) {
           <div className="md:sticky md:top-28">
             <div className="flex flex-wrap gap-2">
               {s.tags.map((t) => (
-                <span key={t} className={`micro px-3 py-2 text-[10px] ${dark ? 'border border-paper/25 text-paper/80' : 'border border-ink/25 text-ink/65'}`}>{t}</span>
+                <span key={t} className={`micro px-3 py-2 ${dark ? 'border border-paper/25 text-paper/80' : 'border border-ink/25 text-ink/65'}`}>{t}</span>
               ))}
             </div>
             <h2 aria-label={s.short} className="display mt-8 text-[clamp(1.7rem,1.98vw,2.4rem)]">
               <Lines lines={[s.short]} classes={['text-ink']} />
             </h2>
-            <p className={`micro mt-4 text-[11px] ${dark ? 'text-paper/75' : 'text-ink/65'}`}>{s.full}</p>
+            <p className={`micro mt-4 ${dark ? 'text-paper/75' : 'text-ink/65'}`}>{s.full}</p>
             <p className={`mt-8 max-w-md text-lg leading-snug ${dark ? 'text-paper/85' : 'text-ink/70'}`}>{d.intro}</p>
           </div>
         </div>

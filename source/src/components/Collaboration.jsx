@@ -30,7 +30,7 @@ export default function Collaboration() {
         <div className="mt-20 grid gap-6 md:mt-28 md:grid-cols-3">
           {c.items.map((it, i) => (
             <div key={it.title} data-fade className="group border border-ink/10 border-t-signal/70 p-8 transition-colors hover:bg-ink/[0.04]">
-              <span className="micro text-[10px] text-steel">0{i + 1}</span>
+              <span className="micro text-steel">0{i + 1}</span>
               <h3 className="display subhead mt-6 text-[clamp(1.3rem,1.8vw,1.85rem)]">{it.title}</h3>
               <p className="mt-4 text-[15px] leading-relaxed text-ink/60">{it.text}</p>
             </div>

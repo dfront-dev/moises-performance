@@ -48,7 +48,7 @@ export default function Testimonials({ tone = 'paper' }) {
                 )}
                 <span>
                   <span className={`block text-sm font-medium ${paper ? 'text-ink/90' : 'text-paper/90'}`}>{t.name}</span>
-                  <span className={`micro text-[10px] ${paper ? 'text-ink/50' : 'text-paper/45'}`}>{t.role}</span>
+                  <span className={`micro ${paper ? 'text-ink/50' : 'text-paper/45'}`}>{t.role}</span>
                 </span>
               </figcaption>
             </figure>

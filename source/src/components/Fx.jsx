@@ -29,7 +29,7 @@ function Chapters() {
       {items.map((it, i) => (
         <button key={i} type="button" onClick={() => go(it.el)} aria-label={it.label} aria-current={i === active ? 'true' : undefined} className="group flex items-center gap-3 py-1">
           <span aria-hidden className={`block h-px bg-ink transition-all duration-700 ${i === active ? 'w-5 opacity-100' : 'w-2 opacity-30 group-hover:w-4 group-hover:opacity-70'}`} />
-          <span aria-hidden className="micro pointer-events-none whitespace-nowrap bg-paper/90 px-2 py-1 text-[9px] text-ink opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 -translate-x-2">{it.label}</span>
+          <span aria-hidden className="micro pointer-events-none whitespace-nowrap bg-paper/90 px-2 py-1 text-ink opacity-0 transition-all duration-500 group-hover:translate-x-0 group-hover:opacity-100 -translate-x-2">{it.label}</span>
         </button>
       ))}
     </nav>

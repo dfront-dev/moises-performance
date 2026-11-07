@@ -30,7 +30,7 @@ export default function Footer({ tone = 'paper' }) {
       <div className="relative mx-auto flex max-w-[1680px] flex-col justify-between gap-10 px-5 pb-10 pt-16 md:flex-row md:items-start md:px-10">
         <div>
           <img src={paper ? 'images/jmp-logo.svg' : 'images/jmp-logo-light.svg'} alt="JMP" width="72" height="29" className="h-7 w-auto" />
-          <p className="micro mt-4 text-[10px] text-steel">João Moisés Performance Physiology</p>
+          <p className="micro mt-4 text-steel">João Moisés Performance Physiology</p>
           <div className="mt-6 space-y-1.5 text-[15px]">
             <a href={`mailto:${EMAIL}`} className={`block transition-colors ${paper ? 'text-ink/85' : 'text-paper/85'} ${hov}`}>{EMAIL}</a>
             <a href={PHONE_HREF} className={`block transition-colors ${paper ? 'text-ink/85' : 'text-paper/85'} ${hov}`}>{PHONE}</a>
@@ -60,8 +60,8 @@ export default function Footer({ tone = 'paper' }) {
         </ul>
       </div>
       <div className="relative mx-auto flex max-w-[1680px] justify-between px-5 pb-6 md:px-10">
-        <p className="micro text-[10px] text-steel">© 2026 JMP</p>
-        <p className="micro bullets text-[10px] text-steel">
+        <p className="micro text-steel">© 2026 JMP</p>
+        <p className="micro bullets text-steel">
           <a href="privacidade.html" className={`transition-colors ${hov}`}>Política de privacidade</a>
           <a href="termos.html" className={`transition-colors ${hov}`}>Termos e condições</a>
         </p>

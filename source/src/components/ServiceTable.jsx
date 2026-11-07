@@ -38,7 +38,7 @@ export default function ServiceTable() {
                   onClick={() => setOpen(isOpen ? null : s.id)}
                   className="group relative grid w-full gap-x-8 gap-y-3 py-9 pr-16 text-left md:grid-cols-12 md:items-center md:py-14 md:pr-0"
                 >
-                  <span className="micro text-[10.5px] text-steel md:col-span-3">{s.verb}</span>
+                  <span className="micro text-steel md:col-span-3">{s.verb}</span>
                   <span className="md:col-span-7">
                     <span className="display block text-[clamp(1.5rem,7.6vw,2.4rem)] leading-[0.95] md:text-[clamp(1.7rem,3.0vw,3.3rem)] transition-colors duration-300 group-hover:text-ink/60">{s.short}</span>
                     <span className="mt-4 block max-w-2xl text-base leading-relaxed text-ink/60 md:text-lg">{s.desc}</span>
@@ -66,7 +66,7 @@ export default function ServiceTable() {
                       <dl className="grid gap-7 md:col-span-9 md:col-start-4 md:grid-cols-3 md:gap-8">
                         {details.map(([label, k]) => (
                           <div key={k} className="border-t border-ink/15 pt-4">
-                            <dt className="micro text-[10px] text-steel">{label}</dt>
+                            <dt className="micro text-steel">{label}</dt>
                             <dd className="mt-3 text-[17px] leading-snug">{s[k]}</dd>
                           </div>
                         ))}

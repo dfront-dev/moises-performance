@@ -73,7 +73,7 @@ export default function Coach({ index, lean = false }) {
                     style={{ filter: 'grayscale(1) contrast(1.15) brightness(0.92)' }}
                   />
                 </picture>
-                <p className="micro absolute bottom-5 left-5 bg-paper px-3 py-2 text-[10px] text-ink">
+                <p className="micro absolute bottom-5 left-5 bg-paper px-3 py-2 text-ink">
                   João Moisés / Fisiologista do Exercício
                 </p>
               </div>
@@ -99,7 +99,7 @@ export default function Coach({ index, lean = false }) {
                     <span data-count={n.value} data-pad={n.pad || 0}>{pad(n.value, n.pad || 0)}</span>
                     <span className="text-ink/40">{n.suffix}</span>
                   </p>
-                  <p className="micro mt-3 text-[10px] text-steel">{n.label}</p>
+                  <p className="micro mt-3 text-steel">{n.label}</p>
                 </div>
               ))}
             </div>
@@ -108,14 +108,14 @@ export default function Coach({ index, lean = false }) {
               {c.credentials.map(([t, m]) => (
                 <div data-row key={t} className="grid gap-1 border-b border-ink/10 py-4 md:grid-cols-12 md:gap-6">
                   <dt className={`text-[15px] font-bold leading-snug ${lean ? 'md:col-span-12' : 'md:col-span-7'}`}>{t}</dt>
-                  {!lean && <dd className="micro text-[10px] text-steel md:col-span-5 md:text-right">{m}</dd>}
+                  {!lean && <dd className="micro text-steel md:col-span-5 md:text-right">{m}</dd>}
                 </div>
               ))}
             </dl>
 
             {!lean && (
               <div className="mt-10">
-                <p className="micro text-[10px] text-steel">Curriculum</p>
+                <p className="micro text-steel">Curriculum</p>
                 <a href="CV-Joao-Moises.pdf" download className="underline-link text-[clamp(1.3rem,2.2vw,2.1rem)] font-bold tracking-tight">Descarregar ↓</a>
               </div>
             )}

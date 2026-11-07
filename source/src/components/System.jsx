@@ -84,7 +84,7 @@ export default function System({ merge = false }) {
             <div className="relative min-h-[110px]" aria-live="polite">
               {c.steps.map((s, i) => (
                 <div key={s.n} className="absolute inset-x-0 top-0 transition-all duration-700" style={{ opacity: active === i ? 1 : 0, transform: `translateY(${active === i ? 0 : 14}px)` }}>
-                  <p className="micro text-[10.5px] text-steel">{s.tag}</p>
+                  <p className="micro text-steel">{s.tag}</p>
                   <p className="mt-3 max-w-xs text-lg leading-snug text-ink/70">{s.text}</p>
                 </div>
               ))}
@@ -95,7 +95,7 @@ export default function System({ merge = false }) {
                 <li key={s.n}>
                   <button type="button" onClick={() => jump(i)} aria-current={active === i ? 'step' : undefined} className={`relative flex w-full items-center gap-4 py-[7px] text-left transition-colors duration-500 ${active === i ? 'text-ink' : 'text-ink/35 hover:text-ink/60'}`}>
                     <span aria-hidden className={`absolute -left-[28px] h-[7px] w-[7px] bg-signal transition-opacity duration-500 ${active === i ? 'opacity-100' : 'opacity-0'}`} />
-                    <span className="micro w-6 text-[10px]">{s.n}</span>
+                    <span className="micro w-6">{s.n}</span>
                     <span className="text-base">{s.title}</span>
                   </button>
                 </li>

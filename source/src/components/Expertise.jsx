@@ -77,10 +77,10 @@ export default function Expertise() {
             <li key={s.id} data-row className="svc-row relative" onMouseEnter={() => setActive(i)} onMouseLeave={() => setActive(-1)}>
               <span data-hair aria-hidden className="absolute inset-x-0 top-0 h-px bg-ink/20" />
               <a href={`servicos.html#${s.id}`} aria-label={s.full} className="grid items-baseline gap-x-8 gap-y-3 py-9 md:grid-cols-12 md:py-14">
-                <span className="micro text-[10.5px] text-steel md:col-span-1">{String(i + 1).padStart(2, '0')}</span>
+                <span className="micro text-steel md:col-span-1">{String(i + 1).padStart(2, '0')}</span>
                 <span className="svc-name display text-[clamp(2rem,5.3vw,6rem)] leading-[1] md:col-span-7">{s.short}</span>
                 <span className="md:col-span-3">
-                  <span className="micro block text-[10.5px] text-steel">{s.full}</span>
+                  <span className="micro block text-steel">{s.full}</span>
                   <span className="mt-3 block max-w-sm text-[15px] leading-relaxed text-ink/60">{s.desc}</span>
                 </span>
                 <span aria-hidden className="svc-arrow hidden text-2xl md:col-span-1 md:block md:justify-self-end">↗</span>

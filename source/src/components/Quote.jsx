@@ -11,7 +11,7 @@ export default function Quote({ tone = 'paper' }) {
         <span aria-hidden className="grid h-11 w-11 place-items-center border border-ink/20 text-[12px] font-medium text-ink/60">{t.initials}</span>
         <span>
           <span className="block text-sm font-bold">{t.name}</span>
-          <span className={`micro text-[10px] ${dark ? 'text-paper/65' : 'text-ink/60'}`}>{t.role}</span>
+          <span className={`micro ${dark ? 'text-paper/65' : 'text-ink/60'}`}>{t.role}</span>
         </span>
       </figcaption>
     </figure>

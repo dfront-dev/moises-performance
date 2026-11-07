@@ -51,15 +51,15 @@ export default function Contact({ standalone = false }) {
             {!standalone && <p data-fade className="max-w-sm text-xl leading-snug">{c.support}</p>}
             <div data-fade className={`space-y-6 ${standalone ? '' : 'mt-12'}`}>
               <div>
-                <p className="micro text-[10px] text-ink/50">Email</p>
+                <p className="micro text-ink/50">Email</p>
                 <a href={`mailto:${EMAIL}`} data-magnetic className="underline-link inline-block break-all text-[clamp(1.3rem,2.2vw,2.1rem)] font-bold tracking-tight">{EMAIL}</a>
               </div>
               <div>
-                <p className="micro text-[10px] text-ink/50">Telemóvel</p>
+                <p className="micro text-ink/50">Telemóvel</p>
                 <a href={PHONE_HREF} data-magnetic className="underline-link inline-block text-[clamp(1.3rem,2.2vw,2.1rem)] font-bold tracking-tight">{PHONE}</a>
               </div>
               <div>
-                <p className="micro text-[10px] text-ink/50">Curriculum</p>
+                <p className="micro text-ink/50">Curriculum</p>
                 <a href="CV-Joao-Moises.pdf" download className="underline-link text-[clamp(1.3rem,2.2vw,2.1rem)] font-bold tracking-tight">Descarregar ↓</a>
               </div>
             </div>
@@ -68,22 +68,22 @@ export default function Contact({ standalone = false }) {
           <form data-fade onSubmit={onSubmit} className="md:col-span-6 md:col-start-7" aria-label="Contacto">
             <div className="space-y-8">
               <label className="block">
-                <span className="micro text-[10px] text-ink/60">Nome</span>
+                <span className="micro text-ink/60">Nome</span>
                 <input required name="nome" autoComplete="name" className={field} placeholder="O teu nome" />
               </label>
               <label className="block">
-                <span className="micro text-[10px] text-ink/60">Modalidade ou objetivo</span>
+                <span className="micro text-ink/60">Modalidade ou objetivo</span>
                 <input required name="objetivo" className={field} placeholder="Ex.: preparação de época em Vela" />
               </label>
               <label className="block">
-                <span className="micro text-[10px] text-ink/60">Mensagem</span>
+                <span className="micro text-ink/60">Mensagem</span>
                 <textarea name="mensagem" rows="4" className={`${field} resize-none`} placeholder="Conta-me o essencial" />
               </label>
             </div>
             <button type="submit" className="btn btn-solid micro mt-12 w-full justify-between md:w-auto">
               {c.cta} <span aria-hidden>→</span>
             </button>
-            <p role="status" className="micro mt-4 min-h-4 text-[10px] text-ink/60">{status}</p>
+            <p role="status" className="micro mt-4 min-h-4 text-ink/60">{status}</p>
           </form>
         </div>
       </div>

@@ -73,7 +73,7 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
         {compact ? (
           <div className="mt-14 flex flex-col gap-6 md:mt-16 md:flex-row md:items-start md:gap-10">
             <h2 className="sr-only">{data.lines.join(' ')}</h2>
-            <p data-fade className="micro chip shrink-0 self-start text-[10.5px]">{data.blocks[0].label}</p>
+            <p data-fade className="micro chip shrink-0 self-start">{data.blocks[0].label}</p>
             {data.intro && (
               <p data-fade className={`max-w-3xl text-base leading-relaxed md:text-lg md:leading-relaxed ${sub}`}>{data.intro}</p>
             )}
@@ -102,7 +102,7 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
           <div className="space-y-20 md:col-span-12">
             {data.blocks.map((b) => (
               <div key={b.label}>
-                {!compact && <p data-fade className="micro chip text-[10.5px]">{b.label}</p>}
+                {!compact && <p data-fade className="micro chip">{b.label}</p>}
                 {!compact && <h3 data-fade className="display subhead mt-6 max-w-2xl text-[clamp(1.5rem,2.4vw,2.6rem)]">{b.title}</h3>}
                 <ul data-rowset className={`border-t ${compact ? '' : 'mt-8'} ${hair}`}>
                   {b.rows.map(([who, what, pic]) => (
@@ -117,7 +117,7 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
                         {b.trophy !== false && <span className={dark ? 'text-paper/40' : 'text-ink/35'}><Medal /></span>}
                         {who}
                       </span>
-                      <span className={`micro self-center text-[10.5px] leading-relaxed md:col-span-7 md:text-right ${dark ? 'text-paper/75' : 'text-ink/65'}`}>{what}</span>
+                      <span className={`micro self-center leading-relaxed md:col-span-7 md:text-right ${dark ? 'text-paper/75' : 'text-ink/65'}`}>{what}</span>
                     </li>
                   ))}
                 </ul>
@@ -125,7 +125,7 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
             ))}
             {data.highlight && (
               <div data-fade className="border border-ink/10 bg-paper-2 p-8 text-ink md:p-10">
-                <p className="micro text-[10.5px]">{data.highlight.label}</p>
+                <p className="micro">{data.highlight.label}</p>
                 <p className="display mt-4 text-[clamp(1.5rem,2.6vw,2.8rem)] leading-[0.98]">{data.highlight.text}</p>
               </div>
             )}

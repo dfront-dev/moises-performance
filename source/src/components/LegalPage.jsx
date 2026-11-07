@@ -18,7 +18,7 @@ export default function LegalPage({ page, label, lines, data }) {
       <PageHeader label={label} lines={lines} classes={['', 'text-ink/50']} intro={data.intro} />
       <section ref={ref} className="bg-paper py-24 text-ink md:py-36">
         <div className="mx-auto grid max-w-[1680px] gap-12 px-5 md:grid-cols-12 md:px-10">
-          <p className="micro text-[10.5px] text-ink/60 md:col-span-3">Última atualização: {updated}</p>
+          <p className="micro text-ink/60 md:col-span-3">Última atualização: {updated}</p>
           <div className="space-y-14 md:col-span-8 md:col-start-5">
             {data.sections.map((s, i) => (
               <article key={s.title} data-sec>
