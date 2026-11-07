@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { testimonials, placeholders } from '../data/content'
+import { testimonials } from '../data/content'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 
@@ -33,30 +33,21 @@ export default function Testimonials() {
 
         <div className="mt-14 grid gap-5 md:mt-20 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
-            <figure key={t.name} data-card className="relative border border-paper/10 border-t-signal/50 bg-paper/[0.035] p-8 text-paper md:col-span-2 lg:col-span-1">
+            <figure key={t.name} data-card className={`group relative border border-paper/10 border-t-signal/50 bg-paper/[0.035] p-8 text-paper md:p-10 ${testimonials.length === 1 ? 'max-w-3xl md:col-span-2 lg:col-span-3' : 'md:col-span-2 lg:col-span-1'}`}>
               <span aria-hidden className="display block text-4xl leading-none text-signal/60">"</span>
-              <blockquote className="mt-4 text-[15px] font-light leading-relaxed text-paper/80">{t.quote}</blockquote>
+              <blockquote className="mt-4 text-[15px] font-light leading-relaxed text-paper/80 md:text-lg md:leading-relaxed">{t.quote}</blockquote>
               <figcaption className="mt-8 flex items-center gap-4">
-                <span aria-hidden className="grid h-10 w-10 place-items-center border border-paper/20 text-[11px] font-medium text-paper/70">{t.initials}</span>
+                {t.photo ? (
+                  <picture>
+                    <source srcSet={`${t.photo}.webp`} type="image/webp" />
+                    <img src={`${t.photo}.jpg`} alt={t.name} loading="lazy" decoding="async" className="h-14 w-14 object-cover grayscale transition duration-700 group-hover:grayscale-0" />
+                  </picture>
+                ) : (
+                  <span aria-hidden className="grid h-10 w-10 place-items-center border border-paper/20 text-[11px] font-medium text-paper/70">{t.initials}</span>
+                )}
                 <span>
                   <span className="block text-sm font-medium text-paper/90">{t.name}</span>
                   <span className="micro text-[10px] text-paper/45">{t.role}</span>
-                </span>
-              </figcaption>
-            </figure>
-          ))}
-          {placeholders.map(([name, role], i) => (
-            <figure key={i} data-card className="relative border border-paper/[0.07] border-t-paper/15 bg-paper/[0.02] p-8 text-paper">
-              <span className="micro absolute right-5 top-4 text-[9px] text-paper/30">Exemplo</span>
-              <span aria-hidden className="display block text-4xl leading-none text-paper/20">"</span>
-              <blockquote className="mt-4 min-h-24 text-[15px] font-light italic leading-relaxed text-paper/40">
-                Espaço reservado para testemunho real, a substituir por citação autorizada do atleta ou federação.
-              </blockquote>
-              <figcaption className="mt-8 flex items-center gap-4">
-                <span aria-hidden className="grid h-10 w-10 place-items-center border border-dashed border-paper/15 text-[11px] text-paper/30">JM</span>
-                <span>
-                  <span className="block text-sm font-medium text-paper/50">{name}</span>
-                  <span className="micro text-[10px] text-paper/30">{role}</span>
                 </span>
               </figcaption>
             </figure>

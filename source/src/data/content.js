@@ -134,6 +134,7 @@ export const testimonials = [
     name: 'Sebastião Seguro',
     role: 'Triatleta CNATRIL',
     initials: 'SS',
+    photo: 'images/testemunhos/sebastiao-seguro',
   },
 ]
 
