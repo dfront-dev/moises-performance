@@ -88,7 +88,7 @@ export default function Coach({ index, lean = false }) {
 
           {/* copy */}
           <div className="md:col-span-7 md:pl-6">
-            <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(3rem,8.2vw,9.5rem)]">
+            <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(2.2rem,5.4vw,6.2rem)]">
               <Lines lines={c.lines} />
             </h2>
 
@@ -109,7 +109,6 @@ export default function Coach({ index, lean = false }) {
                 </div>
               ))}
             </div>
-            {!lean && <p className="micro mt-6 text-[10px] text-steel">{c.numbersNote}</p>}
 
             <dl className="mt-16 border-t border-paper/20">
               {c.credentials.map(([t, m]) => (

@@ -61,16 +61,16 @@ export const coach = {
     { value: 3, suffix: '', pad: 2, label: 'Ciclos Olímpicos' },
     { value: 5, suffix: '', pad: 2, label: 'Modalidades' },
   ],
-  numbersNote: 'Rio 2016 · Tóquio 2020 · Paris 2024. Vela, Surf, Ténis, Padel, Freediving.',
+  // do mais recente para o mais antigo (anos segundo o CV)
   credentials: [
-    ['Mestrado em Treino Desportivo (Alto Rendimento)', 'FMH, Universidade de Lisboa'],
-    ['Pós-graduação em Surf', 'FMH, Universidade de Lisboa'],
-    ['Licenciatura em Ciências do Desporto e Educação Física', '2005 a 2009'],
     ['Mestrado em Nutrição e Metabolismo Humano', 'Em curso, NOVA Medical School'],
-    ['Reabilitação Desportiva Avançada', 'Academia Clínica Espregueira / Clínica do Dragão'],
     ['Especialização em Osteopatia', 'ITS, 2021'],
-    ['Nutrição e Suplementação Desportiva', 'WellXProSchool, 2020'],
     ['Resistance Exercise Performance', 'Exercise Institute, 2021'],
+    ['Nutrição e Suplementação Desportiva', 'WellXProSchool, 2020'],
+    ['Mestrado em Treino Desportivo (Alto Rendimento)', 'FMH, Universidade de Lisboa, 2011 a 2014'],
+    ['Pós-graduação em Surf', 'FMH, Universidade de Lisboa, 2010 a 2011'],
+    ['Licenciatura em Ciências do Desporto e Educação Física', '2005 a 2009'],
+    ['Reabilitação Desportiva Avançada', 'Academia Clínica Espregueira / Clínica do Dragão'],
   ],
   highlights: [
     'Paris 2024 · 5.º lugar, 470 Mixed',
