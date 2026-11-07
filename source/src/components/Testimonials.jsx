@@ -1,5 +1,5 @@
 import { useRef } from 'react'
-import { testimonials, placeholders, EMAIL } from '../data/content'
+import { testimonials, placeholders } from '../data/content'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 
@@ -26,12 +26,9 @@ export default function Testimonials() {
         <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
 
         <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">
-          <h2 aria-label="O impacto no atleta" className="display text-[clamp(2.8rem,8vw,9.5rem)] md:col-span-7">
-            <Lines lines={['O impacto', 'no atleta.']} classes={['', 'text-[#007b6c]']} />
+          <h2 aria-label="Impacto nos atletas" className="display text-[clamp(2.8rem,8vw,9.5rem)] md:col-span-12">
+            <Lines lines={['Impacto', 'nos atletas.']} classes={['', 'text-[#007b6c]']} />
           </h2>
-          <p data-fade className="max-w-md text-base leading-relaxed text-ink/70 md:col-span-5 md:justify-self-end">
-            Testemunhos reais de atletas, treinadores e federações. Os espaços marcados como exemplo são provisórios e serão substituídos por testemunhos autorizados.
-          </p>
         </div>
 
         <div className="mt-20 grid gap-6 md:mt-28 md:grid-cols-2 lg:grid-cols-3">
@@ -66,12 +63,6 @@ export default function Testimonials() {
           ))}
         </div>
 
-        <div data-fade className="mt-16 flex flex-col gap-5 border-t border-ink/15 pt-10 md:flex-row md:items-center md:justify-between">
-          <p className="max-w-lg text-lg leading-snug">Trabalhaste com o João? Se queres deixar o teu testemunho aqui, envia-o por email.</p>
-          <a href={`mailto:${EMAIL}?subject=${encodeURIComponent('Testemunho para o site')}`} className="btn btn-dark micro self-start">
-            Enviar testemunho <span aria-hidden>→</span>
-          </a>
-        </div>
       </div>
     </section>
   )

@@ -3,7 +3,7 @@ import PageHeader from '../components/PageHeader'
 import ResultsBlock from '../components/ResultsBlock'
 import CtaBand from '../components/CtaBand'
 import Testimonials from '../components/Testimonials'
-import { results, resultsFootnote } from '../data/results'
+import { results } from '../data/results'
 
 export default function Resultados() {
   return (
@@ -16,13 +16,10 @@ export default function Resultados() {
       />
       <ResultsBlock data={results[0]} tone="ink" />
       <ResultsBlock data={results[1]} tone="paper" />
-      <div className="bg-ink px-5 py-10 md:px-10">
-        <p className="micro mx-auto max-w-[1680px] text-[10px] leading-relaxed text-steel">{resultsFootnote}</p>
-      </div>
       <Testimonials />
       <CtaBand
-        lines={['Resultados assim', 'na tua equipa?']}
-        text="Vamos falar sobre os objetivos da próxima época."
+        lines={['Queres resultados', 'assim na tua equipa?']}
+        text="Vamos falar dos objetivos da tua época."
         primary={{ label: 'Ver serviços', href: 'servicos.html' }}
         secondary={{ label: 'Contactar', href: 'contacto.html' }}
       />

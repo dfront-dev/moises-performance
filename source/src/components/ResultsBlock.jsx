@@ -43,7 +43,18 @@ export default function ResultsBlock({ data, tone = 'ink' }) {
           <h2 aria-label={data.lines.join(' ')} className="display text-[clamp(3rem,9vw,10.5rem)] md:col-span-8">
             <Lines lines={data.lines} classes={['', dark ? 'text-signal' : 'deep-signal']} />
           </h2>
-          <p data-fade className={`max-w-md text-base leading-relaxed md:col-span-4 md:justify-self-end ${sub}`}>{data.intro}</p>
+          {data.bullets ? (
+            <ul data-fade className={`max-w-md space-y-3 md:col-span-4 md:justify-self-end ${sub}`}>
+              {data.bullets.map((b) => (
+                <li key={b} className="flex gap-3 text-base leading-snug">
+                  <span aria-hidden className="mt-[9px] h-[7px] w-[7px] shrink-0 -skew-x-12 bg-signal" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p data-fade className={`max-w-md text-base leading-relaxed md:col-span-4 md:justify-self-end ${sub}`}>{data.intro}</p>
+          )}
         </div>
 
         <div className="mt-20 grid gap-16 md:mt-28 md:grid-cols-12">

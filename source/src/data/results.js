@@ -3,8 +3,11 @@ export const results = [
     id: 'vela',
     index: '01 / Vela Olímpica',
     lines: ['Vela', 'Olímpica.'],
-    intro:
-      'Avaliação, planeamento, implementação e controlo do treino físico de atletas de alto rendimento, em articulação com treinadores, fisioterapeutas e restantes elementos da equipa multidisciplinar, ao longo de três ciclos olímpicos consecutivos.',
+    bullets: [
+      'Avaliação, planeamento, implementação e controlo do treino físico de atletas de alto rendimento',
+      'Em articulação com treinadores, fisioterapeutas e restantes elementos da equipa multidisciplinar',
+      'Ao longo de três ciclos olímpicos consecutivos',
+    ],
     image: 'vela-bandeira',
     alt: 'João Moisés com atletas da Vela Olímpica Portuguesa',
     blocks: [
@@ -50,22 +53,20 @@ export const results = [
           ['Pedro Henrique', 'Campeão europeu 2015, vice-campeão mundial nos ISA Games'],
           ['Nicolau von Rupp', 'Vice-campeão mundial, ISA World Surfing Games 2015'],
           ['José Ferreira', 'Campeão nacional Pro Júnior 2012 (2010 a 2017)'],
-        ],
-      },
-      {
-        label: 'Padel e outras modalidades',
-        title: 'Do pódio nacional ao mundial',
-        rows: [
-          ['Sebastião Mendonça', '5.º no Mundial de Seleções de Padel, 2018'],
           ['Tomás Fernandes', '3.º no Mundial de Juniores de Surf, 2014'],
           ['Carol Henrique', 'Campeã nacional de Surf, 2016'],
           ['Maria Abecassis', 'Bicampeã nacional de Surf, 2011 e 2012'],
+        ],
+      },
+      {
+        label: 'Outras modalidades',
+        title: 'Do pódio nacional ao mundial',
+        rows: [
+          ['Sebastião Mendonça', '5.º no Mundial de Seleções de Padel, 2018'],
           ['Freediving e Ténis', 'Preparação física desde 2020 e 2021'],
         ],
       },
     ],
-    image2: 'medalhas',
-    alt2: 'Medalhas dos ISA World Surfing Games',
   },
 ]
 
