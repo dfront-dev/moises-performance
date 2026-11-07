@@ -186,7 +186,8 @@ export const social = {
 // Se existir um ficheiro de logótipo (em public/images/entidades/), indicar o caminho em `logo`.
 // Sem logótipo, a entidade aparece escrita em tipografia, sempre em tons de cinza.
 export const entities = [
-  { name: 'Federação Portuguesa de Vela', logo: '' },
-  { name: 'Federação Portuguesa de Surf', logo: '' },
-  { name: 'CNATRIL', logo: '' },
+  { name: 'Federação Portuguesa de Vela', logo: 'images/entidades/fpv.png', h: 'h-8 md:h-11' },
+  { name: 'Federação Portuguesa de Surf', logo: 'images/entidades/fps.png', h: 'h-7 md:h-9' },
+  { name: 'Comité Paralímpico de Portugal', logo: 'images/entidades/cpp.png', h: 'h-14 md:h-[4.5rem]' },
+  { name: 'CNATRIL', logo: 'images/entidades/cnatril.png', h: 'h-6 md:h-8' },
 ]

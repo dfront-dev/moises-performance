@@ -2,8 +2,9 @@ import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import ServiceTable from '../components/ServiceTable'
 import ServiceDetail from '../components/ServiceDetail'
+import ResultsBlock from '../components/ResultsBlock'
 import CtaBand from '../components/CtaBand'
-import { services, details, intro, statement } from '../data/services'
+import { services, details, intro, statement, otherAreas } from '../data/services'
 
 export default function Servicos() {
   return (
@@ -21,6 +22,7 @@ export default function Servicos() {
       <section className="bg-ink px-5 py-24 text-paper md:px-10 md:py-36">
         <p className="display mx-auto max-w-[1680px] text-[clamp(2rem,6vw,7rem)] leading-[0.95]">{statement}</p>
       </section>
+      <ResultsBlock data={otherAreas} tone="paper" />
       <CtaBand
         lines={['Qual é o', 'serviço certo?']}
         text="Conta o essencial e o João indica a melhor forma de intervir."

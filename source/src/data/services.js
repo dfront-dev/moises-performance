@@ -170,3 +170,24 @@ export const details = {
 }
 
 export const statement = 'Ciência, interpretação e experiência aplicadas às decisões de performance.'
+
+export const otherAreas = {
+  id: 'outras-modalidades',
+  lines: ['Outras', 'modalidades.'],
+  intro: 'Trabalho noutras modalidades, além da Vela, do Surf e do Padel.',
+  blocks: [
+    {
+      label: 'Atividade',
+      title: 'Freediving e Ténis',
+      trophy: false,
+      rows: [
+        ['Instrutor de Freediving', 'Desde 2020'],
+        ['Preparação física de Ténis', 'Desde 2021'],
+      ],
+    },
+  ],
+  highlight: {
+    label: 'Em foco',
+    text: 'Desportos de endurance, com foco em triatlo, em articulação com equipas e treinadores.',
+  },
+}

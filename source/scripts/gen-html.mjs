@@ -20,9 +20,9 @@ const pages = [
   {
     file: 'resultados.html', page: 'resultados', path: 'resultados.html',
     title: 'Resultados | JMP, João Moisés Performance Physiology',
-    desc: 'Resultados na Vela Olímpica (Paris 2024, Tóquio 2020, Rio 2016), no Surf e noutras modalidades. Resultados dos atletas e das respetivas equipas.',
+    desc: 'Resultados na Vela Olímpica (Paris 2024, Tóquio 2020, Rio 2016), no Surf e no Padel. Resultados dos atletas e das respetivas equipas.',
     h1: 'Resultados desportivos.',
-    body: '<p>Três ciclos Olímpicos na Vela e um percurso de referência no Surf nacional e internacional, Padel e outras modalidades.</p>',
+    body: '<p>Três ciclos Olímpicos na Vela e um percurso de referência no Surf nacional e internacional e resultados no Padel.</p>',
   },
   {
     file: 'sobre.html', page: 'sobre', path: 'sobre.html',
