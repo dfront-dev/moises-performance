@@ -2,7 +2,6 @@ import Layout from '../components/Layout'
 import Hero from '../components/Hero'
 import Philosophy from '../components/Philosophy'
 import Expertise from '../components/Expertise'
-import System from '../components/System'
 import Audiences from '../components/Audiences'
 import Endurance from '../components/Endurance'
 import Coach from '../components/Coach'
@@ -14,7 +13,6 @@ export default function Home() {
       <Hero />
       <Philosophy />
       <Expertise />
-      <System />
       <Audiences />
       <Endurance />
       <Coach lean />

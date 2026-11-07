@@ -1,69 +1,82 @@
-import DotField from './DotField'
+import { useRef } from 'react'
 import { footerLinks, social, EMAIL, PHONE, PHONE_HREF } from '../data/content'
+import { services } from '../data/services'
+import DotField from './DotField'
+import { useGsap, gsap } from '../lib/useGsap'
 
-const Icon = ({ href, label, children, external = true, paper = false }) => {
-  const svg = (
-    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-      {children}
-    </svg>
-  )
-  const cls = `grid h-9 w-9 place-items-center transition-colors ${paper ? 'text-ink' : 'text-paper'}`
-  if (!href) return <span role="img" aria-label={label} className={cls}>{svg}</span>
+const big = 'text-[clamp(1.35rem,2.3vw,2.4rem)] font-semibold leading-[1.1] tracking-[-0.03em]'
+
+function Group({ label, children }) {
   return (
-    <a
-      href={href}
-      aria-label={label}
-      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-      className={`${cls} ${paper ? 'hover:text-ink/60' : 'hover:text-signal'}`}
-    >
-      {svg}
-    </a>
+    <div data-fgroup>
+      <p className="micro text-steel">{label}</p>
+      <div className="mt-3 flex flex-wrap items-baseline gap-x-8 gap-y-2">{children}</div>
+    </div>
   )
 }
 
-export default function Footer({ tone = 'paper' }) {
-  const paper = tone === 'paper'
-  const hov = paper ? 'hover:text-ink/60' : 'hover:text-signal'
+export default function Footer() {
+  const ref = useRef(null)
+
+  useGsap(ref, ({ q }) => {
+    gsap.from(q('[data-fphoto]'), { clipPath: 'inset(0 0 100% 0)', duration: 1.5, ease: 'power3.inOut', scrollTrigger: { trigger: ref.current, start: 'top 80%' } })
+    gsap.from(q('[data-fphoto] img'), { scale: 1.12, duration: 2, ease: 'power3.out', scrollTrigger: { trigger: ref.current, start: 'top 80%' } })
+    gsap.from(q('[data-fgroup], [data-fcta]'), { opacity: 0, y: 22, stagger: 0.09, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: ref.current, start: 'top 75%' } })
+  })
+
   return (
-    <footer className={`relative overflow-hidden border-t border-ink/15 ${paper ? 'bg-paper text-ink' : 'bg-ink text-paper'}`}>
+    <footer ref={ref} className="relative overflow-hidden border-t border-ink/15 bg-paper text-ink">
       <DotField />
-      <div className="relative mx-auto flex max-w-[1680px] flex-col justify-between gap-10 px-5 pb-10 pt-16 md:flex-row md:items-start md:px-10">
-        <div>
-          <img src={paper ? 'images/jmp-logo.svg' : 'images/jmp-logo-light.svg'} alt="JMP" width="72" height="29" className="h-7 w-auto" />
-          <p className="micro mt-4 text-steel">João Moisés Performance Physiology</p>
-          <div className="mt-6 space-y-1.5 text-[15px]">
-            <a href={`mailto:${EMAIL}`} className={`block transition-colors ${paper ? 'text-ink/85' : 'text-paper/85'} ${hov}`}>{EMAIL}</a>
-            <a href={PHONE_HREF} className={`block transition-colors ${paper ? 'text-ink/85' : 'text-paper/85'} ${hov}`}>{PHONE}</a>
-          </div>
-          <div className="mt-5 flex gap-2 -ml-2">
-            <Icon href={social.instagram} label="Instagram" paper={paper}>
-                <rect x="3" y="3" width="18" height="18" rx="5" />
-                <circle cx="12" cy="12" r="4" />
-                <circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none" />
-            </Icon>
-            <Icon href={social.linkedin} label="LinkedIn" paper={paper}>
-                <rect x="3" y="3" width="18" height="18" rx="2" />
-                <path d="M8 10.5V16M8 7.8v.1M12 16v-5.5M12 12.6c0-1.3 1-2.1 2.2-2.1S16.5 11.3 16.5 12.8V16" />
-            </Icon>
-            <Icon href={`mailto:${EMAIL}`} label="Email" external={false} paper={paper}>
-              <rect x="3" y="5" width="18" height="14" rx="2" />
-              <path d="M3.5 6.5 12 13l8.5-6.5" />
-            </Icon>
+      <div className="relative mx-auto grid max-w-[1680px] gap-14 px-5 pb-12 pt-16 md:grid-cols-12 md:gap-10 md:px-10 md:pb-16 md:pt-24">
+        <div className="md:col-span-6">
+          <div data-fphoto className="relative aspect-[4/3] overflow-hidden rounded-[8px] bg-paper-2">
+            <picture>
+              <source srcSet="images/recovery.webp" type="image/webp" />
+              <img src="images/recovery.jpg" alt="Treinador a orientar um atleta num exercício de mobilidade com banda elástica" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover grayscale" style={{ objectPosition: '42% 50%' }} />
+            </picture>
           </div>
         </div>
-        <ul className="bullets gap-y-3">
-          {footerLinks.map((l) => (
-            <li key={l.label}>
-              <a href={l.href} {...(l.download ? { download: true } : {})} className={`micro transition-colors ${paper ? 'text-ink/65' : 'text-paper/75'} ${hov}`}><span className="roll"><span>{l.label}</span><span aria-hidden>{l.label}</span></span></a>
-            </li>
-          ))}
-        </ul>
+
+        <div className="space-y-9 md:col-span-5 md:col-start-8">
+          <Group label="Serviços">
+            {services.map((s) => (
+              <a key={s.id} href={`servicos.html#${s.id}`} className={`underline-link ${big}`}>{s.short}</a>
+            ))}
+          </Group>
+          <Group label="Navegação">
+            {footerLinks.map((l) => (
+              <a key={l.label} href={l.href} {...(l.download ? { download: true } : {})} className={`underline-link ${big}`}>{l.label}</a>
+            ))}
+          </Group>
+          <Group label="Contactos">
+            <a href={`mailto:${EMAIL}`} className={`underline-link break-all ${big}`}>{EMAIL}</a>
+            <a href={PHONE_HREF} className={`underline-link ${big}`}>{PHONE}</a>
+          </Group>
+          <Group label="Redes">
+            {[['Instagram', social.instagram], ['LinkedIn', social.linkedin]].map(([name, href]) =>
+              href ? (
+                <a key={name} href={href} target="_blank" rel="noopener noreferrer" className={`underline-link ${big}`}>{name}</a>
+              ) : (
+                <span key={name} className={`${big} text-ink/35`}>{name}</span>
+              )
+            )}
+          </Group>
+          <div data-fcta className="pt-2">
+            <a href="contacto.html" className="btn btn-solid micro">
+              Agendar consulta <span aria-hidden>→</span>
+            </a>
+          </div>
+        </div>
       </div>
-      <div className="relative mx-auto flex max-w-[1680px] justify-between px-5 pb-6 md:px-10">
-        <p className="micro text-steel">© 2026 JMP</p>
+
+      <div className="relative mx-auto flex max-w-[1680px] flex-wrap items-center justify-between gap-4 border-t border-ink/10 px-5 py-6 md:px-10">
+        <div className="flex items-center gap-5">
+          <img src="images/jmp-logo.svg" alt="JMP" width="72" height="29" className="h-5 w-auto" />
+          <p className="micro text-steel">© 2026 JMP</p>
+        </div>
         <p className="micro bullets text-steel">
-          <a href="privacidade.html" className={`transition-colors ${hov}`}>Política de privacidade</a>
-          <a href="termos.html" className={`transition-colors ${hov}`}>Termos e condições</a>
+          <a href="privacidade.html" className="transition-colors hover:text-ink">Política de privacidade</a>
+          <a href="termos.html" className="transition-colors hover:text-ink">Termos e condições</a>
         </p>
       </div>
     </footer>
