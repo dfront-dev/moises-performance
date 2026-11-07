@@ -68,7 +68,7 @@ export const results = [
       {
         label: 'Padel',
         title: 'Do pódio nacional ao mundial',
-        rows: [['Sebastião Mendonça', '5.º no Mundial de Seleções de Padel, 2018']],
+        rows: [['Sebastião Mendonça', '5.º no Mundial de Seleções de Padel, 2018', 'sebastiao-mendonca']],
       },
     ],
   },
