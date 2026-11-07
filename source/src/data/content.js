@@ -178,7 +178,7 @@ export const endurance = {
     'Além da Vela e do Surf, o João está a desenvolver uma especialização em endurance, com foco em ciclismo e triatlo: avaliação e análise fisiológica ao serviço de atletas e treinadores, com protocolos específicos de ciclismo, corrida e natação sempre que há uma necessidade concreta.',
 }
 
-// Preencher com os links reais. Os ícones só aparecem quando existe um endereço.
+// Preencher com os links reais. Sem endereço, o ícone aparece sem link.
 export const social = {
   instagram: '',
   linkedin: '',

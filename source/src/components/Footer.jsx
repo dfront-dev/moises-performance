@@ -1,17 +1,24 @@
 import { footerLinks, social, EMAIL, PHONE, PHONE_HREF } from '../data/content'
 
-const Icon = ({ href, label, children, external = true }) => (
-  <a
-    href={href}
-    aria-label={label}
-    {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-    className="grid h-11 w-11 place-items-center border border-paper/25 text-paper transition-colors hover:border-signal hover:bg-signal hover:text-ink"
-  >
-    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+const Icon = ({ href, label, children, external = true }) => {
+  const svg = (
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
       {children}
     </svg>
-  </a>
-)
+  )
+  const cls = 'grid h-9 w-9 place-items-center text-paper transition-colors'
+  if (!href) return <span role="img" aria-label={label} className={cls}>{svg}</span>
+  return (
+    <a
+      href={href}
+      aria-label={label}
+      {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+      className={`${cls} hover:text-signal`}
+    >
+      {svg}
+    </a>
+  )
+}
 
 export default function Footer() {
   return (
@@ -24,20 +31,16 @@ export default function Footer() {
             <a href={`mailto:${EMAIL}`} className="block text-paper/85 transition-colors hover:text-signal">{EMAIL}</a>
             <a href={PHONE_HREF} className="block text-paper/85 transition-colors hover:text-signal">{PHONE}</a>
           </div>
-          <div className="mt-6 flex gap-3">
-            {social.instagram && (
-              <Icon href={social.instagram} label="Instagram">
+          <div className="mt-5 flex gap-2 -ml-2">
+            <Icon href={social.instagram} label="Instagram">
                 <rect x="3" y="3" width="18" height="18" rx="5" />
                 <circle cx="12" cy="12" r="4" />
                 <circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none" />
-              </Icon>
-            )}
-            {social.linkedin && (
-              <Icon href={social.linkedin} label="LinkedIn">
+            </Icon>
+            <Icon href={social.linkedin} label="LinkedIn">
                 <rect x="3" y="3" width="18" height="18" rx="2" />
                 <path d="M8 10.5V16M8 7.8v.1M12 16v-5.5M12 12.6c0-1.3 1-2.1 2.2-2.1S16.5 11.3 16.5 12.8V16" />
-              </Icon>
-            )}
+            </Icon>
             <Icon href={`mailto:${EMAIL}`} label="Email" external={false}>
               <rect x="3" y="5" width="18" height="14" rx="2" />
               <path d="M3.5 6.5 12 13l8.5-6.5" />
