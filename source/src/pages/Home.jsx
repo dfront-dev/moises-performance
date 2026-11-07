@@ -4,7 +4,6 @@ import Philosophy from '../components/Philosophy'
 import Expertise from '../components/Expertise'
 import Audiences from '../components/Audiences'
 import Endurance from '../components/Endurance'
-import Coach from '../components/Coach'
 import Testimonials from '../components/Testimonials'
 
 export default function Home() {
@@ -15,7 +14,6 @@ export default function Home() {
       <Expertise />
       <Audiences />
       <Endurance />
-      <Coach lean />
       <Testimonials />
     </Layout>
   )

@@ -135,7 +135,7 @@ export default function ResultsBlock({ data, tone = 'ink', saturated = false, co
       <div
         ref={tip}
         aria-hidden
-        className={`pointer-events-none fixed left-0 top-0 z-[70] hidden h-[192px] w-[288px] overflow-hidden bg-ink transition-opacity duration-200 md:block ${photo ? 'opacity-100' : 'opacity-0'}`}
+        className={`pointer-events-none fixed left-0 top-0 z-[70] hidden h-[192px] w-[288px] overflow-hidden rounded-[8px] bg-ink transition-opacity duration-200 md:block ${photo ? 'opacity-100' : 'opacity-0'}`}
       >
         {pics.map((p, i) => (
           <picture key={p}>

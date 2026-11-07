@@ -3,6 +3,7 @@ import { expertise as c } from '../data/content'
 import { services } from '../data/services'
 import { Lines } from '../lib/split'
 import TechVisual from './TechVisual'
+import Crosses from './Crosses'
 import { useGsap, gsap } from '../lib/useGsap'
 
 function Visual({ s }) {
@@ -85,7 +86,7 @@ export default function Expertise() {
                 </span>
                 <span aria-hidden className="svc-arrow hidden text-2xl md:col-span-1 md:block md:justify-self-end">↗</span>
                 {/* touch: the image sits in the row */}
-                <span className="mt-4 block aspect-[4/3] overflow-hidden bg-paper-2 md:hidden"><Visual s={s} /></span>
+                <span className="relative mt-4 block md:hidden"><span className="block aspect-[4/3] overflow-hidden rounded-[8px] bg-paper-2"><Visual s={s} /></span><Crosses /></span>
               </a>
             </li>
           ))}
@@ -98,7 +99,7 @@ export default function Expertise() {
       </div>
 
       {/* pointer-following card (desktop) */}
-      <div ref={tip} aria-hidden className="pointer-events-none fixed left-0 top-0 z-[60] hidden h-[300px] w-[240px] overflow-hidden bg-paper-2 md:block" style={{ clipPath: 'inset(100% 0 0 0)' }}>
+      <div ref={tip} aria-hidden className="pointer-events-none fixed left-0 top-0 z-[60] hidden h-[300px] w-[240px] overflow-hidden rounded-[8px] bg-paper-2 md:block" style={{ clipPath: 'inset(100% 0 0 0)' }}>
         {services.map((s, i) => (
           <div key={s.id} className="absolute inset-0 transition-opacity duration-500" style={{ opacity: active === i ? 1 : 0 }}>
             <Visual s={s} />

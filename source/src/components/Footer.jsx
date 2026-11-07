@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { footerLinks, social, EMAIL, PHONE, PHONE_HREF } from '../data/content'
 import { services } from '../data/services'
 import DotField from './DotField'
+import Crosses from './Crosses'
 import { useGsap, gsap } from '../lib/useGsap'
 
 const big = 'text-[clamp(1.35rem,2.3vw,2.4rem)] font-semibold leading-[1.1] tracking-[-0.03em]'
@@ -29,11 +30,14 @@ export default function Footer() {
       <DotField />
       <div className="relative mx-auto grid max-w-[1680px] gap-14 px-5 pb-12 pt-16 md:grid-cols-12 md:gap-10 md:px-10 md:pb-16 md:pt-24">
         <div className="md:col-span-6">
+          <div className="relative">
           <div data-fphoto className="relative aspect-[4/3] overflow-hidden rounded-[8px] bg-paper-2">
             <picture>
               <source srcSet="images/recovery.webp" type="image/webp" />
               <img src="images/recovery.jpg" alt="Treinador a orientar um atleta num exercício de mobilidade com banda elástica" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover grayscale" style={{ objectPosition: '42% 50%' }} />
             </picture>
+          </div>
+            <Crosses />
           </div>
         </div>
 

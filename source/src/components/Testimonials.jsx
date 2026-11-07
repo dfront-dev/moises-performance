@@ -41,7 +41,7 @@ export default function Testimonials({ tone = 'paper' }) {
                 {t.photo ? (
                   <picture>
                     <source srcSet={`${t.photo}.webp`} type="image/webp" />
-                    <img src={`${t.photo}.jpg`} alt={t.name} loading="lazy" decoding="async" className="h-14 w-14 object-cover grayscale transition duration-700 group-hover:grayscale-0" />
+                    <img src={`${t.photo}.jpg`} alt={t.name} loading="lazy" decoding="async" className="h-14 w-14 rounded-[6px] object-cover grayscale transition duration-700 group-hover:grayscale-0" />
                   </picture>
                 ) : (
                   <span aria-hidden className={`grid h-10 w-10 place-items-center border text-[11px] font-medium ${paper ? 'border-ink/20 text-ink/60' : 'border-paper/20 text-paper/70'}`}>{t.initials}</span>

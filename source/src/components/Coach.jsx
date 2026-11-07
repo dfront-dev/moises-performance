@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { coach as c } from '../data/content'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
+import Crosses from './Crosses'
 
 const pad = (n, p = 0) => String(n).padStart(p, '0')
 
@@ -57,8 +58,8 @@ export default function Coach({ index, lean = false }) {
         <div className="mt-14 grid gap-14 md:mt-20 md:grid-cols-12">
           {/* portrait */}
           <div className="md:col-span-5">
-            <div className="md:sticky md:top-24">
-              <div data-coach-frame className="relative aspect-[3/4] overflow-hidden bg-steel/20">
+            <div className="relative md:sticky md:top-24">
+              <div data-coach-frame className="relative aspect-[3/4] overflow-hidden rounded-[8px] bg-steel/20">
                 <picture>
                   <source srcSet="images/joao-sobre.webp" type="image/webp" />
                   <img
@@ -77,6 +78,7 @@ export default function Coach({ index, lean = false }) {
                   João Moisés / Fisiologista do Exercício
                 </p>
               </div>
+              <Crosses />
             </div>
           </div>
 
