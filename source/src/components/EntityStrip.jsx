@@ -4,7 +4,7 @@ function Item({ e, paper }) {
   return (
     <li className="flex shrink-0 items-center gap-14">
       {e.logo ? (
-        <img src={e.logo} alt={e.name} className={`${e.h || 'h-9 md:h-11'} w-auto max-w-none grayscale transition-opacity ${paper ? 'opacity-60 invert hover:opacity-100' : 'opacity-55 hover:opacity-95'}`} />
+        <img src={e.logo} alt={e.name} width={e.w} height={e.ht} decoding="sync" className={`${e.h || 'h-9 md:h-11'} w-auto max-w-none grayscale transition-opacity ${paper ? 'opacity-60 invert hover:opacity-100' : 'opacity-55 hover:opacity-95'}`} />
       ) : (
         <span className="display whitespace-nowrap text-[clamp(1.2rem,2.2vw,2rem)] leading-none text-paper/45 grayscale transition-colors hover:text-paper/85">{e.name}</span>
       )}
