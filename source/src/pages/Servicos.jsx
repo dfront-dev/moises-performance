@@ -11,7 +11,7 @@ export default function Servicos() {
     <Layout page="servicos">
       <PageHeader
         label="Serviços"
-        lines={['Serviços de', 'performance.']}
+        lines={['Consultoria de', 'fisiologia']}
         classes={['', 'text-signal']}
         intro={intro}
       />

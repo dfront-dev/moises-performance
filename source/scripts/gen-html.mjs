@@ -14,7 +14,7 @@ const pages = [
     file: 'servicos.html', page: 'servicos', path: 'servicos.html',
     title: 'Serviços | JMP, João Moisés Performance Physiology',
     desc: 'Consultoria estratégica de otimização do treino, avaliação física e fisiológica presencial e acompanhamento integrado de performance. Fisiologia aplicada à performance.',
-    h1: 'Serviços de performance.',
+    h1: 'Consultoria de fisiologia',
     body: '<ul><li>Consultoria estratégica de otimização do treino: compreender e orientar. Online, pontual ou periódica.</li><li>Avaliação física e fisiológica presencial: avaliar e aprofundar.</li><li>Acompanhamento Integrado de Performance: acompanhar e otimizar, de forma continuada, personalizada e premium.</li></ul>',
   },
   {
