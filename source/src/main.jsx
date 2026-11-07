@@ -4,7 +4,7 @@ import './index.css'
 
 const pages = {
   home: lazy(() => import('./pages/Home')),
-  programas: lazy(() => import('./pages/Programas')),
+  servicos: lazy(() => import('./pages/Servicos')),
   resultados: lazy(() => import('./pages/Resultados')),
   sobre: lazy(() => import('./pages/Sobre')),
   contacto: lazy(() => import('./pages/Contacto')),

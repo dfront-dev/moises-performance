@@ -23,7 +23,7 @@ export default function Sobre() {
         lines={['Vamos falar', 'de performance.']}
         text="Atletas, federações e estruturas técnicas, em Portugal e internacionalmente."
         primary={{ label: 'Falar com o João', href: 'contacto.html' }}
-        secondary={{ label: 'Ver programas', href: 'programas.html' }}
+        secondary={{ label: 'Ver serviços', href: 'servicos.html' }}
       />
     </Layout>
   )

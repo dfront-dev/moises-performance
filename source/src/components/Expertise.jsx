@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { expertise as c } from '../data/content'
-import { programs } from '../data/programs'
+import { services } from '../data/services'
 import { Lines } from '../lib/split'
 import TechVisual from './TechVisual'
 import { useGsap, gsap } from '../lib/useGsap'
@@ -48,55 +48,55 @@ export default function Expertise() {
           <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(3rem,9.4vw,11rem)] md:col-span-12">
             <Lines lines={c.lines} />
           </h2>
-          <p data-fade className="max-w-sm text-base leading-relaxed text-ink/70 md:col-span-5 md:col-start-8">
+          <p data-fade className="max-w-md text-base leading-relaxed text-ink/70 md:col-span-5 md:col-start-8">
             {c.intro}
           </p>
         </div>
 
         <div className="mt-20 grid gap-x-8 gap-y-20 md:mt-28 md:grid-cols-3">
-          {programs.map((p, i) => (
-            <article key={p.id} data-card className={`card group ${offsets[i]}`}>
-              <a href={`programas.html#${p.id}`} className="block">
+          {services.map((s, i) => (
+            <article key={s.id} data-card className={`card group ${offsets[i]}`}>
+              <a href={`servicos.html#${s.id}`} className="block" aria-label={s.full}>
                 <div data-mask className="relative aspect-[4/5] overflow-hidden bg-ink">
                   <div data-inner className="absolute inset-0">
-                    {p.image ? (
+                    {s.image ? (
                       <div className="tint relative h-full w-full">
                         <picture>
-                          <source srcSet={`images/${p.image}.webp`} type="image/webp" />
-                          <img src={`images/${p.image}.jpg`} alt={p.alt} loading="lazy" decoding="async" className="photo h-full w-full object-cover" style={{ objectPosition: p.pos || '50% 50%' }} />
+                          <source srcSet={`images/${s.image}.webp`} type="image/webp" />
+                          <img src={`images/${s.image}.jpg`} alt={s.alt} loading="lazy" decoding="async" className="photo h-full w-full object-cover" style={{ objectPosition: s.pos || '50% 50%' }} />
                         </picture>
                       </div>
                     ) : (
-                      <TechVisual variant={p.visual} label="" />
+                      <TechVisual variant={s.visual} label="" />
                     )}
                   </div>
                 </div>
               </a>
 
-              <h3 data-text className="display mt-6 whitespace-nowrap text-[1.75rem] leading-[0.92] md:text-[clamp(1.4rem,2.45vw,3rem)]">
-                <a href={`programas.html#${p.id}`} className="transition-colors hover:text-[#007b6c]">{p.name}</a>
+              <h3 data-text className="display mt-6 text-[1.75rem] leading-[0.92] md:text-[clamp(1.5rem,2.6vw,3rem)]">
+                <a href={`servicos.html#${s.id}`} className="transition-colors hover:text-[#007b6c]">{s.short}</a>
               </h3>
-              <p data-text className="micro mt-3 text-[10.5px] deep-signal">{p.desc}</p>
-              <p data-text className="mt-4 text-[15px] leading-relaxed text-ink/70">{p.ideal}.</p>
+              <p data-text className="micro mt-3 text-[10.5px] deep-signal">{s.full}</p>
+              <p data-text className="mt-4 text-[15px] leading-relaxed text-ink/70">{s.desc}</p>
 
               <ul data-text className="mt-6 border-t border-ink/20">
-                {p.services.map((s) => (
-                  <li key={s} className="micro flex items-center gap-3 border-b border-ink/10 py-3 text-[10.5px] text-ink/80">
+                {s.tags.map((t) => (
+                  <li key={t} className="micro flex items-center gap-3 border-b border-ink/10 py-3 text-[10.5px] text-ink/80">
                     <span aria-hidden className="h-[7px] w-[7px] -skew-x-12 bg-signal" />
-                    {s}
+                    {t}
                   </li>
                 ))}
               </ul>
 
-              <a data-text href={`programas.html#${p.id}`} className="micro underline-link mt-6 inline-flex items-center gap-3 pb-1">
-                Ver o programa <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+              <a data-text href={`servicos.html#${s.id}`} className="micro underline-link mt-6 inline-flex items-center gap-3 pb-1">
+                Ver o serviço <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
               </a>
             </article>
           ))}
         </div>
 
         <div data-fade className="mt-24 flex justify-center">
-          <a href="programas.html" className="btn btn-dark micro">Comparar os programas <span aria-hidden>→</span></a>
+          <a href="servicos.html" className="btn btn-dark micro">Ver todos os serviços <span aria-hidden>→</span></a>
         </div>
       </div>
     </section>

@@ -4,7 +4,7 @@ export default function Nav({ page = 'home' }) {
   const home = page === 'home'
   const links = [
     { key: 'metodo', label: 'Método', href: home ? '#metodo' : 'index.html#metodo' },
-    { key: 'programas', label: 'Programas', href: 'programas.html' },
+    { key: 'servicos', label: 'Serviços', href: 'servicos.html' },
     { key: 'resultados', label: 'Resultados', href: 'resultados.html' },
     { key: 'sobre', label: 'Sobre', href: 'sobre.html' },
     { key: 'contacto', label: 'Contacto', href: home ? '#contacto' : 'contacto.html' },

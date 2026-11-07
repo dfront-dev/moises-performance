@@ -15,7 +15,7 @@ export const hero = {
   lines: ['Preparador físico', 'para alto', 'rendimento.'],
   support: 'João Moisés Performance. Fisiologista do exercício e preparador físico.',
   role: 'João Moisés, Fisiologista do Exercício e Preparador Físico',
-  primary: { label: 'Explorar programas', href: 'programas.html' },
+  primary: { label: 'Explorar serviços', href: 'servicos.html' },
 }
 
 export const philosophy = {
@@ -43,9 +43,9 @@ export const system = {
 }
 
 export const expertise = {
-  index: '04 / Programas',
-  lines: ['Programas de', 'performance.'],
-  intro: 'Três programas para três momentos: iniciação, alto rendimento e reabilitação.',
+  index: '04 / Serviços',
+  lines: ['Áreas de', 'intervenção.'],
+  intro: 'Três serviços, três níveis de profundidade no processo de treino: compreender e orientar, avaliar e aprofundar, acompanhar e otimizar.',
 }
 
 export const coach = {
@@ -98,7 +98,7 @@ export const contact = {
 }
 
 export const footerLinks = [
-  { label: 'Programas', href: 'programas.html' },
+  { label: 'Serviços', href: 'servicos.html' },
   { label: 'Resultados', href: 'resultados.html' },
   { label: 'Sobre', href: 'sobre.html' },
   { label: 'Testemunhos', href: 'testemunhos.html' },
@@ -143,5 +143,5 @@ export const placeholders = [
   ['[Nome do responsável]', '[Federação / instituição]'],
   ['[Nome do atleta]', '[Modalidade / função]'],
   ['[Nome do atleta]', '[Modalidade / função]'],
-  ['[Pai ou mãe de atleta]', '[Programa JMP Academy]'],
+  ['[Pai ou mãe de atleta]', '[Serviço contratado]'],
 ]

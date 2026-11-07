@@ -21,7 +21,7 @@ export default function Resultados() {
       <CtaBand
         lines={['Resultados assim', 'na tua equipa?']}
         text="Vamos falar sobre os objetivos da próxima época."
-        primary={{ label: 'Ver programas', href: 'programas.html' }}
+        primary={{ label: 'Ver serviços', href: 'servicos.html' }}
         secondary={{ label: 'Contactar', href: 'contacto.html' }}
       />
     </Layout>
