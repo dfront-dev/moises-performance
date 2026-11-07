@@ -21,42 +21,42 @@ export default function Testimonials() {
   })
 
   return (
-    <section id="testemunhos" ref={ref} className="relative bg-ink py-28 text-paper md:py-44">
+    <section id="testemunhos" ref={ref} className="relative bg-ink py-24 text-paper md:py-36">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
         <div aria-hidden data-fade className="section-index h-px bg-paper/20" />
 
-        <div className="mt-14 grid gap-10 md:mt-20 md:grid-cols-12 md:items-end">
-          <h2 aria-label="Impacto nos atletas" className="display text-[clamp(2.8rem,8vw,9.5rem)] md:col-span-12">
-            <Lines lines={['Impacto', 'nos atletas.']} classes={['', 'text-signal']} />
+        <div className="mt-12 grid gap-10 md:mt-16 md:grid-cols-12 md:items-end">
+          <h2 aria-label="Impacto nos atletas" className="display title-soft text-[clamp(2.2rem,5vw,5.6rem)] md:col-span-12">
+            <Lines lines={['Impacto', 'nos atletas.']} classes={['', 'text-signal/90']} />
           </h2>
         </div>
 
-        <div className="mt-20 grid gap-6 md:mt-28 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 grid gap-5 md:mt-20 md:grid-cols-2 lg:grid-cols-3">
           {testimonials.map((t) => (
-            <figure key={t.name} data-card className="relative border border-ink/15 border-t-[4px] border-t-signal bg-white p-8 text-ink md:col-span-2 lg:col-span-1">
-              <span aria-hidden className="display block text-6xl leading-none text-[#007b6c]">"</span>
-              <blockquote className="mt-4 text-[15px] leading-relaxed text-ink">{t.quote}</blockquote>
+            <figure key={t.name} data-card className="relative border border-paper/10 border-t-signal/50 bg-paper/[0.035] p-8 text-paper md:col-span-2 lg:col-span-1">
+              <span aria-hidden className="display block text-4xl leading-none text-signal/60">"</span>
+              <blockquote className="mt-4 text-[15px] font-light leading-relaxed text-paper/80">{t.quote}</blockquote>
               <figcaption className="mt-8 flex items-center gap-4">
-                <span aria-hidden className="grid h-11 w-11 place-items-center bg-signal text-[12px] font-bold text-ink">{t.initials}</span>
+                <span aria-hidden className="grid h-10 w-10 place-items-center border border-paper/20 text-[11px] font-medium text-paper/70">{t.initials}</span>
                 <span>
-                  <span className="block text-sm font-bold">{t.name}</span>
-                  <span className="micro text-[10px] text-ink/60">{t.role}</span>
+                  <span className="block text-sm font-medium text-paper/90">{t.name}</span>
+                  <span className="micro text-[10px] text-paper/45">{t.role}</span>
                 </span>
               </figcaption>
             </figure>
           ))}
           {placeholders.map(([name, role], i) => (
-            <figure key={i} data-card className="relative border border-ink/15 border-t-[4px] border-t-signal bg-white p-8 text-ink">
-              <span className="micro absolute -top-3 right-5 bg-steel px-3 py-1 text-[10px] text-ink">Exemplo</span>
-              <span aria-hidden className="display block text-6xl leading-none text-[#007b6c]">"</span>
-              <blockquote className="mt-4 min-h-24 text-[15px] italic leading-relaxed text-ink/70">
+            <figure key={i} data-card className="relative border border-paper/[0.07] border-t-paper/15 bg-paper/[0.02] p-8 text-paper">
+              <span className="micro absolute right-5 top-4 text-[9px] text-paper/30">Exemplo</span>
+              <span aria-hidden className="display block text-4xl leading-none text-paper/20">"</span>
+              <blockquote className="mt-4 min-h-24 text-[15px] font-light italic leading-relaxed text-paper/40">
                 Espaço reservado para testemunho real, a substituir por citação autorizada do atleta ou federação.
               </blockquote>
               <figcaption className="mt-8 flex items-center gap-4">
-                <span aria-hidden className="grid h-11 w-11 place-items-center border border-dashed border-ink/30 text-[11px] text-ink/50">JM</span>
+                <span aria-hidden className="grid h-10 w-10 place-items-center border border-dashed border-paper/15 text-[11px] text-paper/30">JM</span>
                 <span>
-                  <span className="block text-sm font-bold">{name}</span>
-                  <span className="micro text-[10px] text-ink/60">{role}</span>
+                  <span className="block text-sm font-medium text-paper/50">{name}</span>
+                  <span className="micro text-[10px] text-paper/30">{role}</span>
                 </span>
               </figcaption>
             </figure>
