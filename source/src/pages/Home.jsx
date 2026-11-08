@@ -1,4 +1,5 @@
 import Layout from '../components/Layout'
+import SportsSpiral from '../components/SportsSpiral'
 import Hero from '../components/Hero'
 import Philosophy from '../components/Philosophy'
 import Expertise from '../components/Expertise'
@@ -9,6 +10,7 @@ import Testimonials from '../components/Testimonials'
 export default function Home() {
   return (
     <Layout page="home">
+      <SportsSpiral top />
       <Hero />
       <Philosophy />
       <Expertise />

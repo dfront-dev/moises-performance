@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { hero } from '../data/content'
 import { CharLines } from '../lib/split'
-import { useGsap, gsap } from '../lib/useGsap'
+import { useGsap, gsap, ScrollTrigger } from '../lib/useGsap'
 import DotField from './DotField'
 import Arrow from './Arrow'
 
@@ -31,9 +31,11 @@ export default function Hero() {
       .from(q('[data-plus]'), { opacity: 0, scale: 0.4, stagger: 0.08, duration: 0.8 }, 1.2)
       .from(q('[data-sq]'), { scale: 0, opacity: 0, stagger: 0.18, duration: 0.7, ease: 'back.out(2)' }, 1.9)
 
-    const start = () => tl.play()
-    if (window.__jmpReady) start()
-    else window.addEventListener('jmp:ready', start, { once: true })
+    let ready = !!window.__jmpReady, seen = false
+    const tryPlay = () => { if (ready && seen) tl.play() }
+    const start = () => { ready = true; tryPlay() }
+    if (!ready) window.addEventListener('jmp:ready', start, { once: true })
+    ScrollTrigger.create({ trigger: root, start: 'top 70%', once: true, onEnter: () => { seen = true; tryPlay() } })
 
     // soft parallax on the portrait only (a few percent)
     gsap.to(q('[data-portrait-img]'), { yPercent: 4, ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true } })

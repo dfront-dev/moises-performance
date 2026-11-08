@@ -1,0 +1,1 @@
+import{t as e}from"./main-DTsMNAr2.js";import{r as t,t as n}from"./LegalPage-h5N_WpTu.js";var r=e();function i(){return(0,r.jsx)(n,{page:`termos`,label:`Termos e condições`,lines:[`Termos e`,`condições.`],data:t})}export{i as default};
