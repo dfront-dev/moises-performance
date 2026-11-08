@@ -4,7 +4,7 @@ export default function Quote({ tone = 'paper' }) {
   const t = testimonials[0]
   const dark = tone === 'ink'
   return (
-    <figure data-fade className={`relative border border-t border-t-signal p-8 md:p-12 ${dark ? 'border-paper/15 bg-paper/[0.04] text-paper' : 'border-ink/10 bg-paper-2 text-ink'}`}>
+    <figure data-fade className={`relative border border-t border-t-signal p-8 md:p-12 ${dark ? 'border-paper/15 bg-[#171a1c] text-paper' : 'border-ink/10 bg-paper-2 text-ink'}`}>
       <span aria-hidden className={`display block text-7xl leading-none ${dark ? 'text-signal' : 'text-signal'}`}>"</span>
       <blockquote className="mt-2 text-[clamp(1.05rem,1.5vw,1.45rem)] leading-snug">{t.quote}</blockquote>
       <figcaption className="mt-8 flex items-center gap-4">

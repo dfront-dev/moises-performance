@@ -92,7 +92,7 @@ export default function Endurance() {
         <div ref={chart} aria-hidden className="pointer-events-none relative z-0 mt-12 h-[250px] lg:absolute lg:inset-x-0 lg:bottom-0 lg:mt-0 lg:h-[46%]" style={{ order: 3 }}>
           <div className="mx-auto flex h-full max-w-[1680px] flex-col px-5 pb-6 md:px-10" style={{ opacity: 0.42, WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, #000 30%)', maskImage: 'linear-gradient(to bottom, transparent 0%, #000 30%)' }}>
             <div className="flex items-baseline justify-between gap-4 pt-8">
-              <p className="micro text-paper/60">Training log · illustrative data</p>
+              <p className="micro text-paper/60">Training log</p>
               <p className="micro tabular-nums text-paper/80">{active >= 0 ? `Session ${String(active + 1).padStart(2, '0')} · ${dates[active]}` : `${dates[0]} to ${dates[N - 1]}`}</p>
             </div>
             <div className="relative mt-2 flex min-h-0 flex-1 flex-col">
