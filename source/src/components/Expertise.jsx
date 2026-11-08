@@ -5,6 +5,7 @@ import { Lines } from '../lib/split'
 import TechVisual from './TechVisual'
 import Crosses from './Crosses'
 import { useGsap, gsap } from '../lib/useGsap'
+import Arrow from './Arrow'
 
 function Visual({ s }) {
   return s.image ? (
@@ -84,7 +85,7 @@ export default function Expertise() {
                   <span className="micro block text-steel">{s.full}</span>
                   <span className="mt-3 block max-w-sm text-[15px] leading-relaxed text-ink/60">{s.desc}</span>
                 </span>
-                <span aria-hidden className="svc-arrow hidden text-2xl md:col-span-1 md:block md:justify-self-end">↗</span>
+                <Arrow className="svc-arrow hidden h-6 w-6 md:col-span-1 md:block md:justify-self-end" />
                 {/* touch: the image sits in the row */}
                 <span className="relative mt-4 block md:hidden"><span className="block aspect-[4/3] overflow-hidden rounded-[8px] bg-paper-2"><Visual s={s} /></span><Crosses /></span>
               </a>
@@ -94,7 +95,7 @@ export default function Expertise() {
         </ul>
 
         <div data-fade className="mt-20 flex justify-center">
-          <a href="servicos.html" className="btn btn-solid micro">Ver todos os serviços <span aria-hidden>→</span></a>
+          <a href="servicos.html" className="btn btn-solid micro">Ver todos os serviços <Arrow /></a>
         </div>
       </div>
 

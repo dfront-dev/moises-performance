@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { audiences as c } from '../data/content'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
+import Arrow from './Arrow'
 
 export default function Audiences() {
   const ref = useRef(null)
@@ -40,7 +41,7 @@ export default function Audiences() {
               <h3 className="display subhead text-[clamp(1.3rem,1.8vw,1.9rem)]">{it.title}</h3>
               <p className="mt-5 flex-grow text-[15px] leading-relaxed text-ink/65">{it.text}</p>
               <span className="micro mt-8 inline-flex items-center gap-3 text-ink">
-                {it.cta} <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+                {it.cta} <Arrow className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
               </span>
             </a>
           ))}

@@ -3,6 +3,7 @@ import { hero } from '../data/content'
 import { CharLines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 import DotField from './DotField'
+import Arrow from './Arrow'
 
 // Eight white squares in a ring around the portrait (same layout as the supplied photo, in % of the frame).
 // They stay solid white and only drift slightly as the page scrolls.
@@ -82,7 +83,7 @@ export default function Hero() {
           <p data-fade className="mt-8 max-w-md text-lg leading-relaxed text-ink/65 md:text-xl">{hero.support}</p>
           <div data-fade className="mt-10">
             <a href={hero.primary.href} className="btn btn-solid micro">
-              {hero.primary.label} <span aria-hidden>→</span>
+              {hero.primary.label} <Arrow />
             </a>
           </div>
         </div>

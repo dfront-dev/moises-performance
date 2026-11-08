@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Arrow from './Arrow'
 
 export default function Nav({ page = 'home', tone = 'paper' }) {
   const paper = tone === 'paper'
@@ -96,7 +97,7 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
         ))}
       </ul>
       <a href={cta} onClick={() => setOpen(false)} className="btn btn-solid micro mt-10 w-full justify-between">
-        Agendar consulta <span aria-hidden>→</span>
+        Agendar consulta <Arrow />
       </a>
     </div>
   </>

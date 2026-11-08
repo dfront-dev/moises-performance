@@ -4,6 +4,7 @@ import { services } from '../data/services'
 import DotField from './DotField'
 import Crosses from './Crosses'
 import { useGsap, gsap } from '../lib/useGsap'
+import Arrow from './Arrow'
 
 const big = 'text-[clamp(1.35rem,2.3vw,2.4rem)] font-semibold leading-[1.1] tracking-[-0.03em]'
 
@@ -67,7 +68,7 @@ export default function Footer() {
           </Group>
           <div data-fcta className="pt-2">
             <a href="contacto.html" className="btn btn-solid micro">
-              Agendar consulta <span aria-hidden>→</span>
+              Agendar consulta <Arrow />
             </a>
           </div>
         </div>
