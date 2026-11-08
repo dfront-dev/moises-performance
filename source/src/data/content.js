@@ -182,8 +182,10 @@ export const audiences = {
 
 export const endurance = {
   lines: ['Endurance,', 'ciclismo', 'e triatlo.'],
-  text:
-    'Além da Vela e do Surf, o João está a desenvolver uma especialização em endurance, com foco em ciclismo e triatlo: avaliação e análise fisiológica ao serviço de atletas e treinadores, com protocolos específicos de ciclismo, corrida e natação sempre que há uma necessidade concreta.',
+  text: [
+    'Além do seu histórico de referência de Vela e Surf, o João especializa-se em endurance, com foco também em ciclismo e triatlo.',
+    'Coloca a avaliação e análise fisiológica ao serviço de atletas e treinadores, com protocolos específicos de ciclismo, corrida e natação sempre que há uma necessidade concreta.',
+  ],
 }
 
 // Preencher com os links reais. Sem endereço, o ícone aparece sem link.

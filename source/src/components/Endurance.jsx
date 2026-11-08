@@ -27,7 +27,7 @@ export default function Endurance() {
             <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(2.8rem,7.4vw,8.6rem)]">
               <Lines lines={c.lines} classes={['', 'text-[#007b6c]', 'text-[#007b6c]']} />
             </h2>
-            <p data-fade className="mt-10 max-w-lg border-l-[3px] border-signal pl-5 text-lg leading-snug text-ink/80">{c.text}</p>
+            <div data-fade className="mt-10 max-w-lg space-y-4 border-l-[3px] border-signal pl-5 text-lg leading-snug text-ink/80">{c.text.map((t) => <p key={t}>{t}</p>)}</div>
           </div>
           <div className="md:col-span-6 md:pt-6">
             <Quote tone="paper" />
