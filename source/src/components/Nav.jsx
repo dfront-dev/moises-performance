@@ -68,12 +68,14 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
 
         <button
           type="button"
-          className={`micro md:hidden ${light ? 'text-ink' : 'text-paper'}`}
+          className={`relative -mr-2 h-11 w-11 md:hidden ${open || !light ? 'text-paper' : 'text-ink'}`}
           aria-expanded={open}
           aria-controls="menu-mobile"
+          aria-label={open ? 'Fechar menu' : 'Abrir menu'}
           onClick={() => setOpen((o) => !o)}
         >
-          {open ? 'Fechar' : 'Menu'}
+          <span aria-hidden className={`absolute left-1/2 top-1/2 block h-[3px] w-7 -translate-x-1/2 rounded-full bg-current transition-transform duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] ${open ? '-translate-y-1/2 rotate-45' : '-translate-y-[8px]'}`} />
+          <span aria-hidden className={`absolute left-1/2 top-1/2 block h-[3px] w-7 -translate-x-1/2 rounded-full bg-current transition-transform duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] ${open ? '-translate-y-1/2 -rotate-45' : 'translate-y-[5px]'}`} />
         </button>
       </div>
 
