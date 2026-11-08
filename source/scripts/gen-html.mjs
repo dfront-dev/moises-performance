@@ -80,9 +80,9 @@ for (const p of pages) {
     <meta name="theme-color" content="#F6F4EF" />
     <meta name="robots" content="noindex" data-dev-only />
     <link rel="canonical" href="${site}${p.path}" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png" />
-    <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=2" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png?v=2" />
+    <link rel="apple-touch-icon" href="./apple-touch-icon.png?v=2" />
     <link rel="preload" href="./fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin />${p.preload ? '\n    <link rel="preload" as="image" href="./images/joao-hero.webp" type="image/webp" fetchpriority="high" />' : ''}
     <style>
       html{background:#F6F4EF}
@@ -102,7 +102,7 @@ for (const p of pages) {
     <meta name="twitter:card" content="summary_large_image" />${p.jsonld ? jsonld : ''}
   </head>
   <body>
-    <div id="curtain" aria-hidden="true"><img class="curtain-mark" src="./images/jmp-logo-light.svg" alt="" width="83" height="29" /><span class="curtain-count">000</span><span class="curtain-line"></span></div>
+    <div id="curtain" aria-hidden="true"><img class="curtain-mark" src="./images/jmp-logo-light-v2.svg" alt="" width="83" height="29" /><span class="curtain-count">000</span><span class="curtain-line"></span></div>
     <div id="root" data-page="${p.page}">
       <main style="font-family:sans-serif;background:#F6F4EF;color:#0F1213;padding:48px;min-height:100vh">
         <h1>${p.h1}</h1>
