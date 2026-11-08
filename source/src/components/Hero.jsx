@@ -4,15 +4,17 @@ import { CharLines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
 import DotField from './DotField'
 
-// A few small white squares laid over the portrait. They drift at different speeds as the page scrolls.
+// Eight white squares in a ring around the portrait (same layout as the supplied photo, in % of the frame).
+// They stay solid white and only drift slightly as the page scrolls.
 const squares = [
-  { x: 36, y: 60, w: 9, h: 9, d: -60 },
-  { x: 64, y: 55, w: 6, h: 16, d: 80 },
-  { x: 52, y: 70, w: 9, h: 9, d: 50 },
-  { x: 72, y: 78, w: 9, h: 9, d: -45 },
-  { x: 30, y: 76, w: 6, h: 16, d: -85 },
-  { x: 58, y: 86, w: 9, h: 9, d: 60 },
-  { x: 44, y: 52, w: 6, h: 6, d: 30 },
+  { x: 49.9, y: 21.4, d: -26 },
+  { x: 29.0, y: 31.9, d: 34 },
+  { x: 71.6, y: 31.9, d: -34 },
+  { x: 11.2, y: 52.4, d: 22 },
+  { x: 88.7, y: 52.4, d: -22 },
+  { x: 29.0, y: 71.0, d: -38 },
+  { x: 71.6, y: 71.0, d: 38 },
+  { x: 49.9, y: 83.4, d: 26 },
 ]
 
 export default function Hero() {
@@ -35,9 +37,9 @@ export default function Hero() {
     // soft parallax on the portrait only (a few percent)
     gsap.to(q('[data-portrait-img]'), { yPercent: 4, ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true } })
 
-    // the squares drift and thin out with the scroll
+    // the squares drift a little with the scroll and never fade
     q('[data-sq]').forEach((el) => {
-      gsap.to(el, { y: Number(el.dataset.d), opacity: 0.25, ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: 0.6 } })
+      gsap.to(el, { y: Number(el.dataset.d), ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: 0.6 } })
     })
 
     // letters wake up near the pointer
@@ -106,9 +108,9 @@ export default function Hero() {
               <span key={pos} data-plus aria-hidden className={`absolute ${pos} hidden text-[15px] leading-none text-ink/50 md:block`}>+</span>
             ))}
             {/* white squares, reactive to scroll */}
-            <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
+            <div aria-hidden className="pointer-events-none absolute inset-0">
               {squares.map((q, i) => (
-                <span key={i} data-sq data-d={q.d} className="absolute block bg-white shadow-[0_0_0_1px_rgba(15,18,19,0.08)]" style={{ left: `${q.x}%`, top: `${q.y}%`, width: q.w, height: q.h }} />
+                <span key={i} data-sq data-d={q.d} className="absolute block aspect-square bg-white" style={{ left: `${q.x}%`, top: `${q.y}%`, width: '1.85%', minWidth: 8, marginLeft: '-0.925%', marginTop: '-0.925%' }} />
               ))}
             </div>
           </div>
