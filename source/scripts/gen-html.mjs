@@ -5,9 +5,9 @@ const pages = [
   {
     file: 'index.html', page: 'home', path: '',
     title: 'JMP, João Moisés Performance Physiology | Fisiologia aplicada à performance',
-    desc: 'João Moisés Performance Physiology. Fisiologia aplicada à performance: avaliar, interpretar e transformar informação fisiológica em decisões concretas de treino, em parceria com atletas, treinadores e equipas.',
+    desc: 'Fisiologia aplicada à performance. Avaliação, interpretação e transformação de informação fisiológica em estratégias inteligentes de treino, em parceria com atletas, treinadores e equipas.',
     h1: 'Fisiologia aplicada à performance.',
-    body: '<p>JMP, João Moisés Performance Physiology. Fisiologista do exercício, com mais de 15 anos de experiência em alta competição e três ciclos Olímpicos (Rio 2016, Tóquio 2020, Paris 2024). Avaliar, interpretar e transformar informação fisiológica em decisões concretas de treino, em parceria com atletas, treinadores e equipas.</p>',
+    body: '<p>JMP, João Moisés Performance Physiology. Fisiologista do exercício, com mais de 15 anos de experiência em alta competição e três ciclos Olímpicos (Rio 2016, Tóquio 2020, Paris 2024). Avaliação, interpretação e transformação de informação fisiológica em estratégias inteligentes de treino, em parceria com atletas, treinadores e equipas.</p>',
     jsonld: true, preload: true,
   },
   {
@@ -70,6 +70,7 @@ const jsonld = `
         "jobTitle": "Fisiologista do Exercício",
         "url": "${site}",
         "email": "joaomoises13@gmail.com",
+        "image": "${site}images/og-image.jpg",
         "telephone": "+351918669143",
         "worksFor": { "@type": "Organization", "name": "Federação Portuguesa de Vela" },
         "brand": { "@type": "Brand", "name": "JMP, João Moisés Performance Physiology" }
@@ -105,8 +106,16 @@ for (const p of pages) {
     <meta property="og:title" content="${p.title}" />
     <meta property="og:description" content="${p.desc}" />
     <meta property="og:url" content="${site}${p.path}" />
-    <meta property="og:image" content="${site}images/joao.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />${p.jsonld ? jsonld : ''}
+    <meta property="og:site_name" content="JMP, João Moisés Performance Physiology" />
+    <meta property="og:image" content="${site}images/og-image.jpg" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="João Moisés, fisiologista do exercício, de braços cruzados. JMP, Fisiologia aplicada à performance." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="${p.title}" />
+    <meta name="twitter:description" content="${p.desc}" />
+    <meta name="twitter:image" content="${site}images/og-image.jpg" />${p.jsonld ? jsonld : ''}
   </head>
   <body>
     <div id="curtain" aria-hidden="true"><img class="curtain-mark" src="./images/jmp-logo-light-v2.svg" alt="" width="83" height="29" /><span class="curtain-count">000</span><span class="curtain-line"></span></div>
