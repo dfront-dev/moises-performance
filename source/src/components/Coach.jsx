@@ -51,7 +51,7 @@ export default function Coach({ index, lean = false }) {
   })
 
   return (
-    <section id="sobre" ref={ref} className="relative bg-paper pt-28 text-ink md:pt-44">
+    <section id="sobre" ref={ref} className="relative bg-paper pb-28 pt-28 text-ink md:pb-44 md:pt-44">
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
         <div aria-hidden data-fade className="section-index h-px bg-ink/20" />
 
