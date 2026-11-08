@@ -27,7 +27,7 @@ export default function Footer({ tone = 'ink' }) {
     <footer className={`relative overflow-hidden border-t-[6px] border-signal ${paper ? 'bg-paper text-ink' : 'bg-ink text-paper'}`}>
       <div className="mx-auto flex max-w-[1680px] flex-col justify-between gap-10 px-5 pb-6 pt-14 md:flex-row md:items-start md:px-10">
         <div>
-          <img src={paper ? 'images/jmp-logo.svg' : 'images/jmp-logo-light.svg'} alt="JMP" width="83" height="29" className="h-9 w-auto" />
+          <img src={paper ? 'images/jmp-logo-v2.svg' : 'images/jmp-logo-light-v2.svg'} alt="JMP" width="83" height="29" className="h-9 w-auto" />
           <p className="micro mt-4 text-[10px] text-steel">João Moisés Performance Physiology</p>
           <div className="mt-6 space-y-1.5 text-[15px]">
             <a href={`mailto:${EMAIL}`} className={`block transition-colors ${paper ? 'text-ink/85' : 'text-paper/85'} ${hov}`}>{EMAIL}</a>

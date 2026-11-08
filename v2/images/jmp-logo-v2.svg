@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg fill="#0C0E11" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 82.6 28.66">
+  <g>
+    <path fill="#0C0E11" stroke="#0C0E11" stroke-miterlimit="10" stroke-width="1.5" d="M49.58,24.55V5.14h15.31c1.62,0,2.94,1.32,2.94,2.94v8.54c0,1.54-1.25,2.79-2.79,2.8l-8.57.02,1-2.93h7.53v-8.43h-11.75l-.12,16.47h-3.55Z"/>
+    <path fill="#0C0E11" stroke="#0C0E11" stroke-miterlimit="10" stroke-width="1.5" d="M2.4,24.55l1-2.93h7.37V5.11h3.53l-.17,17.9c0,.48-.12.84-.36,1.08-.3.3-.82.46-1.47.46H2.4Z"/>
+    <polygon fill="#0C0E11" stroke="#0C0E11" stroke-miterlimit="10" stroke-width="1.5" points="39.86 24.55 39.86 8.08 24.07 8.08 24.05 24.55 20.51 24.55 20.47 5.14 43.25 5.14 43.25 24.55 39.86 24.55"/>
+  </g>
+  <g>
+    <path d="M70.91,5.27v-.79h4.06v.79h-1.56v4.27h-.94v-4.27h-1.56Z"/>
+    <path d="M75.33,4.48h1.16l1.48,3.61h.06l1.48-3.61h1.17v5.06h-.93v-3.44h-.04l-1.39,3.42h-.66l-1.37-3.43h-.04v3.44h-.91v-5.06Z"/>
+  </g>
+</svg>
