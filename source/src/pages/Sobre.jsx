@@ -1,9 +1,8 @@
 import Layout from '../components/Layout'
 import PageHeader from '../components/PageHeader'
 import Coach from '../components/Coach'
-import ResultsBlock from '../components/ResultsBlock'
+import SportsSpiral from '../components/SportsSpiral'
 import Testimonials from '../components/Testimonials'
-import { otherAreas } from '../data/services'
 
 export default function Sobre() {
   return (
@@ -15,7 +14,7 @@ export default function Sobre() {
         intro="Decisões construídas com base em dados e acompanhamento no terreno. Fisiologista do exercício, com mais de 15 anos em alta competição."
       />
       <Coach index="01 / Percurso" />
-      <ResultsBlock data={otherAreas} tone="paper" />
+      <SportsSpiral />
       <Testimonials />
     </Layout>
   )
