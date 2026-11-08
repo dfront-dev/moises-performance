@@ -157,7 +157,7 @@ export const placeholders = [
 export const audiences = {
   lines: ['Atletas,', 'treinadores', 'e equipas.'],
   intro:
-    'Cada um decide de forma diferente e precisa de coisas diferentes. O João adapta a forma de intervir, sem nunca substituir o papel do treinador.',
+    'Desde a atletas a equipas e clubes, o João adapta a forma de intervir, sem nunca substituir o papel do treinador.',
   items: [
     {
       title: 'Atletas',
