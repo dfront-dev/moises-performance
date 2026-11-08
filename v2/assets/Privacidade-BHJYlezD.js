@@ -1,0 +1,1 @@
+import{t as e}from"./main-BJrb4N6N.js";import{n as t,t as n}from"./LegalPage-BZQf1CP9.js";var r=e();function i(){return(0,r.jsx)(n,{page:`privacidade`,label:`Política de privacidade`,lines:[`Política de`,`privacidade.`],data:t})}export{i as default};
