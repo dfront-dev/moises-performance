@@ -171,3 +171,13 @@ a:hover > .roll > span, button:hover > .roll > span { transform: translateY(-100
 /* Inline lists read as: one • two • three */
 .bullets { display: flex; flex-wrap: wrap; align-items: center; }
 .bullets > li + li::before, .bullets > span + span::before, .bullets > a + a::before { content: '•'; margin: 0 0.7em; opacity: 0.35; }
+
+/* Endless row of partner marks */
+.marquee { --marquee-gap: clamp(96px, 12vw, 220px); }
+.marquee-track { animation: marquee-run 44s linear infinite; will-change: transform; }
+@keyframes marquee-run { to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none !important; width: auto; flex-wrap: wrap; justify-content: center; }
+  .marquee-row { flex-wrap: wrap; justify-content: center; row-gap: 2.5rem; padding-right: 0 !important; }
+  .marquee-dup { display: none; }
+}
