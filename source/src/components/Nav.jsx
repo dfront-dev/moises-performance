@@ -63,7 +63,7 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
           </nav>
         </div>
 
-        <a href={cta} className={`micro hidden px-5 py-3 transition-colors md:inline-flex md:justify-self-end ${light ? 'bg-ink text-paper hover:bg-signal hover:text-ink' : 'bg-signal text-ink hover:bg-paper'}`}>
+        <a href={cta} data-scramble-hover className={`micro hidden px-5 py-3 transition-colors md:inline-flex md:justify-self-end ${light ? 'bg-ink text-paper hover:bg-signal hover:text-ink' : 'bg-signal text-ink hover:bg-paper'}`}>
           Agendar consulta
         </a>
 

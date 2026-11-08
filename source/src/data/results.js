@@ -1,7 +1,20 @@
 export const results = [
   {
+    id: 'triatlo',
+    index: '01 / Triatlo',
+    lines: ['Triatlo.'],
+    intro: 'Desportos de endurance, com foco em triatlo, em articulação com equipas e treinadores.',
+    blocks: [
+      {
+        label: 'Triatlo',
+        title: 'Resultados recentes',
+        rows: [['Joana Figueiredo', 'Vice-campeã nacional AG em longa distância, 2026', 'joana-figueiredo']],
+      },
+    ],
+  },
+  {
     id: 'vela',
-    index: '01 / Vela Olímpica',
+    index: '02 / Vela Olímpica',
     lines: ['Vela', 'Olímpica.'],
     intro:
       'Avaliação, planeamento, implementação e controlo do treino físico de atletas de alto rendimento, em articulação com treinadores, fisioterapeutas e restantes elementos da equipa multidisciplinar, ao longo de três ciclos olímpicos consecutivos.',
@@ -26,7 +39,7 @@ export const results = [
   },
   {
     id: 'surf',
-    index: '02 / Surf',
+    index: '03 / Surf',
     lines: ['Surf.'],
     intro:
       'Percurso de referência no Surf nacional e internacional, com campeões nacionais, europeus e mundiais de júnior.',
@@ -51,7 +64,7 @@ export const results = [
   },
   {
     id: 'padel',
-    index: '03 / Padel',
+    index: '04 / Padel',
     lines: ['Padel.'],
     intro: 'Preparação física de atletas de Padel.',
     blocks: [

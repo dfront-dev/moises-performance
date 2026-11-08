@@ -145,6 +145,15 @@ export const testimonials = [
     initials: 'JF',
     photo: 'images/testemunhos/jose-ferreira',
   },
+  {
+    // Rascunho: só aparece com ?rascunho no endereço. Falta o texto real, o nome e a fotografia.
+    draft: true,
+    quote: '[Texto do testemunho. Substituir pelo texto real, aprovado pela atleta.]',
+    name: '[Nome da atleta]',
+    role: '[Modalidade ou título]',
+    initials: 'NA',
+    photo: '',
+  },
 ]
 
 export const placeholders = [

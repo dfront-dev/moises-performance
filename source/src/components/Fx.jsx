@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { initCurtain, initTransitions, initProgress } from '../lib/fx'
 import { initCursor, initMagnetic } from '../lib/cursor'
+import { initScramble } from '../lib/scramble'
 
 // Left-hand ruler: one tick per section, the active one stretches. Hover reads the section name.
 function Chapters() {
@@ -38,7 +39,7 @@ function Chapters() {
 
 export default function Fx() {
   useEffect(() => {
-    const offs = [initCurtain(), initTransitions(), initProgress(), initCursor(), initMagnetic()]
+    const offs = [initCurtain(), initTransitions(), initProgress(), initCursor(), initMagnetic(), initScramble()]
     return () => offs.forEach((o) => o && o())
   }, [])
   return <Chapters />

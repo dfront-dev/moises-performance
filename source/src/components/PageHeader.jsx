@@ -42,7 +42,7 @@ export default function PageHeader({ label, lines, intro, classes = [], image, i
           </h1>
 
           {intro && (
-            <p data-fade className={`mt-10 max-w-xl border-l-[3px] border-signal pl-5 text-lg leading-snug md:mt-14 md:text-xl ${paper ? 'text-ink/70' : 'text-paper/85'}`}>
+            <p data-fade data-scramble-in="1400" className={`mt-10 max-w-xl border-l-[3px] border-signal pl-5 text-lg leading-snug md:mt-14 md:text-xl ${paper ? 'text-ink/70' : 'text-paper/85'}`}>
               {intro}
             </p>
           )}

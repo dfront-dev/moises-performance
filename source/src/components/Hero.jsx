@@ -82,7 +82,7 @@ export default function Hero() {
             <CharLines lines={hero.lines} classes={['', 'text-ink/50', 'text-ink/50']} dataAttr="data-hero-line" />
           </h1>
           <div data-rule aria-hidden className="mt-12 h-px w-full max-w-md bg-ink/20 md:mt-16" />
-          <p data-fade className="mt-8 max-w-md text-lg leading-relaxed text-ink/65 md:text-xl">{hero.support}</p>
+          <p data-fade data-scramble-in="1400" className="mt-8 max-w-md text-lg leading-relaxed text-ink/65 md:text-xl">{hero.support}</p>
           <div data-fade className="mt-10">
             <a href={hero.primary.href} className="btn btn-solid micro">
               {hero.primary.label} <Arrow />

@@ -71,7 +71,7 @@ export default function Expertise() {
           <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(2.2rem,5.6vw,6.4rem)] md:col-span-8">
             <Lines lines={c.lines} classes={['', 'text-ink/50']} />
           </h2>
-          <p data-fade className="max-w-md text-base leading-relaxed text-ink/60 md:col-span-4 md:justify-self-end">{c.intro}</p>
+          <p data-fade data-scramble-in="1100" className="max-w-md text-base leading-relaxed text-ink/60 md:col-span-4 md:justify-self-end">{c.intro}</p>
         </div>
 
         <ul data-list className="svc-list mt-20 md:mt-28">

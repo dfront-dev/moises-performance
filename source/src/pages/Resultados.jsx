@@ -17,9 +17,9 @@ export default function Resultados() {
         framedAlt="Atletas da Vela a abraçarem-se, em festa, com o preparador físico num barco"
         intro="Três ciclos Olímpicos na Vela, um percurso de referência no Surf nacional e internacional e resultados no Padel."
       />
-      <ResultsBlock data={results[0]} tone="paper" saturated compact />
-      <ResultsBlock data={results[1]} tone="paper" saturated compact />
-      <ResultsBlock data={results[2]} tone="paper" saturated compact />
+      {results.map((r) => (
+        <ResultsBlock key={r.id} data={r} tone="paper" saturated compact />
+      ))}
       <Testimonials tone="paper" />
     </Layout>
   )

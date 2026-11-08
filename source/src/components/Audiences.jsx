@@ -32,7 +32,7 @@ export default function Audiences() {
           <h2 aria-label={c.lines.join(' ')} className="display text-[clamp(2.18rem,4.8vw,5.7rem)] md:col-span-7">
             <Lines lines={c.lines} classes={['', 'text-ink/50', 'text-ink/50']} />
           </h2>
-          <p data-fade className="max-w-md text-base leading-relaxed text-ink/65 md:col-span-5 md:justify-self-end">{c.intro}</p>
+          <p data-fade data-scramble-in="1100" className="max-w-md text-base leading-relaxed text-ink/65 md:col-span-5 md:justify-self-end">{c.intro}</p>
         </div>
 
         <div className="mt-20 grid gap-6 md:mt-28 md:grid-cols-3" style={{ perspective: 1400 }}>
@@ -40,7 +40,7 @@ export default function Audiences() {
             <a key={it.title} data-item href={it.href} className="group flex flex-col border border-ink/10 border-t-signal/70 p-8 transition-colors hover:bg-ink/[0.04]">
               <h3 className="display subhead text-[clamp(1.3rem,1.8vw,1.9rem)]">{it.title}</h3>
               <p className="mt-5 flex-grow text-[15px] leading-relaxed text-ink/65">{it.text}</p>
-              <span className="micro mt-8 inline-flex items-center gap-3 text-ink">
+              <span data-scramble-hover className="micro mt-8 inline-flex items-center gap-3 text-ink">
                 {it.cta} <Arrow className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
               </span>
             </a>

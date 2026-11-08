@@ -11,7 +11,7 @@ const big = 'text-[clamp(1.35rem,2.3vw,2.4rem)] font-semibold leading-[1.1] trac
 function Group({ label, children }) {
   return (
     <div data-fgroup>
-      <p className="micro text-steel">{label}</p>
+      <p data-scramble-in="700" className="micro text-steel">{label}</p>
       <div className="mt-3 flex flex-wrap items-baseline gap-x-8 gap-y-2">{children}</div>
     </div>
   )
