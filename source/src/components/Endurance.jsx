@@ -65,12 +65,12 @@ export default function Endurance() {
             </h2>
 
             <div className="relative lg:col-span-5 lg:col-start-8 lg:min-h-[390px]">
-              <p
-                className="max-w-sm border-l-2 border-signal pl-5 text-lg leading-snug text-paper/80 transition-all duration-700 lg:absolute lg:inset-x-0 lg:top-0"
+              <div
+                className="max-w-sm space-y-4 border-l-2 border-signal pl-5 text-lg leading-snug text-paper/80 transition-all duration-700 lg:absolute lg:inset-x-0 lg:top-0"
                 style={{ opacity: still || !quote ? 1 : 0, transform: `translateY(${still || !quote ? 0 : -14}px)` }}
               >
-                {c.text}
-              </p>
+                {c.text.map((t) => <p key={t}>{t}</p>)}
+              </div>
               <div
                 className="mt-10 transition-all duration-700 lg:absolute lg:inset-x-0 lg:top-0 lg:mt-0"
                 style={{ opacity: still || quote ? 1 : 0, transform: `translateY(${still || quote ? 0 : 16}px)`, pointerEvents: quote || still ? 'auto' : 'none' }}
