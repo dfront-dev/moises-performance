@@ -24,7 +24,7 @@ export const philosophy = {
   statement:
     'O valor está em avaliar, interpretar e identificar limitadores, e em transformar informação fisiológica em decisões concretas para o treino.',
   note:
-    'Ciência e dados são fundamentais. A observação no terreno e a capacidade de adaptar o trabalho à realidade de cada atleta valem tanto como eles. A diferença está em ligar as duas dimensões.',
+    'Ciência e dados são fundamentais. A observação no terreno e a capacidade de adaptar o trabalho à realidade fisiológica de cada atleta fazem a diferença para obtenção dos melhores resultados.',
 }
 
 export const system = {
