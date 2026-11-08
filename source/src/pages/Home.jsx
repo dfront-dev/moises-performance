@@ -10,8 +10,8 @@ import Testimonials from '../components/Testimonials'
 export default function Home() {
   return (
     <Layout page="home">
-      <SportsSpiral top />
       <Hero />
+      <SportsSpiral />
       <Philosophy />
       <Expertise />
       <Audiences />
