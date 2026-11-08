@@ -12,7 +12,9 @@ export const services = [
     role: 'Analisa e orienta',
     relation: 'Intervenção estratégica pontual ou periódica',
     format: 'Online',
-    visual: 'analysis',
+    image: 'consultoria',
+    pos: '42% 55%',
+    alt: 'Treinador a analisar com um atleta um vídeo de treino no computador portátil',
     subject: 'Serviço: Consultoria',
   },
   {
