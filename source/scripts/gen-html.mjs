@@ -102,7 +102,7 @@ for (const p of pages) {
     <meta name="twitter:card" content="summary_large_image" />${p.jsonld ? jsonld : ''}
   </head>
   <body>
-    <div id="curtain" aria-hidden="true"><img class="curtain-mark" src="./images/jmp-logo-light.svg" alt="" width="72" height="29" /><span class="curtain-count">000</span><span class="curtain-line"></span></div>
+    <div id="curtain" aria-hidden="true"><img class="curtain-mark" src="./images/jmp-logo-light.svg" alt="" width="83" height="29" /><span class="curtain-count">000</span><span class="curtain-line"></span></div>
     <div id="root" data-page="${p.page}">
       <main style="font-family:sans-serif;background:#F6F4EF;color:#0F1213;padding:48px;min-height:100vh">
         <h1>${p.h1}</h1>
