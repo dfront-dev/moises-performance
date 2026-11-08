@@ -2,6 +2,7 @@ import { useRef } from 'react'
 import { hero } from '../data/content'
 import { Lines } from '../lib/split'
 import { useGsap, gsap, ScrollTrigger } from '../lib/useGsap'
+import Arrow from './Arrow'
 
 export default function Hero() {
   const ref = useRef(null)
@@ -135,7 +136,7 @@ export default function Hero() {
           </p>
           <div className="flex flex-wrap gap-3 md:col-span-7 md:justify-end">
             <a data-cta href={hero.primary.href} className="btn btn-solid micro">
-              {hero.primary.label} <span aria-hidden>→</span>
+              {hero.primary.label} <Arrow />
             </a>
           </div>
         </div>

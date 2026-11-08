@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import Arrow from './Arrow'
 
 export default function Nav({ page = 'home', tone = 'ink' }) {
   const paper = tone === 'paper'
@@ -103,7 +104,7 @@ export default function Nav({ page = 'home', tone = 'ink' }) {
         ))}
       </ul>
       <a href={cta} onClick={() => setOpen(false)} className="btn btn-solid micro mt-10 w-full justify-between">
-        Contactos <span aria-hidden>→</span>
+        Contactos <Arrow />
       </a>
     </div>
   </>

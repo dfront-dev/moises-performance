@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { contact as c, EMAIL, PHONE, PHONE_HREF } from '../data/content'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
+import Arrow from './Arrow'
 
 export default function Contact({ standalone = false }) {
   const ref = useRef(null)
@@ -80,7 +81,7 @@ export default function Contact({ standalone = false }) {
               </label>
             </div>
             <button type="submit" className="btn btn-solid micro mt-12 w-full justify-between md:w-auto">
-              {c.cta} <span aria-hidden>→</span>
+              {c.cta} <Arrow />
             </button>
             <p role="status" className="micro mt-4 min-h-4 text-[10px] text-ink/60">{status}</p>
           </form>

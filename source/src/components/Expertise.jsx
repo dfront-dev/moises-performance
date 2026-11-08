@@ -4,6 +4,7 @@ import { services } from '../data/services'
 import { Lines } from '../lib/split'
 import TechVisual from './TechVisual'
 import { useGsap, gsap } from '../lib/useGsap'
+import Arrow from './Arrow'
 
 const offsets = ['', 'md:mt-20', 'md:mt-40']
 
@@ -89,14 +90,14 @@ export default function Expertise() {
               </ul>
 
               <a data-text href={`servicos.html#${s.id}`} className="micro underline-link mt-6 inline-flex items-center gap-3 pb-1">
-                Ver o serviço <span aria-hidden className="transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+                Ver o serviço <Arrow className="transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1" />
               </a>
             </article>
           ))}
         </div>
 
         <div data-fade className="mt-24 flex justify-center">
-          <a href="servicos.html" className="btn btn-dark micro">Ver todos os serviços <span aria-hidden>→</span></a>
+          <a href="servicos.html" className="btn btn-dark micro">Ver todos os serviços <Arrow /></a>
         </div>
       </div>
     </section>

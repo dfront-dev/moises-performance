@@ -1,6 +1,7 @@
 import { useRef } from 'react'
 import { Lines } from '../lib/split'
 import { useGsap, gsap } from '../lib/useGsap'
+import Arrow from './Arrow'
 
 export default function CtaBand({ lines, text, primary, secondary }) {
   const ref = useRef(null)
@@ -26,7 +27,7 @@ export default function CtaBand({ lines, text, primary, secondary }) {
         <div className="mt-12 grid gap-8 md:grid-cols-12 md:items-end">
           {text && <p data-fade className="max-w-md text-lg leading-snug md:col-span-6">{text}</p>}
           <div className="flex flex-wrap gap-3 md:col-span-6 md:justify-end">
-            <a data-fade href={primary.href} className="btn btn-ink-on-signal micro">{primary.label} <span aria-hidden>→</span></a>
+            <a data-fade href={primary.href} className="btn btn-ink-on-signal micro">{primary.label} <Arrow /></a>
             {secondary && (
               <a data-fade href={secondary.href} className="btn micro border border-ink/50 text-ink hover:border-ink hover:bg-ink hover:text-signal">{secondary.label}</a>
             )}

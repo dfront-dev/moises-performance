@@ -2,6 +2,7 @@ import { useRef, useState } from 'react'
 import { services } from '../data/services'
 import { EMAIL } from '../data/content'
 import { useGsap, gsap } from '../lib/useGsap'
+import Arrow from './Arrow'
 
 const mail = (s) => `mailto:${EMAIL}?subject=${encodeURIComponent(s.subject)}`
 
@@ -73,7 +74,7 @@ export default function ServiceTable() {
                       </dl>
                       <div className="flex flex-wrap items-center gap-x-10 gap-y-4 md:col-span-9 md:col-start-4">
                         <a href={`#${s.id}`} className="micro underline-link pb-1">Ver o serviço ↓</a>
-                        <a href={mail(s)} className="micro underline-link pb-1">Falar sobre este serviço →</a>
+                        <a href={mail(s)} className="micro underline-link pb-1">Falar sobre este serviço <Arrow className="ml-1.5" /></a>
                       </div>
                     </div>
                   </div>

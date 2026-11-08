@@ -3,6 +3,7 @@ import PageHeader from './PageHeader'
 import Layout from './Layout'
 import { updated } from '../data/legal'
 import { useGsap, gsap } from '../lib/useGsap'
+import Arrow from './Arrow'
 
 export default function LegalPage({ page, label, lines, data }) {
   const ref = useRef(null)
@@ -42,7 +43,7 @@ export default function LegalPage({ page, label, lines, data }) {
                   )}
                   {s.after && <p>{s.after}</p>}
                   {s.link && (
-                    <a href={s.link.href} className="micro underline-link inline-block pb-1 text-ink">{s.link.label} →</a>
+                    <a href={s.link.href} className="micro underline-link inline-block pb-1 text-ink">{s.link.label} <Arrow className="ml-1.5" /></a>
                   )}
                 </div>
               </article>

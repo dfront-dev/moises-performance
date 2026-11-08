@@ -15,7 +15,7 @@ export const hero = {
   lines: ['Fisiologia', 'aplicada à', 'performance.'],
   support: 'Avaliação, interpretação e transformação de informação fisiológica em estratégias inteligentes de treino.',
   role: 'João Moisés, Fisiologista do Exercício, Performance Physiology',
-  primary: { label: 'Explorar serviços', href: 'servicos.html' },
+  primary: { label: 'Áreas de intervenção', href: 'servicos.html' },
 }
 
 export const philosophy = {
