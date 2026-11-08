@@ -5,16 +5,16 @@ import { useGsap, gsap } from '../lib/useGsap'
 // Quotes and portraits float over giant type. Each piece tilts in perspective as it crosses the screen:
 // it arrives leaning one way, sits flat in the middle and leans the other way as it leaves.
 const photos = [
-  { src: 'images/atletas/vasco-ribeiro', alt: 'Vasco Ribeiro', box: 'right-[6%] top-[12%] w-[20vw] aspect-[3/4]', ry: -20, rx: 8, sk: 3, speed: 110, pos: '50% 20%' },
-  { src: 'images/atletas/teresa-bonvalot', alt: 'Teresa Bonvalot', box: 'left-[6%] top-[70%] w-[24vw] aspect-[4/3]', ry: 18, rx: -7, sk: -3, speed: 90, pos: '45% 30%' },
+  { src: 'images/atletas/vasco-ribeiro', alt: 'Vasco Ribeiro', box: 'md:right-[6%] md:top-[12%] md:w-[20vw] md:aspect-[3/4]', ry: -20, rx: 8, sk: 3, speed: 110, pos: '50% 20%' },
+  { src: 'images/atletas/teresa-bonvalot', alt: 'Teresa Bonvalot', box: 'md:left-[6%] md:top-[70%] md:w-[24vw] md:aspect-[4/3]', ry: 18, rx: -7, sk: -3, speed: 90, pos: '45% 30%' },
 ]
 const cardSpots = [
-  { box: 'left-[22%] top-[27%] w-[38vw]', ry: 14, rx: -6, sk: -2, speed: 70 },
-  { box: 'right-[8%] top-[55%] w-[38vw]', ry: -14, rx: 6, sk: 2, speed: 90 },
+  { box: 'md:left-[22%] md:top-[27%] md:w-[38vw]', ry: 14, rx: -6, sk: -2, speed: 70 },
+  { box: 'md:right-[8%] md:top-[55%] md:w-[38vw]', ry: -14, rx: 6, sk: 2, speed: 90 },
 ]
 const portraitSpots = [
-  { box: 'left-[4%] top-[33%] w-[15vw] aspect-square', ry: 22, rx: -8, sk: -3, speed: 130 },
-  { box: 'right-[28%] top-[50%] w-[13vw] aspect-square', ry: -22, rx: 8, sk: 3, speed: 120 },
+  { box: 'md:left-[4%] md:top-[33%] md:w-[15vw] md:aspect-square', ry: 22, rx: -8, sk: -3, speed: 130 },
+  { box: 'md:right-[28%] md:top-[50%] md:w-[13vw] md:aspect-square', ry: -22, rx: 8, sk: 3, speed: 120 },
 ]
 
 function Photo({ src, alt, pos, className = '' }) {
@@ -34,7 +34,11 @@ export default function Testimonials() {
   useGsap(ref, ({ q, desktop }) => {
     gsap.from(q('[data-line]'), { yPercent: 50, opacity: 0, duration: 1.3, stagger: 0.1, ease: 'power3.out', scrollTrigger: { trigger: ref.current, start: 'top 70%' } })
     if (!desktop) {
-      q('[data-card]').forEach((el) => gsap.from(el, { opacity: 0, y: 30, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' } }))
+      // phone: cards rise in one by one, the two photos drift and straighten as they pass
+      q('[data-mcard]').forEach((el) => gsap.from(el, { opacity: 0, y: 36, duration: 0.9, ease: 'power3.out', scrollTrigger: { trigger: el, start: 'top 90%' } }))
+      q('[data-mphoto]').forEach((el, i) => {
+        gsap.fromTo(el, { y: i ? 70 : 30, rotate: i ? 3 : -3 }, { y: i ? -10 : -30, rotate: 0, ease: 'none', scrollTrigger: { trigger: el, start: 'top bottom', end: 'bottom 40%', scrub: 0.6 } })
+      })
       return undefined
     }
     q('[data-item]').forEach((el) => {
@@ -55,7 +59,7 @@ export default function Testimonials() {
     <section id="testemunhos" ref={ref} className="relative isolate overflow-hidden bg-ink text-white">
       <div className="relative mx-auto max-w-[1680px] px-5 pb-28 pt-28 md:min-h-[178svh] md:px-10 md:pb-0 md:pt-40">
         {/* giant type: it inverts wherever a photo sits behind it */}
-        <h2 aria-label="Impacto nos atletas" className="display relative z-10 text-[clamp(3.4rem,13vw,15rem)] leading-[0.95]" style={{ mixBlendMode: 'difference' }}>
+        <h2 aria-label="Impacto nos atletas" className="display relative z-10 text-[clamp(3.4rem,15vw,5rem)] leading-[0.95] md:text-[clamp(3.4rem,13vw,15rem)]" style={{ mixBlendMode: 'difference' }}>
           <span className="line"><span className="line-inner" data-line>Impacto</span></span>
           <span className="line"><span className="line-inner text-white/55" data-line>nos atletas.</span></span>
         </h2>
@@ -72,8 +76,33 @@ export default function Testimonials() {
           </div>
         ))}
 
+        {/* phone layout: one clear column */}
+        <div className="mt-12 md:hidden">
+          <div className="space-y-4">
+            {testimonials.slice(0, 2).map((t) => (
+              <figure key={t.name} data-mcard className="rounded-[14px] border border-white/12 bg-[#0e1012] p-6">
+                <div className="flex items-center gap-4">
+                  <Photo src={t.photo} alt={t.name} className="h-16 w-16 shrink-0" />
+                  <figcaption className="min-w-0">
+                    <span className="block text-[17px] font-semibold leading-tight tracking-[-0.01em]">{t.name}</span>
+                    <span className="mt-1 block text-[14px] leading-snug text-white/55">{t.role}</span>
+                  </figcaption>
+                </div>
+                <blockquote className="mt-5 border-t border-white/12 pt-5 text-[16px] font-medium leading-[1.55] text-white/95">“{t.quote}”</blockquote>
+              </figure>
+            ))}
+          </div>
+          <div className="mt-10 grid grid-cols-2 items-start gap-3">
+            {photos.map((p, i) => (
+              <div key={p.src} data-mphoto className={i ? 'mt-12' : ''}>
+                <Photo src={p.src} alt={p.alt} pos={p.pos} className="aspect-[3/4] w-full" />
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* the quotes */}
-        <div className="mt-14 space-y-6 md:mt-0 md:space-y-0">
+        <div className="hidden md:block">
           {testimonials.slice(0, 2).map((t, i) => (
             <div key={t.name} data-item {...tiltData(cardSpots[i])} className={`relative z-20 md:absolute ${cardSpots[i].box}`} style={{ perspective: 1300 }}>
               <figure data-tilt data-card className="rounded-[14px] border border-white/12 bg-[#0e1012]/90 p-7 backdrop-blur-md md:p-9">
