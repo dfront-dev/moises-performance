@@ -33,8 +33,8 @@ export default function Footer() {
           <div className="relative">
           <div data-fphoto className="relative aspect-[4/3] overflow-hidden rounded-[8px] bg-paper-2">
             <picture>
-              <source srcSet="images/footer-treino.webp" type="image/webp" />
-              <img src="images/footer-treino.jpg" alt="Treinador a orientar um atleta num exercício com banda elástica, em movimento" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover grayscale" style={{ objectPosition: '50% 38%' }} />
+              <source srcSet="images/footer-treino-q.webp" type="image/webp" />
+              <img src="images/footer-treino-q.jpg" alt="Treinador a orientar um atleta num exercício com banda elástica, em movimento" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover grayscale" style={{ objectPosition: '50% 38%' }} />
             </picture>
           </div>
             <Crosses />
