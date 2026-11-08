@@ -12,8 +12,9 @@ export default function Resultados() {
         label="Resultados"
         lines={['Resultados', 'desportivos.']}
         classes={['', 'text-ink/50']}
-        image="resultados-hero-v2"
-        imagePos="50% 0%"
+        framedImage="resultados-hero-v2"
+        framedPos="28% 30%"
+        framedAlt="Atletas da Vela a abraçarem-se, em festa, com o preparador físico num barco"
         intro="Três ciclos Olímpicos na Vela, um percurso de referência no Surf nacional e internacional e resultados no Padel."
       />
       <ResultsBlock data={results[0]} tone="paper" saturated compact />
