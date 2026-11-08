@@ -42,9 +42,9 @@ export const services = [
     role: 'Integra, intervém, monitoriza e adapta',
     relation: 'Relação continuada, próxima e individualizada',
     format: 'Continuado, personalizado e premium',
-    image: 'elite',
-    pos: '62% 50%',
-    alt: 'Treinador a acompanhar um atleta num exercício de estabilidade e controlo',
+    image: 'acompanhamento',
+    pos: '42% 60%',
+    alt: 'Dois ciclistas a treinar lado a lado numa estrada de montanha',
     subject: 'Serviço: Acompanhamento Integrado',
   },
 ]
