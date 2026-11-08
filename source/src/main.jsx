@@ -6,6 +6,7 @@ const pages = {
   home: lazy(() => import('./pages/Home')),
   servicos: lazy(() => import('./pages/Servicos')),
   resultados: lazy(() => import('./pages/Resultados')),
+  metodo: lazy(() => import('./pages/Metodo')),
   sobre: lazy(() => import('./pages/Sobre')),
   contacto: lazy(() => import('./pages/Contacto')),
   privacidade: lazy(() => import('./pages/Privacidade')),

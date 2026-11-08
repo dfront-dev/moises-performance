@@ -3,7 +3,7 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { resolve } from 'node:path'
 
-const pages = ['index', 'servicos', 'resultados', 'sobre', 'contacto', 'privacidade', 'termos']
+const pages = ['index', 'servicos', 'resultados', 'metodo', 'sobre', 'contacto', 'privacidade', 'termos']
 
 export default defineConfig({
   base: './',

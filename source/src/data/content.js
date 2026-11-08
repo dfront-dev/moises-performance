@@ -98,6 +98,7 @@ export const contact = {
 }
 
 export const footerLinks = [
+  { label: 'Método', href: 'metodo.html' },
   { label: 'Serviços', href: 'servicos.html' },
   { label: 'Resultados', href: 'resultados.html' },
   { label: 'Sobre', href: 'sobre.html' },

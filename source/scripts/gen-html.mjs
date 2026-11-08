@@ -25,9 +25,16 @@ const pages = [
     body: '<p>Três ciclos Olímpicos na Vela e um percurso de referência no Surf nacional e internacional e resultados no Padel.</p>',
   },
   {
+    file: 'metodo.html', page: 'metodo', path: 'metodo.html',
+    title: 'Método | JMP, João Moisés Performance Physiology',
+    desc: 'O sistema de performance JMP: seis momentos, um processo contínuo. Dados objetivos para decidir melhor, com interpretação individual e ligação direta à prática.',
+    h1: 'O sistema de performance.',
+    body: '<ol><li>Compreender: a pessoa, a modalidade e o contexto do atleta.</li><li>Avaliar: apenas o que acrescenta informação relevante.</li><li>Interpretar: os resultados em conjunto com a realidade do atleta.</li><li>Planear: as necessidades transformadas em plano aplicável.</li><li>Acompanhar: a execução no terreno, com ajustes sempre que necessário.</li><li>Reavaliar: a resposta ao treino orienta as decisões seguintes.</li></ol>',
+  },
+  {
     file: 'sobre.html', page: 'sobre', path: 'sobre.html',
     title: 'Sobre | JMP, João Moisés Performance Physiology',
-    desc: 'Perfil, método e formação de João Moisés, fisiologista do exercício e preparador físico com mais de 15 anos de experiência em alta competição.',
+    desc: 'Perfil e formação de João Moisés, fisiologista do exercício e preparador físico com mais de 15 anos de experiência em alta competição.',
     h1: 'Da avaliação à prática.',
     body: '<p>João Moisés, fisiologista do exercício e preparador físico. Preparador Físico da Federação Portuguesa de Vela. Mestrado em Treino Desportivo (Alto Rendimento).</p>',
   },
