@@ -76,7 +76,7 @@ export default function Hero() {
       {/* portrait */}
       <div data-portrait className="portrait-mask absolute right-0 top-0 -z-10 h-[64svh] w-full md:h-full md:w-[58%]">
         <picture>
-          <source srcSet="images/joao-nova.webp" type="image/webp" />
+          <source srcSet="images/joao-hero-q.webp" type="image/webp" />
           <img
             data-ghost
             aria-hidden
@@ -88,7 +88,7 @@ export default function Hero() {
           />
         </picture>
         <picture>
-          <source srcSet="images/joao-nova.webp" type="image/webp" />
+          <source srcSet="images/joao-hero-q.webp" type="image/webp" />
           <img
             data-portrait-img
             alt="João Moisés, fisiologista do exercício, de braços cruzados num espaço de treino"
