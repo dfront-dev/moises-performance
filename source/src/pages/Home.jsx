@@ -14,7 +14,7 @@ export default function Home() {
       <Expertise />
       <Audiences />
       <Endurance />
-      <Testimonials cta={false} />
+      <Testimonials />
     </Layout>
   )
 }

@@ -28,7 +28,7 @@ function Photo({ src, alt, pos, className = '' }) {
   )
 }
 
-export default function Testimonials({ cta = true }) {
+export default function Testimonials() {
   const ref = useRef(null)
 
   useGsap(ref, ({ q, desktop }) => {
@@ -53,7 +53,7 @@ export default function Testimonials({ cta = true }) {
 
   return (
     <section id="testemunhos" ref={ref} className="relative isolate overflow-hidden bg-ink text-white">
-      <div className="relative mx-auto max-w-[1680px] px-5 pb-28 pt-28 md:min-h-[200svh] md:px-10 md:pb-0 md:pt-40">
+      <div className="relative mx-auto max-w-[1680px] px-5 pb-28 pt-28 md:min-h-[178svh] md:px-10 md:pb-0 md:pt-40">
         {/* giant type: it inverts wherever a photo sits behind it */}
         <h2 aria-label="Impacto nos atletas" className="display relative z-10 text-[clamp(3.4rem,13vw,15rem)] leading-[0.95]" style={{ mixBlendMode: 'difference' }}>
           <span className="line"><span className="line-inner" data-line>Impacto</span></span>
@@ -88,13 +88,6 @@ export default function Testimonials({ cta = true }) {
           ))}
         </div>
 
-        {cta && (
-        <div className="relative z-20 mt-14 md:absolute md:bottom-[7%] md:left-[22%] md:mt-0">
-            <a href="contacto.html" className="inline-flex items-center gap-3 rounded-full border-2 border-white px-8 py-4 text-[clamp(1rem,1.4vw,1.4rem)] font-semibold tracking-[-0.01em] text-white transition-colors duration-500 hover:bg-white hover:text-ink">
-              Agendar consulta <span aria-hidden>→</span>
-            </a>
-          </div>
-        )}
       </div>
     </section>
   )
