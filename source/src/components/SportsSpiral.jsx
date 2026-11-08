@@ -25,13 +25,14 @@ export default function SportsSpiral() {
 
   useEffect(() => {
     const els = [...scene.current.querySelectorAll('[data-ph]')]
+    const washes = els.map((el) => el.querySelector('[data-wash]'))
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     let tau = 0, scroll = 0, W = 0, H = 0
 
     const place = () => {
       const rx = Math.min(W * (W < 768 ? 0.34 : 0.34), 560)
       const rz = W < 768 ? 220 : 420
-      const span = H * (W < 768 ? 0.78 : 0.82)
+      const span = H * (W < 768 ? 0.66 : 0.62)
       els.forEach((el, i) => {
         const u = (((i / N + tau + scroll) % 1) + 1) % 1
         const phi = u * Math.PI * 2 * TURNS
@@ -39,9 +40,11 @@ export default function SportsSpiral() {
         const z = Math.cos(phi) * rz
         const y = (u - 0.5) * span
         const depth = (Math.cos(phi) + 1) / 2
-        const edge = Math.min(1, u / 0.09, (1 - u) / 0.09)
-        el.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, ${z.toFixed(1)}px) rotateY(${(-Math.sin(phi) * 16).toFixed(1)}deg)`
-        el.style.opacity = (Math.max(0, edge) * (0.38 + 0.62 * depth)).toFixed(3)
+        const e = Math.max(0, Math.min(1, u / 0.1, (1 - u) / 0.1))
+        const grow = e * e * (3 - 2 * e) // photos grow in and shrink out at the ends of the helix: never see-through
+        el.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, ${z.toFixed(1)}px) rotateY(${(-Math.sin(phi) * 16).toFixed(1)}deg) scale(${grow.toFixed(3)})`
+        el.style.opacity = '1'
+        if (washes[i]) washes[i].style.opacity = ((1 - depth) * 0.62).toFixed(3) // far photos fade towards the paper colour, still opaque
         el.style.zIndex = String(Math.round(depth * 100))
       })
     }
@@ -60,17 +63,18 @@ export default function SportsSpiral() {
 
   return (
     <section ref={root} id="modalidades" className="relative isolate overflow-hidden bg-paper text-ink">
-      <div className="relative mx-auto flex min-h-[88svh] max-w-[1680px] items-center justify-center px-5 py-24 md:min-h-[100svh] md:px-10">
+      <div className="relative mx-auto flex min-h-[100svh] max-w-[1680px] items-center justify-center px-5 py-40 md:min-h-[135svh] md:px-10 md:py-64">
         {/* photos on the helix */}
         <div ref={scene} aria-hidden className="pointer-events-none absolute inset-0 z-0" style={{ perspective: 1200, perspectiveOrigin: '50% 45%' }}>
           <div className="absolute inset-0" style={{ transformStyle: 'preserve-3d' }}>
             {photos.map(([src, alt, pos]) => (
               <div key={src} data-ph className="absolute left-1/2 top-1/2 aspect-[3/4] w-[clamp(96px,13vw,220px)] -translate-x-1/2 -translate-y-1/2 will-change-transform" style={{ marginLeft: 0 }}>
-                <div className="h-full w-full overflow-hidden rounded-[10px] bg-paper-2">
+                <div className="relative h-full w-full overflow-hidden rounded-[10px] bg-paper-2">
                   <picture>
                     <source srcSet={`images/atletas/${src}.webp`} type="image/webp" />
                     <img src={`images/atletas/${src}.jpg`} alt="" loading="eager" decoding="async" className="h-full w-full object-cover grayscale" style={{ objectPosition: pos }} />
                   </picture>
+                  <div data-wash aria-hidden className="absolute inset-0 bg-paper" style={{ opacity: 0 }} />
                 </div>
               </div>
             ))}
