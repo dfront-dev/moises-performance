@@ -4,17 +4,12 @@ import { gsap, ScrollTrigger } from '../lib/gsap'
 // Oversize list of sports with athlete photos travelling on a 3D helix behind the type.
 const photos = [
   ['vasco-ribeiro', 'Vasco Ribeiro', '50% 20%'],
-  ['teresa-bonvalot', 'Teresa Bonvalot', '45% 30%'],
-  ['carol-henrique', 'Carol Henrique', '50% 30%'],
   ['diogo-carolina', 'Diogo e Carolina', '50% 30%'],
   ['eduardo-marques', 'Eduardo Marques', '50% 25%'],
-  ['mafalda-pires-de-lima', 'Mafalda Pires de Lima', '50% 30%'],
   ['maria-abecassis', 'Maria Abecassis', '50% 25%'],
   ['nicolau-von-rupp', 'Nicolau von Rupp', '50% 30%'],
-  ['pedro-henrique', 'Pedro Henrique', '50% 30%'],
-  ['sebastiao-mendonca', 'Sebastião Mendonça', '50% 25%'],
   ['tomas-fernandes', 'Tomás Fernandes', '50% 25%'],
-  ['umpierre-diz-panam', 'Umpierre e Diz', '50% 30%'],
+  ['mafalda-pires-de-lima', 'Mafalda Pires de Lima', '50% 30%'],
 ]
 const sports = ['Triatlo', 'Vela', 'Ciclismo', 'Padel', 'Ténis', 'Surf', 'Freediving']
 const N = photos.length
@@ -33,7 +28,7 @@ export default function SportsSpiral({ top = false }) {
     let tau = 0, scroll = 0, W = 0, H = 0
 
     const place = () => {
-      const rx = Math.min(W * (W < 768 ? 0.34 : 0.34), 560)
+      const rx = Math.min(W * (W < 768 ? 0.36 : 0.4), 640)
       const rz = W < 768 ? 220 : 420
       const span = H * (W < 768 ? 0.66 : 0.62)
       els.forEach((el, i) => {
@@ -76,7 +71,7 @@ export default function SportsSpiral({ top = false }) {
         <div ref={scene} aria-hidden className="pointer-events-none absolute inset-0 z-0" style={{ perspective: 1200, perspectiveOrigin: '50% 45%' }}>
           <div className="absolute inset-0" style={{ transformStyle: 'preserve-3d' }}>
             {photos.map(([src, alt, pos]) => (
-              <div key={src} data-ph className="absolute left-1/2 top-1/2 aspect-[3/4] w-[clamp(96px,13vw,220px)] -translate-x-1/2 -translate-y-1/2 will-change-transform" style={{ marginLeft: 0 }}>
+              <div key={src} data-ph className="absolute left-1/2 top-1/2 aspect-[3/4] w-[clamp(88px,11.5vw,200px)] -translate-x-1/2 -translate-y-1/2 will-change-transform" style={{ marginLeft: 0 }}>
                 <div className="relative h-full w-full overflow-hidden rounded-[10px] bg-paper-2">
                   <picture>
                     <source srcSet={`images/atletas/${src}.webp`} type="image/webp" />
