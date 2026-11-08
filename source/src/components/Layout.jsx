@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import Nav from './Nav'
-import Spine from './Spine'
 import Footer from './Footer'
 import EntityStrip from './EntityStrip'
+import Fx from './Fx'
 import { ScrollTrigger } from '../lib/gsap'
 import { startSmoothScroll } from '../lib/smooth'
 
-export default function Layout({ page, tone = 'ink', children }) {
+export default function Layout({ page, tone = 'paper', children }) {
   useEffect(() => {
     const refresh = () => ScrollTrigger.refresh()
     document.fonts?.ready.then(refresh)
@@ -19,9 +19,9 @@ export default function Layout({ page, tone = 'ink', children }) {
   }, [])
 
   return (
-    <div className="grain">
+    <div>
       <Nav page={page} tone={tone} />
-      <Spine />
+      <Fx />
       <main id="main">{children}</main>
       <EntityStrip tone={tone} />
       <Footer tone={tone} />

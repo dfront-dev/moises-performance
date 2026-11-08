@@ -77,24 +77,34 @@ for (const p of pages) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${p.title}</title>
     <meta name="description" content="${p.desc}" />
-    <meta name="theme-color" content="#080A0B" />
+    <meta name="theme-color" content="#F6F4EF" />
     <meta name="robots" content="noindex" data-dev-only />
     <link rel="canonical" href="${site}${p.path}" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg?v=2" />
     <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png?v=2" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png?v=2" />
-    <link rel="preload" href="./fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin />${p.preload ? '\n    <link rel="preload" as="image" href="./images/joao-hero-q.webp" type="image/webp" fetchpriority="high" />' : ''}
+    <link rel="preload" href="./fonts/Inter-Variable.woff2" as="font" type="font/woff2" crossorigin />${p.preload ? '\n    <link rel="preload" as="image" href="./images/joao-hero.webp" type="image/webp" fetchpriority="high" />' : ''}
+    <style>
+      html{background:#F6F4EF}
+      #curtain{position:fixed;inset:0;z-index:200;background:#0F1213;color:#F6F4EF;display:grid;place-items:center;animation:curtain-failsafe .01s 6s forwards}
+      #curtain .curtain-mark{width:160px;height:auto}
+      #curtain .curtain-count{position:absolute;left:24px;bottom:22px;font:600 11px/1 'Inter',system-ui,sans-serif;letter-spacing:.18em}
+      #curtain .curtain-line{position:absolute;left:0;bottom:0;height:2px;width:100%;background:#14CFB1;transform:scaleX(0);transform-origin:left}
+      @keyframes curtain-failsafe{to{opacity:0;visibility:hidden}}
+    </style>
+    <noscript><style>#curtain{display:none}</style></noscript>
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="pt_PT" />
     <meta property="og:title" content="${p.title}" />
     <meta property="og:description" content="${p.desc}" />
     <meta property="og:url" content="${site}${p.path}" />
-    <meta property="og:image" content="${site}images/joao-nova.jpg" />
+    <meta property="og:image" content="${site}images/joao.jpg" />
     <meta name="twitter:card" content="summary_large_image" />${p.jsonld ? jsonld : ''}
   </head>
   <body>
+    <div id="curtain" aria-hidden="true"><img class="curtain-mark" src="./images/jmp-logo-light-v2.svg" alt="" width="83" height="29" /><span class="curtain-count">000</span><span class="curtain-line"></span></div>
     <div id="root" data-page="${p.page}">
-      <main style="font-family:sans-serif;background:#080A0B;color:#F2F3F1;padding:48px;min-height:100vh">
+      <main style="font-family:sans-serif;background:#F6F4EF;color:#0F1213;padding:48px;min-height:100vh">
         <h1>${p.h1}</h1>
         ${p.body}
       </main>

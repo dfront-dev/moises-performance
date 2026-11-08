@@ -21,7 +21,7 @@ export default function CtaBand({ lines, text, primary, secondary }) {
     <section ref={ref} className="relative isolate overflow-hidden bg-signal py-24 text-ink md:py-36">
       <div aria-hidden className="absolute -right-[4%] top-0 -z-10 hidden h-full w-[16vw] -skew-x-[18deg] bg-ink/10 md:block" />
       <div className="mx-auto max-w-[1680px] px-5 md:px-10">
-        <h2 aria-label={lines.join(' ')} className="display text-[clamp(2.4rem,8vw,9.5rem)]">
+        <h2 aria-label={lines.join(' ')} className="display text-[clamp(1.87rem,4.8vw,5.7rem)]">
           <Lines lines={lines} />
         </h2>
         <div className="mt-12 grid gap-8 md:grid-cols-12 md:items-end">

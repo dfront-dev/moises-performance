@@ -12,7 +12,9 @@ export const services = [
     role: 'Analisa e orienta',
     relation: 'Intervenção estratégica pontual ou periódica',
     format: 'Online',
-    visual: 'analysis',
+    image: 'consultoria',
+    pos: '42% 55%',
+    alt: 'Treinador a analisar com um atleta um vídeo de treino no computador portátil',
     subject: 'Serviço: Consultoria',
   },
   {
@@ -40,9 +42,9 @@ export const services = [
     role: 'Integra, intervém, monitoriza e adapta',
     relation: 'Relação continuada, próxima e individualizada',
     format: 'Continuado, personalizado e premium',
-    image: 'elite',
-    pos: '62% 50%',
-    alt: 'Treinador a acompanhar um atleta num exercício de estabilidade e controlo',
+    image: 'acompanhamento',
+    pos: '42% 60%',
+    alt: 'Dois ciclistas a treinar lado a lado numa estrada de montanha',
     subject: 'Serviço: Acompanhamento Integrado',
   },
 ]

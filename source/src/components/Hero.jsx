@@ -1,143 +1,119 @@
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import { hero } from '../data/content'
-import { Lines } from '../lib/split'
-import { useGsap, gsap, ScrollTrigger } from '../lib/useGsap'
+import { CharLines } from '../lib/split'
+import { useGsap, gsap } from '../lib/useGsap'
+import DotField from './DotField'
 import Arrow from './Arrow'
+
+// Eight white squares in a ring around the portrait (same layout as the supplied photo, in % of the frame).
+// They stay solid white and only drift slightly as the page scrolls.
+const squares = [
+  { x: 49.9, y: 21.4, d: -26 },
+  { x: 29.0, y: 31.9, d: 34 },
+  { x: 71.6, y: 31.9, d: -34 },
+  { x: 11.2, y: 52.4, d: 22 },
+  { x: 88.7, y: 52.4, d: -22 },
+  { x: 29.0, y: 71.0, d: -38 },
+  { x: 71.6, y: 71.0, d: 38 },
+  { x: 49.9, y: 83.4, d: 26 },
+]
 
 export default function Hero() {
   const ref = useRef(null)
-  const readout = useRef(null)
 
   useGsap(ref, ({ q, desktop, root }) => {
-    const tl = gsap.timeline({ defaults: { ease: 'power4.out' } })
-    tl.from(q('[data-hero-line]'), { yPercent: 118, duration: 1.4, stagger: 0.14 }, 0.2)
-      .from(q('[data-portrait]'), { clipPath: 'inset(0 0 0 100%)', duration: 1.5, ease: 'power4.inOut' }, 0)
-      .from(q('[data-portrait-img]'), { scale: 1.3, duration: 2, ease: 'power3.out' }, 0)
-      .from(q('[data-micro]'), { opacity: 0, y: 12, stagger: 0.08, duration: 0.9 }, 0.8)
-      .from(q('[data-cta]'), { opacity: 0, y: 26, stagger: 0.1, duration: 1 }, 1)
-      .from(q('[data-tick]'), { scaleY: 0, transformOrigin: 'top', duration: 1.3 }, 0.5)
-      .from(q('[data-slash]'), { scaleY: 0, transformOrigin: 'top', duration: 1.5, stagger: 0.12, ease: 'power4.inOut' }, 0.2)
-      .from(q('[data-crop]'), { opacity: 0, scale: 1.25, stagger: 0.07, duration: 0.9 }, 1.2)
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' }, paused: true })
+    tl.from(q('[data-hero-line]'), { yPercent: 70, opacity: 0, duration: 1.4, stagger: 0.14 }, 0.1)
+      .from(q('[data-portrait]'), { clipPath: 'inset(0 0 100% 0)', duration: 1.7, ease: 'power3.inOut' }, 0)
+      .from(q('[data-portrait-img]'), { scale: 1.12, duration: 2.4 }, 0)
+      .from(q('[data-fade]'), { opacity: 0, y: 14, stagger: 0.1, duration: 1 }, 0.8)
+      .from(q('[data-rule]'), { scaleX: 0, transformOrigin: 'left', duration: 1.6, ease: 'power3.inOut' }, 0.6)
+      .from(q('[data-plus]'), { opacity: 0, scale: 0.4, stagger: 0.08, duration: 0.8 }, 1.2)
+      .from(q('[data-sq]'), { scale: 0, opacity: 0, stagger: 0.18, duration: 0.7, ease: 'back.out(2)' }, 1.9)
 
-    gsap.to(q('[data-portrait-img]'), {
-      yPercent: 10, ease: 'none',
-      scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true },
-    })
-    gsap.to(q('[data-hero-title]'), {
-      yPercent: -12, ease: 'none',
-      scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true },
-    })
+    const start = () => tl.play()
+    if (window.__jmpReady) start()
+    else window.addEventListener('jmp:ready', start, { once: true })
 
-    // Subtle motion blur: a blurred ghost of the portrait follows scroll velocity.
-    const ghost = q('[data-ghost]')[0]
-    ScrollTrigger.create({
-      start: 0,
-      end: 'max',
-      onUpdate: (self) => {
-        const v = Math.min(Math.abs(self.getVelocity()) / 1800, 1)
-        gsap.to(ghost, { opacity: v * 0.55, x: self.direction * -v * 34, duration: 0.5, overwrite: true, ease: 'power2.out' })
-      },
+    // soft parallax on the portrait only (a few percent)
+    gsap.to(q('[data-portrait-img]'), { yPercent: 4, ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: true } })
+
+    // the squares drift a little with the scroll and never fade
+    q('[data-sq]').forEach((el) => {
+      gsap.to(el, { y: Number(el.dataset.d), ease: 'none', scrollTrigger: { trigger: root, start: 'top top', end: 'bottom top', scrub: 0.6 } })
     })
 
+    // letters wake up near the pointer
     let cleanup
     if (desktop) {
-      const img = q('[data-portrait-img]')[0]
-      const qx = gsap.quickTo(img, 'x', { duration: 1, ease: 'power3.out' })
-      let raf = 0
-      const onMove = (e) => {
-        const r = root.getBoundingClientRect()
-        const nx = (e.clientX - r.left) / r.width
-        const ny = (e.clientY - r.top) / r.height
-        qx((nx - 0.5) * -22)
-        if (raf) return
-        raf = requestAnimationFrame(() => {
-          raf = 0
-          if (readout.current) readout.current.textContent = `X ${nx.toFixed(3)}  Y ${ny.toFixed(3)}`
-        })
+      const chars = q('[data-char]')
+      let raf = 0, px = -999, py = -999, lit = new Set()
+      const R = 230
+      const run = () => {
+        raf = 0
+        const next = new Set()
+        for (const c of chars) {
+          const r = c.getBoundingClientRect()
+          const d = Math.hypot(px - (r.left + r.width / 2), py - (r.top + r.height / 2))
+          if (d < R) { c.style.setProperty('--p', ((1 - d / R) ** 1.5).toFixed(3)); next.add(c) }
+        }
+        lit.forEach((c) => { if (!next.has(c)) c.style.setProperty('--p', 0) })
+        lit = next
       }
-      root.addEventListener('pointermove', onMove)
-      cleanup = () => root.removeEventListener('pointermove', onMove)
+      const onMove = (e) => { px = e.clientX; py = e.clientY; if (!raf) raf = requestAnimationFrame(run) }
+      const onLeave = () => { px = py = -999; if (!raf) raf = requestAnimationFrame(run) }
+      root.addEventListener('pointermove', onMove, { passive: true })
+      root.addEventListener('pointerleave', onLeave)
+      cleanup = () => { root.removeEventListener('pointermove', onMove); root.removeEventListener('pointerleave', onLeave); cancelAnimationFrame(raf) }
     }
-    return cleanup
+    return () => { window.removeEventListener('jmp:ready', start); if (cleanup) cleanup() }
   })
 
+  useEffect(() => { document.documentElement.dataset.page = 'home' }, [])
+
   return (
-    <section id="top" ref={ref} className="relative isolate flex min-h-[100svh] flex-col justify-end overflow-hidden bg-ink text-paper">
-      {/* grid hairlines */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 hidden md:block"
-        style={{ backgroundImage: 'linear-gradient(to right, rgba(242,243,241,.06) 1px, transparent 1px)', backgroundSize: 'calc(100% / 6) 100%' }}
-      />
-
-      <div aria-hidden className="absolute -bottom-52 -left-[12%] -z-10 h-[56vw] w-[56vw] rounded-full bg-signal/[0.09] blur-3xl" />
-      <div aria-hidden data-slash className="absolute left-[41%] top-[17%] -z-10 hidden h-[36%] w-[2.4vw] -skew-x-[16deg] bg-signal md:block" />
-      <div aria-hidden data-slash className="absolute left-[45%] top-[17%] -z-10 hidden h-[36%] w-[5px] -skew-x-[16deg] bg-paper/70 md:block" />
-
-      {/* portrait */}
-      <div data-portrait className="portrait-mask absolute right-0 top-0 -z-10 h-[64svh] w-full md:h-full md:w-[58%]">
-        <picture>
-          <source srcSet="images/joao-hero-q.webp" type="image/webp" />
-          <img
-            data-ghost
-            aria-hidden
-            alt=""
-            src="images/joao-nova.jpg"
-            width="1086"
-            height="1448"
-            className="absolute inset-0 h-full w-full object-cover object-[50%_14%] opacity-0 blur-[14px] grayscale"
-          />
-        </picture>
-        <picture>
-          <source srcSet="images/joao-hero-q.webp" type="image/webp" />
-          <img
-            data-portrait-img
-            alt="João Moisés, fisiologista do exercício, de braços cruzados num espaço de treino"
-            src="images/joao-nova.jpg"
-            width="1086"
-            height="1448"
-            fetchpriority="high"
-            className="absolute inset-0 h-full w-full object-cover object-[50%_14%] grayscale contrast-[1.14] brightness-[0.9]"
-          />
-        </picture>
-        <div aria-hidden className="dots absolute inset-0 opacity-30 mix-blend-overlay" style={{ WebkitMaskImage: 'linear-gradient(to right, #000, transparent 55%)', maskImage: 'linear-gradient(to right, #000, transparent 55%)' }} />
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-ink via-ink/20 to-transparent" />
-      </div>
-
-      {/* technical UI */}
-      <div aria-hidden className="pointer-events-none absolute left-5 top-24 hidden md:left-10 md:top-28 md:block">
-        <p data-micro className="micro text-paper/80">{hero.index}</p>
-        <p data-micro className="micro mt-2 hidden text-steel md:block">{hero.motto}</p>
-      </div>
-      <div aria-hidden data-tick className="pointer-events-none absolute right-6 top-0 hidden h-full w-[3px] bg-signal md:right-10 md:block" style={{ height: '34%' }} />
-      <p aria-hidden data-micro className="micro pointer-events-none absolute right-5 top-28 hidden origin-top-right translate-x-0 text-steel md:right-14 md:block" style={{ writingMode: 'vertical-rl' }}>
-        {hero.role}
-      </p>
-      <div aria-hidden className="pointer-events-none absolute bottom-[34%] right-[8%] hidden md:block">
-        {[['left-0 top-0', 'border-l border-t'], ['right-0 top-0', 'border-r border-t'], ['bottom-0 left-0', 'border-b border-l'], ['bottom-0 right-0', 'border-b border-r']].map(([pos, b]) => (
-          <span key={pos} data-crop className={`absolute h-3 w-3 border-paper/60 ${pos} ${b}`} />
-        ))}
-        <p ref={readout} className="micro px-4 py-3 text-[10px] text-paper/70">X 0.500  Y 0.500</p>
-      </div>
-
-      {/* content */}
-      <div className="mx-auto w-full max-w-[1680px] px-5 pb-8 pt-40 md:px-10 md:pb-10">
-        <h1
-          data-hero-title
-          aria-label={hero.lines.join(' ')}
-          className="display text-[clamp(2rem,8.6vw,14.5rem)] md:text-[clamp(2.4rem,8.2vw,13rem)]"
-        >
-          <Lines lines={hero.lines} classes={['', 'text-signal', 'text-signal']} dataAttr="data-hero-line" />
-        </h1>
-
-        <div className="mt-10 grid gap-8 border-t border-paper/15 pt-7 md:mt-14 md:grid-cols-12 md:items-end">
-          <p data-cta className="max-w-md text-lg leading-snug text-paper/85 md:col-span-5 md:text-xl">
-            {hero.support}
-          </p>
-          <div className="flex flex-wrap gap-3 md:col-span-7 md:justify-end">
-            <a data-cta href={hero.primary.href} className="btn btn-solid micro">
+    <section id="top" ref={ref} className="relative isolate overflow-hidden bg-paper text-ink">
+      <DotField />
+      <div className="relative mx-auto grid min-h-[100svh] max-w-[1680px] gap-12 px-5 pb-16 pt-32 md:grid-cols-12 md:items-center md:gap-10 md:px-10 md:pb-20 md:pt-28">
+        <div className="md:col-span-7">
+          <h1 aria-label={hero.lines.join(' ')} className="display text-[clamp(2.5rem,6.4vw,7.2rem)]">
+            <CharLines lines={hero.lines} classes={['', 'text-ink/50', 'text-ink/50']} dataAttr="data-hero-line" />
+          </h1>
+          <div data-rule aria-hidden className="mt-12 h-px w-full max-w-md bg-ink/20 md:mt-16" />
+          <p data-fade className="mt-8 max-w-md text-lg leading-relaxed text-ink/65 md:text-xl">{hero.support}</p>
+          <div data-fade className="mt-10">
+            <a href={hero.primary.href} className="btn btn-solid micro">
               {hero.primary.label} <Arrow />
             </a>
+          </div>
+        </div>
+
+        <div className="md:col-span-5">
+          <div className="relative">
+            <div data-portrait className="relative aspect-[4/5] overflow-hidden rounded-[8px] bg-paper-2">
+              <picture>
+                <source srcSet="images/joao-hero.webp" type="image/webp" />
+                <img
+                  data-portrait-img
+                  alt="João Moisés, fisiologista do exercício, de braços cruzados num espaço de treino"
+                  src="images/joao-hero.jpg"
+                  width="1086"
+                  height="1448"
+                  fetchpriority="high"
+                  className="absolute inset-0 h-full w-full object-cover object-[50%_14%] grayscale contrast-[1.04]"
+                />
+              </picture>
+            </div>
+            {/* crop marks */}
+            {[['-left-3 -top-3'], ['-right-3 -top-3'], ['-bottom-3 -left-3'], ['-bottom-3 -right-3']].map(([pos]) => (
+              <span key={pos} data-plus aria-hidden className={`absolute ${pos} hidden text-[15px] leading-none text-ink/50 md:block`}>+</span>
+            ))}
+            {/* white squares, reactive to scroll */}
+            <div aria-hidden className="pointer-events-none absolute inset-0">
+              {squares.map((q, i) => (
+                <span key={i} data-sq data-d={q.d} className="absolute block aspect-square bg-white" style={{ left: `${q.x}%`, top: `${q.y}%`, width: '1.85%', minWidth: 8, marginLeft: '-0.925%', marginTop: '-0.925%' }} />
+              ))}
+            </div>
           </div>
         </div>
       </div>
