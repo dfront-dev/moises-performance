@@ -44,7 +44,7 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
         <div className={`hidden flex-col items-center text-center md:flex ${light ? 'text-ink' : 'text-paper'}`}>
           <div className={`grid transition-[grid-template-rows,opacity,margin] duration-500 ease-[cubic-bezier(0.22,0.61,0.36,1)] ${solid ? 'mb-0 grid-rows-[0fr] opacity-0' : 'mb-[2px] grid-rows-[1fr] opacity-100'}`} aria-hidden={solid}>
             <p className="overflow-hidden text-[clamp(15px,1.45vw,21px)] font-semibold leading-tight tracking-[-0.01em]">
-              João Moisés <span aria-hidden className="mx-[0.55em] opacity-60">•</span> Sport Physiologist
+              Performance Physiology
             </p>
           </div>
           <nav aria-label="Principal" className="flex items-center text-[clamp(15px,1.45vw,21px)] font-semibold leading-tight tracking-[-0.01em]">
