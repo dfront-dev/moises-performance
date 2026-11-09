@@ -52,7 +52,7 @@ export const results = [
         label: 'Surf',
         title: 'Referências nacionais',
         rows: [
-          ['Teresa Bonvalot', 'Bicampeã europeia júnior 2016 e 2017, campeã nacional (2015 a 2020)', 'teresa-bonvalot'],
+          ['Teresa Bonvalot', 'Bicampeã europeia júnior 2016 e 2017, campeã nacional (2015 a 2018)', 'teresa-bonvalot'],
           ['José Champalimaud', 'Vice-campeão nacional de Sub-18, 2018'],
           ['José Ferreira', 'Campeão nacional Pro Júnior 2012 (2010 a 2017)', 'jose-ferreira'],
           ['Carol Henrique', 'Campeã nacional de Surf, 2016', 'carol-henrique'],
