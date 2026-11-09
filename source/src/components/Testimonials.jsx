@@ -11,14 +11,14 @@ const photos = [
 const draftMode = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('rascunho')
 const list = testimonials.filter((t) => !t.draft || draftMode)
 const cardSpots = [
-  { box: 'md:left-[22%] md:top-[27%] md:w-[38vw]', ry: 14, rx: -6, sk: -2, speed: 70 },
-  { box: 'md:right-[8%] md:top-[55%] md:w-[38vw]', ry: -14, rx: 6, sk: 2, speed: 90 },
-  { box: 'md:left-[16%] md:top-[78%] md:w-[38vw]', ry: 14, rx: -6, sk: -2, speed: 80 },
+  { box: 'md:left-[22%] md:top-[calc(15rem+25vw+130px)] md:w-[38vw]', ry: 14, rx: -6, sk: -2, speed: 70 },
+  { box: 'md:right-[8%] md:top-[calc(15rem+25vw+570px)] md:w-[38vw]', ry: -14, rx: 6, sk: 2, speed: 90 },
+  { box: 'md:left-[16%] md:top-[calc(15rem+25vw+1010px)] md:w-[38vw]', ry: 14, rx: -6, sk: -2, speed: 80 },
 ]
 const portraitSpots = [
-  { box: 'md:left-[4%] md:top-[33%] md:w-[15vw] md:aspect-square', ry: 22, rx: -8, sk: -3, speed: 130 },
-  { box: 'md:right-[28%] md:top-[50%] md:w-[13vw] md:aspect-square', ry: -22, rx: 8, sk: 3, speed: 120 },
-  { box: 'md:right-[18%] md:top-[74%] md:w-[13vw] md:aspect-square', ry: 22, rx: -8, sk: -3, speed: 110 },
+  { box: 'md:left-[4%] md:top-[calc(15rem+25vw+190px)] md:w-[15vw] md:aspect-square', ry: 22, rx: -8, sk: -3, speed: 130 },
+  { box: 'md:right-[28%] md:top-[calc(15rem+25vw+530px)] md:w-[13vw] md:aspect-square', ry: -22, rx: 8, sk: 3, speed: 120 },
+  { box: 'md:right-[18%] md:top-[calc(15rem+25vw+990px)] md:w-[13vw] md:aspect-square', ry: 22, rx: -8, sk: -3, speed: 110 },
 ]
 
 function Photo({ src, alt, pos, className = '', initials }) {
@@ -62,7 +62,7 @@ export default function Testimonials() {
 
   return (
     <section id="testemunhos" ref={ref} className="relative isolate overflow-hidden bg-ink text-white">
-      <div className={`relative mx-auto max-w-[1680px] px-5 pb-28 pt-28 ${list.length > 2 ? 'md:min-h-[220svh]' : 'md:min-h-[178svh]'} md:px-10 md:pb-0 md:pt-40`}>
+      <div className={`relative mx-auto max-w-[1680px] px-5 pb-28 pt-28 ${list.length > 2 ? 'md:min-h-[max(220svh,calc(15rem+25vw+1430px))]' : 'md:min-h-[max(178svh,calc(15rem+25vw+990px))]'} md:px-10 md:pb-0 md:pt-40`}>
         {/* giant type: it inverts wherever a photo sits behind it */}
         <h2 aria-label="Impacto nos atletas" className="display relative z-10 text-[clamp(3.4rem,15vw,5rem)] leading-[0.95] md:text-[clamp(3.4rem,13vw,15rem)]" style={{ mixBlendMode: 'difference' }}>
           <span className="line"><span className="line-inner" data-line>Impacto</span></span>
