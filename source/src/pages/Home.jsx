@@ -7,6 +7,9 @@ import Audiences from '../components/Audiences'
 import Endurance from '../components/Endurance'
 import Testimonials from '../components/Testimonials'
 
+// Secção Endurance escondida por agora. Para voltar a mostrá-la, passar a true.
+const SHOW_ENDURANCE = false
+
 export default function Home() {
   return (
     <Layout page="home">
@@ -15,7 +18,7 @@ export default function Home() {
       <Philosophy />
       <Expertise />
       <Audiences />
-      <Endurance />
+      {SHOW_ENDURANCE && <Endurance />}
       <Testimonials />
     </Layout>
   )
