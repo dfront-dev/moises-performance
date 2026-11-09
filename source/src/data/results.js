@@ -60,6 +60,7 @@ export const results = [
           ['Tomás Fernandes', '3.º no Mundial de Juniores de Surf, 2014', 'tomas-fernandes'],
           ['Carol Henrique', 'Campeã nacional de Surf, 2016', 'carol-henrique'],
           ['Maria Abecassis', 'Bicampeã nacional de Surf, 2011 e 2012', 'maria-abecassis'],
+          ['José Champalimaud', 'Vice-campeão nacional de Sub-18, 2018'],
         ],
       },
     ],
