@@ -29,7 +29,7 @@ const pages = [
     title: 'Método | JMP, João Moisés Performance Physiology',
     desc: 'O sistema de performance JMP: seis momentos, um processo contínuo. Dados objetivos para decidir melhor, com interpretação individual e ligação direta à prática.',
     h1: 'O sistema de performance.',
-    body: '<ol><li>Compreender: a pessoa, a modalidade e o contexto do atleta.</li><li>Avaliar: apenas o que acrescenta informação relevante.</li><li>Interpretar: os resultados em conjunto com a realidade do atleta.</li><li>Planear: as necessidades transformadas em plano aplicável.</li><li>Acompanhar: a execução no terreno, com ajustes sempre que necessário.</li><li>Reavaliar: a resposta ao treino orienta as decisões seguintes.</li></ol>',
+    body: '<ol><li>Compreender: a pessoa, a modalidade e o contexto do atleta.</li><li>Avaliar: apenas o que acrescenta informação relevante.</li><li>Interpretar: os resultados em conjunto com a realidade do atleta.</li><li>Orientar: as necessidades transformadas em plano aplicável.</li><li>Acompanhar: a execução no terreno, com ajustes sempre que necessário.</li><li>Reavaliar: a resposta ao treino orienta as decisões seguintes.</li></ol>',
   },
   {
     file: 'sobre.html', page: 'sobre', path: 'sobre.html',

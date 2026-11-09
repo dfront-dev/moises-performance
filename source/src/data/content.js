@@ -36,7 +36,7 @@ export const system = {
     { n: '01', title: 'Compreender', tag: 'Contexto', text: 'A pessoa, a modalidade e o contexto do atleta.' },
     { n: '02', title: 'Avaliar', tag: 'Dados', text: 'Apenas o que acrescenta informação relevante.' },
     { n: '03', title: 'Interpretar', tag: 'Análise', text: 'Os resultados em conjunto com a realidade do atleta.' },
-    { n: '04', title: 'Planear', tag: 'Estratégia', text: 'As necessidades transformadas em plano aplicável.' },
+    { n: '04', title: 'Orientar', tag: 'Estratégia', text: 'As necessidades transformadas em plano aplicável.' },
     { n: '05', title: 'Acompanhar', tag: 'Execução', text: 'A execução no terreno, com ajustes sempre que necessário.' },
     { n: '06', title: 'Reavaliar', tag: 'Evolução', text: 'A resposta ao treino orienta as decisões seguintes.' },
   ],
