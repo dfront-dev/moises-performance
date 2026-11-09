@@ -36,7 +36,7 @@ export const system = {
     { n: '01', title: 'Compreender', tag: 'Contexto', text: 'A pessoa, a modalidade e o contexto do atleta.' },
     { n: '02', title: 'Avaliar', tag: 'Dados', text: 'Apenas o que acrescenta informação relevante.' },
     { n: '03', title: 'Interpretar', tag: 'Análise', text: 'Os resultados em conjunto com a realidade do atleta.' },
-    { n: '04', title: 'Orientar', tag: 'Estratégia', text: 'As necessidades transformadas em plano aplicável.' },
+    { n: '04', title: 'Orientar', tag: 'Estratégia', text: 'A informação traduzida em estratégias de treino individualizadas e aplicáveis.' },
     { n: '05', title: 'Acompanhar', tag: 'Execução', text: 'A execução no terreno, com ajustes sempre que necessário.' },
     { n: '06', title: 'Reavaliar', tag: 'Evolução', text: 'A resposta ao treino orienta as decisões seguintes.' },
   ],
@@ -110,9 +110,8 @@ export const differentiators = {
   index: '04 / Diferenciação',
   lines: ['O que distingue', 'o acompanhamento.'],
   items: [
-    { n: '01', title: 'Presença no terreno', text: 'Aumenta o rigor e a exigência das sessões, e permite perceber a resposta à fadiga e a qualidade do movimento, aspetos que nem sempre aparecem nos dados.' },
-    { n: '02', title: 'Visão integrada', text: 'Treino, recuperação, sono, alimentação, contexto emocional e saúde fazem parte do mesmo processo, em articulação com toda a equipa técnica.' },
-    { n: '03', title: 'Experiência de elite', text: 'Três ciclos Olímpicos e múltiplas modalidades, com conhecimento científico combinado com experiência real de alta competição.' },
+    { n: '01', title: 'Presença no terreno', text: 'A proximidade e a comunicação direta permitem acompanhar e avaliar continuamente o atleta, com sensibilidade para adaptar cada exercício e perceber aspetos que nem sempre aparecem nos dados.' },
+    { n: '02', title: 'Experiência de elite', text: 'Três ciclos olímpicos e experiência em múltiplas modalidades, combinando conhecimento científico com experiência prática no alto rendimento.' },
   ],
 }
 

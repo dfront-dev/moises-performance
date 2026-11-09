@@ -132,7 +132,7 @@ export default function System({ merge = false }) {
               <span className="block">{d.lines[0]}</span>
               <span className="block text-ink/50">{d.lines[1]}</span>
             </h3>
-            <ul className="mt-10 grid gap-10 md:col-span-8 md:mt-0 md:grid-cols-3 md:gap-8">
+            <ul className={`mt-10 grid gap-10 md:col-span-8 md:mt-0 ${d.items.length === 2 ? 'md:grid-cols-2' : 'md:grid-cols-3'} md:gap-8`}>
               {d.items.map((it) => (
                 <li key={it.title} data-merge-item>
                   <span aria-hidden className="block h-[2px] w-10 bg-signal" />
