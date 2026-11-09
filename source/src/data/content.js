@@ -166,25 +166,25 @@ export const placeholders = [
 export const audiences = {
   lines: ['Atletas,', 'treinadores', 'e equipas.'],
   intro:
-    'Desde a atletas a equipas e clubes, o João adapta a forma de intervir, sem nunca substituir o papel do treinador.',
+    'Uma abordagem especializada e adaptada às necessidades de cada atleta, treinador ou equipa, desde a avaliação e orientação ao acompanhamento integrado.',
   items: [
     {
       title: 'Atletas',
-      text: 'Clareza sobre o que pode estar a limitar a evolução e orientação especializada sobre como melhorar o processo de treino.',
-      href: 'servicos.html#consultoria',
-      cta: 'Consultoria e avaliação',
+      text: 'Compreender o que limita a evolução, identificar prioridades e otimizar a performance através de avaliação, orientação especializada e acompanhamento físico e fisiológico.',
+      href: 'servicos.html',
+      cta: 'Conhecer serviços',
     },
     {
       title: 'Treinadores',
-      text: 'Um parceiro especializado, não um substituto. Acrescenta conhecimento fisiológico, análise e acompanhamento ao processo de treino, e o treinador decide como integrar as recomendações.',
+      text: 'Apoio especializado em fisiologia, avaliação e análise de dados para complementar o trabalho do treinador e contribuir para decisões de treino mais informadas.',
       href: 'servicos.html#acompanhamento',
-      cta: 'Acompanhamento integrado',
+      cta: 'Explorar colaboração',
     },
     {
       title: 'Equipas, clubes e federações',
-      text: 'Integração na estrutura de performance, com articulação regular com treinadores e restantes profissionais, e formação de equipas técnicas.',
+      text: 'Integração de conhecimento fisiológico, preparação física e monitorização da performance na estrutura técnica, com uma intervenção adaptada aos objetivos e necessidades de cada equipa.',
       href: 'sobre.html',
-      cta: 'Consultoria e formação',
+      cta: 'Explorar colaboração',
     },
   ],
 }
