@@ -11,7 +11,7 @@ const photos = [
   ['tomas-fernandes', 'Tomás Fernandes', '50% 25%'],
   ['mafalda-pires-de-lima', 'Mafalda Pires de Lima', '50% 30%'],
 ]
-const sports = ['Vela', 'Surf', 'Triatlo', 'Freediving', 'Ténis', 'Padel']
+const sports = ['Vela', 'Surf', 'Triatlo', 'Freediving', 'Ténis', 'Padel', 'Wingfoil']
 const N = photos.length
 const TURNS = 1.35 // how many times the helix wraps around
 
