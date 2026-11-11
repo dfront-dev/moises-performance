@@ -145,13 +145,12 @@ export const testimonials = [
     photo: 'images/testemunhos/jose-ferreira',
   },
   {
-    // Rascunho: só aparece com ?rascunho no endereço. Falta o texto real, o nome e a fotografia.
-    draft: true,
-    quote: '[Texto do testemunho. Substituir pelo texto real, aprovado pela atleta.]',
-    name: '[Nome da atleta]',
-    role: '[Modalidade ou título]',
-    initials: 'NA',
-    photo: '',
+    quote:
+      'O que mais gosto no trabalho com o Moisés é que nada é feito de forma isolada. O treino é ajustado a cada mesociclo do triatlo e às diferentes fases do meu corpo. E sinto que o conhecimento e a sensibilidade que tem para a saúde da mulher fazem mesmo a diferença.',
+    name: 'Joana Figueiredo',
+    role: 'Triatleta CNATRIL',
+    initials: 'JF',
+    photo: 'images/atletas/joana-figueiredo',
   },
 ]
 
