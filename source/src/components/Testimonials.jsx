@@ -6,18 +6,18 @@ import { useGsap, gsap } from '../lib/useGsap'
 // it arrives leaning one way, sits flat in the middle and leans the other way as it leaves.
 const photos = [
   { src: 'images/atletas/vasco-ribeiro', alt: 'Vasco Ribeiro', box: 'md:right-[6%] md:top-[12%] md:w-[20vw] md:aspect-[3/4]', ry: -20, rx: 8, sk: 3, speed: 110, pos: '50% 20%' },
-  { src: 'images/atletas/teresa-bonvalot', alt: 'Teresa Bonvalot', box: 'md:right-[18%] md:top-[calc(15rem+25vw+990px)] md:w-[13vw] md:aspect-square', ry: 18, rx: -7, sk: -3, speed: 90, pos: '45% 30%' },
+  { src: 'images/atletas/teresa-bonvalot', alt: 'Teresa Bonvalot', box: 'md:right-[18%] md:top-[calc(17rem+25vw+990px)] md:w-[13vw] md:aspect-square', ry: 18, rx: -7, sk: -3, speed: 90, pos: '45% 30%' },
 ]
 const draftMode = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('rascunho')
 const list = testimonials.filter((t) => !t.draft || draftMode)
 const cardSpots = [
-  { box: 'md:left-[22%] md:top-[calc(15rem+25vw+130px)] md:w-[38vw]', ry: 14, rx: -6, sk: -2, speed: 70 },
-  { box: 'md:right-[8%] md:top-[calc(15rem+25vw+570px)] md:w-[38vw]', ry: -14, rx: 6, sk: 2, speed: 90 },
-  { box: 'md:left-[16%] md:top-[calc(15rem+25vw+1010px)] md:w-[38vw]', ry: 14, rx: -6, sk: -2, speed: 80 },
+  { box: 'md:left-[22%] md:top-[calc(17rem+25vw+130px)] md:w-[38vw]', ry: 14, rx: -6, sk: -2, speed: 70 },
+  { box: 'md:right-[8%] md:top-[calc(17rem+25vw+570px)] md:w-[38vw]', ry: -14, rx: 6, sk: 2, speed: 90 },
+  { box: 'md:left-[16%] md:top-[calc(17rem+25vw+1010px)] md:w-[38vw]', ry: 14, rx: -6, sk: -2, speed: 80 },
 ]
 const portraitSpots = [
-  { box: 'md:left-[4%] md:top-[calc(15rem+25vw+190px)] md:w-[15vw] md:aspect-square', ry: 22, rx: -8, sk: -3, speed: 130 },
-  { box: 'md:right-[24%] md:top-[calc(15rem+25vw+400px)] md:w-[13vw] md:aspect-square', ry: -22, rx: 8, sk: 3, speed: 120 },
+  { box: 'md:left-[4%] md:top-[calc(17rem+25vw+190px)] md:w-[15vw] md:aspect-square', ry: 22, rx: -8, sk: -3, speed: 130 },
+  { box: 'md:right-[24%] md:top-[calc(17rem+25vw+400px)] md:w-[13vw] md:aspect-square', ry: -22, rx: 8, sk: 3, speed: 120 },
   { box: 'md:left-[6%] md:top-[70%] md:w-[24vw] md:aspect-[4/3]', ry: 22, rx: -8, sk: -3, speed: 110 },
 ]
 
@@ -62,7 +62,7 @@ export default function Testimonials() {
 
   return (
     <section id="testemunhos" ref={ref} className="relative isolate overflow-hidden bg-ink text-white">
-      <div className={`relative mx-auto max-w-[1680px] px-5 pb-28 pt-28 ${list.length > 2 ? 'md:min-h-[max(220svh,calc(15rem+25vw+1430px))]' : 'md:min-h-[max(178svh,calc(15rem+25vw+990px))]'} md:px-10 md:pb-0 md:pt-40`}>
+      <div className={`relative mx-auto max-w-[1680px] px-5 pb-28 pt-28 ${list.length > 2 ? 'md:min-h-[max(220svh,calc(17rem+25vw+1550px))]' : 'md:min-h-[max(178svh,calc(17rem+25vw+1110px))]'} md:px-10 md:pb-0 md:pt-48`}>
         {/* giant type: it inverts wherever a photo sits behind it */}
         <h2 aria-label="Impacto nos atletas" className="display relative z-10 text-[clamp(3.4rem,15vw,5rem)] leading-[0.95] md:text-[clamp(3.4rem,13vw,15rem)]" style={{ mixBlendMode: 'difference' }}>
           <span className="line"><span className="line-inner" data-line>Impacto</span></span>
