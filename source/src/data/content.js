@@ -13,7 +13,7 @@ export const hero = {
   index: 'Performance Physiology / 001',
   motto: 'Precisão. Disciplina. Progresso.',
   lines: ['Fisiologia', 'aplicada à', 'performance.'],
-  support: 'Avaliação, interpretação e transformação de informação fisiológica em estratégias inteligentes de treino.',
+  support: 'Compreender o atleta, interpretar informação fisiológica e transformá-la em estratégias para otimizar o treino.',
   role: 'João Moisés, Fisiologista do Exercício, Performance Physiology',
   primary: { label: 'Áreas de intervenção', href: 'servicos.html' },
 }
