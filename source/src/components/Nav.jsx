@@ -64,7 +64,7 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
         </div>
 
         <a href={cta} data-scramble-hover className={`micro hidden px-5 py-3 transition-colors md:inline-flex md:justify-self-end ${light ? 'bg-ink text-paper hover:bg-signal hover:text-ink' : 'bg-signal text-ink hover:bg-paper'}`}>
-          Agendar consulta
+          Agendar conversa
         </a>
 
         <button
@@ -97,7 +97,7 @@ export default function Nav({ page = 'home', tone = 'paper' }) {
         ))}
       </ul>
       <a href={cta} onClick={() => setOpen(false)} className="btn btn-solid micro mt-10 w-full justify-between">
-        Agendar consulta <Arrow />
+        Agendar conversa <Arrow />
       </a>
     </div>
   </>

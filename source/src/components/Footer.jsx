@@ -68,7 +68,7 @@ export default function Footer() {
           </Group>
           <div data-fcta className="pt-2">
             <a href="contacto.html" className="btn btn-solid micro">
-              Agendar consulta <Arrow />
+              Agendar conversa <Arrow />
             </a>
           </div>
         </div>

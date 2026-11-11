@@ -30,7 +30,7 @@ export default function Contact() {
     e.preventDefault()
     const d = new FormData(e.currentTarget)
     const topics = d.getAll('assunto').join(', ') || 'Por definir'
-    const subject = 'Agendar consulta'
+    const subject = 'Agendar conversa'
     const body = `Nome: ${d.get('nome')}\nEmail: ${d.get('email')}\nTelemóvel: ${d.get('telemovel') || '-'}\nO pedido diz respeito a: ${topics}\n\n${d.get('mensagem')}`
     setStatus('A abrir o teu cliente de email com a mensagem preparada.')
     window.location.href = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
@@ -39,11 +39,15 @@ export default function Contact() {
   return (
     <section id="contacto" ref={ref} className="relative isolate bg-ink pb-28 pt-40 text-white md:pb-40 md:pt-56">
       <div className="mx-auto max-w-[1100px] px-5 md:px-10">
-        <h1 aria-label="Agendar consulta" className="display text-center text-[clamp(2.8rem,8.5vw,8.5rem)] leading-[1]">
-          <span className="line"><span className="line-inner" data-line>Agendar consulta</span></span>
+        <h1 aria-label="Agendar conversa" className="display text-center text-[clamp(2.8rem,8.5vw,8.5rem)] leading-[1]">
+          <span className="line"><span className="line-inner" data-line>Agendar conversa</span></span>
         </h1>
 
-        <form onSubmit={onSubmit} aria-label="Agendar consulta" className="mt-16 md:mt-24">
+        <p data-fade className="mx-auto mt-8 max-w-2xl text-center text-[clamp(1.05rem,1.5vw,1.45rem)] font-medium leading-snug text-white/70 md:mt-10">
+          Fala um pouco sobre os teus objetivos ou desafios, para identificarmos em conjunto a forma de intervenção mais adequada às tuas necessidades.
+        </p>
+
+        <form onSubmit={onSubmit} aria-label="Agendar conversa" className="mt-14 md:mt-20">
           <div className="grid gap-x-12 md:grid-cols-2" data-fade>
             <label className="block"><span className="sr-only">Nome</span><input required name="nome" autoComplete="name" className={line} placeholder="Nome *" /></label>
             <label className="block"><span className="sr-only">Email</span><input required type="email" name="email" autoComplete="email" className={line} placeholder="Email *" /></label>
@@ -54,6 +58,7 @@ export default function Contact() {
             <legend className="text-[clamp(1.05rem,1.4vw,1.4rem)] font-semibold">O pedido diz respeito a:</legend>
             <div className="mt-8 flex flex-wrap gap-x-14 gap-y-6">
               {services.map((s) => <Check key={s.id} name="assunto" value={s.short}>{s.short}</Check>)}
+              <Check name="assunto" value="Ainda não sei / Preciso de orientação">Ainda não sei / Preciso de orientação</Check>
             </div>
           </fieldset>
 
