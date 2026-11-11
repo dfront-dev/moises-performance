@@ -130,11 +130,11 @@ export const collaboration = {
 export const testimonials = [
   {
     quote:
-      'Após uma grande queda de bicicleta, o Moisés ajudou-me a restabelecer o meu ombro de uma lesão grave, onde o prognóstico era pessimista e conservador, a tempo de recuperar para uma prova que me preparei o ano inteiro. Hoje sei que sem o Moisés não continuaria no desporto.',
-    name: 'Sebastião Seguro',
+      'O que mais gosto no trabalho com o Moisés é que nada é feito de forma isolada. O treino é ajustado a cada mesociclo do triatlo e às diferentes fases do meu corpo. E sinto que o conhecimento e a sensibilidade que tem para a saúde da mulher fazem mesmo a diferença.',
+    name: 'Joana Figueiredo',
     role: 'Triatleta CNATRIL',
-    initials: 'SS',
-    photo: 'images/testemunhos/sebastiao-seguro',
+    initials: 'JF',
+    photo: 'images/atletas/joana-figueiredo',
   },
   {
     quote:
@@ -146,11 +146,11 @@ export const testimonials = [
   },
   {
     quote:
-      'O que mais gosto no trabalho com o Moisés é que nada é feito de forma isolada. O treino é ajustado a cada mesociclo do triatlo e às diferentes fases do meu corpo. E sinto que o conhecimento e a sensibilidade que tem para a saúde da mulher fazem mesmo a diferença.',
-    name: 'Joana Figueiredo',
+      'Após uma grande queda de bicicleta, o Moisés ajudou-me a restabelecer o meu ombro de uma lesão grave, onde o prognóstico era pessimista e conservador, a tempo de recuperar para uma prova que me preparei o ano inteiro. Hoje sei que sem o Moisés não continuaria no desporto.',
+    name: 'Sebastião Seguro',
     role: 'Triatleta CNATRIL',
-    initials: 'JF',
-    photo: 'images/atletas/joana-figueiredo',
+    initials: 'SS',
+    photo: 'images/testemunhos/sebastiao-seguro',
   },
 ]
 
