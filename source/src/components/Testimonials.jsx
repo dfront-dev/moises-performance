@@ -6,7 +6,7 @@ import { useGsap, gsap } from '../lib/useGsap'
 // it arrives leaning one way, sits flat in the middle and leans the other way as it leaves.
 const photos = [
   { src: 'images/atletas/vasco-ribeiro', alt: 'Vasco Ribeiro', box: 'md:right-[6%] md:top-[12%] md:w-[20vw] md:aspect-[3/4]', ry: -20, rx: 8, sk: 3, speed: 110, pos: '50% 20%' },
-  { src: 'images/atletas/teresa-bonvalot', alt: 'Teresa Bonvalot', box: 'md:left-[6%] md:top-[70%] md:w-[24vw] md:aspect-[4/3]', ry: 18, rx: -7, sk: -3, speed: 90, pos: '45% 30%' },
+  { src: 'images/atletas/teresa-bonvalot', alt: 'Teresa Bonvalot', box: 'md:right-[18%] md:top-[calc(15rem+25vw+990px)] md:w-[13vw] md:aspect-square', ry: 18, rx: -7, sk: -3, speed: 90, pos: '45% 30%' },
 ]
 const draftMode = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('rascunho')
 const list = testimonials.filter((t) => !t.draft || draftMode)
@@ -17,8 +17,8 @@ const cardSpots = [
 ]
 const portraitSpots = [
   { box: 'md:left-[4%] md:top-[calc(15rem+25vw+190px)] md:w-[15vw] md:aspect-square', ry: 22, rx: -8, sk: -3, speed: 130 },
-  { box: 'md:right-[28%] md:top-[calc(15rem+25vw+530px)] md:w-[13vw] md:aspect-square', ry: -22, rx: 8, sk: 3, speed: 120 },
-  { box: 'md:right-[18%] md:top-[calc(15rem+25vw+990px)] md:w-[13vw] md:aspect-square', ry: 22, rx: -8, sk: -3, speed: 110 },
+  { box: 'md:right-[24%] md:top-[calc(15rem+25vw+400px)] md:w-[13vw] md:aspect-square', ry: -22, rx: 8, sk: 3, speed: 120 },
+  { box: 'md:left-[6%] md:top-[70%] md:w-[24vw] md:aspect-[4/3]', ry: 22, rx: -8, sk: -3, speed: 110 },
 ]
 
 function Photo({ src, alt, pos, className = '', initials }) {
