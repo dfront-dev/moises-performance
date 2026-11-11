@@ -38,7 +38,7 @@ export default function Philosophy() {
           <p data-words className="text-[clamp(1.55rem,3.3vw,3.4rem)] font-medium leading-[1.1] tracking-[-0.02em] md:col-span-8 md:col-start-5">
             <Words text={c.statement} />
           </p>
-          <p data-fade className="max-w-sm border-l-2 border-signal pl-5 text-base leading-relaxed text-ink/60 md:col-span-3 md:col-start-5">
+          <p data-fade className="max-w-lg border-l-2 border-signal pl-5 text-base leading-relaxed text-ink/60 md:col-span-6 md:col-start-5">
             {c.note}
           </p>
         </div>

@@ -22,9 +22,9 @@ export const philosophy = {
   index: '02 / Filosofia',
   lines: ['Da fisiologia', 'à decisão.'],
   statement:
-    'O valor está em avaliar, interpretar e identificar limitadores, e em transformar informação fisiológica em decisões concretas para o treino.',
+    'Cada atleta responde de forma diferente ao treino. Conhecer a pessoa, compreender essa resposta, identificar limitadores e adaptar estratégias é fundamental para otimizar a sua evolução.',
   note:
-    'Ciência e dados são fundamentais. A observação no terreno e a capacidade de adaptar o trabalho à realidade fisiológica de cada atleta fazem a diferença para obtenção dos melhores resultados.',
+    'A informação fisiológica é o ponto de partida. A interpretação, a observação no terreno e o conhecimento do contexto de cada atleta permitem transformá-la em decisões individualizadas para a obtenção dos melhores resultados.',
 }
 
 export const system = {
@@ -45,7 +45,7 @@ export const system = {
 export const expertise = {
   index: '04 / Serviços',
   lines: ['Áreas de', 'intervenção.'],
-  intro: 'Três serviços, três níveis de profundidade no processo de treino: compreender e orientar, avaliar e aprofundar, acompanhar e otimizar.',
+  intro: 'Três serviços, diferentes níveis de intervenção no processo de treino: compreender e orientar, avaliar e aprofundar, acompanhar e otimizar.',
 }
 
 export const coach = {
