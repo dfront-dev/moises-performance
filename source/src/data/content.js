@@ -170,19 +170,19 @@ export const audiences = {
     {
       title: 'Atletas',
       text: 'Compreender o que limita a evolução, identificar prioridades e otimizar a performance através de avaliação, orientação especializada e acompanhamento físico e fisiológico.',
-      href: 'servicos.html',
+      href: 'contacto.html',
       cta: 'Conhecer serviços',
     },
     {
       title: 'Treinadores',
       text: 'Apoio especializado em fisiologia, avaliação e análise de dados para complementar o trabalho do treinador e contribuir para decisões de treino mais informadas.',
-      href: 'servicos.html#acompanhamento',
+      href: 'contacto.html',
       cta: 'Explorar colaboração',
     },
     {
       title: 'Equipas, clubes e federações',
       text: 'Integração de conhecimento fisiológico, preparação física e monitorização da performance na estrutura técnica, com uma intervenção adaptada aos objetivos e necessidades de cada equipa.',
-      href: 'sobre.html',
+      href: 'contacto.html',
       cta: 'Explorar colaboração',
     },
   ],

@@ -21,18 +21,20 @@ export default function SportsSpiral({ top = false }) {
 
   useEffect(() => {
     const els = [...scene.current.querySelectorAll('[data-ph]')]
-    const washes = els.map((el) => el.querySelector('[data-wash]'))
+    els.forEach((el) => { el._w = el.querySelector('[data-wash]') })
+    let vis = els // the photos shown at this screen size (the phone shows five, not seven)
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const title = root.current.querySelector('h2')
     const intro = { v: top ? 0 : 1 } // on the home page the helix opens up once the intro curtain lifts
     let tau = 0, scroll = 0, W = 0, H = 0
 
     const place = () => {
-      const rx = Math.min(W * (W < 768 ? 0.36 : 0.4), 640)
+      const rx = Math.min(W * (W < 768 ? 0.4 : 0.42), 680)
       const rz = W < 768 ? 220 : 420
-      const span = H * (W < 768 ? 0.66 : 0.62)
-      els.forEach((el, i) => {
-        const u = (((i / N + tau + scroll) % 1) + 1) % 1
+      const span = H * (W < 768 ? 0.8 : 0.7)
+      const n = vis.length
+      vis.forEach((el, i) => {
+        const u = (((i / n + tau + scroll) % 1) + 1) % 1
         const phi = u * Math.PI * 2 * TURNS
         const x = Math.sin(phi) * rx
         const z = Math.cos(phi) * rz
@@ -42,11 +44,13 @@ export default function SportsSpiral({ top = false }) {
         const grow = e * e * (3 - 2 * e) // photos grow in and shrink out at the ends of the helix: never see-through
         el.style.transform = `translate3d(${x.toFixed(1)}px, ${y.toFixed(1)}px, ${z.toFixed(1)}px) rotateY(${(-Math.sin(phi) * 16).toFixed(1)}deg) scale(${(grow * intro.v).toFixed(3)})`
         el.style.opacity = '1'
-        if (washes[i]) washes[i].style.opacity = ((1 - depth) * 0.62).toFixed(3) // far photos fade towards the paper colour, still opaque
+        // far photos, and photos crossing the middle where the type sits, fade towards the paper colour. Still opaque, so the type stays readable.
+        const centre = 1 - Math.min(1, Math.abs(x) / (rx * 0.55))
+        if (el._w) el._w.style.opacity = Math.min(0.86, (1 - depth) * 0.6 + centre * 0.42).toFixed(3)
         el.style.zIndex = String(Math.round(depth * 100))
       })
     }
-    const measure = () => { const r = scene.current.getBoundingClientRect(); W = r.width; H = r.height; place() }
+    const measure = () => { const r = scene.current.getBoundingClientRect(); W = r.width; H = r.height; vis = els.filter((e) => e.offsetParent !== null); place() }
     measure()
     window.addEventListener('resize', measure)
 
@@ -66,12 +70,12 @@ export default function SportsSpiral({ top = false }) {
 
   return (
     <section ref={root} id="modalidades" className="relative isolate overflow-hidden bg-paper text-ink">
-      <div className={`relative mx-auto flex min-h-[100svh] max-w-[1680px] items-center justify-center px-5 ${top ? 'py-32 md:py-40' : 'py-40 md:min-h-[135svh] md:py-64'} md:px-10`}>
+      <div className={`relative mx-auto flex min-h-[118svh] max-w-[1680px] items-center justify-center px-5 ${top ? 'py-32 md:py-40' : 'py-40 md:min-h-[135svh] md:py-64'} md:px-10`}>
         {/* photos on the helix */}
         <div ref={scene} aria-hidden className="pointer-events-none absolute inset-0 z-0" style={{ perspective: 1200, perspectiveOrigin: '50% 45%' }}>
           <div className="absolute inset-0" style={{ transformStyle: 'preserve-3d' }}>
-            {photos.map(([src, alt, pos]) => (
-              <div key={src} data-ph className="absolute left-1/2 top-1/2 aspect-[3/4] w-[clamp(88px,11.5vw,200px)] -translate-x-1/2 -translate-y-1/2 will-change-transform" style={{ marginLeft: 0 }}>
+            {photos.map(([src, alt, pos], i) => (
+              <div key={src} data-ph className={`${i >= 5 ? 'max-md:hidden' : ''} absolute left-1/2 top-1/2 aspect-[3/4] w-[clamp(76px,11.5vw,200px)] -translate-x-1/2 -translate-y-1/2 will-change-transform`} style={{ marginLeft: 0 }}>
                 <div className="relative h-full w-full overflow-hidden rounded-[10px] bg-paper-2">
                   <picture>
                     <source srcSet={`images/atletas/${src}.webp`} type="image/webp" />
